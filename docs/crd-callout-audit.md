@@ -100,6 +100,14 @@ have been reviewed.
 
 ## Interpretation and future work
 
+Tranche 2D adds the complete Cypher partition at 5955–7380 and tables 28–38
+(691 cells including 208 blank cells). It closes B157–B160 and B167–B169.
+Together, 2A–2D cover 76 baseline visual groups and 39 Word tables; 24 groups
+and 22 tables remain for 2E. Native links reach all 198 Cypher definitions,
+while unmatched source clauses remain in the reference. Executable random
+tables remain information-library lot 5. The sole explicit deferral is still
+7953. Historical tranche counts below are retained for traceability.
+
 Tranche 2C subsequently added the Foci/equipment partition at 3438–5952,
 preserving tables 2–27, all 674 cells and the Equipment intrusion at 5594.
 Together, 2A–2C close 69 baseline visual groups and 28 Word tables; 31 groups

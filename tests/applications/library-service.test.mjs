@@ -108,6 +108,25 @@ test("Foci and equipment chapters resolve lazily in both languages and never byp
   }
 });
 
+test("Cypher reference discovery is bilingual, lazy and permission checked", async () => {
+  const { pack, calls, document } = setup();
+  for (const language of ["en", "fr"]) {
+    pack.collection = `cypher.rules-${language}`;
+    game.packs = new Map([[pack.collection, pack]]);
+    pack.getIndex = async () => [{ _id: "cyphers", name: "Cyphers", flags: {
+      cypherFoundry: { crd: { logicalId: "journal.crd-cyphers" } }
+    } }];
+    const before = calls.document;
+    const row = (await libraryIndex(language)).find(row => row.key === "crd-cyphers");
+    assert.equal(row.uuid, `Compendium.cypher.rules-${language}.JournalEntry.cyphers`);
+    assert.equal(calls.document, before);
+    assert.equal(await libraryDocument("crd-cyphers", language), document);
+    document.testUserPermission = () => false;
+    assert.equal(await libraryDocument("crd-cyphers", language), null);
+    document.testUserPermission = () => true;
+  }
+});
+
 test("Home shortcut is permission checked, repeatable, and preserves user-edited macros", async () => {
   const { calls } = setup();
   const first = await createLibraryShortcut();

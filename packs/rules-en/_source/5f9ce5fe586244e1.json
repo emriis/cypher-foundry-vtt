@@ -1,0 +1,512 @@
+{
+  "_id": "5f9ce5fe586244e1",
+  "_key": "!journal!5f9ce5fe586244e1",
+  "name": "Cyphers",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "e1bfb61d42374ae0",
+      "_key": "!journal.pages!5f9ce5fe586244e1.e1bfb61d42374ae0",
+      "name": "Cyphers",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"crd-callout\"><p>The GM should have a general idea of what cyphers you have so they can create encounters that make those cyphers useful. It’s not fun if you have a climbing cypher and no opportunity to climb something.</p></aside>\n<p>Cyphers are one-use abilities that your character has, and they change from session to session. This spices up the game because you always have new options for dealing with challenges—you have different tricks up your sleeve each time. Maybe a cypher lets you turn a combat encounter into a negotiation or reveals information about your foes and how they tie in to the overall story.</p>\n<p>Cyphers are things that a player might do by asking the right questions or rolling well, presented as a one-use character ability that explicitly tries something cool and different. There’s a lot of stuff on your character sheet that you can consistently rely on—skills, Pools, abilities, and so on; cyphers are the wild cards that give you fresh options and let you try something new. There are many different cyphers, and while none of them will break the game, they will be useful and interesting.</p>\n<p>Many cyphers are the sort of thing that a realistic hero in a film or television show could do without any supernatural help, like having a burst of insight about the best way to use the nearby terrain, getting a surge of adrenaline to accomplish something exceptional, or being lucky enough to make that once-in-a-lifetime shot. In some ways they’re like a capability you had within yourself but can’t always rely on. Which means they’re pretty realistic, because on a typicalday you might not be able to jump over a fence, make a half-court shot, or evade a dangerous driver on the highway, but on thedays you do manage one of those things, it’s memorable.</p>\n<p>You should think of cyphers less like gear or treasure and more like character abilities (from your type or focus) that you didn’t expect to have. The cyphers lead to fun game moments where you can say, “Oh, I’ve got a trick that’ll help with this situation,” and that trick is different every time you play. The cypher might be intuitive knowledge of the local computer network, calling in a favor from the Faerie Court, or an explosive device. It might be a hot-wired teleporter or a force field with just enough battery to last a few minutes. Or a powerful electromagnet or a prayer that cures disease. Cyphers keep the game fresh and interesting—your character has different options in every session.</p>\n<p>Another way to think of cyphers is that they make a scenario fun and cool, but they don’t permanently change what your character is capable of. For example, an action movie franchise might frequently show that the hero is a skilled gunner or driver, but there’s only one movie where they have a gunfight while climbing a steep cliff, and in that scene the hero had a couple of moments where they slipped and almost died. In game terms, the hero is trained in guns and driving, not in climbing, but they had a cypher that made a climbing task merely difficult instead of deadly.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "7eec8d28a7123f5b"
+          }
+        }
+      }
+    },
+    {
+      "_id": "bf5e9db32583ae9c",
+      "_key": "!journal.pages!5f9ce5fe586244e1.bf5e9db32583ae9c",
+      "name": "Use Them and Replace Them",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Cyphers are single-use effects and are used up when you activate them. In other words, unlike an ability from your type or focus that you can use whenever you want, a cypher is something you use once and then it’s gone. They’re a game mechanic designed so that you discover them frequently, use them when you need them, and find more to replace them. Usually, you’ll find new cyphers at least once each game session, so don’t be afraid to use the ones you have—you’ll get more soon.</p>\n<aside class=\"crd-callout\"><p>If you use an asset-granting cypher as part of helping another character, they gain all the assets from the cypher, and that number of assets is their asset limit for that task.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "107e933d3ef126e6"
+          }
+        }
+      }
+    },
+    {
+      "_id": "86d13f9b1c4a4350",
+      "_key": "!journal.pages!5f9ce5fe586244e1.86d13f9b1c4a4350",
+      "name": "Cypher Limit",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You can only have a small number of cyphers at a time, called your cypher limit (for most characters, the limit is two). The game does this to encourage you (the player) to use cyphers instead of hoarding them for an emergency.</p>\n<p>Your type tells you how many cyphers you can have at a time. Some focus abilities and abilities at higher tiers increase your cypher limit.</p>\n<p>When you create a new character and join a campaign, the GM should give you enough cyphers to put you at your cypher limit—“fill you up” or “top you off” with cyphers, as it were.</p>\n<aside class=\"crd-callout\"><p>Sometimes the game rules talk about how many cyphers you are carrying. Saying “I have two cyphers” and “I’m carrying two cyphers” mean the same thing</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "cb5adf0901e83994"
+          }
+        }
+      }
+    },
+    {
+      "_id": "4c99bcc4c2cddfea",
+      "_key": "!journal.pages!5f9ce5fe586244e1.4c99bcc4c2cddfea",
+      "name": "Gaining New Cyphers",
+      "type": "text",
+      "sort": 400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Every time your character has a significant rest (such as making a one-hour recovery) is a good time for the GM to award you more cyphers. You can think of this as a break between two significant scenes in a story; the characters have rested, have moved to a new location, or are about to face a new challenge, and now you have new cyphers to make use of.</p>\n<p>To simplify things, the GM might offer new cyphers to all characters at the same time, even if not everyone is resting. For example, if you’re resting for an hour, your friend Sandy is searching the internet for a clue, and your friend Robin is standing guard, the GM could offer new cyphers to all three of you at the same time.</p>\n<p>At any time, as your action you can “lose” (discard) one or more of your current cyphers. This frees up space (not actual space in your pockets) so you can “find” another cypher. For example, if you have a cypher that gets rid of a poison in your system and you don’t think you’re going to face any poisonous threats this session, you can lose that cypher and make room for a new one the GM is offering you. Of course, if your current cypher is immediately useful (like rallying a wound), you could use it (gaining its effect), which frees up a space for a new cypher.</p>\n<p>Your GM might hand out cyphers randomly by rolling on one of the tables in this section or by drawing random cards from a deck of cyphers. Or they might plan ahead and choose what cyphers you find based on upcoming encounters—for example, a healing cypher if there’s a dangerous creature up ahead or a swimming cypher because soon you’ll have to cross a lake.</p>\n<p>It’s okay to let the GM know when you’re out of cyphers or haven’t been at your cypher limit for a while. Even the best GMs sometimes forget to check on your cyphers, and reminding them means they get the fun job of handing out new cyphers to the group. After all, seeing how players come up with unexpected and creative uses for their cyphers is one of the perks of being a GM!</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "5ea81f0ef48ea157"
+          }
+        }
+      }
+    },
+    {
+      "_id": "fb9692983cbc9b20",
+      "_key": "!journal.pages!5f9ce5fe586244e1.fb9692983cbc9b20",
+      "name": "Example Cyphers",
+      "type": "text",
+      "sort": 500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>This section explains how to read a cypher description and has information on more than eighty nonphysical cyphers. Cyphers that are physical objects, called manifest cyphers, are covered later in the section.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "35472aec3a2a353c"
+          }
+        }
+      }
+    },
+    {
+      "_id": "68bee1793e74b3d8",
+      "_key": "!journal.pages!5f9ce5fe586244e1.68bee1793e74b3d8",
+      "name": "Reading a Cypher Description",
+      "type": "text",
+      "sort": 600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>A cypher has a simple description and statistics. Here’s how to understand what those mean.</p>\n<p>Name: Every cypher has a name. These are fun, evocative names, but they’re not necessarily something your character uses during the game—the name is there so you and the GM can keep track of what cypher you have. When you get a cypher, write its name down in the Cyphers section of your character sheet.</p>\n<p>Effect: This is what the cypher does. Most cyphers only last for one action or perhaps one round. If the cypher doesn’t list a duration, it only affects one task. For example, the combat enhancer cypher entry says “You get two assets on a combat or noncombat task,” meaning it only affects one task.</p>\n<p>You make all choices about a cypher when you use it. For example, if it affects one roll, you choose which roll. If it affects another creature, you choose the creature. If it happens in response to something another creature does, you choose which creature and what you’re responding to.</p>\n<p>If you’re trying to affect an unwilling target, such as disarming a foe or scaring someone away, you have to succeed at an attack roll against them.</p>\n<p>Cyphers are instant effects, which means using one isn’t an action. For example, the combat enhancer cypher is instant and adds two assets to your next attack or defense roll, so you can activate it on your turn and use it on your attack roll that turn. And because it doesn’t use an action, you can use it when it’s not your turn—such as on a defense roll in response to a foe’s attack against you.</p>\n<aside class=\"crd-callout\"><p>Cyphers are level 4 effects. For most cyphers, the level doesn’t matter—it doesn’t affect what the cypher can do or how long it lasts.</p></aside>\n<p>Some cyphers say that you can use them before or after a roll. This means that if you roll and don’t like the number you got, you can use the cypher to affect the roll, but you have to do that before the GM tells you if you succeed or fail at the task.</p>\n<p>If a cypher has an ongoing effect that lasts until you use a recovery, you can always end the effect earlier as an extra action on your turn, at no cost.</p>\n<p>Explanation: This section gives you three non-supernatural suggestions for how to explain what’s happening in the story when you use the cypher. This makes the cypher less about math and game mechanics and more about what your character is doing as a person and their physical and mental presence in the scene. You can use these explanations or come up with your own (or the GM may have you skip the explanation).</p>\n<h3>Nonstandard Cyphers</h3>\n<p>Some of the cyphers here don’t follow the normal rules for cyphers, such as having a fixed duration (like “24 hours”) instead of lasting for one task or ending when you use a recovery. Those cyphers are marked with the following symbol to remind you that they’re not like most cyphers.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "0dc4267f682a70c0"
+          }
+        }
+      }
+    },
+    {
+      "_id": "6e3a75ceaaee6f11",
+      "_key": "!journal.pages!5f9ce5fe586244e1.6e3a75ceaaee6f11",
+      "name": "Random Cyphers",
+      "type": "text",
+      "sort": 700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<table><tbody>\n<tr>\n<th>d00</th>\n<th>Cypher</th>\n<th></th>\n</tr>\n<tr>\n<td>01–03</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.75281e10470be1eb]{Amazing effort}</td>\n<td></td>\n</tr>\n<tr>\n<td>04</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7a2b624714b49f2b]{Berserk}</td>\n<td></td>\n</tr>\n<tr>\n<td>05–06</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7a4cf3bcdc38b2a5]{Best tool}</td>\n<td></td>\n</tr>\n<tr>\n<td>07</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7c45eb5da4f50125]{Bleed}</td>\n<td></td>\n</tr>\n<tr>\n<td>08</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.c7369cb97bf19fef]{Burst of speed}</td>\n<td></td>\n</tr>\n<tr>\n<td>09</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.5d05830b57451aee]{Calm sniper}</td>\n<td></td>\n</tr>\n<tr>\n<td>10</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.8656d01badba7b95]{Collateral damage}</td>\n<td></td>\n</tr>\n<tr>\n<td>11–12</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.5d181c62f9650b48]{Combat enhancer}</td>\n<td></td>\n</tr>\n<tr>\n<td>13</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.4a099b8ce293df53]{Counterattack}</td>\n<td></td>\n</tr>\n<tr>\n<td>14</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.aaa993b042975d9b]{Crying jag}</td>\n<td></td>\n</tr>\n<tr>\n<td>15–16</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.398eaa291974f12e]{Deflect wound}</td>\n<td></td>\n</tr>\n<tr>\n<td>17</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2999686dafae9053]{Disarm}</td>\n<td></td>\n</tr>\n<tr>\n<td>18</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.63c08e1fc4b16edd]{Disease recovery}</td>\n<td></td>\n</tr>\n<tr>\n<td>19</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.50df9fcd3ae0eb60]{Double attack}</td>\n<td></td>\n</tr>\n<tr>\n<td>20</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.f2c914f69cbc50ec]{Equipment cache}</td>\n<td></td>\n</tr>\n<tr>\n<td>21</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.39620e9b18cef6e2]{Extended breath}</td>\n<td></td>\n</tr>\n<tr>\n<td>22</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.b6b1fb3e1aee4e0f]{Feat of strength}</td>\n<td></td>\n</tr>\n<tr>\n<td>23</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2f795cf4bb81c853]{Focus fire}</td>\n<td></td>\n</tr>\n<tr>\n<td>24</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.1610dfa8126d37da]{Fortuitous moment}</td>\n<td></td>\n</tr>\n<tr>\n<td>25</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.418a387c1f853638]{Fortunate fluke}</td>\n<td></td>\n</tr>\n<tr>\n<td>26</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e7424f7200a047f3]{Get to the point}</td>\n<td></td>\n</tr>\n<tr>\n<td>27–28</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.d0a09f5ffb2486ba]{Hamper foe}</td>\n<td></td>\n</tr>\n<tr>\n<td>29</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.23838492ecef43ad]{Horizon observer}</td>\n<td></td>\n</tr>\n<tr>\n<td>30</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.ce286635a3be37e6]{Ignite}</td>\n<td></td>\n</tr>\n<tr>\n<td>31</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.8bb2a45c9ffe7ef6]{Improved acrobatics}</td>\n<td></td>\n</tr>\n<tr>\n<td>32</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2807954df1baf3b6]{Improved blocking}</td>\n<td></td>\n</tr>\n<tr>\n<td>33</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7e4149481cc84478]{Improved charm}</td>\n<td></td>\n</tr>\n<tr>\n<td>34</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.974adbff5a1869b6]{Improved climbing}</td>\n<td></td>\n</tr>\n<tr>\n<td>35</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.eb7bfc6021df4d36]{Improved deception}</td>\n<td></td>\n</tr>\n<tr>\n<td>36</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e372c66304d6f080]{Improved dexterity}</td>\n<td></td>\n</tr>\n<tr>\n<td>37</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.26079d735059fa7a]{Improved disguising}</td>\n<td></td>\n</tr>\n<tr>\n<td>38</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.aebd42416be69677]{Improved dodging}</td>\n<td></td>\n</tr>\n<tr>\n<td>39</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.32ec27c99fb17f7b]{Improved driving}</td>\n<td></td>\n</tr>\n<tr>\n<td>40</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.aabceecd1a988f9f]{Improved escaping}</td>\n<td></td>\n</tr>\n<tr>\n<td>41</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7c5c60e9d325ed96]{Improved healing}</td>\n<td></td>\n</tr>\n<tr>\n<td>42</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.de0a004983972820]{Improved initiative}</td>\n<td></td>\n</tr>\n<tr>\n<td>43</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.b111487c33c4df56]{Improved intimidation}</td>\n<td></td>\n</tr>\n<tr>\n<td>44</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2586874f4ebcdbd2]{Improved jumping}</td>\n<td></td>\n</tr>\n<tr>\n<td>45</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.cca5dd1921d5b3c0]{Improved lockpicking}</td>\n<td></td>\n</tr>\n<tr>\n<td>46</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.cea0c345f49ad87f]{Improved perception}</td>\n<td></td>\n</tr>\n<tr>\n<td>47</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.8358f643bea41763]{Improved pickpocketing}</td>\n<td></td>\n</tr>\n<tr>\n<td>48</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.23731e146e2d8b90]{Improved repairing}</td>\n<td></td>\n</tr>\n<tr>\n<td>49</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.c0570f4e928a077f]{Improved sneaking}</td>\n<td></td>\n</tr>\n<tr>\n<td>50</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.542fac11d3596991]{Improved swimming}</td>\n<td></td>\n</tr>\n<tr>\n<td>51</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6ac2f25deb8c3b07]{Improvised range}</td>\n<td></td>\n</tr>\n<tr>\n<td>52</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.1ab8dae821224df1]{Improvised shelter}</td>\n<td></td>\n</tr>\n<tr>\n<td>53</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.de121eac911a434c]{Improvised shield}</td>\n<td></td>\n</tr>\n<tr>\n<td>54</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.fbde10186cb60eca]{Inhibit foe}</td>\n<td></td>\n</tr>\n<tr>\n<td>55</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.946451fc4033fd29]{Inspire aggression}</td>\n<td></td>\n</tr>\n<tr>\n<td>56</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.24df42f006ff5124]{Intellect replenisher}</td>\n<td></td>\n</tr>\n<tr>\n<td>57</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2212a754db54e9f1]{Knockout}</td>\n<td></td>\n</tr>\n<tr>\n<td>58</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.47abb5cbb7836c57]{Lucid moment}</td>\n<td></td>\n</tr>\n<tr>\n<td>59</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.d7905d47b2bedba8]{Maintain temperature}</td>\n<td></td>\n</tr>\n<tr>\n<td>60</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.3fee69a823ab5e29]{Make passage}</td>\n<td></td>\n</tr>\n<tr>\n<td>61</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.9b3a15ace069a500]{Master password}</td>\n<td></td>\n</tr>\n<tr>\n<td>62</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7871f7a31adfbbd1]{Mental concentration}</td>\n<td></td>\n</tr>\n<tr>\n<td>63</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.1d603f6856379d30]{Might replenisher}</td>\n<td></td>\n</tr>\n<tr>\n<td>64–66</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.23aa96a82ed8afc7]{Motivated aid}</td>\n<td></td>\n</tr>\n<tr>\n<td>67</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.318e662002defd00]{Near-death experience}</td>\n<td></td>\n</tr>\n<tr>\n<td>68–70</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.235f53d875d82caf]{Noncombat enhancer}</td>\n<td></td>\n</tr>\n<tr>\n<td>71</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7ba106beb72f4606]{Not me}</td>\n<td></td>\n</tr>\n<tr>\n<td>72</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.4130f4bcd6908d1c]{Offensive object break}</td>\n<td></td>\n</tr>\n<tr>\n<td>73</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7932a10d5260eb12]{Pacify beast}</td>\n<td></td>\n</tr>\n<tr>\n<td>74</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.fa0dc3b500ee5713]{Perfect moment}</td>\n<td></td>\n</tr>\n<tr>\n<td>75</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.d9c106aa2bb125bc]{Pidgin}</td>\n<td></td>\n</tr>\n<tr>\n<td>76</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.5bbe65e28489920a]{Poison recovery}</td>\n<td></td>\n</tr>\n<tr>\n<td>77</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.67340024d1570257]{Press the advantage}</td>\n<td></td>\n</tr>\n<tr>\n<td>78</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.45602c6ef4c87432]{Push}</td>\n<td></td>\n</tr>\n<tr>\n<td>79</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.eb5d528efda238e5]{Quick disable}</td>\n<td></td>\n</tr>\n<tr>\n<td>80</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e54bef82344f4fd3]{Quick feint}</td>\n<td></td>\n</tr>\n<tr>\n<td>81</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.01fad8bc7146ecdb]{Quick funds}</td>\n<td></td>\n</tr>\n<tr>\n<td>82</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.4495e3e09296ac34]{Remembering}</td>\n<td></td>\n</tr>\n<tr>\n<td>83</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.fb647b8d2c7fd641]{Repel}</td>\n<td></td>\n</tr>\n<tr>\n<td>84</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.33372422d721fbb5]{Restrain}</td>\n<td></td>\n</tr>\n<tr>\n<td>85</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.ea290d8cadfb7079]{Reveal unseen}</td>\n<td></td>\n</tr>\n<tr>\n<td>86</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.cb44e8f0d8f5d76c]{Sated}</td>\n<td></td>\n</tr>\n<tr>\n<td>87</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.670ca7f3c322dfc5]{Secret}</td>\n<td></td>\n</tr>\n<tr>\n<td>88</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7b66ff78e9e59d57]{Silent message}</td>\n<td></td>\n</tr>\n<tr>\n<td>89</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.637f7e4cf0561e5a]{Slippery}</td>\n<td></td>\n</tr>\n<tr>\n<td>90</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.12a7679fb290aa24]{Snap alert}</td>\n<td></td>\n</tr>\n<tr>\n<td>91</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.feee20fe0ae79738]{Speed replenisher}</td>\n<td></td>\n</tr>\n<tr>\n<td>92</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.865d604a6ffd2823]{Take one for the team}</td>\n<td></td>\n</tr>\n<tr>\n<td>93</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.63ccbd650bb5e810]{Teach trick}</td>\n<td></td>\n</tr>\n<tr>\n<td>94</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2cbe9cba75c57f92]{Traumatic amnesia}</td>\n<td></td>\n</tr>\n<tr>\n<td>95–97</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.ee8ea8ff0b9f2e8f]{Wound recovery}</td>\n<td></td>\n</tr>\n<tr>\n<td>98–00</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.39ef70a796a6e8ae]{Wounded desperation}</td>\n<td></td>\n</tr>\n</tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "7f1ad80e37c386a1"
+          }
+        }
+      }
+    },
+    {
+      "_id": "2b63447131344773",
+      "_key": "!journal.pages!5f9ce5fe586244e1.2b63447131344773",
+      "name": "Cypher Descriptions",
+      "type": "text",
+      "sort": 800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h3>@UUID[Compendium.cypher.equipment-en.Item.75281e10470be1eb]{Amazing Effort}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7a2b624714b49f2b]{Berserk}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7a4cf3bcdc38b2a5]{Best Tool}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7c45eb5da4f50125]{Bleed}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.c7369cb97bf19fef]{Burst of Speed}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.5d05830b57451aee]{Calm Sniper}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.8656d01badba7b95]{Collateral Damage}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.5d181c62f9650b48]{Combat Enhancer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.4a099b8ce293df53]{Counterattack}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.aaa993b042975d9b]{Crying Jag}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.398eaa291974f12e]{Deflect Wound}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2999686dafae9053]{Disarm}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.63c08e1fc4b16edd]{Disease Recovery}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.50df9fcd3ae0eb60]{Double Attack}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.f2c914f69cbc50ec]{Equipment Cache}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.39620e9b18cef6e2]{Extended Breath}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.b6b1fb3e1aee4e0f]{Feat of Strength}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2f795cf4bb81c853]{Focus Fire}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.1610dfa8126d37da]{Fortuitous Moment}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.418a387c1f853638]{Fortunate Fluke}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e7424f7200a047f3]{Get to the Point}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.d0a09f5ffb2486ba]{Hamper Foe}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.23838492ecef43ad]{Horizon Observer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.ce286635a3be37e6]{Ignite}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.8bb2a45c9ffe7ef6]{Improved Acrobatics}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2807954df1baf3b6]{Improved Blocking}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7e4149481cc84478]{Improved Charm}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.974adbff5a1869b6]{Improved Climbing}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.eb7bfc6021df4d36]{Improved Deception}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e372c66304d6f080]{Improved Dexterity}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.26079d735059fa7a]{Improved Disguising}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.aebd42416be69677]{Improved Dodging}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.32ec27c99fb17f7b]{Improved Driving}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.aabceecd1a988f9f]{Improved Escaping}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7c5c60e9d325ed96]{Improved Healing}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.de0a004983972820]{Improved Initiative}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.b111487c33c4df56]{Improved Intimidation}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2586874f4ebcdbd2]{Improved Jumping}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.cca5dd1921d5b3c0]{Improved Lockpicking}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.cea0c345f49ad87f]{Improved Perception}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.8358f643bea41763]{Improved Pickpocketing}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.23731e146e2d8b90]{Improved Repairing}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.c0570f4e928a077f]{Improved Sneaking}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.542fac11d3596991]{Improved Swimming}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6ac2f25deb8c3b07]{Improvised Range}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.1ab8dae821224df1]{Improvised Shelter}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.de121eac911a434c]{Improvised Shield}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.fbde10186cb60eca]{Inhibit Foe}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.946451fc4033fd29]{Inspire Aggression}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.24df42f006ff5124]{Intellect Replenisher}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2212a754db54e9f1]{Knockout}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.47abb5cbb7836c57]{Lucid Moment}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.d7905d47b2bedba8]{Maintain Temperature}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.3fee69a823ab5e29]{Make Passage}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.9b3a15ace069a500]{Master Password}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7871f7a31adfbbd1]{Mental Concentration}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.1d603f6856379d30]{Might Replenisher}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.23aa96a82ed8afc7]{Motivated Aid}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.318e662002defd00]{Near-Death Experience}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.235f53d875d82caf]{Noncombat Enhancer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7ba106beb72f4606]{Not Me}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.4130f4bcd6908d1c]{Offensive Object Break}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7932a10d5260eb12]{Pacify Beast}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.fa0dc3b500ee5713]{Perfect Moment}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.d9c106aa2bb125bc]{Pidgin}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.5bbe65e28489920a]{Poison Recovery}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.67340024d1570257]{Press the Advantage}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.45602c6ef4c87432]{Push}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.eb5d528efda238e5]{Quick Disable}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e54bef82344f4fd3]{Quick Feint}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.01fad8bc7146ecdb]{Quick Funds}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.4495e3e09296ac34]{Remembering}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.fb647b8d2c7fd641]{Repel}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.33372422d721fbb5]{Restrain}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.ea290d8cadfb7079]{Reveal Unseen}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.cb44e8f0d8f5d76c]{Sated}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.670ca7f3c322dfc5]{Secret}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7b66ff78e9e59d57]{Silent Message}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.637f7e4cf0561e5a]{Slippery}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.12a7679fb290aa24]{Snap Alert}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.feee20fe0ae79738]{Speed Replenisher}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.865d604a6ffd2823]{Take One for the Team}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.63ccbd650bb5e810]{Teach Trick}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2cbe9cba75c57f92]{Traumatic Amnesia}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.ee8ea8ff0b9f2e8f]{Wound Recovery}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.39ef70a796a6e8ae]{Wounded Desperation}</h3>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "e993ce941e087768"
+          }
+        }
+      }
+    },
+    {
+      "_id": "2ed7a12385352589",
+      "_key": "!journal.pages!5f9ce5fe586244e1.2ed7a12385352589",
+      "name": "Manifest Cyphers",
+      "type": "text",
+      "sort": 900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Up till now, this section has talked about cyphers as nonphysical things—a burst of inspiration, unexpected good luck, and so on. That’s the default way a Cypher game handles cyphers, and it works well for realistic stories where people can’t break the laws of physics or do supernatural things.</p>\n<p>Some genres handle cyphers differently. Fantasy heroes often have magic potions, scrolls, or amulets. Space opera heroes might find mysterious devices from an ancient precursor species. Superheroes and some kinds of modern spy games can include clever gizmos with special abilities. All of these things are cyphers, but in a physical form. They’re called manifest cyphers, and they do the weird stuff—turn you invisible, teleport you a hundred miles, make you immune to fire, and so on. Because they are physical objects, you can give a manifest cypher to an ally or hide it somewhere for later (assuming someone doesn’t find your stash and take it), perhaps so you can pick up a new cypher.</p>\n<p>Your cypher limit is the maximum number of cyphers you can have at a time, counting both nonphysical cyphers and manifest cyphers.</p>\n<aside class=\"crd-callout\"><p>A manifest cypher’s level may interact with some character abilities, such as Prepare Spell in the Casts Spells focus</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "e60febc42f9d0603"
+          }
+        }
+      }
+    },
+    {
+      "_id": "274e4be95c7b96a2",
+      "_key": "!journal.pages!5f9ce5fe586244e1.274e4be95c7b96a2",
+      "name": "Reading a Manifest Cypher Description",
+      "type": "text",
+      "sort": 1000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>A manifest cypher has a simple description and statistics. Here’s how to understand what those mean.</p>\n<p>Name: Every manifest cypher has a name related to what it does. The name isn’t necessarily the name of the physical item itself—it’s an easy name so you and the GM can keep track of what manifest cypher you have.</p>\n<p>Effect: This is what the manifest cypher does. Most cyphers have a duration like “until your next ten-minute or longer recovery”; these cyphers end when you decide to use that recovery (not at the end of the recovery time). If the cypher doesn’t list a duration, it only affects one task. For example, the description of an energy blast cypher says it projects a ray of destructive energy, meaning it creates one blast and is done.</p>\n<p>You make all choices about a manifest cypher when you use it. For example, if it affects one roll, you choose which roll. If it affects another creature, you choose the creature. If it happens in response to something another creature does, you choose which creature and what you’re responding to.</p>\n<p>If you’re trying to affect an unwilling target, such as disarming a foe or scaring someone away, you have to succeed at an attack roll against them.</p>\n<p>Manifest cyphers are not instant effects; activating one uses your action.</p>\n<p>Genre Items: Any particular manifest cypher has a different form depending on the genre of the game. In a fantasy game, a manifest cypher that turns you invisible might be a magic item called a potion of invisibility, but in a sci-fi game it might be a jacket made of hair-thin circuits called a stealthshroud. This name is probably what people in the game world call the cypher. The manifest cypher descriptions in this section include some genre‑appropriate names for each cypher.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "4db5c001d41793ab"
+          }
+        }
+      }
+    },
+    {
+      "_id": "d59b991508ede4d4",
+      "_key": "!journal.pages!5f9ce5fe586244e1.d59b991508ede4d4",
+      "name": "Manifest Cypher Power Levels",
+      "type": "text",
+      "sort": 1100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Some character types and foci allow you to choose a manifest cypher each day and use it like a standard character ability with a Pool point cost. The tables in this section categorize most manifest cyphers as low, medium, advanced, high, or ultra power for this purpose.</p>\n<p>If you want to choose a cypher randomly, first roll on the Random Manifest Cyphers table to determine the power level, then roll on the associated power level table.</p>\n<aside class=\"crd-callout\"><p>Manifest cyphers are level 6 effects. For most cyphers, the level doesn’t matter—it doesn’t affect what the cypher can do or how long it lasts.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1adcfc45d48d6a61"
+          }
+        }
+      }
+    },
+    {
+      "_id": "a722d1f930994dee",
+      "_key": "!journal.pages!5f9ce5fe586244e1.a722d1f930994dee",
+      "name": "Random Manifest Cyphers",
+      "type": "text",
+      "sort": 1200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<table><tbody>\n<tr>\n<th>d00</th>\n<th>Cypher Power</th>\n<th>Icon</th>\n</tr>\n<tr>\n<td>01–45</td>\n<td>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.4135d903b9776581]{Low}</td>\n<td></td>\n</tr>\n<tr>\n<td>46–80</td>\n<td>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.6c8c5d973b243a88]{Medium}</td>\n<td></td>\n</tr>\n<tr>\n<td>81–92</td>\n<td>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.1044b5cb1cc6ef42]{Advanced}</td>\n<td></td>\n</tr>\n<tr>\n<td>93–98</td>\n<td>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.08715c1ee06af623]{High}</td>\n<td></td>\n</tr>\n<tr>\n<td>99–00</td>\n<td>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.9aaa593105249316]{Ultra}</td>\n<td></td>\n</tr>\n</tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1238d759392d556c"
+          }
+        }
+      }
+    },
+    {
+      "_id": "4135d903b9776581",
+      "_key": "!journal.pages!5f9ce5fe586244e1.4135d903b9776581",
+      "name": "Low-Power Manifest Cyphers",
+      "type": "text",
+      "sort": 1300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<table><tbody>\n<tr>\n<th>d00</th>\n<th>Name</th>\n<th>Page</th>\n</tr>\n<tr>\n<td>01–02</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6d818e727f229277]{Comprehension}</td>\n<td></td>\n</tr>\n<tr>\n<td>03–05</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.549320b9ffe0879e]{Contingent activator}</td>\n<td></td>\n</tr>\n<tr>\n<td>06–08</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.3d860cbdc2b097fa]{Darksight}</td>\n<td></td>\n</tr>\n<tr>\n<td>09–10</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.c793f2d44364295d]{Depth scanner}</td>\n<td></td>\n</tr>\n<tr>\n<td>11–12</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7f3c6278c3357505]{Device controller}</td>\n<td></td>\n</tr>\n<tr>\n<td>13–15</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.b28cad583be3f145]{Disguise module}</td>\n<td></td>\n</tr>\n<tr>\n<td>16–17</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.4fad537624cfd740]{Eagleseye}</td>\n<td></td>\n</tr>\n<tr>\n<td>18–19</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.fe06c19ff3387960]{Endure climate}</td>\n<td></td>\n</tr>\n<tr>\n<td>20–23</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e6575ee864f70693]{Energy resistance}</td>\n<td></td>\n</tr>\n<tr>\n<td>24–28</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.19cd810df41c564f]{Enhanced climbing}</td>\n<td></td>\n</tr>\n<tr>\n<td>29–33</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e8b666c5a1e7f105]{Enhanced jumping}</td>\n<td></td>\n</tr>\n<tr>\n<td>34–36</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e2da52169d98b759]{Enhanced reflexes}</td>\n<td></td>\n</tr>\n<tr>\n<td>37–40</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.95144b871ba9a203]{Enhanced strength}</td>\n<td></td>\n</tr>\n<tr>\n<td>41–44</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.d7bbd8256d182622]{Enhanced swimming}</td>\n<td></td>\n</tr>\n<tr>\n<td>45–47</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.69006fca088d4128]{Fear}</td>\n<td></td>\n</tr>\n<tr>\n<td>48–50</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.09c0a01a2c8804f4]{Friction reducer}</td>\n<td></td>\n</tr>\n<tr>\n<td>51–52</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.250bfeeed986c6b1]{Image projector}</td>\n<td></td>\n</tr>\n<tr>\n<td>53–54</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2673d1a3ebe82b74]{Information scanner}</td>\n<td></td>\n</tr>\n<tr>\n<td>55–56</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.377407416597f6bb]{Insanity suppressor}</td>\n<td></td>\n</tr>\n<tr>\n<td>57–58</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.332e3081ab8d64b0]{Instant outfit}</td>\n<td></td>\n</tr>\n<tr>\n<td>59–60</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.08bfddfd2347e853]{Instant servant}</td>\n<td></td>\n</tr>\n<tr>\n<td>61–64</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6a49698bb37084cb]{Knowledge augmentation}</td>\n<td></td>\n</tr>\n<tr>\n<td>65–67</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e548f0cf3f4847f6]{Obstacle bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>68–69</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.9e816013266a5597]{Range extender}</td>\n<td></td>\n</tr>\n<tr>\n<td>70–72</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.c443c901c0161dd8]{Remote viewer}</td>\n<td></td>\n</tr>\n<tr>\n<td>73–75</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.c333b8f26ea76605]{Retaliation}</td>\n<td></td>\n</tr>\n<tr>\n<td>76–77</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.a8b43287d7775767]{Sound dampener}</td>\n<td></td>\n</tr>\n<tr>\n<td>78–79</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.0d5fad6b14e88c3e]{Speeding bullet}</td>\n<td></td>\n</tr>\n<tr>\n<td>80–81</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.fcc52bc0d49c3b1f]{Sustenance}</td>\n<td></td>\n</tr>\n<tr>\n<td>82–83</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7be46b50d8d83747]{Telepathy}</td>\n<td></td>\n</tr>\n<tr>\n<td>84–86</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.9e77176fa593fbd2]{Tracer}</td>\n<td></td>\n</tr>\n<tr>\n<td>87–88</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.8fc97c168b69c060]{Trick embedder}</td>\n<td></td>\n</tr>\n<tr>\n<td>89–92</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.1aa925e0a744880d]{Virtual shield}</td>\n<td></td>\n</tr>\n<tr>\n<td>93–95</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6d10440b572e26cc]{Water breathing}</td>\n<td></td>\n</tr>\n<tr>\n<td>96–98</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.40d5bed574859abf]{Weapon augmentation}</td>\n<td></td>\n</tr>\n<tr>\n<td>99–00</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7b0d6d68fedbac9c]{Zone of privacy}</td>\n<td></td>\n</tr>\n</tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "4a81e99af8fb049f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "6c8c5d973b243a88",
+      "_key": "!journal.pages!5f9ce5fe586244e1.6c8c5d973b243a88",
+      "name": "Medium-Power Manifest Cyphers",
+      "type": "text",
+      "sort": 1400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<table><tbody>\n<tr>\n<th>d00</th>\n<th>Name</th>\n<th>Page</th>\n</tr>\n<tr>\n<td>01–03</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.0cbeccffcf0ceb36]{Adhesion bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>04–06</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.94fe964158c76109]{Decay metal}</td>\n<td></td>\n</tr>\n<tr>\n<td>07–08</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.b5c00fe54d755fb8]{Disease immunity}</td>\n<td></td>\n</tr>\n<tr>\n<td>09–12</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.bd646bd4dff0b649]{Energy blast}</td>\n<td></td>\n</tr>\n<tr>\n<td>13–15</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7749c2f1d46bf8ac]{Extra cyphers}</td>\n<td></td>\n</tr>\n<tr>\n<td>16–17</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.941dbe5c96ac6a8a]{Flash bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>18–20</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.1a4c9b398fa419c8]{Flight}</td>\n<td></td>\n</tr>\n<tr>\n<td>21–22</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.78eae89efccf2572]{Frost wall}</td>\n<td></td>\n</tr>\n<tr>\n<td>23–24</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.57dfebbe4082a766]{Future potential}</td>\n<td></td>\n</tr>\n<tr>\n<td>25–26</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.39b955795f8dffb7]{Giant size}</td>\n<td></td>\n</tr>\n<tr>\n<td>27–28</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.30ce2bbe6d33f10c]{Inferno wall}</td>\n<td></td>\n</tr>\n<tr>\n<td>29–30</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.bec3ebd76faa9f57]{Instant building}</td>\n<td></td>\n</tr>\n<tr>\n<td>31–33</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.a8370aa827ad4f1f]{Instant healing}</td>\n<td></td>\n</tr>\n<tr>\n<td>34–36</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.d48eb2d5658f7cad]{Intellect booster}</td>\n<td></td>\n</tr>\n<tr>\n<td>37–40</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2b3cefd3375c834d]{Intellect restorer}</td>\n<td></td>\n</tr>\n<tr>\n<td>41–43</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.890b38203b2c1b79]{Intense perception}</td>\n<td></td>\n</tr>\n<tr>\n<td>44–46</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.46ac675ea0e2b8cb]{Lightning wall}</td>\n<td></td>\n</tr>\n<tr>\n<td>47–49</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e3fca0f4203be1cf]{Memory wipe}</td>\n<td></td>\n</tr>\n<tr>\n<td>50–51</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.b57695eddc4b84e7]{Mental vigilance}</td>\n<td></td>\n</tr>\n<tr>\n<td>52–54</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.fab7124236754e40]{Might booster}</td>\n<td></td>\n</tr>\n<tr>\n<td>55–58</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.d5356ca3084aa0ed]{Might restorer}</td>\n<td></td>\n</tr>\n<tr>\n<td>59–60</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2408b14235de65d5]{Motion sensor}</td>\n<td></td>\n</tr>\n<tr>\n<td>61–62</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6a39f4a852265517]{Object duplicator}</td>\n<td></td>\n</tr>\n<tr>\n<td>63–64</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.940ba3db35c72921]{Paralyzer}</td>\n<td></td>\n</tr>\n<tr>\n<td>65–66</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.d9cb0ee1ed7d4530]{Penultimate key}</td>\n<td></td>\n</tr>\n<tr>\n<td>67–69</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.bf147076303fe66f]{Poison immunity}</td>\n<td></td>\n</tr>\n<tr>\n<td>70–71</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.88dca671a85fe120]{Reality spike}</td>\n<td></td>\n</tr>\n<tr>\n<td>72–73</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.97847b1a81e2d75c]{Remote mapper}</td>\n<td></td>\n</tr>\n<tr>\n<td>74–75</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e24145d97b1dc273]{Repair}</td>\n<td></td>\n</tr>\n<tr>\n<td>76–78</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.adb4c32deb81b899]{Sleep inducer}</td>\n<td></td>\n</tr>\n<tr>\n<td>79–81</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.78cbf8a1365bca6c]{Speed booster}</td>\n<td></td>\n</tr>\n<tr>\n<td>82–85</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.ec135b9537437012]{Speed restorer}</td>\n<td></td>\n</tr>\n<tr>\n<td>86–88</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6514275f39bba687]{Stamina enhancer}</td>\n<td></td>\n</tr>\n<tr>\n<td>89–91</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.bea2f403e9ca9948]{Summon creature}</td>\n<td></td>\n</tr>\n<tr>\n<td>92–94</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.846f27139f3441d8]{Telekinesis}</td>\n<td></td>\n</tr>\n<tr>\n<td>95–96</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.94f6278a36963c8d]{Teleporter (bounder)}</td>\n<td></td>\n</tr>\n<tr>\n<td>97–98</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.9b39df42e76f0e55]{Tiny size}</td>\n<td></td>\n</tr>\n<tr>\n<td>99–00</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.5063b74eacd7896a]{Uninterruptible power source}</td>\n<td></td>\n</tr>\n</tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "25153ce5820eb4e0"
+          }
+        }
+      }
+    },
+    {
+      "_id": "1044b5cb1cc6ef42",
+      "_key": "!journal.pages!5f9ce5fe586244e1.1044b5cb1cc6ef42",
+      "name": "Advanced-Power Manifest Cyphers",
+      "type": "text",
+      "sort": 1500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<table><tbody>\n<tr>\n<th>d00</th>\n<th>Name</th>\n<th>Page</th>\n</tr>\n<tr>\n<td>01–07</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.9933f92d7b39d1c1]{Corrosive bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>08–12</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.2b006f8d369eb84a]{Enhanced armor}</td>\n<td></td>\n</tr>\n<tr>\n<td>13–19</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.7020ee0cb609911b]{Enhanced dodging}</td>\n<td></td>\n</tr>\n<tr>\n<td>20–26</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.83f0454aabc80582]{Fiery bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>27–31</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.78fb9333e221f8d3]{Force field}</td>\n<td></td>\n</tr>\n<tr>\n<td>32–37</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.855e2cdc6660ae7f]{Freezing bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>38–41</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.227c564c74666a82]{Gravity bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>42–48</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.e2ad80f409f51edf]{Homing projectile}</td>\n<td></td>\n</tr>\n<tr>\n<td>49–53</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.506f9397f53053ce]{Invisibility}</td>\n<td></td>\n</tr>\n<tr>\n<td>54–56</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.13a4fe383ad9301c]{Mind control}</td>\n<td></td>\n</tr>\n<tr>\n<td>57–62</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.70ea89312e0fe82b]{Nullification}</td>\n<td></td>\n</tr>\n<tr>\n<td>63–65</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.afed0dac46b34779]{Phase changer}</td>\n<td></td>\n</tr>\n<tr>\n<td>66–68</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.97adcc42dffe7e22]{Phasing ray}</td>\n<td></td>\n</tr>\n<tr>\n<td>69–74</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.95ceabae19b75951]{Poison bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>75–77</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.380771e4c97fd60a]{Regeneration}</td>\n<td></td>\n</tr>\n<tr>\n<td>78–83</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6dc99566fa0b2bb8]{Shock bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>84–90</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.68489d46977aeb59]{Shrapnel bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>91–97</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.a26a3407dff5af88]{Sonic bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>98–00</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.94f6278a36963c8d]{Teleporter (traveler)}</td>\n<td></td>\n</tr>\n</tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "3130d55485f87c5e"
+          }
+        }
+      }
+    },
+    {
+      "_id": "08715c1ee06af623",
+      "_key": "!journal.pages!5f9ce5fe586244e1.08715c1ee06af623",
+      "name": "High-Power Manifest Cyphers",
+      "type": "text",
+      "sort": 1600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<table><tbody>\n<tr>\n<th>d00</th>\n<th>Name</th>\n<th>Page</th>\n</tr>\n<tr>\n<td>01–30</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.1c67bbf2153320f8]{Cluster bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>31–70</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.267df8007e43d15e]{Question}</td>\n<td></td>\n</tr>\n<tr>\n<td>71–80</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.def1f00a285358a0]{Resurrection}</td>\n<td></td>\n</tr>\n<tr>\n<td>81–00</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.94f6278a36963c8d]{Teleporter (planetary)}</td>\n<td></td>\n</tr>\n</tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1105c7c6545ef763"
+          }
+        }
+      }
+    },
+    {
+      "_id": "9aaa593105249316",
+      "_key": "!journal.pages!5f9ce5fe586244e1.9aaa593105249316",
+      "name": "Ultra-Power Manifest Cyphers",
+      "type": "text",
+      "sort": 1700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<table><tbody>\n<tr>\n<th>d00</th>\n<th>Name</th>\n<th>Page</th>\n</tr>\n<tr>\n<td>01–13</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.b7e5e5ca240aef3c]{Gigantic bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>14–23</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.a58645d8d2463f7d]{Incredible speed}</td>\n<td></td>\n</tr>\n<tr>\n<td>24–33</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.8b6466759a2d4e9c]{Invulnerability enhancement}</td>\n<td></td>\n</tr>\n<tr>\n<td>34–46</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.10da5a0f375ee752]{Overpowered bomb}</td>\n<td></td>\n</tr>\n<tr>\n<td>47–56</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.d12b1c8b790b2109]{Penultimate enhancement}</td>\n<td></td>\n</tr>\n<tr>\n<td>57–68</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.f33740a5b68dc8cd]{Perfection}</td>\n<td></td>\n</tr>\n<tr>\n<td>69–78</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.94f6278a36963c8d]{Teleporter (interstellar)}</td>\n<td></td>\n</tr>\n<tr>\n<td>79–90</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.fcc22af0918f12c5]{Ultimate enhancement}</td>\n<td></td>\n</tr>\n<tr>\n<td>91–00</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.ac806766b49e603f]{Ultimate healing}</td>\n<td></td>\n</tr>\n</tbody></table>\n<aside class=\"crd-callout\"><p>Your GM might use these tables to skew found manifest cyphers toward or away from a particular power level.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "2987d694cd1d9848"
+          }
+        }
+      }
+    },
+    {
+      "_id": "22ed812228ebe947",
+      "_key": "!journal.pages!5f9ce5fe586244e1.22ed812228ebe947",
+      "name": "Manifest Cypher Descriptions",
+      "type": "text",
+      "sort": 1800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h3>@UUID[Compendium.cypher.equipment-en.Item.0cbeccffcf0ceb36]{Adhesion Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.1c67bbf2153320f8]{Cluster Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6d818e727f229277]{Comprehension}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.549320b9ffe0879e]{Contingent Activator}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.9933f92d7b39d1c1]{Corrosive Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.3d860cbdc2b097fa]{Darksight}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.94fe964158c76109]{Decay Metal}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.c793f2d44364295d]{Depth Scanner}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7f3c6278c3357505]{Device Controller}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.b5c00fe54d755fb8]{Disease Immunity}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.b28cad583be3f145]{Disguise Module}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.4fad537624cfd740]{Eagleseye}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.fe06c19ff3387960]{Endure Climate}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.bd646bd4dff0b649]{Energy Blast}</h3>\n<table><tbody>\n<tr>\n<th>d00</th>\n<th>Energy Type</th>\n</tr>\n<tr>\n<td>01–15</td>\n<td>Cold</td>\n</tr>\n<tr>\n<td>16–40</td>\n<td>Electricity</td>\n</tr>\n<tr>\n<td>41–50</td>\n<td>Force</td>\n</tr>\n<tr>\n<td>51–80</td>\n<td>Heat/concentrated light</td>\n</tr>\n<tr>\n<td>81–85</td>\n<td>Magnetic wave</td>\n</tr>\n<tr>\n<td>86–90</td>\n<td>Molecular bond disruption</td>\n</tr>\n<tr>\n<td>91–00</td>\n<td>Radiation</td>\n</tr>\n</tbody></table>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e6575ee864f70693]{Energy Resistance}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2b006f8d369eb84a]{Enhanced Armor}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.19cd810df41c564f]{Enhanced Climbing}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7020ee0cb609911b]{Enhanced Dodging}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e8b666c5a1e7f105]{Enhanced Jumping}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e2da52169d98b759]{Enhanced Reflexes}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.95144b871ba9a203]{Enhanced Strength}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.d7bbd8256d182622]{Enhanced Swimming}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7749c2f1d46bf8ac]{Extra Cyphers}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.69006fca088d4128]{Fear}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.83f0454aabc80582]{Fiery Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.941dbe5c96ac6a8a]{Flash Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.1a4c9b398fa419c8]{Flight}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.78fb9333e221f8d3]{Force Field}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.855e2cdc6660ae7f]{Freezing Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.09c0a01a2c8804f4]{Friction Reducer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.78eae89efccf2572]{Frost Wall}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.57dfebbe4082a766]{Future Potential}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.39b955795f8dffb7]{Giant Size}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.b7e5e5ca240aef3c]{Gigantic Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.227c564c74666a82]{Gravity Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e2ad80f409f51edf]{Homing Projectile}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.250bfeeed986c6b1]{Image Projector}</h3>\n<table><tbody>\n<tr>\n<th>d00</th>\n<th>Image</th>\n</tr>\n<tr>\n<td>01–10</td>\n<td>Copy of you that imitates your movements and speech (10-foot [3.5 m] cube)</td>\n</tr>\n<tr>\n<td>11–30</td>\n<td>Terrifying creature, perhaps extinct or fictional (10-foot [3.5 m] cube)</td>\n</tr>\n<tr>\n<td>31–40</td>\n<td>Huge machine or natural feature that obscures sight (30-foot [9 m] cube)</td>\n</tr>\n<tr>\n<td>41–50</td>\n<td>Beautiful pastoral scene (50-foot [16 m] cube)</td>\n</tr>\n<tr>\n<td>51–60</td>\n<td>Food that looks delicious but may not be familiar (10-foot [3.5 m] cube)</td>\n</tr>\n<tr>\n<td>61–80</td>\n<td>Solid color that obscures sight (50‑foot [16 m] cube)</td>\n</tr>\n<tr>\n<td>81–00</td>\n<td>Incomprehensible scene that is disorienting and strange  (20-foot [6 m] cube)</td>\n</tr>\n</tbody></table>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.a58645d8d2463f7d]{Incredible Speed}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.30ce2bbe6d33f10c]{Inferno Wall}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2673d1a3ebe82b74]{Information Scanner}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.377407416597f6bb]{Insanity Suppressor}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.bec3ebd76faa9f57]{Instant Building}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.a8370aa827ad4f1f]{Instant Healing}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.332e3081ab8d64b0]{Instant Outfit}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.08bfddfd2347e853]{Instant Servant}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.d48eb2d5658f7cad]{Intellect Booster}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2b3cefd3375c834d]{Intellect Restorer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.890b38203b2c1b79]{Intense Perception}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.506f9397f53053ce]{Invisibility}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.8b6466759a2d4e9c]{Invulnerability Enhancement}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6a49698bb37084cb]{Knowledge Augmentation}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.46ac675ea0e2b8cb]{Lightning Wall}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e3fca0f4203be1cf]{Memory Wipe}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.b57695eddc4b84e7]{Mental Vigilance}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.fab7124236754e40]{Might Booster}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.d5356ca3084aa0ed]{Might Restorer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.13a4fe383ad9301c]{Mind Control}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.2408b14235de65d5]{Motion Sensor}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.70ea89312e0fe82b]{Nullification}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6a39f4a852265517]{Object Duplicator}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e548f0cf3f4847f6]{Obstacle Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.10da5a0f375ee752]{Overpowered Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.940ba3db35c72921]{Paralyzer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.d12b1c8b790b2109]{Penultimate Enhancement}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.d9cb0ee1ed7d4530]{Penultimate Key}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.f33740a5b68dc8cd]{Perfection}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.afed0dac46b34779]{Phase Changer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.97adcc42dffe7e22]{Phasing Ray}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.95ceabae19b75951]{Poison Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.bf147076303fe66f]{Poison Immunity}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.267df8007e43d15e]{Question}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.9e816013266a5597]{Range Extender}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.88dca671a85fe120]{Reality Spike}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.380771e4c97fd60a]{Regeneration}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.97847b1a81e2d75c]{Remote Mapper}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.c443c901c0161dd8]{Remote Viewer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.e24145d97b1dc273]{Repair}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.def1f00a285358a0]{Resurrection}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.c333b8f26ea76605]{Retaliation}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6dc99566fa0b2bb8]{Shock Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.68489d46977aeb59]{Shrapnel Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.adb4c32deb81b899]{Sleep Inducer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.a26a3407dff5af88]{Sonic Bomb}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.a8b43287d7775767]{Sound Dampener}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.78cbf8a1365bca6c]{Speed Booster}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.ec135b9537437012]{Speed Restorer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.0d5fad6b14e88c3e]{Speeding Bullet}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6514275f39bba687]{Stamina Enhancer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.bea2f403e9ca9948]{Summon Creature}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.fcc52bc0d49c3b1f]{Sustenance}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.846f27139f3441d8]{Telekinesis}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7be46b50d8d83747]{Telepathy}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.94f6278a36963c8d]{Teleporter}</h3>\n<table><tbody>\n<tr>\n<th>d00</th>\n<th>Type</th>\n<th>Power Level</th>\n<th></th>\n<th></th>\n</tr>\n<tr>\n<td>01–50</td>\n<td>Bounder</td>\n<td>Medium</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>51–80</td>\n<td>Traveler</td>\n<td>Advanced</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>81–95</td>\n<td>Planetary</td>\n<td>High</td>\n<td></td>\n<td></td>\n</tr>\n<tr>\n<td>96–00</td>\n<td>Interstellar</td>\n<td>Ultra</td>\n<td></td>\n<td></td>\n</tr>\n</tbody></table>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.9b39df42e76f0e55]{Tiny Size}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.9e77176fa593fbd2]{Tracer}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.8fc97c168b69c060]{Trick Embedder}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.fcc22af0918f12c5]{Ultimate Enhancement}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.ac806766b49e603f]{Ultimate Healing}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.5063b74eacd7896a]{Uninterruptible Power Source}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.1aa925e0a744880d]{Virtual Shield}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6d10440b572e26cc]{Water Breathing}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.40d5bed574859abf]{Weapon Augmentation}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.7b0d6d68fedbac9c]{Zone of Privacy}</h3>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "8f1530ef72cd8e0a"
+          }
+        }
+      }
+    },
+    {
+      "_id": "4366c4c240ff3371",
+      "_key": "!journal.pages!5f9ce5fe586244e1.4366c4c240ff3371",
+      "name": "Power Boost Cyphers",
+      "type": "text",
+      "sort": 1900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Power boost cyphers are a variety of cypher only available to superhero characters in some superhero games. They increase, modify, or improve a character’s existing special ability. For example, a burst boost cypher turns a single-target attack into an area attack centered on you; depending on your character, type, and focus, this might mean you’re throwing a fan of knives all around you, rapidly teleporting and attacking multiple foes, or releasing a blast of fire in all directions.</p>\n<p>The GM decides if power boost cyphers are in the game and can award one in place of a regular cypher. Power boost cyphers may be nonphysical cyphers or manifest cyphers, as decided by the GM.</p>\n<p>When you activate a power boost cypher, you choose which ability it affects. You can modify the effect to fit your superhero character as needed. So if you are a strong, punching hero, a burst boost cypher might allow you to strike the ground and affect everyone around you.</p>\n<p>If a power boost cypher doesn’t include a duration, it only affects one task.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1052a26bbfb8b84c"
+          }
+        }
+      }
+    },
+    {
+      "_id": "fe28f47fee9f3094",
+      "_key": "!journal.pages!5f9ce5fe586244e1.fe28f47fee9f3094",
+      "name": "Random Cyphers for Superheroes",
+      "type": "text",
+      "sort": 2000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Superheroes can use regular cyphers as well as power boost cyphers. This random generation table includes both.</p>\n<table><tbody>\n<tr>\n<th>d00</th>\n<th>Cypher</th>\n</tr>\n<tr>\n<td>01–04</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.928d236e93705855]{Amazing feat}</td>\n</tr>\n<tr>\n<td>05–08</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.df97849621f1044a]{Area boost}</td>\n</tr>\n<tr>\n<td>09–12</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.fd5d6c07a8d8ee74]{Burst boost}</td>\n</tr>\n<tr>\n<td>13–16</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6691492d45d6ae95]{Damage boost}</td>\n</tr>\n<tr>\n<td>17–20</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.6681f349013e3121]{Efficacy boost}</td>\n</tr>\n<tr>\n<td>21–24</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.df169fb5c2ee34c6]{Range boost}</td>\n</tr>\n<tr>\n<td>25–28</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.72a5a58776e26ec7]{Shift boost}</td>\n</tr>\n<tr>\n<td>29–32</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.ade6ebf97479d965]{Source boost}</td>\n</tr>\n<tr>\n<td>33–36</td>\n<td>@UUID[Compendium.cypher.equipment-en.Item.012b39d0f5e13689]{Split boost}</td>\n</tr>\n<tr>\n<td>37–00</td>\n<td>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.6e3a75ceaaee6f11]{Roll on Random Cypher table}</td>\n</tr>\n</tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "28cb7079e9a9f065"
+          }
+        }
+      }
+    },
+    {
+      "_id": "bcd4a80f997300f2",
+      "_key": "!journal.pages!5f9ce5fe586244e1.bcd4a80f997300f2",
+      "name": "Power Boost Cypher Descriptions",
+      "type": "text",
+      "sort": 2100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h3>@UUID[Compendium.cypher.equipment-en.Item.928d236e93705855]{Amazing Feat}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.df97849621f1044a]{Area Boost}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.fd5d6c07a8d8ee74]{Burst Boost}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6691492d45d6ae95]{Damage Boost}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.6681f349013e3121]{Efficacy Boost}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.df169fb5c2ee34c6]{Range Boost}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.72a5a58776e26ec7]{Shift Boost}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.ade6ebf97479d965]{Source Boost}</h3>\n<h3>@UUID[Compendium.cypher.equipment-en.Item.012b39d0f5e13689]{Split Boost}</h3>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "30bf158809ec2d93"
+          }
+        }
+      }
+    },
+    {
+      "_id": "738ea261d6074091",
+      "_key": "!journal.pages!5f9ce5fe586244e1.738ea261d6074091",
+      "name": "Technology-Duplicating Cyphers",
+      "type": "text",
+      "sort": 2200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Depending on the time period and genre of the game, some technological items can do what manifest cyphers can do. For example, a shrapnel bomb cypher might be impressive to a wizard or barbarian in a fantasy game, but to a modern character, it’s just a grenade. To keep cyphers distinct from regular equipment, most modern and sci-fi campaigns will only use nonphysical cyphers, and if the PCs ever find a manifest cypher, it’s truly strange and rare, like a device created by aliens. That paradigm also makes sense because in a modern game your cypher limit shouldn’t prevent you from carrying a mobile phone, three grenades, and nightvision goggles all at the same time—those things are all equipment, not manifest cyphers.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "0082031e1bd724e3"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.crd-cyphers",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Cyphers",
+        "sourceLocator": "CRD paragraphs 5955-7380",
+        "transformations": [
+          "Verbatim source paragraphs with structural HTML formatting",
+          "Complete canonical Item definitions replaced by native compendium links; paragraph destinations recorded separately"
+        ]
+      }
+    }
+  }
+}

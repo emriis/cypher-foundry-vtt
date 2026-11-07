@@ -1,0 +1,4475 @@
+{
+  "schemaVersion": 1,
+  "referenceSha256": "cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729",
+  "sourceRange": [
+    5955,
+    7380
+  ],
+  "nonblankParagraphs": 1202,
+  "journalIds": [
+    "journal.crd-cyphers"
+  ],
+  "destinations": [
+    {
+      "start": 5955,
+      "end": 5961,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "e1bfb61d42374ae0",
+      "sourceSha256": "3163de48252d6a771a5113ecb76c1645dea8be8574f7478e0f3c7905c172cbaf"
+    },
+    {
+      "start": 5963,
+      "end": 5965,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bf5e9db32583ae9c",
+      "sourceSha256": "2c88db7ffafe407e5abeb5e549148b643dc2183013d7ae5a392dee510c34684b"
+    },
+    {
+      "start": 5966,
+      "end": 5970,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "86d13f9b1c4a4350",
+      "sourceSha256": "0899529cf4ef097a02d6f4a0e9b61d0912eb2fbe0f879a37b3c1e26bc88863b3"
+    },
+    {
+      "start": 5971,
+      "end": 5976,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "4c99bcc4c2cddfea",
+      "sourceSha256": "b82db016893a10203638cf8a4c6470413ab9ae4afd7ee613fab5a7253f89ad6e"
+    },
+    {
+      "start": 5977,
+      "end": 5978,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "fb9692983cbc9b20",
+      "sourceSha256": "7d888e7fb979f22b9e3e50278a60e0e2c3cfdf4c3857936e3b82da87b096ca0b"
+    },
+    {
+      "start": 5979,
+      "end": 5991,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "68bee1793e74b3d8",
+      "sourceSha256": "ddf56ebcba8ee4763ab19c6800b20fedb09ee8008368483f4d4e5d3284eccadf"
+    },
+    {
+      "start": 5992,
+      "end": 6252,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "6e3a75ceaaee6f11",
+      "sourceSha256": "ff06d05e6edb2f2d89afff68dc0ee56a14017f0e04c077d8b441008ba0ef3091"
+    },
+    {
+      "start": 6254,
+      "end": 6255,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "35e8ed8882b833664526823afd90322e60d1e413ddc7910e335722e58dbecd49"
+    },
+    {
+      "start": 6256,
+      "end": 6257,
+      "kind": "canonical-item",
+      "logicalId": "cypher.amazing-effort",
+      "field": "system.description",
+      "sourceSha256": "c871dc9ba9b3e07f1d6af1b6705894d176b516a9be6c2a2dc845dff3b568c41c"
+    },
+    {
+      "start": 6258,
+      "end": 6258,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "08bd7cbf4b138e67be4a5cce28bc717ce3be31615b3daa16bf10cde894de77f9"
+    },
+    {
+      "start": 6259,
+      "end": 6260,
+      "kind": "canonical-item",
+      "logicalId": "cypher.berserk",
+      "field": "system.description",
+      "sourceSha256": "c130a8cb8c8ba5afc990195ca3feb5b7752dce7d545050eb52c9bf04e7c4abe7"
+    },
+    {
+      "start": 6261,
+      "end": 6261,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "3681475f38227e1bcea38c34ce54b8c69fc1520f7ef553e9440a07d8007a48f1"
+    },
+    {
+      "start": 6262,
+      "end": 6263,
+      "kind": "canonical-item",
+      "logicalId": "cypher.best-tool",
+      "field": "system.description",
+      "sourceSha256": "b1bde1f08ef669cd1c688bffdca39f8b75651c4a0b04a8c144d5740c2ec24128"
+    },
+    {
+      "start": 6264,
+      "end": 6264,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "2574b5ca76b0782c9d1c8d5558d32fa74df5b6e0aeb30ea4b7cd0ab0fb0be9de"
+    },
+    {
+      "start": 6265,
+      "end": 6267,
+      "kind": "canonical-item",
+      "logicalId": "cypher.bleed",
+      "field": "system.description",
+      "sourceSha256": "f92ed0e4200a45bcf2b4e388b126590a90f0f25fcefec18a0ca7eae4b339104b"
+    },
+    {
+      "start": 6268,
+      "end": 6268,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "374902ca533cbf7b97497272a2f0541d31ca0c3f139395880d354e8a85e79ea4"
+    },
+    {
+      "start": 6269,
+      "end": 6270,
+      "kind": "canonical-item",
+      "logicalId": "cypher.burst-of-speed",
+      "field": "system.description",
+      "sourceSha256": "c0a56fdeabfc6ff24a501e9633af3f94cf0f4079446341453a5409e3166b19a4"
+    },
+    {
+      "start": 6271,
+      "end": 6271,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "d05e0986b31365dfac267e0fa5d7d276ba2738bae173941863ade248c9d23a6b"
+    },
+    {
+      "start": 6272,
+      "end": 6273,
+      "kind": "canonical-item",
+      "logicalId": "cypher.calm-sniper",
+      "field": "system.description",
+      "sourceSha256": "c142200c6ce6947fb45d3efaf56261a9055a08242481b62ff2574a6a91dfd2f7"
+    },
+    {
+      "start": 6274,
+      "end": 6274,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "fe05a3cf5110e0d627f4259fdce7161be6b8531619e01fe6c4b97d2e939b200e"
+    },
+    {
+      "start": 6275,
+      "end": 6276,
+      "kind": "canonical-item",
+      "logicalId": "cypher.collateral-damage",
+      "field": "system.description",
+      "sourceSha256": "d8361019a52fedbf249cb3d4bc46761779ed6abe23bca1a42f1b24c0f0aab057"
+    },
+    {
+      "start": 6277,
+      "end": 6277,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "4325b3170e467d903116cb5b381a2a7bdaa0b9550602c3c9b7cf146c70b2e91b"
+    },
+    {
+      "start": 6278,
+      "end": 6279,
+      "kind": "canonical-item",
+      "logicalId": "cypher.combat-enhancer",
+      "field": "system.description",
+      "sourceSha256": "9cfc8b42dc55f38a9b9e07ae655190ee8b06494a6c729f6f27cf81e7de05e526"
+    },
+    {
+      "start": 6280,
+      "end": 6280,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "87c820e249080a32af27b6a9bbd682657a0937eae93999af5dd306416bbe8250"
+    },
+    {
+      "start": 6281,
+      "end": 6282,
+      "kind": "canonical-item",
+      "logicalId": "cypher.counterattack",
+      "field": "system.description",
+      "sourceSha256": "e3ff2b05b6496558912413dce171e38f4626f724b61c05ee90ebbea429e85365"
+    },
+    {
+      "start": 6283,
+      "end": 6283,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "32a777fd7b97b080470daa24e48896838841bf53f1368ae8f34a972652b6a50b"
+    },
+    {
+      "start": 6284,
+      "end": 6285,
+      "kind": "canonical-item",
+      "logicalId": "cypher.crying-jag",
+      "field": "system.description",
+      "sourceSha256": "4dd2ae89985bd82bc92cace72b81b0963c5f6ae7ac7a142324744963c8fe9b7d"
+    },
+    {
+      "start": 6286,
+      "end": 6286,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "72bc94da8543f0635caa8c1c800a3573eb8d3131d31c6413f86dc3db5d5f347f"
+    },
+    {
+      "start": 6287,
+      "end": 6288,
+      "kind": "canonical-item",
+      "logicalId": "cypher.deflect-wound",
+      "field": "system.description",
+      "sourceSha256": "a84762e9e6cf6f0361eadf8c258406b4a48097eeb14cd152aded504c042df95f"
+    },
+    {
+      "start": 6289,
+      "end": 6289,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "0449aa195af99b148f7e64c9d8ab2e20ecba3dd1dbe8a43025d6c2dee335b553"
+    },
+    {
+      "start": 6290,
+      "end": 6291,
+      "kind": "canonical-item",
+      "logicalId": "cypher.disarm",
+      "field": "system.description",
+      "sourceSha256": "f8df84182ec0252190f2c35c57fa75d8df7e97932f07925506e914f1a9249bbe"
+    },
+    {
+      "start": 6292,
+      "end": 6292,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "49942974dcde9c40780ab31e3d0e2e6f884780d7040e375cb85bb941e81f6d89"
+    },
+    {
+      "start": 6293,
+      "end": 6294,
+      "kind": "canonical-item",
+      "logicalId": "cypher.disease-recovery",
+      "field": "system.description",
+      "sourceSha256": "1ec22b9c3a3589b4924fca7a89e9a58a19f9930a9be5e95379176c64eb734639"
+    },
+    {
+      "start": 6296,
+      "end": 6296,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "73f4a3f27986110944476e26046ca7423569416990a9c13c2ef215c83dc7f315"
+    },
+    {
+      "start": 6297,
+      "end": 6298,
+      "kind": "canonical-item",
+      "logicalId": "cypher.double-attack",
+      "field": "system.description",
+      "sourceSha256": "7e8856090b8d4ff411ab4c181fc15c9e3e12f979c3c526b604b09c3516441abf"
+    },
+    {
+      "start": 6299,
+      "end": 6299,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "d307d32b0373d7bd8b164b26fc86cf439af2026f2a93411cf1429b86fa207eef"
+    },
+    {
+      "start": 6300,
+      "end": 6301,
+      "kind": "canonical-item",
+      "logicalId": "cypher.equipment-cache",
+      "field": "system.description",
+      "sourceSha256": "4375d4dec199bdcb9b2c635e9894550c17a99907a55f2c6e26a814834ce76c9f"
+    },
+    {
+      "start": 6303,
+      "end": 6303,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "1c96be54ac1926c3c77d164ce1291555e0b4f6b3721ff71805f27958ab47cefc"
+    },
+    {
+      "start": 6304,
+      "end": 6306,
+      "kind": "canonical-item",
+      "logicalId": "cypher.extended-breath",
+      "field": "system.description",
+      "sourceSha256": "0e1bdcf2019b13b2b614aeaa7a26da0af0896322036a3e3f1ac80727784769a6"
+    },
+    {
+      "start": 6307,
+      "end": 6307,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "fb70a7d99d175a706ddc8974b19b336e6d2702cc566a1377e7ad1fac46738a7e"
+    },
+    {
+      "start": 6308,
+      "end": 6309,
+      "kind": "canonical-item",
+      "logicalId": "cypher.feat-of-strength",
+      "field": "system.description",
+      "sourceSha256": "7881712bdb1453143afa7a45e5dbf94b3afa40192eb9f903664f5bc4672818b0"
+    },
+    {
+      "start": 6310,
+      "end": 6310,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "16c93cae89a43487dc1051aac8a2caecb468f07ec534a7dcd4ebfe57a6df701a"
+    },
+    {
+      "start": 6311,
+      "end": 6312,
+      "kind": "canonical-item",
+      "logicalId": "cypher.focus-fire",
+      "field": "system.description",
+      "sourceSha256": "25e6aa2756775f532845d77662371dfe240a9644ee16935fe4e316b60dd65a94"
+    },
+    {
+      "start": 6313,
+      "end": 6313,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "9ae13fe1a3493385c5b4cd72a91d4afe6f2bf8fb25fd44394b2cd449978c2ddc"
+    },
+    {
+      "start": 6314,
+      "end": 6315,
+      "kind": "canonical-item",
+      "logicalId": "cypher.fortuitous-moment",
+      "field": "system.description",
+      "sourceSha256": "f0821cbe1bf342234468d0ae9b2e2d1c18fb27b853a49930ac95db12ce79dc46"
+    },
+    {
+      "start": 6316,
+      "end": 6316,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "116c49318b24f3719ab998db4500ba81a230f40d7eb64fa16d1405ea85b59774"
+    },
+    {
+      "start": 6317,
+      "end": 6318,
+      "kind": "canonical-item",
+      "logicalId": "cypher.fortunate-fluke",
+      "field": "system.description",
+      "sourceSha256": "f7d578cb8cfb00192bf43ea04f5cccdbbb5f822ca40130f6a915fddfd9bff82a"
+    },
+    {
+      "start": 6319,
+      "end": 6319,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "eabb08cd2313dc66ccd56e960bcf94a394b39fddb75f0e5ab021b945aab9db47"
+    },
+    {
+      "start": 6320,
+      "end": 6321,
+      "kind": "canonical-item",
+      "logicalId": "cypher.get-to-the-point",
+      "field": "system.description",
+      "sourceSha256": "2e7fd6cfc6b7a18f982d16529ea1d7cff19f78e7ef212d07803276b00d56061a"
+    },
+    {
+      "start": 6322,
+      "end": 6322,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "ca7b576346bc30c37a3ff7b8974e9001d421e3f27724183fe27cbe2ab001dc84"
+    },
+    {
+      "start": 6323,
+      "end": 6324,
+      "kind": "canonical-item",
+      "logicalId": "cypher.hamper-foe",
+      "field": "system.description",
+      "sourceSha256": "13985eaaa9e1d4b787114306d204309801ed0844b4ccc3295c5986ef78a94ebd"
+    },
+    {
+      "start": 6325,
+      "end": 6325,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "959ab0e354167e965e8bde948b70dd8510dd1f22a48beeb4f8e698c396400ba3"
+    },
+    {
+      "start": 6326,
+      "end": 6327,
+      "kind": "canonical-item",
+      "logicalId": "cypher.horizon-observer",
+      "field": "system.description",
+      "sourceSha256": "4cd3536fb026456349b61ccfe5f1b39f5f4a23f35823921fbcf3740d181b7c9d"
+    },
+    {
+      "start": 6328,
+      "end": 6328,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "0676988e78d7ccbfcd25aaa4fa918a829640ed0cbd3d78be9ecb7e16c7b04289"
+    },
+    {
+      "start": 6329,
+      "end": 6330,
+      "kind": "canonical-item",
+      "logicalId": "cypher.ignite",
+      "field": "system.description",
+      "sourceSha256": "a8b1ec12c7aa6944388433f70a337b80da2246e59aab854607f490b0b217c0dd"
+    },
+    {
+      "start": 6331,
+      "end": 6331,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "9f5dc0a51738a3aa95219a754f90a5c7ce9d1da92696b54445da7e5997c55c53"
+    },
+    {
+      "start": 6332,
+      "end": 6333,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-acrobatics",
+      "field": "system.description",
+      "sourceSha256": "d343889c21fd3c9b418643de80697791efa3681bcbc51602ff11f79e31c2fe8b"
+    },
+    {
+      "start": 6335,
+      "end": 6335,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "fcd064d729cb9d1878f94d79cb1218ec65bf587364778daeee2b08011277a32d"
+    },
+    {
+      "start": 6336,
+      "end": 6337,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-blocking",
+      "field": "system.description",
+      "sourceSha256": "f08d6bb7e89006fc0c81f60a7bfbe9066198a831611e47caa0aac52b7b262f80"
+    },
+    {
+      "start": 6338,
+      "end": 6338,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "071bd3e094469c185e9dd1bc68470c2dee92a1dabf662fbc049d4418e471fcf4"
+    },
+    {
+      "start": 6339,
+      "end": 6340,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-charm",
+      "field": "system.description",
+      "sourceSha256": "0ac24b78b5346389e262cc7d201dc0efcdae7854a087f8e93b1efe3c0c2c45f4"
+    },
+    {
+      "start": 6341,
+      "end": 6341,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "baf0bde1062e4a1dd7ddf542238d1d3b81100d09442bae0e6980a39ea9f52797"
+    },
+    {
+      "start": 6342,
+      "end": 6343,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-climbing",
+      "field": "system.description",
+      "sourceSha256": "8c48ddd5275b576c159fe9de79b5620e10c8ac5ec2efff232b28157a185e8cc8"
+    },
+    {
+      "start": 6344,
+      "end": 6344,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "9b55a368319e6cba2191976be0dcd1bce78db60fde92c81278390ac486261d5a"
+    },
+    {
+      "start": 6345,
+      "end": 6346,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-deception",
+      "field": "system.description",
+      "sourceSha256": "1b2ec089d2fce9e29b7f0a528dc4f491b10aecafb85eabe26ee661973f383bbc"
+    },
+    {
+      "start": 6347,
+      "end": 6347,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "f935c3615fed40a11680871733c379536f6d7871d404e85e815e3a27d53f2ca9"
+    },
+    {
+      "start": 6348,
+      "end": 6349,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-dexterity",
+      "field": "system.description",
+      "sourceSha256": "10c97d2e76e2fce452a66ddbf27f3a12c6506281b3d0d7cc7116129e212fd9c2"
+    },
+    {
+      "start": 6350,
+      "end": 6350,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "6374f30eab66907dc5bbe5a174ce5116663762fceb08efcb46f11ada04246c1e"
+    },
+    {
+      "start": 6351,
+      "end": 6352,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-disguising",
+      "field": "system.description",
+      "sourceSha256": "f7127badc9b073f488b195e8d5c435ee90e6db7ccf3afa9ddb07c504074d8906"
+    },
+    {
+      "start": 6354,
+      "end": 6354,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "ff38f94788432f3e1fbc5b1ea89c7de89861e33d0a21ebf6cf8a5c6b3cd5d786"
+    },
+    {
+      "start": 6355,
+      "end": 6356,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-dodging",
+      "field": "system.description",
+      "sourceSha256": "887e98117f0fb72e35d502c5b486a35de26df7a6a0aad26465c8b3a2c4a9e961"
+    },
+    {
+      "start": 6357,
+      "end": 6357,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "5a1e4951b77e4a340936b00377ebcbce31d5a740f45c255e1a0f95dd1ce74d7e"
+    },
+    {
+      "start": 6358,
+      "end": 6360,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-driving",
+      "field": "system.description",
+      "sourceSha256": "b38347ec941e67c8cb2346907b520038bc39683de251d50b1269f396f2c61a37"
+    },
+    {
+      "start": 6361,
+      "end": 6361,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "b60f4fc1961e100b9730be00a6874e75ece76375a7b022909fa152578aa5e4f6"
+    },
+    {
+      "start": 6362,
+      "end": 6363,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-escaping",
+      "field": "system.description",
+      "sourceSha256": "252d821aab3c73efcdec81db372cd86398577f0aebc48fd86fedb90a7c3b040f"
+    },
+    {
+      "start": 6364,
+      "end": 6364,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "7306041bd800f31591a39ca54dba0147e1f39bf05a7bc8b34e0d9d948785f01d"
+    },
+    {
+      "start": 6365,
+      "end": 6366,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-healing",
+      "field": "system.description",
+      "sourceSha256": "5b939eb490f0be240cea7556c14b12040c8b1a99bef60f3f04611f97fe40b83a"
+    },
+    {
+      "start": 6367,
+      "end": 6367,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "5a6e99898bbad10df4e04fe2b585207e48a72377872282b8ba148ba8e0c9d472"
+    },
+    {
+      "start": 6368,
+      "end": 6370,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-initiative",
+      "field": "system.description",
+      "sourceSha256": "ac954723b32eee4be1366a7719b48e7cae90a073a903aa16fa6b7c690787b2a6"
+    },
+    {
+      "start": 6371,
+      "end": 6371,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "c71595156db50652e60a3490f67924f58c5ff41b986871974797affd0640e26e"
+    },
+    {
+      "start": 6372,
+      "end": 6373,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-intimidation",
+      "field": "system.description",
+      "sourceSha256": "9518922e7db6b0629de25e1e1633e5f84bcfd6257c60a56d97f677eebbc0f0d8"
+    },
+    {
+      "start": 6374,
+      "end": 6374,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "e68232d59a3d9a0545585a451cde390a482b28dedfb492e75c5f48675bec9522"
+    },
+    {
+      "start": 6375,
+      "end": 6376,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-jumping",
+      "field": "system.description",
+      "sourceSha256": "8bc38c8b18cc5e24967381b13e7285edf994b1879020b86cf9dcb5a111809d43"
+    },
+    {
+      "start": 6377,
+      "end": 6377,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "5e49094acbd72c2043adfe7adff56032a506d0818dce0fe33831ce2e203e5003"
+    },
+    {
+      "start": 6378,
+      "end": 6379,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-lockpicking",
+      "field": "system.description",
+      "sourceSha256": "e93e3371146c58775b0684cefac9de64a4ba6364b571853d0990f0d18e826a61"
+    },
+    {
+      "start": 6380,
+      "end": 6380,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "bd931dc6178c0349fb3a1f1ed7161917496732854bd9f3ed3c75a18cb0f5cfa1"
+    },
+    {
+      "start": 6381,
+      "end": 6382,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-perception",
+      "field": "system.description",
+      "sourceSha256": "c35dbae36c6e79792a75ec20153b9b705c04311c074da35e218899cccaebefe3"
+    },
+    {
+      "start": 6383,
+      "end": 6383,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "43c56be3e1b3caf3479211985069f96189c991cb8d78ff03fd83aaf10b5b3745"
+    },
+    {
+      "start": 6384,
+      "end": 6385,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-pickpocketing",
+      "field": "system.description",
+      "sourceSha256": "116def2fda08ab95e00c2288f28b2b3c1cfb3cfd9627162aeb28e54e0713e47c"
+    },
+    {
+      "start": 6386,
+      "end": 6386,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "0b3a7a1d5099db9ee3beafc440b6b266e4516d072e9b8c3bba02252208744af9"
+    },
+    {
+      "start": 6387,
+      "end": 6388,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-repairing",
+      "field": "system.description",
+      "sourceSha256": "10396251921532f44e47fcb2a7873d2ebc4311430f80ff4b2df4372e5e1f934f"
+    },
+    {
+      "start": 6389,
+      "end": 6389,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "46be94b77ed5303e58338d1f46a88da06fb9135fb08a32e59d59af21aa22fa6a"
+    },
+    {
+      "start": 6390,
+      "end": 6391,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-sneaking",
+      "field": "system.description",
+      "sourceSha256": "8ef11e8fc6bef9022f21f92dcf8be780ba47ba90c705925e70f3bf06e9e58be2"
+    },
+    {
+      "start": 6393,
+      "end": 6393,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "d763980195fbbb7f566a0d9223214d23f9268feb6bf57195c6a5c41d4d5188b2"
+    },
+    {
+      "start": 6394,
+      "end": 6395,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improved-swimming",
+      "field": "system.description",
+      "sourceSha256": "516abeefca04f2b9dc896994b576063277c809c89857e6baec37d1ab84c51b89"
+    },
+    {
+      "start": 6396,
+      "end": 6396,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "c3202be8d35698a46ab05e2724da3e988bfbb3e3be4c9242603463a1f624d32b"
+    },
+    {
+      "start": 6397,
+      "end": 6398,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improvised-range",
+      "field": "system.description",
+      "sourceSha256": "77af16b9d039f7dcb2b561f04cba615d110d3d12609503b1f35247880c399259"
+    },
+    {
+      "start": 6399,
+      "end": 6399,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "ab1639863e6a340e65a0c6467742fdb574aba1ddc1181a1b41d1abb6bdc92d91"
+    },
+    {
+      "start": 6400,
+      "end": 6401,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improvised-shelter",
+      "field": "system.description",
+      "sourceSha256": "7f86fea300713bc288a9d9f5acebc7aa35f70eb3e1c231bd0b32480eee4e74dd"
+    },
+    {
+      "start": 6402,
+      "end": 6402,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "dbb14069ecadd8000a08986d397658a4e1e252014e8390c4fc7dc76f1a3da4ec"
+    },
+    {
+      "start": 6403,
+      "end": 6404,
+      "kind": "canonical-item",
+      "logicalId": "cypher.improvised-shield",
+      "field": "system.description",
+      "sourceSha256": "191ac0f14255152d7b61f64628ae4dccbe044f6e0f1c51ae6a679847f8f8a188"
+    },
+    {
+      "start": 6405,
+      "end": 6405,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "4d0a222359bdc01e93d6baca61598d0c1fba96aa3733f8d08f2dac5a1fda3531"
+    },
+    {
+      "start": 6406,
+      "end": 6407,
+      "kind": "canonical-item",
+      "logicalId": "cypher.inhibit-foe",
+      "field": "system.description",
+      "sourceSha256": "52e06fba6353dbbf5958eeea924acf1f76c1232040db05b0e6e18307895ff120"
+    },
+    {
+      "start": 6408,
+      "end": 6408,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "e48045991df85814e11ca4eb046f7ffe87b6618c9008813406bc32ef7a784e13"
+    },
+    {
+      "start": 6409,
+      "end": 6410,
+      "kind": "canonical-item",
+      "logicalId": "cypher.inspire-aggression",
+      "field": "system.description",
+      "sourceSha256": "d098aa35e4f15a67d740bdd77619221e09ad5ffb14c6b1445ee786eb3e7af532"
+    },
+    {
+      "start": 6411,
+      "end": 6411,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "c9714c571a08d9e9caba9e173e6f08a0a1ac337bdd91c5cd07123cd47ee0a324"
+    },
+    {
+      "start": 6412,
+      "end": 6413,
+      "kind": "canonical-item",
+      "logicalId": "cypher.intellect-replenisher",
+      "field": "system.description",
+      "sourceSha256": "cf9514d0f0059c736573aad113e32b1cc1352a07450291c9f232821c41e08246"
+    },
+    {
+      "start": 6414,
+      "end": 6414,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "e2ec5fc1c15b030b8212c22529efce42fabbcb941f7fd95d0bf7afd993dfffb4"
+    },
+    {
+      "start": 6415,
+      "end": 6416,
+      "kind": "canonical-item",
+      "logicalId": "cypher.knockout",
+      "field": "system.description",
+      "sourceSha256": "9bb253809e29926c1f2142385ae9ac856019ebdc39b55e7a9815572993683bcd"
+    },
+    {
+      "start": 6417,
+      "end": 6417,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "79e828771882fc3e35e8cb43e322a5147ccb2c315bbad4d1a65a62b1294d1efc"
+    },
+    {
+      "start": 6418,
+      "end": 6419,
+      "kind": "canonical-item",
+      "logicalId": "cypher.lucid-moment",
+      "field": "system.description",
+      "sourceSha256": "ab4d7a0c4d92b2d4894975da495e5bb49964919e143b8cb9e690a10d55fafe0e"
+    },
+    {
+      "start": 6420,
+      "end": 6420,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "ed17352497b464d6acb07473f9bfca93efdf77f0e314b9b32bc0aa2ec946c046"
+    },
+    {
+      "start": 6421,
+      "end": 6422,
+      "kind": "canonical-item",
+      "logicalId": "cypher.maintain-temperature",
+      "field": "system.description",
+      "sourceSha256": "ed0c5dcef9f176b4db718b2e18e48a6df62bf5c6f6f0c48f55aed243840f83a3"
+    },
+    {
+      "start": 6423,
+      "end": 6423,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "0bbc9a2088195111a48367ab5791d7e239c9271e6b33254bcd92e2e9e07d74ee"
+    },
+    {
+      "start": 6424,
+      "end": 6426,
+      "kind": "canonical-item",
+      "logicalId": "cypher.make-passage",
+      "field": "system.description",
+      "sourceSha256": "33e9e435e8d2be7c6a02202133b0d1b17b0d306082481deb8e32552ea64e1729"
+    },
+    {
+      "start": 6427,
+      "end": 6427,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "ed0df55893bfb918082650c929c7e056fc57123002819e231745e618da7f8a47"
+    },
+    {
+      "start": 6428,
+      "end": 6430,
+      "kind": "canonical-item",
+      "logicalId": "cypher.master-password",
+      "field": "system.description",
+      "sourceSha256": "30a9f79b329b3992d523376a946a8b2e83d233f911e525542f14f1082dcdd188"
+    },
+    {
+      "start": 6431,
+      "end": 6431,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "712a64c295def198372c2bd75872508a2c41e0880b9629c31d2dbcd2575a2a43"
+    },
+    {
+      "start": 6432,
+      "end": 6434,
+      "kind": "canonical-item",
+      "logicalId": "cypher.mental-concentration",
+      "field": "system.description",
+      "sourceSha256": "d56e02aeff855e349c15b8fc79b103cbadb9a4af154df2da69d761854d185347"
+    },
+    {
+      "start": 6435,
+      "end": 6435,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "987ac5c3b05ddf6b2521f0fd2380f82738f730b670a17308f148df1776f82311"
+    },
+    {
+      "start": 6436,
+      "end": 6437,
+      "kind": "canonical-item",
+      "logicalId": "cypher.might-replenisher",
+      "field": "system.description",
+      "sourceSha256": "622934a4bc8a6a2cc21cf6e98ef3865c540cc20e719bbea6bef46d07852c1a03"
+    },
+    {
+      "start": 6438,
+      "end": 6438,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "d1eadc9dc338373be5448caa022b7e796d7521fb282898e2452a980109138a09"
+    },
+    {
+      "start": 6439,
+      "end": 6440,
+      "kind": "canonical-item",
+      "logicalId": "cypher.motivated-aid",
+      "field": "system.description",
+      "sourceSha256": "28dab826274791078ef62865ba02dc73e1624155697bdca105251976b93201c6"
+    },
+    {
+      "start": 6441,
+      "end": 6441,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "bbc779a2d876ae3feccd3ffd24a8fc1aa1943de1b40a4dab2b2a12fe6617310b"
+    },
+    {
+      "start": 6442,
+      "end": 6444,
+      "kind": "canonical-item",
+      "logicalId": "cypher.near-death-experience",
+      "field": "system.description",
+      "sourceSha256": "86a882ed5bb0812346252fc2dedd635f9342401b4c9b10bb18e72c98263312f5"
+    },
+    {
+      "start": 6445,
+      "end": 6445,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "14a0d7d22a389515e5876408852a878ddafc150e122d4cb786b93c2168f4bfa9"
+    },
+    {
+      "start": 6446,
+      "end": 6447,
+      "kind": "canonical-item",
+      "logicalId": "cypher.noncombat-enhancer",
+      "field": "system.description",
+      "sourceSha256": "fd958ea45ea659ad780eb6038ec86bda76228753dc77349c2492df5466b57bd7"
+    },
+    {
+      "start": 6448,
+      "end": 6448,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "1a77138de0a5b9fe40f635effaf177032035514172bcae8a8152f4d0667e5f66"
+    },
+    {
+      "start": 6449,
+      "end": 6451,
+      "kind": "canonical-item",
+      "logicalId": "cypher.not-me",
+      "field": "system.description",
+      "sourceSha256": "86fb637de25babb7dd5c05505d9402c03ff090f8c87c1530fbcff43645a53544"
+    },
+    {
+      "start": 6452,
+      "end": 6452,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "1b680960213695854125d19b748b481f5bc8dbc76d7fe4b77aa151cf85fd40f2"
+    },
+    {
+      "start": 6453,
+      "end": 6454,
+      "kind": "canonical-item",
+      "logicalId": "cypher.offensive-object-break",
+      "field": "system.description",
+      "sourceSha256": "a5f72f2f4a4f4d80be278b4a460146939a2d9249529687f936db49e2f72269a2"
+    },
+    {
+      "start": 6455,
+      "end": 6455,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "af7fce6fa6858ccca5c90ee41d3569260b1deec6c11b02f238abbc824819839b"
+    },
+    {
+      "start": 6456,
+      "end": 6459,
+      "kind": "canonical-item",
+      "logicalId": "cypher.pacify-beast",
+      "field": "system.description",
+      "sourceSha256": "5bd8ba0eced1444963a1798888403d3844a9ec75b1fab79e4e70abc2d422657a"
+    },
+    {
+      "start": 6460,
+      "end": 6460,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "64af2820ff23a71c6551473c2bba584436e747360e1840b9683251d0e8cd858b"
+    },
+    {
+      "start": 6461,
+      "end": 6463,
+      "kind": "canonical-item",
+      "logicalId": "cypher.perfect-moment",
+      "field": "system.description",
+      "sourceSha256": "c3804f82f469afd50d071b11f97bb6f4577506511708281ac41270f46fdcc50b"
+    },
+    {
+      "start": 6464,
+      "end": 6464,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "8587fa3cfd777fef6170e7ec8b8cae957dbb0846c74a98147cde9dcf60909063"
+    },
+    {
+      "start": 6465,
+      "end": 6466,
+      "kind": "canonical-item",
+      "logicalId": "cypher.pidgin",
+      "field": "system.description",
+      "sourceSha256": "0c839c0c920e0c99c8064212c311d93347d09cbfad3b2854a436474c02f65666"
+    },
+    {
+      "start": 6467,
+      "end": 6467,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "f2a62ce0463a5e0029dd478f133496942bb7d75afb6716419fe638417f5baed1"
+    },
+    {
+      "start": 6468,
+      "end": 6469,
+      "kind": "canonical-item",
+      "logicalId": "cypher.poison-recovery",
+      "field": "system.description",
+      "sourceSha256": "c57654e2345ab5f4651e54468ccfb04e00b02c57dfed42a972f0bbe53abbb519"
+    },
+    {
+      "start": 6470,
+      "end": 6470,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "1c42b886f8836b9b5342180e2ce61f7cb10af09a3386928c5ec9a41af8787de3"
+    },
+    {
+      "start": 6471,
+      "end": 6472,
+      "kind": "canonical-item",
+      "logicalId": "cypher.press-the-advantage",
+      "field": "system.description",
+      "sourceSha256": "95b15367a976578e7914e7ee8993e300085096ab6abac749e44d21c451225881"
+    },
+    {
+      "start": 6473,
+      "end": 6473,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "731ce7ed808913b2fb4a3db764cad1d9be4433f3fe232818d7e66c7d3fd2a9c0"
+    },
+    {
+      "start": 6474,
+      "end": 6475,
+      "kind": "canonical-item",
+      "logicalId": "cypher.push",
+      "field": "system.description",
+      "sourceSha256": "6031051b5537b094ef2e9846bfebb8a5397d3a95c7f6da426ee5e9e4e4ef1d07"
+    },
+    {
+      "start": 6476,
+      "end": 6476,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "a3380891817025948c3eb2edcc9beb646dc17de11b7e44e5691155dd6c12574f"
+    },
+    {
+      "start": 6477,
+      "end": 6478,
+      "kind": "canonical-item",
+      "logicalId": "cypher.quick-disable",
+      "field": "system.description",
+      "sourceSha256": "d904c6e92dd6c01ef01fe835237188910134c3db28207593d8ad58f8a55a7fcd"
+    },
+    {
+      "start": 6479,
+      "end": 6479,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "346cd744796cb8419d3a70c5c486a71b89ba087d695e8396fc1ff8d6a9d83eb1"
+    },
+    {
+      "start": 6480,
+      "end": 6481,
+      "kind": "canonical-item",
+      "logicalId": "cypher.quick-feint",
+      "field": "system.description",
+      "sourceSha256": "b6d1788471328530f89859d6149d18d35106423a8dd361d5261210b66365d92c"
+    },
+    {
+      "start": 6482,
+      "end": 6482,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "9170a5d49089cd164f666b37fd0e8da59a9ec8c54194236b2554710a3c13fd6a"
+    },
+    {
+      "start": 6483,
+      "end": 6484,
+      "kind": "canonical-item",
+      "logicalId": "cypher.quick-funds",
+      "field": "system.description",
+      "sourceSha256": "9e73aefc5f167af6f34a3d811a3e77ccbc23fe32f3222efa4e68d5b52ddb19aa"
+    },
+    {
+      "start": 6485,
+      "end": 6485,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "cd58707a452203a4874bf02e95eef093293f3c914806435e7a41c29f1ee47d16"
+    },
+    {
+      "start": 6486,
+      "end": 6488,
+      "kind": "canonical-item",
+      "logicalId": "cypher.remembering",
+      "field": "system.description",
+      "sourceSha256": "c557b957391bbf3043b57e563c4501f45b8132975b5b5af870fd9949af113d44"
+    },
+    {
+      "start": 6489,
+      "end": 6489,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "535ad4fbb66056950d0e8f69b02749ce59bbdf4318c6ac08a6970fa8aa4563a2"
+    },
+    {
+      "start": 6490,
+      "end": 6491,
+      "kind": "canonical-item",
+      "logicalId": "cypher.repel",
+      "field": "system.description",
+      "sourceSha256": "9cbe4632e3e3f481eee313f67832e4de01019ebde52374790d9793d65fd60f2c"
+    },
+    {
+      "start": 6492,
+      "end": 6492,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "ed48b3479d20b4e8ed6c4df1380096a0deb5025c0c79d7608560da3bed3ae9a3"
+    },
+    {
+      "start": 6493,
+      "end": 6494,
+      "kind": "canonical-item",
+      "logicalId": "cypher.restrain",
+      "field": "system.description",
+      "sourceSha256": "f7fca20b9b4ed075f108ab664a58ae39c5c1b41453e9aa8b9329589d6e675f69"
+    },
+    {
+      "start": 6495,
+      "end": 6495,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "e0a39fb7c039352414dd34c79b787b341c9f845311ce45ba10da5ba88f20cb92"
+    },
+    {
+      "start": 6496,
+      "end": 6497,
+      "kind": "canonical-item",
+      "logicalId": "cypher.reveal-unseen",
+      "field": "system.description",
+      "sourceSha256": "fd393a832a943caa244af17fbdcd6e1b32015d65cace565808c235fa30284414"
+    },
+    {
+      "start": 6498,
+      "end": 6498,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "0519d82819b25daad574ac914257c9acaa32546ed5028109b59e4925872fbd79"
+    },
+    {
+      "start": 6499,
+      "end": 6500,
+      "kind": "canonical-item",
+      "logicalId": "cypher.sated",
+      "field": "system.description",
+      "sourceSha256": "6ffa470af3ec1ebea8bd2373551425e96ac5985d4167caf0c234ae9662307ad4"
+    },
+    {
+      "start": 6501,
+      "end": 6501,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "7e32a729b1226ed1270f282a8c63054d09b26bc9ec53ea69771ce38158dfade8"
+    },
+    {
+      "start": 6502,
+      "end": 6503,
+      "kind": "canonical-item",
+      "logicalId": "cypher.secret",
+      "field": "system.description",
+      "sourceSha256": "ff0433223929d1170b09a97d2c9f539ae126ed1d59a468df82de3f13dda7eca5"
+    },
+    {
+      "start": 6504,
+      "end": 6504,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "3efe4a017391a5ba5e3e9cf0358eb40df5e570a04d2ce42da9518489e8f2b906"
+    },
+    {
+      "start": 6505,
+      "end": 6506,
+      "kind": "canonical-item",
+      "logicalId": "cypher.silent-message",
+      "field": "system.description",
+      "sourceSha256": "001bd9a87b00ba50463bb81cd7c01e8f0ecfe0c3658f37d1f004f69d3e13ea72"
+    },
+    {
+      "start": 6507,
+      "end": 6507,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "c6c86a52ac2209417ab93c10c10d0c4c6f7d699c746eb0038228c9ecbfaeab01"
+    },
+    {
+      "start": 6508,
+      "end": 6509,
+      "kind": "canonical-item",
+      "logicalId": "cypher.slippery",
+      "field": "system.description",
+      "sourceSha256": "aa83cea16761d834ba62f0377bc18510df43a2e1e57a2391caa585d4734b3108"
+    },
+    {
+      "start": 6510,
+      "end": 6510,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "48112f0d8f96d9eef58434ca95665aab542bd1e0463feadfef82dfeb18331b05"
+    },
+    {
+      "start": 6511,
+      "end": 6512,
+      "kind": "canonical-item",
+      "logicalId": "cypher.snap-alert",
+      "field": "system.description",
+      "sourceSha256": "3f6138c20d0d19e9685b01e535eab99324da8d0e5940fd9000ade724a4abd04f"
+    },
+    {
+      "start": 6513,
+      "end": 6513,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "e3d185a0e4c3d72e3beef9ee90663c46b247230db3a0f16d4119e4584bc832d4"
+    },
+    {
+      "start": 6514,
+      "end": 6515,
+      "kind": "canonical-item",
+      "logicalId": "cypher.speed-replenisher",
+      "field": "system.description",
+      "sourceSha256": "f0e6f279f3ce8eb44e2858e8dbda199b1ba55b3fe3a55881298d35f2c486cb6f"
+    },
+    {
+      "start": 6516,
+      "end": 6516,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "85f6c66b31ccc40e2405002a22d03dc40a7ec5f34d879e48573533c72077b36f"
+    },
+    {
+      "start": 6517,
+      "end": 6518,
+      "kind": "canonical-item",
+      "logicalId": "cypher.take-one-for-the-team",
+      "field": "system.description",
+      "sourceSha256": "475b886f18bdb23cb3b818b3da0b09829d1c506cf363945b7e7906bae4fabccc"
+    },
+    {
+      "start": 6519,
+      "end": 6519,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "1ad261de03ff295c3b5b8505a1e486f7d6b2f2f2996bdb400d7f13c6a429ed76"
+    },
+    {
+      "start": 6520,
+      "end": 6521,
+      "kind": "canonical-item",
+      "logicalId": "cypher.teach-trick",
+      "field": "system.description",
+      "sourceSha256": "4174b0cb16d751c280aa0dc169bc843160c504a57a7489d46e41c0c2c2957103"
+    },
+    {
+      "start": 6522,
+      "end": 6522,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "436fd330e064e65dc6844155907a6f9a9e989f292114eb976477f582d0e72dcc"
+    },
+    {
+      "start": 6523,
+      "end": 6524,
+      "kind": "canonical-item",
+      "logicalId": "cypher.traumatic-amnesia",
+      "field": "system.description",
+      "sourceSha256": "89eade7e0de65a71ddd1302dc3973332d040fefd45c4f45a536f102d124ad5e3"
+    },
+    {
+      "start": 6525,
+      "end": 6525,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "81e24e375ec7cc18bbe30b00eadc1da81aa896f52c18e9dd0bc6206f7996e679"
+    },
+    {
+      "start": 6526,
+      "end": 6527,
+      "kind": "canonical-item",
+      "logicalId": "cypher.wound-recovery",
+      "field": "system.description",
+      "sourceSha256": "9cef8c5b46c5f1f3aa33f8b4b4dc9611c4bc357453138375c0c5c608dc147e50"
+    },
+    {
+      "start": 6528,
+      "end": 6528,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2b63447131344773",
+      "sourceSha256": "cbd815ef3cc17dd0b1f75f896805b4b4ac3d5f1c31b92b786c15e25685fb6b15"
+    },
+    {
+      "start": 6529,
+      "end": 6531,
+      "kind": "canonical-item",
+      "logicalId": "cypher.wounded-desperation",
+      "field": "system.description",
+      "sourceSha256": "95a8238ed7209197bd6eff9647e3c019425bc0a292eaea087b8e3f18c06d0d87"
+    },
+    {
+      "start": 6532,
+      "end": 6536,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "2ed7a12385352589",
+      "sourceSha256": "1d175581172da1df2203d28c53342ccd423ef0248b950c224ddfb3b15635174f"
+    },
+    {
+      "start": 6537,
+      "end": 6544,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "274e4be95c7b96a2",
+      "sourceSha256": "b6124c0a074329383bcf4875aa7c6f0ad00ca2f801bea6f01b88794412c4294a"
+    },
+    {
+      "start": 6545,
+      "end": 6548,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "d59b991508ede4d4",
+      "sourceSha256": "8a1e5b75e8ae8ea07f1a1f6c4b288d8d29608bd3e9be33c1fb041ff8156db1e1"
+    },
+    {
+      "start": 6549,
+      "end": 6566,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "a722d1f930994dee",
+      "sourceSha256": "e20a77dbabfd4a805d7995cf71143afb2eeeca7b1d9a592f7931d728ed006c62"
+    },
+    {
+      "start": 6568,
+      "end": 6678,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "4135d903b9776581",
+      "sourceSha256": "321a7619b2286c45a6cce156613049e573284d50ef2d4937bcd9a1ab1838e0ff"
+    },
+    {
+      "start": 6680,
+      "end": 6796,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "6c8c5d973b243a88",
+      "sourceSha256": "7cf81f43aac94bf1c8f2c8494728cac4ab372bfc8e6958cb7df64d95989d0105"
+    },
+    {
+      "start": 6798,
+      "end": 6857,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "1044b5cb1cc6ef42",
+      "sourceSha256": "289f8d75f2afeb288daea2dc4c310dcfa2571ea6c8a183b55453dd35d68e92d3"
+    },
+    {
+      "start": 6859,
+      "end": 6873,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "08715c1ee06af623",
+      "sourceSha256": "fe10b06cf34f37d7505c2964724266b31f56536d9e5d0b330a780dfa0af9309d"
+    },
+    {
+      "start": 6875,
+      "end": 6906,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "9aaa593105249316",
+      "sourceSha256": "5d8fd444dfe17606128420e315c822b55cc758c759dc0f490e9adc4a8192ddf4"
+    },
+    {
+      "start": 6907,
+      "end": 6908,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "c2e569207b27d3e4832331b12cf3ac62cef98cf144720b06301ede57003fb06f"
+    },
+    {
+      "start": 6909,
+      "end": 6911,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.adhesion-bomb",
+      "field": "system.description",
+      "sourceSha256": "6f3ed024bf4697dae5105d7dbfa6425f795f2acce561a0a91db3424af598eed2"
+    },
+    {
+      "start": 6912,
+      "end": 6912,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "99e624a4d56a2e7ced6cadbc662e9615cd852420962cec830f37fb5bdc946885"
+    },
+    {
+      "start": 6913,
+      "end": 6916,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.cluster-bomb",
+      "field": "system.description",
+      "sourceSha256": "b643e87487b34c9aee3ea3dcafd137f2fbb8b74c4f553d55cb8bc5db94a82c6c"
+    },
+    {
+      "start": 6918,
+      "end": 6918,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "b941fa4adc33a7ff38121d43fa30c8822446f176c387467b0ed83a7046c70e46"
+    },
+    {
+      "start": 6919,
+      "end": 6921,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.comprehension",
+      "field": "system.description",
+      "sourceSha256": "a6b37ca04631747130dd3d86993a9b59acfafad85c109ef7481ae8c094692aa2"
+    },
+    {
+      "start": 6922,
+      "end": 6922,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "e9445177c6f24272c86e47855d635aaf3814323a95b54b4abc9deb30345ffb41"
+    },
+    {
+      "start": 6923,
+      "end": 6924,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.contingent-activator",
+      "field": "system.description",
+      "sourceSha256": "da08db4cdab5fc57d91b47a7a4c00680053068678b43699609724068afa9f4e2"
+    },
+    {
+      "start": 6925,
+      "end": 6925,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "af4e8bdd005510934ca4548047ffd28b7b13e5c949b815238429e7a67289f2a5"
+    },
+    {
+      "start": 6926,
+      "end": 6927,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.corrosive-bomb",
+      "field": "system.description",
+      "sourceSha256": "a63506db675a1c48578aa1879424f9b07745363ff9d60c187421a3d91a01edfa"
+    },
+    {
+      "start": 6928,
+      "end": 6928,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "63f2a339036b27511f89b36f3fdc2f1d2852e3054b519af693033c7dc372cb79"
+    },
+    {
+      "start": 6929,
+      "end": 6930,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.darksight",
+      "field": "system.description",
+      "sourceSha256": "a649e91b648891bf77dabed28493b851ea91bdcdcbc36a8388a9c9b10dd59cdf"
+    },
+    {
+      "start": 6931,
+      "end": 6931,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "fb7ee29faa610931507978602bc51c3f14b4db91b364156ef514bfc66eba602b"
+    },
+    {
+      "start": 6932,
+      "end": 6933,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.decay-metal",
+      "field": "system.description",
+      "sourceSha256": "889e2ea3efd456ff81531b9b518b81c0201f7b0a5c1ca6a504358969c73a074c"
+    },
+    {
+      "start": 6934,
+      "end": 6934,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "db72feea064f5fb927923f0de775933e4e0b1eb99ac343a56e12e55e24fb7a11"
+    },
+    {
+      "start": 6935,
+      "end": 6936,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.depth-scanner",
+      "field": "system.description",
+      "sourceSha256": "5d2919cdee871d46e83020688eccc8457afe8cfea1c207b9f78f5b24beea1d97"
+    },
+    {
+      "start": 6937,
+      "end": 6937,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "dbad7863fd6fbe5bec2e4196226c371a85579f9b092ceff2f6108c83185fd20f"
+    },
+    {
+      "start": 6938,
+      "end": 6939,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.device-controller",
+      "field": "system.description",
+      "sourceSha256": "d9d2e8c3b6df513ed9447d26a629ea6d6d69b299478fb2ef47a2fa53c314679d"
+    },
+    {
+      "start": 6940,
+      "end": 6940,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "088282bc15dea5b1552ac1b138ad98d3c6cb8ec770bbd13a4053d76bae3b1376"
+    },
+    {
+      "start": 6941,
+      "end": 6943,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.disease-immunity",
+      "field": "system.description",
+      "sourceSha256": "89348c556f291be0c15595d0b8cf3a83dcc44072a691056ffc02ba7d3fc7b550"
+    },
+    {
+      "start": 6944,
+      "end": 6944,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "9746d48ced9b98ae0974f1cb0ad9c4584974f260bfd705c3fb1ce18f9dbdb577"
+    },
+    {
+      "start": 6945,
+      "end": 6947,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.disguise-module",
+      "field": "system.description",
+      "sourceSha256": "72e6ed57f046c1d2224d2834c23635b954131a1f2bf539aa0135a9e98ed92e48"
+    },
+    {
+      "start": 6949,
+      "end": 6949,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "1c5cc3b25802c2b14865d2f5907caec5da96f077c3aba8305692b019343aab7f"
+    },
+    {
+      "start": 6950,
+      "end": 6951,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.eagleseye",
+      "field": "system.description",
+      "sourceSha256": "901fd83493aeaf399564e40887c6247d98f869b74dbcafc99e742b7933ebad5d"
+    },
+    {
+      "start": 6952,
+      "end": 6952,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "615c695248bf387b1ae149daf3680eaf6ff951489b358865ff32ac0b7246f269"
+    },
+    {
+      "start": 6953,
+      "end": 6954,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.endure-climate",
+      "field": "system.description",
+      "sourceSha256": "912e98daecd92727c50182f0ada527ffb9d7c90dd4f7b758a8c780de68e3e4e8"
+    },
+    {
+      "start": 6955,
+      "end": 6955,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "206de9bd6860fca1873656ff07f1b80416dac6fd1bae5a851d36873fc8113c13"
+    },
+    {
+      "start": 6956,
+      "end": 6956,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.energy-blast",
+      "field": "system.description",
+      "sourceSha256": "caa0db9cfac408a37be7e6cf8f64390c8e575e5b4bf6dbb520f206fe3b53e6f0"
+    },
+    {
+      "start": 6957,
+      "end": 6972,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "c90c1e607b98e3bca4289f6aab6ba543cd63dd3c55462e59a7c85f630611a91d"
+    },
+    {
+      "start": 6973,
+      "end": 6973,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.energy-blast",
+      "field": "system.description",
+      "sourceSha256": "d45a29a9154c1937bd8fd630f65afe6bc76f585a663ef7203e4f44ac2d45e57a"
+    },
+    {
+      "start": 6974,
+      "end": 6974,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "f27bf95a76b61fe80aec58c508ea2244885f65f7e738447ed718d57fb1336e59"
+    },
+    {
+      "start": 6975,
+      "end": 6976,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.energy-resistance",
+      "field": "system.description",
+      "sourceSha256": "15a1ecb199fb75bdb39d7baff2684afedccbb6c577e47acb09904ae9f7bee5fe"
+    },
+    {
+      "start": 6977,
+      "end": 6977,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "12f5264c7c53b947898dc74e926dc9253912b5a7c427fda0e0c66e631cd6ac46"
+    },
+    {
+      "start": 6978,
+      "end": 6979,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.enhanced-armor",
+      "field": "system.description",
+      "sourceSha256": "167afbe1872db5637bd24250aaf59230571d1d8382e98767bd7338e7608e677b"
+    },
+    {
+      "start": 6980,
+      "end": 6980,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "f47ce800c3fba94dd90c3dcad1b751ac5f3e98225cf3b3528e34caa46c52bfe2"
+    },
+    {
+      "start": 6981,
+      "end": 6982,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.enhanced-climbing",
+      "field": "system.description",
+      "sourceSha256": "4aa914461c7827317075cf0bc95a68477f08a6a834a3e1a219e32215c4644308"
+    },
+    {
+      "start": 6983,
+      "end": 6983,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "2f8ca2344d066c0eadb05f57a80ae59001f3daff3f124bac3211a3565040ad0f"
+    },
+    {
+      "start": 6984,
+      "end": 6985,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.enhanced-dodging",
+      "field": "system.description",
+      "sourceSha256": "0b83a35abd073a1fb14029169f7e6213315895f82fe15a82803999f6f84fe432"
+    },
+    {
+      "start": 6986,
+      "end": 6986,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "afa69a1165a8316743658c9c61976618c4c8cf29f15d9f2bd33e822d908fe7e7"
+    },
+    {
+      "start": 6987,
+      "end": 6988,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.enhanced-jumping",
+      "field": "system.description",
+      "sourceSha256": "8a7ab927686e1657cf8c22503c00968bb1263781be8cf2bddc769f89c8896553"
+    },
+    {
+      "start": 6989,
+      "end": 6989,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "aa60482f0e798c6d960b0a32ba6b9219c2730b346d12ea8dc4f39a9810ef20d0"
+    },
+    {
+      "start": 6990,
+      "end": 6991,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.enhanced-reflexes",
+      "field": "system.description",
+      "sourceSha256": "a78b9e799717e5fad3be34bbe576b97c2094e5e2b2c19e787ca6cd0bacd46a8b"
+    },
+    {
+      "start": 6992,
+      "end": 6992,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "547e9a879beddb7281ca5284bdac4036f955e304755968555cbd024c9e4a60d1"
+    },
+    {
+      "start": 6993,
+      "end": 6994,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.enhanced-strength",
+      "field": "system.description",
+      "sourceSha256": "96bc2ddbb6828960f6ed1b069c1c9700cbb80b875127d33dab374dddf7e89cfb"
+    },
+    {
+      "start": 6995,
+      "end": 6995,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "3c6ad22317662973856802b8d9b99a49a533548822efe245ec781273e705073a"
+    },
+    {
+      "start": 6996,
+      "end": 6997,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.enhanced-swimming",
+      "field": "system.description",
+      "sourceSha256": "a5277ac3ef0d1203d267f8e5651d299b76f31c83760f08f19143680d15c7eb3a"
+    },
+    {
+      "start": 6998,
+      "end": 6998,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "36e6f7288c8196b79fb35b30cf1c8d9163fd31f036e8164d3024fb96d46c76ea"
+    },
+    {
+      "start": 6999,
+      "end": 7000,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.extra-cyphers",
+      "field": "system.description",
+      "sourceSha256": "c66e29ad6fe09590ccfd150ee842d63b3a39b378e97a34863efb62ea7ff00453"
+    },
+    {
+      "start": 7001,
+      "end": 7001,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "140262b32b0c98dfc6afb74b287d2df7f50e0645cea8c1dd907c793699180ee2"
+    },
+    {
+      "start": 7002,
+      "end": 7004,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.fear",
+      "field": "system.description",
+      "sourceSha256": "c1d0516f6e90482059c7de82675175ab5e6655613f6bb243652d1c75c71c673d"
+    },
+    {
+      "start": 7005,
+      "end": 7005,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "8f9c54075cf2b2e959c0228beb9c4ac6ecde60b0ccd247305e8714f8d50e2928"
+    },
+    {
+      "start": 7006,
+      "end": 7007,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.fiery-bomb",
+      "field": "system.description",
+      "sourceSha256": "d284f1f5272c4973567c189318b4866b1659ed0c1af5b98409ac1be870d33d6b"
+    },
+    {
+      "start": 7008,
+      "end": 7008,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "f839e7abb11b0f65b6fb68d2a9e03028ee9c67a88e02430ac5a74ee83070cab2"
+    },
+    {
+      "start": 7009,
+      "end": 7010,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.flash-bomb",
+      "field": "system.description",
+      "sourceSha256": "0b32bad91574a20d821152dd3257e94879a7a491b69aaf5ec90b3ea7a29778a4"
+    },
+    {
+      "start": 7011,
+      "end": 7011,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "d839f0fdd5d94c9b457d7abe638b4008585f824a49da62788e39310ee9b81c29"
+    },
+    {
+      "start": 7012,
+      "end": 7014,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.flight",
+      "field": "system.description",
+      "sourceSha256": "a60652aa0035e3f623053cc73d927064f2beed50a7ec942b5ccf9e46eec15b80"
+    },
+    {
+      "start": 7016,
+      "end": 7016,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "440776ee6666a337c61c1e8b1dc4c0d1db2c972728ff21d53106659e1b4cb92c"
+    },
+    {
+      "start": 7017,
+      "end": 7019,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.force-field",
+      "field": "system.description",
+      "sourceSha256": "b5dc1bdc6974eb2d27933ceec1cee5974b5853d933df355bd700c2955c4af891"
+    },
+    {
+      "start": 7020,
+      "end": 7020,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "cf9d0b468a14b1a7e9b34e92f6a644da42f74b83d01d784ab6633d971be19f40"
+    },
+    {
+      "start": 7021,
+      "end": 7022,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.freezing-bomb",
+      "field": "system.description",
+      "sourceSha256": "c706b341bc7ad2f99cf5323cf670c3016de191ce99de9c3822cde1ac15725841"
+    },
+    {
+      "start": 7023,
+      "end": 7023,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "2ae16ff7d640892020cc44d009b429c4609d5741b53d75718afb1c3f6aaabb0c"
+    },
+    {
+      "start": 7024,
+      "end": 7025,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.friction-reducer",
+      "field": "system.description",
+      "sourceSha256": "006268bb7cadb240831a7edce28ebfabc067147cee3feb180c24cc6e640383ac"
+    },
+    {
+      "start": 7026,
+      "end": 7026,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "4ae0a1a3b3be7e3414f6586890267d4e29f05cf1217246536b7045efed26ea40"
+    },
+    {
+      "start": 7027,
+      "end": 7028,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.frost-wall",
+      "field": "system.description",
+      "sourceSha256": "847b5b9062370afcae0062a4d57af733de4a8d3441044ae41c44ff5bfcc91df8"
+    },
+    {
+      "start": 7029,
+      "end": 7029,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "bd0064a15995cd1c17408b8e07ac7e6d516dd773bd5c97178c212eafae32718f"
+    },
+    {
+      "start": 7030,
+      "end": 7031,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.future-potential",
+      "field": "system.description",
+      "sourceSha256": "d3a716a35f3434558c65dce51d73bd96d4d930b4d56049ea465c46e6e5910d60"
+    },
+    {
+      "start": 7032,
+      "end": 7032,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "40cc314862396bb5eb5baca23cb8ea03448a53da5b2ffbeb0994157c2c398f6f"
+    },
+    {
+      "start": 7033,
+      "end": 7035,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.giant-size",
+      "field": "system.description",
+      "sourceSha256": "13d82251ddd82d3201b14d3a39c8df7207e35348601a122ce63d3c2b8d5ecec0"
+    },
+    {
+      "start": 7036,
+      "end": 7036,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "2f4e57c337797ed467ee8df32db18c0588af2b06f8c24d32579d4d7d866b7e65"
+    },
+    {
+      "start": 7037,
+      "end": 7040,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.gigantic-bomb",
+      "field": "system.description",
+      "sourceSha256": "0ae011dac23ef5682ca5c128e96a8dd69406ddb7233fc17a197a7e77b700dece"
+    },
+    {
+      "start": 7041,
+      "end": 7041,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "a3cb996cef00ccb855755e80ebdd0e44611a5b33d440fd94e019f64b0245574f"
+    },
+    {
+      "start": 7042,
+      "end": 7043,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.gravity-bomb",
+      "field": "system.description",
+      "sourceSha256": "8968a7f3d3610bcd06e5f55d5ba6c89cf435c82aecd3641dc797b488b58d215e"
+    },
+    {
+      "start": 7044,
+      "end": 7044,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "54a619c63a6276fb2247b70a28d247b932b6631f4aa83e51b8eefe6fe2c31c90"
+    },
+    {
+      "start": 7045,
+      "end": 7047,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.homing-projectile",
+      "field": "system.description",
+      "sourceSha256": "c766821e1d3a374c172dd05bff13816aa472131bebd49e6bde30988b60c861d1"
+    },
+    {
+      "start": 7048,
+      "end": 7048,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "1842e49e4c980b5ae62340096cb4b31fb4e0079f1fd128c8a8403b63470e23ae"
+    },
+    {
+      "start": 7049,
+      "end": 7050,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.image-projector",
+      "field": "system.description",
+      "sourceSha256": "0a011167cf40fe85378f025c42f29b7ab1904e1819f3cf0e44ab735ea78e88a7"
+    },
+    {
+      "start": 7051,
+      "end": 7066,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "f912ab64a9032acf05f890b802c1bc7744afbdf52109182ff80ae08ecafc8499"
+    },
+    {
+      "start": 7067,
+      "end": 7067,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.image-projector",
+      "field": "system.description",
+      "sourceSha256": "42f71d29b904b000c23caa8618b2de5eb658565a0c746529a0f5c1e5cd0b39a0"
+    },
+    {
+      "start": 7068,
+      "end": 7068,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "cfdbe7bd63372e415b8b73519b6a5a14faa105fb27a93350176e14a1ef6165ff"
+    },
+    {
+      "start": 7069,
+      "end": 7070,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.incredible-speed",
+      "field": "system.description",
+      "sourceSha256": "86b8416fa09a8e1c61396cd920105c49b97a6411a792e9eff5203a64ac811594"
+    },
+    {
+      "start": 7071,
+      "end": 7071,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "27c910ca970076123311857758f97c65192f83e72a010321b3944152835bac11"
+    },
+    {
+      "start": 7072,
+      "end": 7073,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.inferno-wall",
+      "field": "system.description",
+      "sourceSha256": "cc845a638dab58c38259e7326702d4c5092531b56271f215868d48946cd9fceb"
+    },
+    {
+      "start": 7074,
+      "end": 7074,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "6bf58fce11b94866e61f225f3e0a9570372be4c053cbd1a8763b0d07d693686d"
+    },
+    {
+      "start": 7075,
+      "end": 7076,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.information-scanner",
+      "field": "system.description",
+      "sourceSha256": "14080abaa99323039fe209be191ba191dea5927f328f579d3d5d79864f64b845"
+    },
+    {
+      "start": 7077,
+      "end": 7077,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "46d1d73a52100c47fc5ddf4c4522640869d39859d95c64ff84a6be3bd1d60a87"
+    },
+    {
+      "start": 7078,
+      "end": 7079,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.insanity-suppressor",
+      "field": "system.description",
+      "sourceSha256": "313ad03c0ff46b0ea147f436a81d5820524a0d825f499050ed3131024c7c37f8"
+    },
+    {
+      "start": 7080,
+      "end": 7080,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "2f76518572376058f607a5977592558f186b677f01a85873455794fe14ba567f"
+    },
+    {
+      "start": 7081,
+      "end": 7082,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.instant-building",
+      "field": "system.description",
+      "sourceSha256": "f71a07ac3cb6886e145d464b487c915d28ecb017594898b4899295a4f22b4439"
+    },
+    {
+      "start": 7083,
+      "end": 7083,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "43f6bcc66b8761471298abb36fb47a84d345a0c6441be0245bace76cf9bd8558"
+    },
+    {
+      "start": 7084,
+      "end": 7085,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.instant-healing",
+      "field": "system.description",
+      "sourceSha256": "bb3e480398f85893ceb1e37ba0ace6f93f48cc137b56ff2729592813cf8defc2"
+    },
+    {
+      "start": 7086,
+      "end": 7086,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "187785777ddcb9dd26ed1545a155e93ae44401c0f5847a778281b1f637c461e7"
+    },
+    {
+      "start": 7087,
+      "end": 7088,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.instant-outfit",
+      "field": "system.description",
+      "sourceSha256": "80030b64bd7da76211d65e8730c945e072b3d0dc3aec6f07cc459249ac25e539"
+    },
+    {
+      "start": 7089,
+      "end": 7089,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "b00d98cbddc83dd6faedcfaef0fdeddb6663d272d2dd241c079ee9998e9e4db8"
+    },
+    {
+      "start": 7090,
+      "end": 7091,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.instant-servant",
+      "field": "system.description",
+      "sourceSha256": "99d59b9f93d6da45268060d2f73b962cf3c78b59434119825010a0f6a640219e"
+    },
+    {
+      "start": 7092,
+      "end": 7092,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "f8aa05de31453713148f04b18128ff7be2a8a3c3a587f3b55751376a4b9eafaa"
+    },
+    {
+      "start": 7093,
+      "end": 7094,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.intellect-booster",
+      "field": "system.description",
+      "sourceSha256": "32c376bfd3a1ef100f12594537d811d38a1e1ddb9e56058be460f1635309efb5"
+    },
+    {
+      "start": 7095,
+      "end": 7095,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "a53ab4471f36bb3fa60fa115e689ff5240cccd920a68a1a21247ca77d41f2123"
+    },
+    {
+      "start": 7096,
+      "end": 7097,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.intellect-restorer",
+      "field": "system.description",
+      "sourceSha256": "4e7240458d3a2c83b20afd4311b45e159ec5807299239801209eaf27f70f8399"
+    },
+    {
+      "start": 7098,
+      "end": 7098,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "0872d96c6325516b7cccb040920d747d6c3b37895c9ec9d1cacc6700cde02d44"
+    },
+    {
+      "start": 7099,
+      "end": 7100,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.intense-perception",
+      "field": "system.description",
+      "sourceSha256": "6e1fb4d1fe62205c666a62bc24ec436cd264edd2e0e4d0dbbffeee86722fb2a7"
+    },
+    {
+      "start": 7101,
+      "end": 7101,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "d53895c6eb7816fb44ec7f46db45019172de4793a42ccaf893ed71ec8ed00743"
+    },
+    {
+      "start": 7102,
+      "end": 7104,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.invisibility",
+      "field": "system.description",
+      "sourceSha256": "ea4cbefc11237880df2902172fa14b12c1095c1b81883b8fc0f64beb5863e405"
+    },
+    {
+      "start": 7105,
+      "end": 7105,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "6080b790c1fb4ad65524a86b4bae99e00948e54f985adebe9ddeaaa1b60f2ee6"
+    },
+    {
+      "start": 7106,
+      "end": 7107,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.invulnerability-enhancement",
+      "field": "system.description",
+      "sourceSha256": "3974b27ead652cf143a2eca1048915d3e486b3cc6b5fc45c766188be62ad857d"
+    },
+    {
+      "start": 7108,
+      "end": 7108,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "63966b1876cff198893d15979241439b56fc29c0617c8a8113c58c6d4479b1ec"
+    },
+    {
+      "start": 7109,
+      "end": 7125,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.knowledge-augmentation",
+      "field": "system.description",
+      "sourceSha256": "8e7764ad9dc06f00647422e2234b9cd80cc4a6c8f76d29c91b4b46feaa4246ed"
+    },
+    {
+      "start": 7127,
+      "end": 7127,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "0886882459f489435e42a8a63021baa220fd7ef198f867d941241f70c5742671"
+    },
+    {
+      "start": 7128,
+      "end": 7129,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.lightning-wall",
+      "field": "system.description",
+      "sourceSha256": "caf7daeee07d9cd202065131a0b9e00436daefd6cc7f3be0fd83d0a229668723"
+    },
+    {
+      "start": 7130,
+      "end": 7130,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "284e518e7dca177e5de267acf19be70244219b6bfd2e9a3e4b542e6d2ca7600d"
+    },
+    {
+      "start": 7131,
+      "end": 7132,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.memory-wipe",
+      "field": "system.description",
+      "sourceSha256": "c61ac740853b9f1917b97376fe6098392231a9f8960bdbb6ac905e811d06bda5"
+    },
+    {
+      "start": 7133,
+      "end": 7133,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "f5116a0dae7781590d1f24cc1602d1bca23bb0293886e7bcf640c1d897d7bdd5"
+    },
+    {
+      "start": 7134,
+      "end": 7135,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.mental-vigilance",
+      "field": "system.description",
+      "sourceSha256": "859e913d06c4e423af78085f50e84ac5efbe71680a1175a66b2775b14248f550"
+    },
+    {
+      "start": 7136,
+      "end": 7136,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "55027ccdd38b9c3a88804489f031b6a471b594006869a988f423b7bf3a5ba9b8"
+    },
+    {
+      "start": 7137,
+      "end": 7138,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.might-booster",
+      "field": "system.description",
+      "sourceSha256": "501cf60612fca9278bbd5d10c58e4db6e4f2baa440bdaa7779a1100d69c93668"
+    },
+    {
+      "start": 7139,
+      "end": 7139,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "b8875df39e60374b86a5813330c7f1f1192d387eedbd18d8e5372bc6a91d807e"
+    },
+    {
+      "start": 7140,
+      "end": 7141,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.might-restorer",
+      "field": "system.description",
+      "sourceSha256": "1e7ad69e4932407bfa377fe59e2aafef50f460ec26b160c93f718dd70b24d577"
+    },
+    {
+      "start": 7142,
+      "end": 7142,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "fc2feab8e0f150a00217954e9ff3ae1aba97e1a9b5938a6a7d5cb084bb20747c"
+    },
+    {
+      "start": 7143,
+      "end": 7145,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.mind-control",
+      "field": "system.description",
+      "sourceSha256": "473f68930680d4cf7ab9ee261cb7233ea73efd4a17cf7e059065672933a57abc"
+    },
+    {
+      "start": 7146,
+      "end": 7146,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "b1dca4a8a2967f89155c21e8b996b9db59cfa8572fc13d1564598a7da852ccc8"
+    },
+    {
+      "start": 7147,
+      "end": 7148,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.motion-sensor",
+      "field": "system.description",
+      "sourceSha256": "50be615b630d05258131581470f1c324471c13a81caedf409488282dbaadf95f"
+    },
+    {
+      "start": 7149,
+      "end": 7149,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "73ef49b5ccc9c24260d428d30fe0509addf3b8bfe698dd851ff3588275774b5a"
+    },
+    {
+      "start": 7150,
+      "end": 7152,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.nullification",
+      "field": "system.description",
+      "sourceSha256": "d9cfbc355619b31d29c474b3b95ad538d232da01137a32e3a251ed5ddfa5eec5"
+    },
+    {
+      "start": 7153,
+      "end": 7153,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "5ef47a6f3dcf5a8dc70c4e22545d319550dd7f9869957a26f4cf0c2fba0805ed"
+    },
+    {
+      "start": 7154,
+      "end": 7155,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.object-duplicator",
+      "field": "system.description",
+      "sourceSha256": "3caf36f20ed1d3193faf33866948a83c3d03e8d3bb7c46f134a887a00f31655f"
+    },
+    {
+      "start": 7156,
+      "end": 7156,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "b4496daa39311d0727677f0048d93c5380e58dfbf3a1f37ebade0894d90eb8bd"
+    },
+    {
+      "start": 7157,
+      "end": 7158,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.obstacle-bomb",
+      "field": "system.description",
+      "sourceSha256": "35341f225ce1a11ede0f62ca62ed989f3b7a3d9eb15890806b98f2e77c24b91f"
+    },
+    {
+      "start": 7160,
+      "end": 7160,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "a16fff82d56106601466f1b46e25dad01c99de74f0e80942e3c4605cb8069d2e"
+    },
+    {
+      "start": 7161,
+      "end": 7164,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.overpowered-bomb",
+      "field": "system.description",
+      "sourceSha256": "3ff0c5043cd44ab9e66647e41d052c1b13228a3cf28817ff6461aabd94f8e236"
+    },
+    {
+      "start": 7165,
+      "end": 7165,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "a14057f0214bae7282a0401f40fa85a184b8bc008dfec0c6a80630e8927934ab"
+    },
+    {
+      "start": 7166,
+      "end": 7167,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.paralyzer",
+      "field": "system.description",
+      "sourceSha256": "e983c8b11be13526d99da00dc9f58bf6648420454ea9c5a2ff56d97b01013383"
+    },
+    {
+      "start": 7168,
+      "end": 7168,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "b5ca31eff013b7c70fc5415fa7cedc3daa51533fbfcfcbf041d015c032950b4c"
+    },
+    {
+      "start": 7169,
+      "end": 7170,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.penultimate-enhancement",
+      "field": "system.description",
+      "sourceSha256": "657939b47b276e8562420827a4875d9833b9ded5f3a7b1384c9db480a16f7f60"
+    },
+    {
+      "start": 7171,
+      "end": 7171,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "7d1af6a16c5f994d74759b9d08e8a6b92b6fd76c847e2abbe712fd3e2bb87952"
+    },
+    {
+      "start": 7172,
+      "end": 7173,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.penultimate-key",
+      "field": "system.description",
+      "sourceSha256": "562cd4ab9c8326fe85fb82e38104354bceeadbb959b23fac623c4355920c990e"
+    },
+    {
+      "start": 7174,
+      "end": 7174,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "81b1bf6e9f52881c925937a349c66980e06de30acb34c09bda37b8b6013af7db"
+    },
+    {
+      "start": 7175,
+      "end": 7176,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.perfection",
+      "field": "system.description",
+      "sourceSha256": "fb20667a60959b3c9dfeec1e28e2290307e0d25d87decac69b4bd88e53155652"
+    },
+    {
+      "start": 7178,
+      "end": 7178,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "4a2431fb158b3a98a72eca5d442a1b420e7c8df7dfabce6eb248fd907e6fd962"
+    },
+    {
+      "start": 7179,
+      "end": 7180,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.phase-changer",
+      "field": "system.description",
+      "sourceSha256": "9d93bfff42a8600a40113a345843a624c9b57c61eac4f9d9db9ad8ba53dfb101"
+    },
+    {
+      "start": 7181,
+      "end": 7181,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "2691e7e417fbc38d60e4a0d4bdd5932d724dbd3b6662fcee7831345a9d0fe080"
+    },
+    {
+      "start": 7182,
+      "end": 7183,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.phasing-ray",
+      "field": "system.description",
+      "sourceSha256": "30713d0edee52a031bf9f86e54917417702e23b234e7018ac5bd25cd730c015b"
+    },
+    {
+      "start": 7184,
+      "end": 7184,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "fb05c30fb89c340a335851a8c0763f5ea9798ac4e491386953580f00668b36bd"
+    },
+    {
+      "start": 7185,
+      "end": 7186,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.poison-bomb",
+      "field": "system.description",
+      "sourceSha256": "11c5fb60965a01b3db8155d69a3d9509f24047441d7a274a243ffdca80cc8b8b"
+    },
+    {
+      "start": 7187,
+      "end": 7187,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "0be142668a3eeca559c5afd9e2cbc7d81e704c6ea9593ad0ab9a75c66dccbd76"
+    },
+    {
+      "start": 7188,
+      "end": 7189,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.poison-immunity",
+      "field": "system.description",
+      "sourceSha256": "a298c7f677ebc8f2ed7d19cb2b1b2cf116dea660d2696ab83248d3a2f302b45e"
+    },
+    {
+      "start": 7190,
+      "end": 7190,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "289aff12b04274cb04b8f7dbf486ba8b3528c6fd16b60b9a31d31ce23b339236"
+    },
+    {
+      "start": 7191,
+      "end": 7192,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.question",
+      "field": "system.description",
+      "sourceSha256": "2eabb74856ae814fab4ec03f79c8fdc1f25dd1e3d86265a601ed63e2a0adbbdf"
+    },
+    {
+      "start": 7194,
+      "end": 7194,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "6897200c030b6e16014a75aa508f2e74d0ae5e21889fa0681e2328ac6b8a3713"
+    },
+    {
+      "start": 7195,
+      "end": 7196,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.range-extender",
+      "field": "system.description",
+      "sourceSha256": "7140502a096ec025241b6ae47198f5d7fd7a75286dd626784b0923e9e18e9128"
+    },
+    {
+      "start": 7197,
+      "end": 7197,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "360db59d33cc86de0e166e3cff77964f00706618207d54ea92463ae7c84cd1d0"
+    },
+    {
+      "start": 7198,
+      "end": 7199,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.reality-spike",
+      "field": "system.description",
+      "sourceSha256": "0edb7cfdbb26361a89d42aff7457228922b1157d169f3fd1061ff67b6baf8642"
+    },
+    {
+      "start": 7200,
+      "end": 7200,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "35de2da495048b4f43abec7981955ec21ffae67cedbac28944e5f00278ab06b2"
+    },
+    {
+      "start": 7201,
+      "end": 7202,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.regeneration",
+      "field": "system.description",
+      "sourceSha256": "6579663a5b9f5a15b789caefe3fc3e0136754c0896810d8f4cbcda50921110e5"
+    },
+    {
+      "start": 7203,
+      "end": 7203,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "9bcac5d9ea834b23ca376ca8a3cfeae9b7eb5fa269eb1278a3992a81e84f239b"
+    },
+    {
+      "start": 7204,
+      "end": 7205,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.remote-mapper",
+      "field": "system.description",
+      "sourceSha256": "973cce3c1653eaf287ff642b1631e8122c52581142014199254166c9bab829f7"
+    },
+    {
+      "start": 7206,
+      "end": 7206,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "080e7a9229b40cf549fb2aa0fc9d31fd379f70bffec04d0233a9cedb100c9949"
+    },
+    {
+      "start": 7207,
+      "end": 7208,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.remote-viewer",
+      "field": "system.description",
+      "sourceSha256": "9ed31cc7d704bfd6cb82067fecb68128a1add9f813eef17f5a7bfc192962506f"
+    },
+    {
+      "start": 7209,
+      "end": 7209,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "1196b6c538ecc61a658445255dcb19ebe23e05465acd46c4aa5d995667bd8cfe"
+    },
+    {
+      "start": 7210,
+      "end": 7211,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.repair",
+      "field": "system.description",
+      "sourceSha256": "45836566d5db26bba60ba8e4c576a9cd190423c4bd1a2ba1dabb6137422e94c4"
+    },
+    {
+      "start": 7212,
+      "end": 7212,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "7f65e66d7b992f00e39bd0933f6ed9732c99bf22e061c0fbf46af3aeb1c52bc0"
+    },
+    {
+      "start": 7213,
+      "end": 7215,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.resurrection",
+      "field": "system.description",
+      "sourceSha256": "d6556733eac7162fab974e7d5ca56567cec15040f7fa2f7a2bae66bbdfff0e4c"
+    },
+    {
+      "start": 7216,
+      "end": 7216,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "5dd0cd4a0b58d82ac59a82fe30adb6d4d1e502ca5aa2cdeaee6c251cd33e40c6"
+    },
+    {
+      "start": 7217,
+      "end": 7218,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.retaliation",
+      "field": "system.description",
+      "sourceSha256": "e6fac24d523b3be665d13900570fa908438a084c8c7b615bdc229c83c742923e"
+    },
+    {
+      "start": 7219,
+      "end": 7219,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "ed55bec3f98c6104d981b1ca73390ec35bd147f5f60d8ba063519d8520d77658"
+    },
+    {
+      "start": 7220,
+      "end": 7221,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.shock-bomb",
+      "field": "system.description",
+      "sourceSha256": "d08da566cc74aa02b2d94d546f8eeb063934cc358c299cec36ddf23d23cd9987"
+    },
+    {
+      "start": 7222,
+      "end": 7222,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "aba8ef56b34a5501f631af33300682cb72b463b2f98594f3539beadbd4eeef94"
+    },
+    {
+      "start": 7223,
+      "end": 7224,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.shrapnel-bomb",
+      "field": "system.description",
+      "sourceSha256": "117f67fd546bd752d3b4b36e71548d210591528f92722e233f48452848d132bd"
+    },
+    {
+      "start": 7225,
+      "end": 7225,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "9f8165363820eee2d91a01a0840d3dc364ea3c4fef885b3afa82f96381c3ee28"
+    },
+    {
+      "start": 7226,
+      "end": 7227,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.sleep-inducer",
+      "field": "system.description",
+      "sourceSha256": "07ce82f2ab114b885c29b72a3712a60b13b600f62c2f59c63f479ae24b2752bd"
+    },
+    {
+      "start": 7229,
+      "end": 7229,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "3eb6cec09a3ff91a7e410f4223af5d83d6867b09e55deff314f461c4de25a67e"
+    },
+    {
+      "start": 7230,
+      "end": 7231,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.sonic-bomb",
+      "field": "system.description",
+      "sourceSha256": "452c5c221d55e1d4f1ce9e20b0c9d8c17d41e8dbf30a616fc64649dc47522819"
+    },
+    {
+      "start": 7232,
+      "end": 7232,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "75fb5623e8d816f72d4f27fda818c212a4a21458fd6047628383edbc91ef2af4"
+    },
+    {
+      "start": 7233,
+      "end": 7235,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.sound-dampener",
+      "field": "system.description",
+      "sourceSha256": "8c7dba31bfe9f96aa0c89715a2e33f71ec5d5ff75a19efbc719cb94f7d45cd0c"
+    },
+    {
+      "start": 7236,
+      "end": 7236,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "492136b1f22fcae1531ed346d5637f2afcd23b4be128ebfdaca9bb13bdce0a2d"
+    },
+    {
+      "start": 7237,
+      "end": 7238,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.speed-booster",
+      "field": "system.description",
+      "sourceSha256": "5388d3efba981311a3f8e9d4c133b660adfdac4bc0ff718a88b34d3b2e5acd6b"
+    },
+    {
+      "start": 7239,
+      "end": 7239,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "3ec4447920a0721b9f7469f559cc534a54c8701d66c1caa6448e2b495fe0b459"
+    },
+    {
+      "start": 7240,
+      "end": 7241,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.speed-restorer",
+      "field": "system.description",
+      "sourceSha256": "69d4b013dcb012c348b270db55b39aa877056e7da1fbca1839f1612e552f6b62"
+    },
+    {
+      "start": 7242,
+      "end": 7242,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "9c1583d73e4552ecaf7c8f0aedbede8ed95d751317063a71bf20ca0a3606fcd0"
+    },
+    {
+      "start": 7243,
+      "end": 7244,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.speeding-bullet",
+      "field": "system.description",
+      "sourceSha256": "29a3e1fade61114d3ba98ffe871c0a38528f300b62c7c330f0fb19f20401800f"
+    },
+    {
+      "start": 7245,
+      "end": 7245,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "2465fedbc951c4928f24e54eeb389cdda51d6e470ee5fb05604bf2759fd4b400"
+    },
+    {
+      "start": 7246,
+      "end": 7247,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.stamina-enhancer",
+      "field": "system.description",
+      "sourceSha256": "d0e624b4ba10c70cb07d12f36c5413f982cb532adab63d1774e07f6a08a0d38e"
+    },
+    {
+      "start": 7248,
+      "end": 7248,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "f8634139c4065c98e176ac8f34f83f41b373a0053734e0594db16af0aeff462b"
+    },
+    {
+      "start": 7249,
+      "end": 7251,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.summon-creature",
+      "field": "system.description",
+      "sourceSha256": "849dfc21945f09631f3b45eede551a12dcf81bc40a37b8ec8ac3960f0a9a81d4"
+    },
+    {
+      "start": 7252,
+      "end": 7252,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "1d5635647dc8195f3582997adf156d35d59a4940158b6f646f1545e8aa5fca58"
+    },
+    {
+      "start": 7253,
+      "end": 7254,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.sustenance",
+      "field": "system.description",
+      "sourceSha256": "1fb849a6cced60391e4d27ffe7ce2a0ba8dd41fbeb94f75365537bd3f6c82314"
+    },
+    {
+      "start": 7255,
+      "end": 7255,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "f410d53a7a4787a7ed6c4b9df3f67eb1d79789df4d108a670b2c99b598c8a593"
+    },
+    {
+      "start": 7256,
+      "end": 7260,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.telekinesis",
+      "field": "system.description",
+      "sourceSha256": "e1cc55454edbb1821ecde5c8e9f8c8cf3d47cad790b3ecfb96811372e31c8b19"
+    },
+    {
+      "start": 7261,
+      "end": 7261,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "6ffb124f3ca6615988eabd1f2ae5e022348ddd646800619282bbf03164ccc567"
+    },
+    {
+      "start": 7262,
+      "end": 7263,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.telepathy",
+      "field": "system.description",
+      "sourceSha256": "6f31a82179ac72462321964abce10d851f3a60a3deb1ebcc52ebfc6fb66c437d"
+    },
+    {
+      "start": 7264,
+      "end": 7264,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "8b3e34288edc3933cc01039aaeed6fa936851e2f620e717504a00143d977e70e"
+    },
+    {
+      "start": 7265,
+      "end": 7265,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.teleporter",
+      "field": "system.description",
+      "sourceSha256": "9c9d1ef2e0952b7fcbf9368d69154bd1837ffa271450bacd888f488b3f3eb269"
+    },
+    {
+      "start": 7266,
+      "end": 7288,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "9b3e396d17aa54502478bba9f8e5b8e11c28e4e3eaebc497b42771d3079eb687"
+    },
+    {
+      "start": 7291,
+      "end": 7295,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.teleporter",
+      "field": "system.description",
+      "sourceSha256": "235984761ac9b7664c620eeb38793ac4626afda1ab594782ccbe35a1ada61e1a"
+    },
+    {
+      "start": 7296,
+      "end": 7296,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "ce146ded8344f3352c554bf461e498fa2efb396b058dc0f555fb7d1a49e0401d"
+    },
+    {
+      "start": 7297,
+      "end": 7299,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.tiny-size",
+      "field": "system.description",
+      "sourceSha256": "09647702bf26858c8eac71fc3ec72bc837132f9aae727b93d75c29e2d010ab13"
+    },
+    {
+      "start": 7300,
+      "end": 7300,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "1719e0099fb807389fdcfc4ea5d2fa36442af71de1ee7ea8b82eebdfb7928f76"
+    },
+    {
+      "start": 7301,
+      "end": 7302,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.tracer",
+      "field": "system.description",
+      "sourceSha256": "1570389eca4bfe6d3a7dcacd48aca00ca608140d3892782a77d7dd713238cec2"
+    },
+    {
+      "start": 7303,
+      "end": 7303,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "8fadbe858ebbbb4c991e36cb2e6b396645574b271e36d9571719fb576ceabbf5"
+    },
+    {
+      "start": 7304,
+      "end": 7306,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.trick-embedder",
+      "field": "system.description",
+      "sourceSha256": "3f24f465c3bb0271f2a79bcd8745f20b475c48474262e41cedb3425d1ade9b48"
+    },
+    {
+      "start": 7308,
+      "end": 7308,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "a8f972ce5ea0a31c42b4400827216c76cf436eb1b74dba21abc1b00b5f108606"
+    },
+    {
+      "start": 7309,
+      "end": 7310,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.ultimate-enhancement",
+      "field": "system.description",
+      "sourceSha256": "ed41d7aa23c1f72c9e5e7babd09c93ac9383d44f955039069d4435f5e692dc55"
+    },
+    {
+      "start": 7311,
+      "end": 7311,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "4524948caadad04862e8345aea7d43b3e3a5b09e099f824c105d1d908d555c63"
+    },
+    {
+      "start": 7312,
+      "end": 7313,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.ultimate-healing",
+      "field": "system.description",
+      "sourceSha256": "db2bb6ebf2aa05c9f5c931f1f997b79f31803fb6364ae7bed4f00f90f03c63a1"
+    },
+    {
+      "start": 7314,
+      "end": 7314,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "450e5ab29cacd494ccbf9bca564585208065b3c52d0396dc15193973e86f4ed8"
+    },
+    {
+      "start": 7315,
+      "end": 7317,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.uninterruptible-power-source",
+      "field": "system.description",
+      "sourceSha256": "25b6ed5d3c1dbf6326307819d0a40b13c71eda1178386dbee7e9b799a27320dc"
+    },
+    {
+      "start": 7318,
+      "end": 7318,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "93086b41c9a6f4f2ba7ec3173ad2942866cc505858fbf7ef30e7db20811fb0c3"
+    },
+    {
+      "start": 7319,
+      "end": 7320,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.virtual-shield",
+      "field": "system.description",
+      "sourceSha256": "319c380a47a9f6fc780951f03e456fd3a58aa92b7d24c062acf09ae60480bec8"
+    },
+    {
+      "start": 7321,
+      "end": 7321,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "4fa023594764255f8647832f7cd80cead2e0c4094348f33648bd7c2f48b1537c"
+    },
+    {
+      "start": 7322,
+      "end": 7323,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.water-breathing",
+      "field": "system.description",
+      "sourceSha256": "f55a6215c17a64f4f4272c3b1846d5248452a5c4a31752f4df559005f00fe213"
+    },
+    {
+      "start": 7324,
+      "end": 7324,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "776703475f7474a4bd010f4dfbc549f4dad32b16589981f955e33a9c5ade1b49"
+    },
+    {
+      "start": 7325,
+      "end": 7326,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.weapon-augmentation",
+      "field": "system.description",
+      "sourceSha256": "239dff5e76acaaa69bc8b210c7c49f364045fdf6cb41cb06f76591f12bb4eb6d"
+    },
+    {
+      "start": 7327,
+      "end": 7327,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947",
+      "sourceSha256": "59d04946d56f0abd0f328f7c5bcdb40438d1c8b77ab5105f5fc6f2c4f8258ff6"
+    },
+    {
+      "start": 7328,
+      "end": 7329,
+      "kind": "canonical-item",
+      "logicalId": "cypher.manifest.zone-of-privacy",
+      "field": "system.description",
+      "sourceSha256": "45b967340420d49fbab00f02003bf9a79e78c623dd0db402ee242d64ccf00ca2"
+    },
+    {
+      "start": 7330,
+      "end": 7334,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "4366c4c240ff3371",
+      "sourceSha256": "b89c69108e4b1f37643e9f4a9f271b4cb441192116908d11e184265606a4f4d1"
+    },
+    {
+      "start": 7335,
+      "end": 7358,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "fe28f47fee9f3094",
+      "sourceSha256": "a5c55949931583aeec1d12c34f845c6cb53b824956963f7a1342f91ff4f420df"
+    },
+    {
+      "start": 7359,
+      "end": 7360,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "7359865f5b60d12e66b79a5f811ea96a5441ea90001e12ace71275f20e244c3c"
+    },
+    {
+      "start": 7361,
+      "end": 7361,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.amazing-feat",
+      "field": "system.description",
+      "sourceSha256": "fee1cf9ecea016cbaf8bd7fb34ca453b5028e969252c200b3b85b679c8b3c469"
+    },
+    {
+      "start": 7362,
+      "end": 7362,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "523aa29d1464818e5ae9ed44fa5b24760e7a01bfbaa25e045ff022be8a0335ce"
+    },
+    {
+      "start": 7363,
+      "end": 7363,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.area-boost",
+      "field": "system.description",
+      "sourceSha256": "128692d63f1da7042709ac8353c3bff1fb86baec3f58a1c4ac7b6af635b6b66b"
+    },
+    {
+      "start": 7364,
+      "end": 7364,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "319b4c727793c7940ec4be2a1b75a9000d3c2da9b680ac4d5d5c19027d3ec287"
+    },
+    {
+      "start": 7365,
+      "end": 7365,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.burst-boost",
+      "field": "system.description",
+      "sourceSha256": "5fc8fcae2e9bab2fe3ff51bdd7476429b2230fcf6babdd05032477fefc8e91f7"
+    },
+    {
+      "start": 7366,
+      "end": 7366,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "de08dbca6d31543745b8edbb0c9a2322f6d78e018892203ccdada48054cac296"
+    },
+    {
+      "start": 7367,
+      "end": 7367,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.damage-boost",
+      "field": "system.description",
+      "sourceSha256": "fce5f8350979e44971eec77986eeae1e76eb3cf51fbe4f1c6a3e6eb4ab35eec5"
+    },
+    {
+      "start": 7368,
+      "end": 7368,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "eebd3a3dbb0e72657cd07da2079771ec8137cc6c0a4797bf7097297dff3e0ee5"
+    },
+    {
+      "start": 7369,
+      "end": 7369,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.efficacy-boost",
+      "field": "system.description",
+      "sourceSha256": "bf5ed3329118bcc161c187d3bb6a34b8bced8304b932b6ef00b30ae794274479"
+    },
+    {
+      "start": 7370,
+      "end": 7370,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "78176a7546409389576a688b5426ce87006ada5456eda539902979c6981adcb1"
+    },
+    {
+      "start": 7371,
+      "end": 7371,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.range-boost",
+      "field": "system.description",
+      "sourceSha256": "687a0fecf0a11bc0cdece9ceb632f32f7fa1cdf6a2e2347939d7fc174a772914"
+    },
+    {
+      "start": 7372,
+      "end": 7372,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "1fa0e593105452ed3040c6a258e61b35ddd1a6ac109113461b6af811674ee844"
+    },
+    {
+      "start": 7373,
+      "end": 7373,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.shift-boost",
+      "field": "system.description",
+      "sourceSha256": "e7635af7e8cd18ef806f6e37993fa22c11489b22f445dd9016d77bd62c495571"
+    },
+    {
+      "start": 7374,
+      "end": 7374,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "d9eb90bda05b68700a867a0c4e9420295513b152ca4c9f86ae15bb6575dcc029"
+    },
+    {
+      "start": 7375,
+      "end": 7375,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.source-boost",
+      "field": "system.description",
+      "sourceSha256": "b7be70eb1b3db44478a520ef6173d7ed4b4238d3bc72f8ca6d0a6e91f2609215"
+    },
+    {
+      "start": 7376,
+      "end": 7376,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "bcd4a80f997300f2",
+      "sourceSha256": "a3295d108f09c351ac6c89da5fa67bd9dd9015caef6384f751e6a5b714b93332"
+    },
+    {
+      "start": 7377,
+      "end": 7377,
+      "kind": "canonical-item",
+      "logicalId": "cypher.power-boost.split-boost",
+      "field": "system.description",
+      "sourceSha256": "6fc3a087c80aa2a5f5b5813f27da2f09c6614d0c832c6905a77a93b00866eda2"
+    },
+    {
+      "start": 7378,
+      "end": 7379,
+      "kind": "journal",
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "738ea261d6074091",
+      "sourceSha256": "d532f1d1922cd7790fcf3c657d53d5ebf9eec03def7d5807c355eda0a02057ac"
+    }
+  ],
+  "tables": [
+    {
+      "index": 28,
+      "start": 5993,
+      "end": 6253,
+      "cells": 261,
+      "blankParagraphs": 87,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "6e3a75ceaaee6f11"
+    },
+    {
+      "index": 29,
+      "start": 6550,
+      "end": 6567,
+      "cells": 18,
+      "blankParagraphs": 5,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "a722d1f930994dee"
+    },
+    {
+      "index": 30,
+      "start": 6569,
+      "end": 6679,
+      "cells": 111,
+      "blankParagraphs": 36,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "4135d903b9776581"
+    },
+    {
+      "index": 31,
+      "start": 6681,
+      "end": 6797,
+      "cells": 117,
+      "blankParagraphs": 38,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "6c8c5d973b243a88"
+    },
+    {
+      "index": 32,
+      "start": 6799,
+      "end": 6858,
+      "cells": 60,
+      "blankParagraphs": 19,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "1044b5cb1cc6ef42"
+    },
+    {
+      "index": 33,
+      "start": 6860,
+      "end": 6874,
+      "cells": 15,
+      "blankParagraphs": 4,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "08715c1ee06af623"
+    },
+    {
+      "index": 34,
+      "start": 6876,
+      "end": 6905,
+      "cells": 30,
+      "blankParagraphs": 9,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "9aaa593105249316"
+    },
+    {
+      "index": 35,
+      "start": 6957,
+      "end": 6972,
+      "cells": 16,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "index": 36,
+      "start": 7051,
+      "end": 7066,
+      "cells": 16,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "index": 37,
+      "start": 7266,
+      "end": 7290,
+      "cells": 25,
+      "blankParagraphs": 10,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "index": 38,
+      "start": 7337,
+      "end": 7358,
+      "cells": 22,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-cyphers",
+      "pageId": "fe28f47fee9f3094"
+    }
+  ],
+  "definitions": [
+    {
+      "paragraph": 6255,
+      "logicalId": "cypher.amazing-effort",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6258,
+      "logicalId": "cypher.berserk",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6261,
+      "logicalId": "cypher.best-tool",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6264,
+      "logicalId": "cypher.bleed",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6268,
+      "logicalId": "cypher.burst-of-speed",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6271,
+      "logicalId": "cypher.calm-sniper",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6274,
+      "logicalId": "cypher.collateral-damage",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6277,
+      "logicalId": "cypher.combat-enhancer",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6280,
+      "logicalId": "cypher.counterattack",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6283,
+      "logicalId": "cypher.crying-jag",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6286,
+      "logicalId": "cypher.deflect-wound",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6289,
+      "logicalId": "cypher.disarm",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6292,
+      "logicalId": "cypher.disease-recovery",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6296,
+      "logicalId": "cypher.double-attack",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6299,
+      "logicalId": "cypher.equipment-cache",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6303,
+      "logicalId": "cypher.extended-breath",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6307,
+      "logicalId": "cypher.feat-of-strength",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6310,
+      "logicalId": "cypher.focus-fire",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6313,
+      "logicalId": "cypher.fortuitous-moment",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6316,
+      "logicalId": "cypher.fortunate-fluke",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6319,
+      "logicalId": "cypher.get-to-the-point",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6322,
+      "logicalId": "cypher.hamper-foe",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6325,
+      "logicalId": "cypher.horizon-observer",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6328,
+      "logicalId": "cypher.ignite",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6331,
+      "logicalId": "cypher.improved-acrobatics",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6335,
+      "logicalId": "cypher.improved-blocking",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6338,
+      "logicalId": "cypher.improved-charm",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6341,
+      "logicalId": "cypher.improved-climbing",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6344,
+      "logicalId": "cypher.improved-deception",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6347,
+      "logicalId": "cypher.improved-dexterity",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6350,
+      "logicalId": "cypher.improved-disguising",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6354,
+      "logicalId": "cypher.improved-dodging",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6357,
+      "logicalId": "cypher.improved-driving",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6361,
+      "logicalId": "cypher.improved-escaping",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6364,
+      "logicalId": "cypher.improved-healing",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6367,
+      "logicalId": "cypher.improved-initiative",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6371,
+      "logicalId": "cypher.improved-intimidation",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6374,
+      "logicalId": "cypher.improved-jumping",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6377,
+      "logicalId": "cypher.improved-lockpicking",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6380,
+      "logicalId": "cypher.improved-perception",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6383,
+      "logicalId": "cypher.improved-pickpocketing",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6386,
+      "logicalId": "cypher.improved-repairing",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6389,
+      "logicalId": "cypher.improved-sneaking",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6393,
+      "logicalId": "cypher.improved-swimming",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6396,
+      "logicalId": "cypher.improvised-range",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6399,
+      "logicalId": "cypher.improvised-shelter",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6402,
+      "logicalId": "cypher.improvised-shield",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6405,
+      "logicalId": "cypher.inhibit-foe",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6408,
+      "logicalId": "cypher.inspire-aggression",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6411,
+      "logicalId": "cypher.intellect-replenisher",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6414,
+      "logicalId": "cypher.knockout",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6417,
+      "logicalId": "cypher.lucid-moment",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6420,
+      "logicalId": "cypher.maintain-temperature",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6423,
+      "logicalId": "cypher.make-passage",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6427,
+      "logicalId": "cypher.master-password",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6431,
+      "logicalId": "cypher.mental-concentration",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6435,
+      "logicalId": "cypher.might-replenisher",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6438,
+      "logicalId": "cypher.motivated-aid",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6441,
+      "logicalId": "cypher.near-death-experience",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6445,
+      "logicalId": "cypher.noncombat-enhancer",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6448,
+      "logicalId": "cypher.not-me",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6452,
+      "logicalId": "cypher.offensive-object-break",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6455,
+      "logicalId": "cypher.pacify-beast",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6460,
+      "logicalId": "cypher.perfect-moment",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6464,
+      "logicalId": "cypher.pidgin",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6467,
+      "logicalId": "cypher.poison-recovery",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6470,
+      "logicalId": "cypher.press-the-advantage",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6473,
+      "logicalId": "cypher.push",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6476,
+      "logicalId": "cypher.quick-disable",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6479,
+      "logicalId": "cypher.quick-feint",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6482,
+      "logicalId": "cypher.quick-funds",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6485,
+      "logicalId": "cypher.remembering",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6489,
+      "logicalId": "cypher.repel",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6492,
+      "logicalId": "cypher.restrain",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6495,
+      "logicalId": "cypher.reveal-unseen",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6498,
+      "logicalId": "cypher.sated",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6501,
+      "logicalId": "cypher.secret",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6504,
+      "logicalId": "cypher.silent-message",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6507,
+      "logicalId": "cypher.slippery",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6510,
+      "logicalId": "cypher.snap-alert",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6513,
+      "logicalId": "cypher.speed-replenisher",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6516,
+      "logicalId": "cypher.take-one-for-the-team",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6519,
+      "logicalId": "cypher.teach-trick",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6522,
+      "logicalId": "cypher.traumatic-amnesia",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6525,
+      "logicalId": "cypher.wound-recovery",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6528,
+      "logicalId": "cypher.wounded-desperation",
+      "pageId": "2b63447131344773"
+    },
+    {
+      "paragraph": 6908,
+      "logicalId": "cypher.manifest.adhesion-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6912,
+      "logicalId": "cypher.manifest.cluster-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6918,
+      "logicalId": "cypher.manifest.comprehension",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6922,
+      "logicalId": "cypher.manifest.contingent-activator",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6925,
+      "logicalId": "cypher.manifest.corrosive-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6928,
+      "logicalId": "cypher.manifest.darksight",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6931,
+      "logicalId": "cypher.manifest.decay-metal",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6934,
+      "logicalId": "cypher.manifest.depth-scanner",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6937,
+      "logicalId": "cypher.manifest.device-controller",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6940,
+      "logicalId": "cypher.manifest.disease-immunity",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6944,
+      "logicalId": "cypher.manifest.disguise-module",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6949,
+      "logicalId": "cypher.manifest.eagleseye",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6952,
+      "logicalId": "cypher.manifest.endure-climate",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6955,
+      "logicalId": "cypher.manifest.energy-blast",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6974,
+      "logicalId": "cypher.manifest.energy-resistance",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6977,
+      "logicalId": "cypher.manifest.enhanced-armor",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6980,
+      "logicalId": "cypher.manifest.enhanced-climbing",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6983,
+      "logicalId": "cypher.manifest.enhanced-dodging",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6986,
+      "logicalId": "cypher.manifest.enhanced-jumping",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6989,
+      "logicalId": "cypher.manifest.enhanced-reflexes",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6992,
+      "logicalId": "cypher.manifest.enhanced-strength",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6995,
+      "logicalId": "cypher.manifest.enhanced-swimming",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 6998,
+      "logicalId": "cypher.manifest.extra-cyphers",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7001,
+      "logicalId": "cypher.manifest.fear",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7005,
+      "logicalId": "cypher.manifest.fiery-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7008,
+      "logicalId": "cypher.manifest.flash-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7011,
+      "logicalId": "cypher.manifest.flight",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7016,
+      "logicalId": "cypher.manifest.force-field",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7020,
+      "logicalId": "cypher.manifest.freezing-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7023,
+      "logicalId": "cypher.manifest.friction-reducer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7026,
+      "logicalId": "cypher.manifest.frost-wall",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7029,
+      "logicalId": "cypher.manifest.future-potential",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7032,
+      "logicalId": "cypher.manifest.giant-size",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7036,
+      "logicalId": "cypher.manifest.gigantic-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7041,
+      "logicalId": "cypher.manifest.gravity-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7044,
+      "logicalId": "cypher.manifest.homing-projectile",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7048,
+      "logicalId": "cypher.manifest.image-projector",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7068,
+      "logicalId": "cypher.manifest.incredible-speed",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7071,
+      "logicalId": "cypher.manifest.inferno-wall",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7074,
+      "logicalId": "cypher.manifest.information-scanner",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7077,
+      "logicalId": "cypher.manifest.insanity-suppressor",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7080,
+      "logicalId": "cypher.manifest.instant-building",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7083,
+      "logicalId": "cypher.manifest.instant-healing",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7086,
+      "logicalId": "cypher.manifest.instant-outfit",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7089,
+      "logicalId": "cypher.manifest.instant-servant",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7092,
+      "logicalId": "cypher.manifest.intellect-booster",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7095,
+      "logicalId": "cypher.manifest.intellect-restorer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7098,
+      "logicalId": "cypher.manifest.intense-perception",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7101,
+      "logicalId": "cypher.manifest.invisibility",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7105,
+      "logicalId": "cypher.manifest.invulnerability-enhancement",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7108,
+      "logicalId": "cypher.manifest.knowledge-augmentation",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7127,
+      "logicalId": "cypher.manifest.lightning-wall",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7130,
+      "logicalId": "cypher.manifest.memory-wipe",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7133,
+      "logicalId": "cypher.manifest.mental-vigilance",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7136,
+      "logicalId": "cypher.manifest.might-booster",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7139,
+      "logicalId": "cypher.manifest.might-restorer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7142,
+      "logicalId": "cypher.manifest.mind-control",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7146,
+      "logicalId": "cypher.manifest.motion-sensor",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7149,
+      "logicalId": "cypher.manifest.nullification",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7153,
+      "logicalId": "cypher.manifest.object-duplicator",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7156,
+      "logicalId": "cypher.manifest.obstacle-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7160,
+      "logicalId": "cypher.manifest.overpowered-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7165,
+      "logicalId": "cypher.manifest.paralyzer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7168,
+      "logicalId": "cypher.manifest.penultimate-enhancement",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7171,
+      "logicalId": "cypher.manifest.penultimate-key",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7174,
+      "logicalId": "cypher.manifest.perfection",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7178,
+      "logicalId": "cypher.manifest.phase-changer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7181,
+      "logicalId": "cypher.manifest.phasing-ray",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7184,
+      "logicalId": "cypher.manifest.poison-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7187,
+      "logicalId": "cypher.manifest.poison-immunity",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7190,
+      "logicalId": "cypher.manifest.question",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7194,
+      "logicalId": "cypher.manifest.range-extender",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7197,
+      "logicalId": "cypher.manifest.reality-spike",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7200,
+      "logicalId": "cypher.manifest.regeneration",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7203,
+      "logicalId": "cypher.manifest.remote-mapper",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7206,
+      "logicalId": "cypher.manifest.remote-viewer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7209,
+      "logicalId": "cypher.manifest.repair",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7212,
+      "logicalId": "cypher.manifest.resurrection",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7216,
+      "logicalId": "cypher.manifest.retaliation",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7219,
+      "logicalId": "cypher.manifest.shock-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7222,
+      "logicalId": "cypher.manifest.shrapnel-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7225,
+      "logicalId": "cypher.manifest.sleep-inducer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7229,
+      "logicalId": "cypher.manifest.sonic-bomb",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7232,
+      "logicalId": "cypher.manifest.sound-dampener",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7236,
+      "logicalId": "cypher.manifest.speed-booster",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7239,
+      "logicalId": "cypher.manifest.speed-restorer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7242,
+      "logicalId": "cypher.manifest.speeding-bullet",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7245,
+      "logicalId": "cypher.manifest.stamina-enhancer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7248,
+      "logicalId": "cypher.manifest.summon-creature",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7252,
+      "logicalId": "cypher.manifest.sustenance",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7255,
+      "logicalId": "cypher.manifest.telekinesis",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7261,
+      "logicalId": "cypher.manifest.telepathy",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7264,
+      "logicalId": "cypher.manifest.teleporter",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7296,
+      "logicalId": "cypher.manifest.tiny-size",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7300,
+      "logicalId": "cypher.manifest.tracer",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7303,
+      "logicalId": "cypher.manifest.trick-embedder",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7308,
+      "logicalId": "cypher.manifest.ultimate-enhancement",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7311,
+      "logicalId": "cypher.manifest.ultimate-healing",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7314,
+      "logicalId": "cypher.manifest.uninterruptible-power-source",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7318,
+      "logicalId": "cypher.manifest.virtual-shield",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7321,
+      "logicalId": "cypher.manifest.water-breathing",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7324,
+      "logicalId": "cypher.manifest.weapon-augmentation",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7327,
+      "logicalId": "cypher.manifest.zone-of-privacy",
+      "pageId": "22ed812228ebe947"
+    },
+    {
+      "paragraph": 7360,
+      "logicalId": "cypher.power-boost.amazing-feat",
+      "pageId": "bcd4a80f997300f2"
+    },
+    {
+      "paragraph": 7362,
+      "logicalId": "cypher.power-boost.area-boost",
+      "pageId": "bcd4a80f997300f2"
+    },
+    {
+      "paragraph": 7364,
+      "logicalId": "cypher.power-boost.burst-boost",
+      "pageId": "bcd4a80f997300f2"
+    },
+    {
+      "paragraph": 7366,
+      "logicalId": "cypher.power-boost.damage-boost",
+      "pageId": "bcd4a80f997300f2"
+    },
+    {
+      "paragraph": 7368,
+      "logicalId": "cypher.power-boost.efficacy-boost",
+      "pageId": "bcd4a80f997300f2"
+    },
+    {
+      "paragraph": 7370,
+      "logicalId": "cypher.power-boost.range-boost",
+      "pageId": "bcd4a80f997300f2"
+    },
+    {
+      "paragraph": 7372,
+      "logicalId": "cypher.power-boost.shift-boost",
+      "pageId": "bcd4a80f997300f2"
+    },
+    {
+      "paragraph": 7374,
+      "logicalId": "cypher.power-boost.source-boost",
+      "pageId": "bcd4a80f997300f2"
+    },
+    {
+      "paragraph": 7376,
+      "logicalId": "cypher.power-boost.split-boost",
+      "pageId": "bcd4a80f997300f2"
+    }
+  ]
+}

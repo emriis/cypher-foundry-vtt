@@ -81,6 +81,14 @@ significant table structure and must not be filtered out. As with genre
 authoring, refresh the contents intentionally and review French hashes after
 source edits; validation does not write generated packs into this checkout.
 
+The Cypher chapter uses `npm run author:crd-cyphers` and the read-only
+`npm run check:crd-cyphers`, with its paragraph/table register in
+`data/crd-reference-cyphers.json`. Native links are scoped to the source family
+(nonphysical, manifest or power boost). Named Teleporter variants keep their
+table labels while linking the common Item, without activating or generating
+anything. Preserve empty cells and the distinction between reference tables
+and executable RollTables, which belong to information-library lot 5.
+
 ### TDD and BDD boundary
 
 For recovery and healing work, follow the source contracts and persistence
