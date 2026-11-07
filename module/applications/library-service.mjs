@@ -15,6 +15,8 @@ const references = Object.freeze([
   ["crd-fantasy", "rules", "JournalEntry"],
   ["crd-science-fiction", "rules", "JournalEntry"],
   ["crd-superheroes", "rules", "JournalEntry"],
+  ["crd-foci", "rules", "JournalEntry"],
+  ["crd-equipment", "rules", "JournalEntry"],
   ["task-difficulty", "rules", "JournalEntry"],
   ["effort-edge", "rules", "JournalEntry"],
   ["recoveries-healing", "rules", "JournalEntry"],

@@ -188,7 +188,7 @@ APIs. The platform guides establish the intended native capabilities:
 | Lot | Status | Acceptance boundary |
 | --- | --- | --- |
 | 1 | Complete; merged in PR #176 | Home, existing reference selections, task pilot, cypher preview and personal shortcut |
-| 2 | In progress | Tranche 2A merged; tranche 2B implements the five genre chapters; 2C–2E remain |
+| 2 | In progress | Tranches 2A–2B merged; 2C implements Foci/equipment; 2D–2E remain |
 | 3 | Planned | Complete player guide and quick references |
 | 4 | Planned | Complete GM guide and linked screen |
 | 5 | Planned | Native source-backed random table packs |
@@ -250,8 +250,8 @@ working tree was clean. The accepted multiple-PR split remains:
 | Tranche | Source chapters | Status |
 | --- | --- | --- |
 | 2A | Creation, core character, Skills, Descriptors; initial contents/index | Merged in PR #177 |
-| 2B | Real World, cross-genre selection, Fantasy, Science Fiction, Superheroes | Implemented and validated — 2026-11-06 |
-| 2C | Foci and Equipment | Planned |
+| 2B | Real World, cross-genre selection, Fantasy, Science Fiction, Superheroes | Merged in PR #178 |
+| 2C | Foci and Equipment | Implemented and validated, 2026-11-07; pending merge |
 | 2D | Cyphers and reference tables | Planned |
 | 2E | Rules of the Game, Advancement, credits and final coverage reconciliation | Planned |
 
@@ -297,7 +297,7 @@ examples, conditional clauses, and existing translated Item names. They are
 marked `reviewed` as an editorial disposition; numeric/markup/hash checks do
 not independently certify semantics or substitute for human review.
 
-The current inventory is **1,378** canonical EN documents and their FR
+The inventory after 2A was **1,378** canonical EN documents and their FR
 counterparts, including **12** Rules Journals (seven existing selections plus
 five additions). Historical translation-batch manifests remain fixed; the
 explicit reference inventory adds the new Journals to whole-catalogue checks.
@@ -379,7 +379,7 @@ passages were reused only after exact English correspondence. Named abilities,
 Types and Foci follow their canonical French proposals. Editorial status is
 `reviewed`; authoring/check/build commands never promote it automatically.
 
-The current inventory is **1,383** canonical EN documents with paired FR
+The inventory after 2B was **1,383** canonical EN documents with paired FR
 documents, including **17 Rules Journals**. Source completeness does not add
 gameplay automation: optional rules, genre exceptions, origin powers and
 power-shift advice become consultable without changing the accepted runtime
@@ -424,3 +424,89 @@ V13 remains untested live; manifest verification is unchanged. No commit,
 push, generated LevelDB replacement or user-world mutation is part of this lot.
 The next authorized sequence remains **2C Foci and Equipment**, **2D Cyphers**,
 then **2E Rules, Advancement, credits and coverage reconciliation**.
+
+### Tranche 2C content and identity contract
+
+Baseline: `a3a6fcd`, after PR #178, with a clean working tree. Two additive
+Journals provide **46 Foci pages** and **13 Equipment pages**, with **120 new
+French display fields**. The contents and thematic index now reach eleven
+source chapters, for **109 reference/index pages** in total. All existing
+document/page identities and fourteen pack IDs are preserved.
+
+`data/crd-reference-details.json` partitions the **2,368 nonblank paragraphs
+at 3438–5952** under the supplied CRD hash. A source paragraph is omitted from
+Journal prose only when its whole text is proven in a specific field of its
+owning Focus or an Ability actually referenced by that Focus. Unmatched wording
+remains complete in the Journal, rather than being reconstructed from another
+variant. The chapter links all **42 native Focus sheets**, including their
+existing tier/prerequisite views derived from authored flowchart edges. This
+lot does not change Focus graphs, acquisition eligibility or runtime powers.
+
+The ordinary-player live check exposed an existing Focus-sheet rendering error:
+its activation-label callback lost the Foundry localization context. The same
+inspection showed Focus and Type views reading flattened legacy Ability fields
+instead of actual `Ability.system` data. Both views now project document names,
+system costs/descriptions and flags explicitly; Focus prerequisites still come
+from the existing graph, and Type labels honor the owning Type's tier mapping.
+Focused regression tests reproduce the rendering error and unnamed/free
+Ability rows with Document-shaped inputs. This is a presentation correction,
+without changing costs, prerequisites, advancement or saved content.
+The Type and Focus cards also render the passive activation label once,
+instead of repeating it beside the same activation classification.
+
+All **26 Word tables (indices 2–27)** retain their **674 cells**, including
+**31 blank cells**, in source order. These are consultation tables: animal-form
+examples, item/weapon comparisons and currency equivalents. They do not become
+random RollTables. All **259 equipment rows** link to distinct existing Items
+selected by the full canonical English genre/price/name tuple. Same-name
+equipment from different genres or price categories is never merged. Notes,
+levels, damage, range and other columns remain readable in the reference.
+
+The English source preserves examples, optional ammunition handling, equipment
+intrusions, armor/weapon rules, artifact depletion and currency-context advice.
+French proposals were compared with those clauses and their numeric limits;
+reuse was restricted to complete matching English text. Native cost labels
+translate Pool names and their conjunctions. Three cost-choice labels in the
+existing Fantasy/Science Fiction French references were also corrected from
+English “or” to French “ou”; their UUIDs, costs and English source stay intact.
+Authoring/check/build commands never promote editorial review status.
+
+This closes **17 more baseline visual groups**, leaving **31** of the original
+100, plus **33** of the original 61 Word tables for 2D–2E. The Equipment
+intrusion at **5594** is now complete and removed from the deferral register;
+only **7953**, Doing Something Else, remains explicitly deferred. Source-bound
+dispositions and the generic paragraph-matching callout diagnostic remain
+separate. The [destination checklist](crd-reference-destinations.md) retains
+the original indices for traceability.
+
+The current inventory is **1,385 canonical EN documents** with paired FR
+documents, including **19 Rules Journals** and **255 paired Journal display
+fields**. The source authoring and validation commands normalize legacy
+catalogue inputs in disposable workspaces. Existing Focus, Ability and equipment
+definitions, generated LevelDB packs and user worlds are not edited.
+
+### Tranche 2C validation — 2026-11-06–07
+
+The isolated complete Node suite passes **1,306 tests**, with no failures or
+skips. Focused content contracts check complete paragraph coverage, all table
+cells including blanks, native Item identities and read-only authoring
+reproducibility. Document-shaped regression tests cover the Focus/Type
+presentation fixes. Lint, pilot type checking, architecture, locale and syntax
+checks pass. Journal, translation, terminology and callout audits pass, with
+**19 reviewed Rules Journals** and **255 paired display fields**; the sole
+explicit callout deferral remains paragraph 7953.
+
+The isolated Foundry build compiles **14 packs**, passes **15 compiled-pack
+checks** and verifies the package archive. All **four library E2E scenarios**
+pass on **Foundry V14.370 / Chromium 153.0.8010.12**. The exhaustive scenario
+visits all **109 pages** in EN/FR and light/dark themes, for **436 page renders**,
+checking native links, keyboard navigation and the 480px library layout. The
+ordinary-player scenario opens native Focus and equipment sheets, with visible
+Focus prerequisites. A final ordinary-player rerun also passes after removing
+the duplicated passive activation label, with an explicit tag-count assertion
+in both languages. French Focus and narrow equipment-table screenshots were
+also inspected. These observations do not constitute a complete accessibility
+audit. V13 remains untested live; manifest verification is unchanged.
+
+No commit or push is part of this lot. Next: **2D Cyphers**, then **2E Rules,
+Advancement, credits and final coverage reconciliation**.

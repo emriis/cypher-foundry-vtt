@@ -71,6 +71,16 @@ those Items, French proposals or generated databases. Regenerate the contents
 with `author:crd-chapters` after intentional genre-page changes, then review
 the affected French source hashes explicitly.
 
+Foci and equipment references use `npm run author:crd-details` and the read-only
+`npm run check:crd-details`, with the complete partition in
+`data/crd-reference-details.json`. The Foci chapter links the existing native
+Focus sheets and their tier/prerequisite views; it does not recreate graph
+edges. Equipment tables retain their full cell structure and link each item by
+its canonical English genre, price category and name. Blank note cells are
+significant table structure and must not be filtered out. As with genre
+authoring, refresh the contents intentionally and review French hashes after
+source edits; validation does not write generated packs into this checkout.
+
 ### TDD and BDD boundary
 
 For recovery and healing work, follow the source contracts and persistence

@@ -100,6 +100,12 @@ have been reviewed.
 
 ## Interpretation and future work
 
+Tranche 2C subsequently added the Foci/equipment partition at 3438–5952,
+preserving tables 2–27, all 674 cells and the Equipment intrusion at 5594.
+Together, 2A–2C close 69 baseline visual groups and 28 Word tables; 31 groups
+and 33 tables remain for 2D–2E. The sole remaining explicit deferral is 7953.
+The tranche paragraphs below retain their historical counts.
+
 Library tranches 2A–2B subsequently added complete source-bounded partitions
 at paragraphs 1–3437, recorded in `data/crd-reference-creation.json` and
 `data/crd-reference-genres.json`. They close 52 of the baseline 100 open visual

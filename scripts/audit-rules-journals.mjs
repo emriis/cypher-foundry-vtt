@@ -34,7 +34,7 @@ export async function auditRulesJournals(root=ROOT,output=path.join(root,"report
        throw new Error("Rules Journal bilingual field/mechanic mismatch: "+id+" "+JSON.stringify(check));}
      return {...inspectAbilityPair8(id,source.document,item.proposal),status:item.proposal.status,sourceFile:source.file,proposalFile:item.file};
    });
-   const report={version:1,scope:manifest.scope+" and library chapter tranches 2A–2B",reference:manifest.reference,expected:ids.length,
+   const report={version:1,scope:manifest.scope+" and library chapter tranches 2A–2C",reference:manifest.reference,expected:ids.length,
     semanticCertification:false,warning:"Automated checks cannot approve Rules Journals semantic fidelity.",
     statuses:details.reduce((a,row)=>(a[row.status]=(a[row.status]??0)+1,a),{}),details};
    await fs.mkdir(path.dirname(output),{recursive:true});

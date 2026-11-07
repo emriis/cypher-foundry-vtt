@@ -11,6 +11,6 @@ test("all bilingual documents pass a strict, source-backed cross-family audit",a
  assert.equal(report.summary.proposals,EXPECTED_CATALOGUE_COUNT);
  assert.equal(report.summary.compiled,EXPECTED_CATALOGUE_COUNT);
  assert.deepEqual(report.summary.statusCounts,{reviewed:EXPECTED_CATALOGUE_COUNT});
- for(const count of [701,58,53,55,42,457,17])
+ for(const count of [701,58,53,55,42,457,19])
    assert.ok(Object.values(report.summary.families).some(f=>f.total===count),"Missing canonical family "+count);
 });
