@@ -86,6 +86,23 @@ prose or recreated by this reference work. The full equipment intrusion at
 5594 is no longer deferred. The baseline index and historical match counts
 below remain unchanged; they are not current completion claims.
 
+## Library tranche 2D dispositions
+
+The [Cypher partition](../data/crd-reference-cyphers.json) gives every nonblank
+paragraph at **5955–7380** a complete source-backed destination. It closes
+**B157–B160 and B167–B169**, leaving **24** of the original 100 groups open
+after 2A–2D. All **198 Cypher Items** are linked from their family description
+lists; source paragraphs are omitted only with whole-paragraph evidence in a
+specific field of their owning Item.
+
+Word tables **28–38** retain all **691 cells**, including **208 empty cells**.
+Generation, power selection, power-category tables and inline Energy Blast,
+Image Projector and Teleporter results remain consultation tables here.
+Native links reach definitions, manifest power pages and the superhero
+fallback table. Lot 5 owns executable RollTables. This brings coverage to
+**39 of 61 source tables**, with **22** still to reconcile in 2E. Empty source
+icon cells and absent symbol artwork are not reconstructed or guessed.
+
 ## Baseline: 100 visual groups requiring review
 
 | Group | CRD paragraphs | Existing full paragraph matches | Source section | Proposed reference destination |

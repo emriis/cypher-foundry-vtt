@@ -26,6 +26,8 @@
     "author:crd-genres": "node scripts/author-genre-chapters.mjs --write",
     "check:crd-details": "node scripts/author-detail-chapters.mjs",
     "author:crd-details": "node scripts/author-detail-chapters.mjs --write",
+    "check:crd-cyphers": "node scripts/author-cypher-chapter.mjs",
+    "author:crd-cyphers": "node scripts/author-cypher-chapter.mjs --write",
     "audit:i18n": "node scripts/review-translations.mjs",
     "preview:translations": "node scripts/review-translations.mjs --preview",
     "build:packs": "node scripts/build-packs.mjs",

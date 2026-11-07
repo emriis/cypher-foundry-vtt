@@ -188,7 +188,7 @@ APIs. The platform guides establish the intended native capabilities:
 | Lot | Status | Acceptance boundary |
 | --- | --- | --- |
 | 1 | Complete; merged in PR #176 | Home, existing reference selections, task pilot, cypher preview and personal shortcut |
-| 2 | In progress | Tranches 2A–2B merged; 2C implements Foci/equipment; 2D–2E remain |
+| 2 | In progress | Tranches 2A–2C merged; 2D adds Cyphers; 2E remains |
 | 3 | Planned | Complete player guide and quick references |
 | 4 | Planned | Complete GM guide and linked screen |
 | 5 | Planned | Native source-backed random table packs |
@@ -251,8 +251,8 @@ working tree was clean. The accepted multiple-PR split remains:
 | --- | --- | --- |
 | 2A | Creation, core character, Skills, Descriptors; initial contents/index | Merged in PR #177 |
 | 2B | Real World, cross-genre selection, Fantasy, Science Fiction, Superheroes | Merged in PR #178 |
-| 2C | Foci and Equipment | Implemented and validated, 2026-11-07; pending merge |
-| 2D | Cyphers and reference tables | Planned |
+| 2C | Foci and Equipment | Merged, confirmed before tranche 2D |
+| 2D | Cyphers and reference tables | Implemented and validated, 2026-11-07; pending merge |
 | 2E | Rules of the Game, Advancement, credits and final coverage reconciliation | Planned |
 
 ### Tranche 2A content and identity contract
@@ -479,7 +479,7 @@ dispositions and the generic paragraph-matching callout diagnostic remain
 separate. The [destination checklist](crd-reference-destinations.md) retains
 the original indices for traceability.
 
-The current inventory is **1,385 canonical EN documents** with paired FR
+At 2C delivery, the inventory was **1,385 canonical EN documents** with paired FR
 documents, including **19 Rules Journals** and **255 paired Journal display
 fields**. The source authoring and validation commands normalize legacy
 catalogue inputs in disposable workspaces. Existing Focus, Ability and equipment
@@ -510,3 +510,80 @@ audit. V13 remains untested live; manifest verification is unchanged.
 
 No commit or push is part of this lot. Next: **2D Cyphers**, then **2E Rules,
 Advancement, credits and final coverage reconciliation**.
+
+### Tranche 2D content and identity contract
+
+Baseline: `b4166f7`, with a clean working tree and the user-confirmed 2C merge.
+One additive `journal.crd-cyphers` provides **22 EN/FR pages** and **45 new
+French display fields**. The contents/index now reaches twelve source chapters,
+for **131 reference/index pages** overall. Existing Journal/page/Item and pack
+identities are preserved. The inventory becomes **1,386 canonical EN documents**
+with paired FR documents, including **20 Rules Journals** and **300 paired
+Journal display fields**.
+
+The [Cypher paragraph register](../data/crd-reference-cyphers.json) partitions
+all **1,202 nonblank paragraphs at 5955–7380** under the pinned source hash.
+All **198 definitions** link to their native Items: **86 nonphysical**, **103
+manifest** and **9 power-boost** cyphers. Definition prose is replaced by a link
+only when the complete source paragraph is proven in a specific field of that
+same Item; unmatched wording stays verbatim in the Journal. This does not
+expand effect automation, change generation probabilities or modify owned Items.
+
+All **11 Word tables (28–38)** remain readable, retaining **691 cells**,
+including **208 blank cells**, in source order. These include general and
+superhero generation, manifest power selection, the five manifest power
+categories, Energy Blast, Image Projector and Teleporter results. Power-table
+labels navigate to the relevant Journal pages; the superhero fallback reaches
+the general Cypher table. Named Teleporter variants link to the common Item
+while retaining their variant label, without selecting a variant or rolling it.
+Tables are references in this tranche; native executable RollTables remain
+**lot 5**, which will reuse the existing generation/award services.
+
+The supplied DOCX has empty icon cells and mentions a nonstandard-cypher symbol
+without supplying a symbol, drawing or image in these paragraphs. Empty cells
+and source wording are preserved; no symbol or power icon is invented. Tables
+in this chapter have no merged cells. They are not flattened into prose or
+discarded because a native Item also contains structured table data.
+
+This closes **seven more baseline visual groups** (B157–B160, B167–B169), for
+**76 covered and 24 remaining**, and brings source-table coverage to **39/61**,
+with **22** remaining for 2E. The sole explicit deferred callout remains Doing
+Something Else at paragraph 7953. Source and native links keep the distinction
+between effect level and power category, nonphysical instant activation and
+manifest action activation, recovery-based expiration and exceptional fixed
+durations. French content is reviewed against these clauses and complete
+matching source text; authoring and audits never promote review status.
+
+### Tranche 2D validation — 2026-11-07
+
+The isolated complete Node suite passes **1,311 tests**, with no failures or
+skips. The source contracts verify each complete paragraph and its source hash,
+all eleven table structures including empty cells, all 198 native definitions,
+variant labels and internal page links. Missing definitions and changed source
+boundaries fail closed. Authoring checks reproduce the stored chapter/index.
+The service regression covers lazy bilingual discovery and observer permission.
+Lint, pilot type checking, architecture, locale and E2E syntax checks pass.
+Journal, translation, terminology and normalized callout audits pass, including
+**20 reviewed Rules Journals**, **300 paired display fields** and no mechanical
+differences. Paragraph 7953 remains the sole explicit deferred callout.
+
+The isolated build compiles all **14 packs**, passes **15 compiled-pack checks**
+and verifies the packaged archive. All **four library E2E scenarios** pass on
+**Foundry V14.370 / Chromium 153.0.8010.12**, system `0.2.0-alpha.1`. An ordinary
+player opens native definitions in all three Cypher families in EN/FR without
+creating owned Items or ChatMessages. The exhaustive scenario renders all
+**131 pages** in both languages and themes (**524 page renders**), checking
+native links, keyboard selection, selected-button contrast and 480px library
+layout. The French medium-power table was also visually inspected at 480px,
+including its roll ranges and native Item labels. This is focused observation,
+not a complete accessibility audit. V13 remains untested live; manifest
+verification is unchanged.
+The exhaustive page scenario also passes again after adjusting its screenshot
+step to bring the Cypher table into view.
+
+Changes are limited to the additive EN/FR chapter and paragraph register,
+contents/index, library discovery, Node authoring/inventory tooling, regression
+tests and documentation. Existing Cypher definitions, generated LevelDB packs,
+release artifacts and user worlds are not modified. No commit or push is part
+of this tranche. Next: **2E Rules of the Game, Advancement, credits and final
+coverage reconciliation**.
