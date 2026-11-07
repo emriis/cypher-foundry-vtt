@@ -536,18 +536,19 @@ This source milestone does not close the runtime or guide/tool milestones.
 - [x] Link Journals to structured records.
 - [x] Add EN/FR and provenance tests.
 
-### W6 — Quick Reference — Planned
+### W6 — Quick Reference — Complete
 
-- [ ] Extract high-frequency rules.
-- [ ] Create concise Journal entries.
-- [ ] Link to authoritative rules.
-- [ ] Add navigation and tests.
+- [x] Extract high-frequency rules into eight source-faithful quick cards.
+- [x] Create an additional paginated quick-reference Journal without replacing existing selections.
+- [x] Link to authoritative rules.
+- [x] Add navigation and focused source/UI tests.
 
-### W7 — Player/GM Guides — Planned
+### W7 — Player/GM Guides — In progress
 
-- [ ] Build player navigation.
+- [x] Build twelve player procedures and distinct guide navigation (library lot 3).
 - [ ] Build GM navigation.
-- [ ] Validate all links.
+- [x] Validate the player guide's EN/FR links and shared task path live (library lot 3).
+- [ ] Validate the GM guide's links and procedures live (library lot 4).
 
 ### W8 — Genres and GM library — In progress
 

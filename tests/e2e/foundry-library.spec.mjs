@@ -200,6 +200,17 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
       await expect(library.locator('.library-source a[href="https://col.montecookgames.com"]')).toHaveCount(1);
       expect(await player.evaluate(id => ({ items: game.actors.get(id).items.toObject(), messages: game.messages.size }), ids.actor)).toEqual(before);
     }
+    await library.locator('[data-key="player-guide"]').click();
+    await expect(library.locator('[data-key="player-guide"]')).toHaveAttribute("aria-pressed", "true");
+    await library.locator('[data-action="page"]').nth(3).click();
+    await expect(library.locator(".library-editorial")).toBeVisible();
+    const fullTaskRule = library.locator(".library-source > section .content-link").first();
+    await fullTaskRule.click();
+    await expect.poll(() => player.evaluate(() => [...foundry.applications.instances.values()].some(app =>
+      app.document?.documentName === "JournalEntry" && app.rendered))).toBe(true);
+    await player.evaluate(async () => {
+      for (const app of foundry.applications.instances.values()) if (app.document?.documentName === "JournalEntry" && app.rendered) await app.close();
+    });
     await library.locator('[data-action="task"]').click();
     await submit(player, 'select[name="actor"]');
     await expect(player.locator('input[name="effort"]')).toBeVisible();

@@ -188,8 +188,8 @@ APIs. The platform guides establish the intended native capabilities:
 | Lot | Status | Acceptance boundary |
 | --- | --- | --- |
 | 1 | Complete; merged in PR #176 | Home, existing reference selections, task pilot, cypher preview and personal shortcut |
-| 2 | Complete; 2E pending merge | All fourteen source chapters, attribution, complete paragraph/table reconciliation |
-| 3 | Planned | Complete player guide and quick references |
+| 2 | Complete; merged | All fourteen source chapters, attribution, complete paragraph/table reconciliation |
+| 3 | Complete; awaiting merge | Twelve player procedures and eight linked quick-reference cards |
 | 4 | Planned | Complete GM guide and linked screen |
 | 5 | Planned | Native source-backed random table packs |
 | 6 | Planned | Complete bilingual macro packs |
@@ -253,7 +253,7 @@ working tree was clean. The accepted multiple-PR split remains:
 | 2B | Real World, cross-genre selection, Fantasy, Science Fiction, Superheroes | Merged in PR #178 |
 | 2C | Foci and Equipment | Merged, confirmed before tranche 2D |
 | 2D | Cyphers and reference tables | Merged in PR #180 |
-| 2E | Rules of the Game, Advancement, credits and final coverage reconciliation | Implemented and validated, 2026-11-07; pending merge |
+| 2E | Rules of the Game, Advancement, credits and final coverage reconciliation | Merged in PR #181 |
 
 ### Tranche 2A content and identity contract
 
@@ -673,3 +673,80 @@ generated LevelDB packs, release artifacts and user worlds are not edited.
 No commit or push is part of this tranche. Lot 2 is complete as a source-reference
 delivery. Next: **3: player guide and quick references**; executable random
 tables remain lot 5 and the separate runtime automation register remains open.
+
+## Lot 3 delivery register
+
+Baseline: `7506711`, after PR #181, with a clean working tree. Two additive
+editorial resources in the existing `rules-en/fr` packs provide a **twelve-page
+player guide** and **eight quick-reference cards**, with **42 new paired French
+display fields**. Canonical IDs are `journal.player-guide` and
+`journal.player-quick-reference`; neither belongs to the fourteen-chapter source
+partition. The catalogue becomes **1,391 EN documents** with paired FR documents,
+including **25 Rules Journals** and **441 paired Journal display fields**.
+
+The player procedures cover starting/access/language, creation choices, the
+sheet/equipment readiness, task rolls, attacks, defenses/shields, recovery and
+wound healing, abilities/cyphers, cooperation/guarding/conditions, rerolls/retries/
+intrusions, advancement/projects and followers/companions. They identify actual
+sheet controls and link complete CRD context. Permissions, fictional applicability,
+declared range/position and unsupported effects remain explicit. The guide does
+not claim that reading content grants it, that a generic activation executes
+every power, or that source text closes the separate automation backlog.
+
+Quick cards cover difficulty, Effort/Edge, special rolls, action timing,
+conditions/special damage, wounds/Pool damage, ranges/movement and rest/healing.
+They retain selected **complete CRD paragraphs and table cells**, rather than
+inventing replacement rule summaries; every card links to the full procedure,
+examples and exceptions. They do not become RollTables. Existing seven quick
+selections, all source chapter/page/Item identities and all fourteen pack IDs
+are preserved. The full CRD partition remains **7,747 paragraphs / 61 tables /
+100 historical visual groups**, without assigning overlapping guide excerpts
+as additional canonical source destinations.
+
+The [player resource contract](../data/library-player-resources.json) records
+pinned source ranges/hashes and actual sheet action/template references for
+regression checks. English prose is authored in the two `_source` records;
+French remains separately reviewed source-hashed proposals. This contract
+does not store a second copy of the prose or assert executable power coverage.
+
+Library discovery gives these resources distinct allowlisted roles. The guide
+has its own navigation section; cards remain beside quick references. A shared
+reader presents a single selected page, explicitly labelled as practical help
+or selected excerpts rather than the complete source. Role and pagination come
+from the destination allowlist, not arbitrary Journal flags. Existing ordinary
+task dialogs/services remain the launch path; reading never imports documents,
+spends resources or requires script macros.
+
+### Lot 3 validation — 2026-11-07
+
+The isolated complete suite passes **1,321 Node tests**, with no failures or
+skips. Focused content and permission tests check stable identity, complete
+EN/FR fields, guarded translations, native page links, whole source excerpts,
+table order and the continued existence of documented sheet controls. Journal
+localization contracts now include both editorial resources alongside the
+source Journals. Lint, pilot type checking, architecture, locale and E2E syntax
+checks pass. The Journal audit reports **25 reviewed Journals / 441 paired
+display fields**; i18n and terminology audits report no mechanical differences
+or blocking terminology errors. Complete source coverage remains unchanged.
+
+The isolated build compiles **14 packs**, passes **15 compiled-pack checks**
+and verifies the packaged archive. All **five library E2E scenarios** pass on
+**Foundry V14.370 / Chromium 153.0.8010.12**, system `0.2.0-alpha.1`. The new
+scenario visits the twenty player pages in both languages and themes at 480px
+width (**80 renders**), checking keyboard selection, native full-rule links,
+pagination, reload and absence of world-document creation. The existing
+exhaustive source scenario still passes its **716 renders**. An ordinary player
+opens the guide, follows its full-rule link, cancels a task safely and then
+performs a paid task through the existing aid with script macros disabled.
+
+The French task-guide page was visually inspected in the narrow layout. These
+are focused observations, not a complete accessibility certification. V13
+remains untested live; manifest verification is unchanged.
+
+Changed families are two EN Journals and their reviewed French proposals,
+the evidence contract and inventory/audit tooling, library discovery/reader
+and template, EN/FR locale fragments and generated bundles, content/service/live
+tests, and planning/source/development documentation. Existing canonical Item
+definitions, generated LevelDB packs, release artifacts and user worlds are
+not edited. No commit or push is part of this lot. Next: **lot 4, GM guide and
+linked GM screen**.

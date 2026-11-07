@@ -1,0 +1,295 @@
+{
+  "_id": "a7a2dd6ad59ab359",
+  "_key": "!journal!a7a2dd6ad59ab359",
+  "name": "Player guide",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "0ed87fb5f6d455d5",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.0ed87fb5f6d455d5",
+      "name": "Start here",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>Ask the GM to create or assign a PC you own. Open its book button or the Cypher Library entry in Journals. Choose EN or FR for the reference text; this does not change interface language or translate existing world Items.</li><li>This guide explains controls. The linked CRD chapters contain the full rules. Reading a compendium entry does not add it to your character. Library reading and task rolls work without script macros; a personal macro shortcut needs separate permission.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.837cd26d902605e2]{Creating Your Character}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "c1f4a8f9e9c29e25"
+          }
+        }
+      }
+    },
+    {
+      "_id": "129b8ee6c693c7e0",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.129b8ee6c693c7e0",
+      "name": "Create your character",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>Agree the genre and character concept with the GM. Choose the appropriate Type, Descriptor and Focus from the library links. On your PC sheet, drop the chosen compendium Items and finish their choice dialogs; reviewing a sheet alone does not apply it.</li><li>Review the resulting Pools, Edge, Effort, Skills, selected abilities and equipment before play. Type and Focus choices may require particular tiers or prerequisite branches. Check optional species/second choices with the GM instead of granting yourself every listed option.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.837cd26d902605e2]{Creating Your Character}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.a4080ccb6348a01e.JournalEntryPage.7eba62b913c1d7bc]{Descriptors}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.20e153b9f5b29509.JournalEntryPage.1da4a8a54a43d6a5]{Foci}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "448643d1357389a4"
+          }
+        }
+      }
+    },
+    {
+      "_id": "2a1b0ed73f44855b",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.2a1b0ed73f44855b",
+      "name": "Read the sheet and ready equipment",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>The main sheet shows current/max Pools, Edge, Effort, wounds, recoveries, defenses and owned content. Click a stat roll control for an ordinary task. Read the active effect labels before adding a manual modifier so you do not count the same circumstance twice.</li><li>In inventory, distinguish carried, equipped and actually held equipment. Use the equipment-use control to declare grip, readiness and any required setup; owning or equipping an Item does not invent free hands. Agree range, position, available operators and fictional prerequisites with the GM.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.1100e5b9964ae01b]{Character Stats and Pools}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6c8d69662f861f7a.JournalEntryPage.20c2ec710309495a]{Equipment}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "b43bebde00268b4f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "a400834d035a278a",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.a400834d035a278a",
+      "name": "Make a task roll",
+      "type": "text",
+      "sort": 400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>Describe your intent and agree the stat and difficulty with the GM. Use Make a task roll in this library, choose your owned PC and stat, then select a relevant acquired Skill, declared assets, hindrances and Effort in the standard dialog. A reference Skill is not automatically selected or learned.</li><li>Review the proposed Pool cost and use Edge only as the dialog calculates it. Cancel before submission to leave resources unchanged. Read the chat result and the GM’s description; do not manually subtract the same cost again. Declare movement penalties with the GM when the supported workflow does not supply them.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.e858315d5a818496]{Taking Action}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.7d3bca4f76084bc2]{Easing Tasks}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "be5c04eb228f1034"
+          }
+        }
+      }
+    },
+    {
+      "_id": "5a17629a2ba382ef",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.5a17629a2ba382ef",
+      "name": "Attack and resolve the result",
+      "type": "text",
+      "sort": 500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>Ready the actual weapon or attack and select the intended token target when the attack workflow needs one. Use its Attack control, choose the permitted configuration, and declare range, attack form, applicable Skill, assets and Effort. Some attacks have extra prerequisites; a compendium description does not satisfy them.</li><li>Review whether the result has already changed the target’s Health or applied a supported effect before making any manual correction. The GM adjudicates narrative minor/major effects and unsupported power effects. When several targets or separate attacks are involved, follow that ability’s procedure rather than reusing an ordinary attack as an automatic area attack.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.d57a984f71946bfd]{Attack}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.83eac1c2681eb4e4]{Damage}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "499c0289c0bb83db"
+          }
+        }
+      }
+    },
+    {
+      "_id": "877ad26fee14364e",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.877ad26fee14364e",
+      "name": "Defend and use a shield",
+      "type": "text",
+      "sort": 600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>For a standalone defense, use Block or Dodge on your PC sheet and complete the appropriate dialog. When the GM launches an NPC attack, respond through that attack’s defense workflow instead of rolling an unrelated task and applying the consequences twice. Check the declared wound, damage and target before confirming.</li><li>A physical shield must be equipped, actually held and usable. Select it only when the defense offers shield absorption. Read the shield’s own wound track and destruction state; do not add absorbed wounds to the PC again. Special shield abilities have their own controls and requirements. Position, reach and remaining movement remain declarations, not inferred token geometry.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.b776c9d80531783a]{Defending}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.168a8c5828b3cfc2]{Area Attacks}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "5ea2fe50629d301c"
+          }
+        }
+      }
+    },
+    {
+      "_id": "e3479d3456dd03da",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.e3479d3456dd03da",
+      "name": "Recover, rally and treat wounds",
+      "type": "text",
+      "sort": 700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>After the entire rest has finished, use the matching recovery control. Confirm completion, choose any applicable source and allocate the recovery points in the dialog; select offered wound benefits explicitly. A checked recovery box alone does not roll, restore points or finish a rest.</li><li>Use Rally on the chosen wound severity to spend the displayed Might cost. For Treatment, select the patient and complete the healing workflow, agreeing treatment time, tools and help with the GM. Some damage requires specialist treatment; do not clear a protected wound or restore it by ordinary rest merely because the value is editable.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.21c591beeb9e68b0]{Recoveries}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.45b08b7cf5faed30]{Healing Wounds}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "6d8cb88bcc750a52"
+          }
+        }
+      }
+    },
+    {
+      "_id": "dd3842ca4ed9224f",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.dd3842ca4ed9224f",
+      "name": "Use abilities and cyphers",
+      "type": "text",
+      "sort": 800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>Read the owned ability’s cost, activation class, duration, target and prerequisites. Use the specific effect or family control when one is offered; a generic activation or chat description does not execute every power. Ask the GM to resolve unsupported effects without spending or applying the same consequence twice.</li><li>For a cypher, distinguish a preview/variant or internal table roll from using the cypher. Use the owned cypher’s Use control to follow its one-use timing and consumption; inspect the result before resolving particular effects manually. The GM awards new cyphers. Discarding or transferring a cypher uses the inventory controls and their confirmations, not deleting a reference Item.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.1d6be919f4976396.JournalEntryPage.133672a4e3520e87]{Genre Character Abilities from Types and Foci}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.e1bfb61d42374ae0]{Cyphers}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.2ed7a12385352589]{Manifest Cyphers}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "a7b99cc51a94aa59"
+          }
+        }
+      }
+    },
+    {
+      "_id": "5be7e82f3f0db7a0",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.5be7e82f3f0db7a0",
+      "name": "Cooperate, guard and declare conditions",
+      "type": "text",
+      "sort": 900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>Use the General actions panel to declare cooperation with the actual beneficiary or foe selected. Agree applicability and choose one cooperative mode per task or attack. The beneficiary selects applicable help in the roll dialog; several declarations do not bypass the global asset cap. Follower help is handled separately from PC cooperative modes.</li><li>Use the guarding control to begin or end guarding, and the condition controls for supported declared states and durations. Inform the GM when a condition should end or a specific action should be prevented. Token icons alone do not declare every rule effect, and the system does not infer adjacency or the suitability of a distraction from the map.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.d5a20a4748e112cc]{Special Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.3e581f0d1199e2f1]{Cooperative Actions}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.04c899c56485ad8a]{Guarding}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "acc440c849def055"
+          }
+        }
+      }
+    },
+    {
+      "_id": "bcebffad4932807e",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.bcebffad4932807e",
+      "name": "Reroll, retry and propose an intrusion",
+      "type": "text",
+      "sort": 1000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>Use the result’s chat-card reroll control to spend XP and retain the best die. The original action’s expenses are not normally recovered; the retained natural-20 exception refunds its recorded Pool cost once. Read any reconciliation warning and let the GM settle an ambiguous or interrupted correction rather than restoring an old sheet by hand.</li><li>Retrying a failed ordinary task is a fresh action, not an XP reroll. Use the original task card’s retry control only if the GM permits the same task to be attempted again; choose at least one paid level of Effort. To change the story, use Player Intrusion on the sheet, describe your proposal and await the GM decision. Declined proposals spend nothing.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.5b3fdd7a2794d612]{Retrying a Task After Failure}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.9a828ce40b960dc9]{Rerolling}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.9314a790ffaaf21a]{Player Intrusion}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.e3d6d999511f8258]{React to a GM Intrusion}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "5b82459dfae719e9"
+          }
+        }
+      }
+    },
+    {
+      "_id": "81b8be16c9b7e687",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.81b8be16c9b7e687",
+      "name": "Advance and plan a project",
+      "type": "text",
+      "sort": 1100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>Record XP awarded by the GM, then use the advancement purchase controls for a permitted category and complete the required choices before paying. Follow the tier’s available choices and Focus prerequisites. Free Focus/Genre choices are settled at the tier transition rather than banked for later. Review the awarded resource points after purchase.</li><li>Use New project to propose a resource-point activity, its result and contributors. The GM confirms qualifications, cost and time. Complete it through the project controls after the agreed work; do not spend the same points manually. Character arcs and story awards still require discussion and recording with the GM, not an assumed automatic reward.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.4d36d269c64bdab3]{Character Advancement}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.a3329547741d451e]{Resource Points}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "615380f63e6556c3"
+          }
+        }
+      }
+    },
+    {
+      "_id": "668dafe2d1ca9156",
+      "_key": "!journal.pages!a7a2dd6ad59ab359.668dafe2d1ca9156",
+      "name": "Work with a follower or companion",
+      "type": "text",
+      "sort": 1200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"library-editorial-note\"><p>Practical guide: follow the links for the complete rules. Controls still depend on permissions and table decisions.</p></aside><ol><li>With the GM, register the actual NPC follower and select its help role or independent task. Choose applicable follower help explicitly in your roll; it shares the global asset limit. A follower’s existence, level and task modifications are distinct from a PC owning a descriptive ability.</li><li>Declare proximity, consciousness, movement and other companion circumstances through the offered controls when a supported power needs them. Use its dedicated upgrade, command or repair workflow when present. A distant or incapacitated companion does not automatically satisfy a power’s conditions; ask the GM to resolve fiction-dependent cases.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.044a7ab242205764]{Followers}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "4ea8b6d8ad796b55"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "library": {
+        "role": "guide"
+      },
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.player-guide",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Editorial player procedures linked to the CRD",
+        "sourceLocator": "CRD sections and paragraph hashes listed in data/library-player-resources.json",
+        "transformations": [
+          "Editorial instructions for existing system controls; no replacement CRD wording",
+          "Native links to complete source rules"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "_id": "4e81cf3f712eff14",
+  "_key": "!journal!4e81cf3f712eff14",
+  "name": "Player quick references",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "41670d62348e70d5",
+      "_key": "!journal.pages!4e81cf3f712eff14.41670d62348e70d5",
+      "name": "Difficulty and task resolution",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>CRD excerpts: follow the links for complete procedures, examples and exceptions.</p></aside><p>If you reduce the difficulty of a task to 0 or less, it’s routine, and you automatically succeed without a roll.</p>\n<p>If the task still isn’t routine after these adjustments, the GM uses the task difficulty to determine your target number—the number you must roll on the d20 to succeed at the task. Examples of different target numbers are shown on the Task Difficulty table.</p>\n<p>The target number is always three times the task’s difficulty, so a difficulty 2 task has a target number of 6, while a difficulty 5 task has a target number of 15.</p>\n<p>To succeed at the task, you must roll the target number or higher on a d20. (Higher is always better for a d20 roll.) The GM doesn’t have to tell you what the difficulty or target number is, but might give a hint, especially if your PC would reasonably know if the action was easy, average, difficult, or impossible.</p>\n<p>You roll a d20. If the roll is equal to or higher than the target number, you succeed. If not, you probably fail. Either way, the task attempt is considered your action.</p><table><tbody><tr><th>Task Difficulty</th><th>Description</th><th>Target Number</th><th>Guidance</th></tr><tr><td>0</td><td>Routine</td><td>0</td><td>Anyone can do this basically every time.</td></tr><tr><td>1</td><td>Simple</td><td>3</td><td>Most people can do this most of the time.</td></tr><tr><td>2</td><td>Standard</td><td>6</td><td>Typical task requiring focus, but most people can usually do this.</td></tr><tr><td>3</td><td>Demanding</td><td>9</td><td>Requires full attention; most people have a 50/50 chance to succeed.</td></tr><tr><td>4</td><td>Difficult</td><td>12</td><td>Trained people have a 50/50 chance to succeed.</td></tr><tr><td>5</td><td>Challenging</td><td>15</td><td>Even trained people often fail.</td></tr><tr><td>6</td><td>Intimidating</td><td>18</td><td>Normal people almost never succeed.</td></tr><tr><td>7</td><td>Formidable</td><td>21</td><td>Impossible without skills or great effort.</td></tr><tr><td>8</td><td>Heroic</td><td>24</td><td>A task worthy of tales told for years afterward.</td></tr><tr><td>9</td><td>Immortal</td><td>27</td><td>A task worthy of legends that last lifetimes.</td></tr><tr><td>10</td><td>Impossible</td><td>30</td><td>A task that normal humans couldn’t consider (but one that doesn’t break the laws of physics).</td></tr></tbody></table><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.e858315d5a818496]{Taking Action}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "edd6ba86bd7d2d00"
+          }
+        }
+      }
+    },
+    {
+      "_id": "513b1a3ccac47179",
+      "_key": "!journal.pages!4e81cf3f712eff14.513b1a3ccac47179",
+      "name": "Effort and Edge",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>CRD excerpts: follow the links for complete procedures, examples and exceptions.</p></aside><p>Effort is when your character tries harder than normal at a task. Because you’re pushing yourself to succeed, this costs points from one of your stat Pools. Which Pool these points come from depends on what kind of task it is; use your Might Pool for Effort on Might tasks, your Speed Pool for Effort on Speed tasks, and your Intellect Pool for Effort on Intellect tasks.</p>\n<p>Using Effort costs 3 Pool points and eases the task by one step—this is often called applying one level of Effort. Remember to subtract your Edge from this cost.</p>\n<p>You have to decide to use Effort (and spend the points for it) before you make the roll.</p>\n<p>When you use Effort on an attack, you choose whether you’re easing the roll by one step or increasing the damage by 3.</p>\n<p>Applying More Effort: Tier 1 characters can only use one level of Effort on a task—your Effort score on your character sheet is the maximum number of levels of Effort you can use. More advanced characters can increase their Effort score (up to a maximum of six). Levels of Effort beyond the first one only cost 2 points instead of 3. So applying two levels of Effort costs 5 points (3 + 2), using three levels cost 7 points (3 + 2 + 2), and so on.</p>\n<p>Effort on Multiple Tasks: Your Effort limit is per task or per action, so if you do multiple things in a turn, you can use Effort up to your limit on each of them. For example, you can use Effort up to your limit when making an attack on your turn, then use Effort up to your limit again when a foe attacks you on their turn, then use it up to your limit again when a second foe attacks you on their turn. And if you have an ability that gives you an extra action on your turn, that’s a separate task, so you could use Effort up to your limit again. Of course, using Effort on four tasks in a round would cost a lot of Pool points!</p>\n<p>Multiple Levels of Effort: If your Effort is 2 or higher, you can split your Effort between easing the attack roll and increasing the damage. For example, if your Effort is 3, you could use three levels of Effort on the attack roll, or two levels on the attack roll and one level on the damage, or one level on the attack roll and two levels on the damage, or three levels on the damage; your total Effort on the task is three, within your Effort limit.</p>\n<p>Edge</p>\n<p>Your Might, Speed, and Intellect Pools each have a linked Edge stat—Might Edge, Speed Edge, and Intellect Edge. Edge works like a “discount” when you spend points; whenever you spend points from a Pool, reduce the point cost by your Edge for that stat (to a minimum point cost of 0, which means it’s free).</p>\n<p>Generally, you can use your Edge only once per action (no “double-dipping”). So if you apply Effort to ease your pistol shot’s chance of hitting and apply more Effort to increase damage, the two levels of Effort you apply (5 points from your Speed Pool) get the discount of your Edge only once. Or if you spend 1 Speed to activate a special attack and use a level of Effort on that attack, you only get the discount from your Edge once. An easy way to handle using your Edge is to add up the entire Pool cost for an action (such as the cost of a Blast and one level of Effort to ease the attack), then subtract your Edge once from the total.</p>\n<p>Some character abilities give you a free level of Effort on a task. This free level doesn’t cost you any Pool points, and it doesn’t count toward your Effort limit. However, even if you have free levels of Effort, you’re still limited to applying a maximum of six levels of Effort on a task.</p>\n<aside class=\"crd-callout\"><p>Effort requires spending points from the stat Pool appropriate to the action, minus any Edge you have in that Pool. Each level of Effort eases the task by one step.</p></aside>\n<aside class=\"crd-callout\"><p>By using skills, assets, and Effort, you can ease a task by a maximum of eleven steps: one to three steps from skills, one or two steps from assets, and one to six steps from Effort.</p></aside><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.7d3bca4f76084bc2]{Easing Tasks}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "035f7581a6bba05c"
+          }
+        }
+      }
+    },
+    {
+      "_id": "d88f083d33b64d0d",
+      "_key": "!journal.pages!4e81cf3f712eff14.d88f083d33b64d0d",
+      "name": "Special rolls",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>CRD excerpts: follow the links for complete procedures, examples and exceptions.</p></aside><p>If you roll a 1, 17, 18, 19, or 20, special rules come into play. More information on each of these results is in the following sections.</p>\n<p>1: GM intrusion</p>\n<p>17: +1 damage bonus</p>\n<p>18: +2 damage bonus</p>\n<p>19: +3 damage bonus or minor effect. If the roll was a damage-dealing attack, it deals 3 additional damage, or you can choose a minor effect in addition to the normal results of the task. If the roll was something other than an attack, you can choose a minor effect in addition to the normal results of the task.</p>\n<p>20: +4 damage bonus or major effect. If the roll was a damage-dealing attack, it deals 4 additional damage, or you can choose a major effect in addition to the normal results of the task. If the roll was something other than an attack, you can choose a major effect in addition to the normal results of the task. And the point cost for the action (if any) decreases to 0, so if you spent points from a stat Pool on the action, you regain those points as if you had not spent them at all.</p><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.435176772ef63763]{Rolling the Die}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "733174c6cd060687"
+          }
+        }
+      }
+    },
+    {
+      "_id": "00ee3ac08a7a274c",
+      "_key": "!journal.pages!4e81cf3f712eff14.00ee3ac08a7a274c",
+      "name": "Actions and initiative",
+      "type": "text",
+      "sort": 400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>CRD excerpts: follow the links for complete procedures, examples and exceptions.</p></aside><p>A small number of options in the game are fast and can be done as a First action instead of an action. With a First action, you have the option to jump ahead to the front of the initiative order, ahead of everyone else. If you do this, you can perform your First action (and only your First action), and the rest of your turn happens later.</p>\n<p>Once your First action is done, everyone else’s turns happen in the normal initiative order. After everyone else’s turns using their actions are done, you have the option to perform a follow-up non-attack activity such as moving an immediate distance, picking up something off the floor, drawing or putting away a weapon, or something else minor—as long as it’s not an attack. This is referred to as a Follow-up action, and it only comes into play for characters using a First action.</p>\n<p>First actions are always optional. Anything labeled as a First action can be used as an action. Just because something is a First action doesn’t mean you have to go first—you always can choose to do it in the normal initiative order, which means you don’t have to delay anything else you want to do that round to a Follow-up action.</p>\n<p>Last Actions</p>\n<p>A small number of actions in the game are slow and have to be done as a Last action. A Last action always happens at the end of the round, after everyone else has acted (even after the Follow-up action of someone who performed a First action this round). If you perform a Last action, on that round you can’t do anything else (not even move an immediate distance). Last actions are typically those that take longer than a normal action, such as swinging a heavy greatsword or casting a complicated spell.</p>\n<p>If more than one character takes a Last action, they happen at the end of the round, in initiative order.</p>\n<p>On later rounds after the round you used a Last action, the initiative order goes back to normal. In other words, just because you took a Last action in a round doesn’t mean you have to go last every round after that.</p>\n<aside class=\"crd-callout\"><p>You can attack with a heavy weapon as a Last action and still move an immediate distance before or after the attack, but your attack is hindered.</p></aside><table><tbody><tr><th>First Action</th></tr><tr><td>Attack with a light weapon</td></tr><tr><td>Close or open a door</td></tr><tr><td>Drop or pick up something</td></tr><tr><td>Move an immediate distance</td></tr><tr><td>Fall prone</td></tr><tr><td>Give something to/take something from an adjacent ally</td></tr><tr><td>Drink a potion or use a simple item already in hand</td></tr></tbody></table><table><tbody><tr><th>Action</th></tr><tr><td>Attack with a light weapon or medium weapon</td></tr><tr><td>Use a typical character ability</td></tr><tr><td>Activate or use a device</td></tr><tr><td>Move a short distance</td></tr><tr><td>Use a one-action recovery</td></tr></tbody></table><table><tbody><tr><th>Last Action</th></tr><tr><td>Attack with a heavy weapon</td></tr><tr><td>Pick a lock</td></tr><tr><td>Run a long distance</td></tr></tbody></table><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.7b88f7bc4dae840b]{Actions and Initiative}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "87cdfdd8b87f7d70"
+          }
+        }
+      }
+    },
+    {
+      "_id": "75b66f807b9473a7",
+      "_key": "!journal.pages!4e81cf3f712eff14.75b66f807b9473a7",
+      "name": "Conditions and special damage",
+      "type": "text",
+      "sort": 500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>CRD excerpts: follow the links for complete procedures, examples and exceptions.</p></aside><p>Being dazed hinders all your tasks, usually for about one round. You might be dazed by being struck hard on the head, exposed to extremely loud sounds, or affected by a mental attack. When this happens, for the duration of the daze effect, all of your tasks are hindered.</p>\n<p>Being stunned means you lose your turn; you can’t take any actions except to defend yourself.</p>\n<p>When you’re exposed to poison—whether the venom of a serpent, rat poison slipped into a burrito, cyanide dissolved in wine, or an overdose of acetaminophen—you make a Might defense roll to resist it. Failing this roll might mean you take a wound, lose points directly from your Speed or Intellect Pool, are hindered for a while, or experience a special effect like paralysis, unconsciousness, or something stranger.</p>\n<p>Diseases work like poisons, but their effect occurs every day, so you must make a Might defense roll each day or suffer the effects. Disease effects are as varied as poisons: wounds, hindrance, damage to Pools, and so on. Many diseases inflict damage that cannot be restored through conventional means—you need specialized treatment, such as healing magic or a specialist doctor.</p>\n<p>Paralytic effects cause you to drop to the ground, unable to move. Unless otherwise specified, you can still take actions that require no physical movement. For example, if you have a telepathy ability, you probably can still use it while physically paralyzed.</p>\n<p>Psychic attacks that directly blast or otherwise hurt your mind usually damage your Intellect Pool. Other mental effects could have the same effect.</p>\n<p>Other special effects might make you blind or deaf, so dizzy that you can’t stand without immediately falling over, or unable to breathe. Even stranger effects might alter gravity just for you, teleport you somewhere, mutate you, alter your memories, make you hallucinate, or cause incredible pain. The GM handles how this affects you and how the effect can be removed.</p><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.d5a20a4748e112cc]{Special Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.74ee63be6e20a22d]{Modifying Attack and Defense}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "7dccaac6a73a0544"
+          }
+        }
+      }
+    },
+    {
+      "_id": "ed45c756439d52ca",
+      "_key": "!journal.pages!4e81cf3f712eff14.ed45c756439d52ca",
+      "name": "Wounds and Pool damage",
+      "type": "text",
+      "sort": 600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>CRD excerpts: follow the links for complete procedures, examples and exceptions.</p></aside><p>Creatures, NPCs, and physical hazards typically inflict damage to PCs in the form of wounds. Wounds have three categories of severity—minor, moderate, and major.</p>\n<p>A core character can take three minor wounds, three moderate wounds, and three major wounds. Your type might allow you to take additional wounds, and some characters have abilities that allow them to take more than the normal number of wounds.</p>\n<p>Each time you take a wound, mark off the appropriate wound box on your character sheet.</p>\n<p>Minor Wounds: These are nicks, scratches, bruises, and other inconsequential injuries that no longer hurt after a few hours. Individual minor wounds don’t negatively affect your character in any way.</p>\n<p>When you’ve taken all of your minor wounds, any other minor wounds you take become (“roll over to”) moderate wounds.</p>\n<p>Moderate Wounds: These are open cuts, weapon grazes, sprains, minor fractures, and other injuries that no longer hurt after a few days. Individual moderate wounds don’t negatively affect your character in any way.</p>\n<p>When you’ve taken all of your moderate wounds, all of your actions are hindered, and any other moderate wounds you take become (“roll over to”) major wounds.</p>\n<p>Major Wounds: These are fractures, large open cuts, gunshot wounds, and other significant injuries that generally take anywhere from days to weeks to recover from.</p>\n<p>Each individual major wound hinders all of your actions. When you take your third major wound, you die.</p>\n<p>Some special attacks may instead damage your Pools, such as a disease that inflicts Might damage, a numbing poison that inflicts Speed damage, or a psychic attack that inflicts Intellect damage. A few very dangerous attacks can inflict wounds and Pool damage at the same time.</p>\n<p>If damage reduces your stat Pool to 0, any further damage to that stat (including excess damage from the attack that reduced the stat to 0) turns into wounds.</p>\n<p>Pool Damage to Wound Conversions</p><table><tbody><tr><th>Pool Damage</th><th>Wound Type</th></tr><tr><td>1 to 4</td><td>Minor</td></tr><tr><td>5 to 8</td><td>Moderate</td></tr><tr><td>9+</td><td>Major</td></tr></tbody></table><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.83eac1c2681eb4e4]{Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.45b08b7cf5faed30]{Healing Wounds}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "3c4460368995b4cd"
+          }
+        }
+      }
+    },
+    {
+      "_id": "b1a16621e791bec6",
+      "_key": "!journal.pages!4e81cf3f712eff14.b1a16621e791bec6",
+      "name": "Ranges and movement",
+      "type": "text",
+      "sort": 700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>CRD excerpts: follow the links for complete procedures, examples and exceptions.</p></aside><p>Instead of precise distances like 10 feet (3.5 m) or 90 feet (27 m), Cypher uses simple range categories for most distances: immediate, short, long, and very long.</p>\n<p>Immediate distance or immediate range is what’s in reach of your character or within a few steps. If you’re standing in a prison cell or a small room, everything in the room is within immediate distance. At most, immediate distance is 10 feet (3.5 m).</p>\n<p>Short distance is anything greater than immediate distance extending up to 50 feet (16 m) or so.</p>\n<p>Long distance is anything greater than short distance extending up to 100 feet (30 m) or so.</p>\n<p>Very long distance is anything greater than long distance extending up to 500 feet (150 m) or so.</p>\n<p>Beyond very long distance, ranges are always specified—1,000 feet (300 m), a mile (1.6 km), and so on.</p>\n<aside class=\"crd-callout\"><p>Narratively, immediate distance is right there, practically next to the character. Short distance is nearby. Long distance is farther off. Very long distance is really far off.</p></aside>\n<aside class=\"crd-callout\"><p>Rarely, you might need even bigger range categories, like the following: Planetary: On the same planet. Interplanetary: Within the same solar system. Interstellar: Within the same galaxy. Intergalactic: Anywhere in the same universe. Interdimensional: Anywhere.</p></aside>\n<p>All weapons and special abilities (including creature abilities) use these terms for ranges. For example, melee weapons have immediate range—they are close-combat weapons, and you can use them to attack anyone within immediate distance. A thrown knife (and most other thrown weapons) has short range. A bow has long range. Magic spells vary, but a particular one might be short range.</p>\n<p>Cypher uses these categories for areas, too—an immediate area is an area about an immediate distance across, a short area is a short distance across, and so on. Because the categories aren’t precise, it doesn’t matter if the area is a cube or sphere.</p>\n<h3>Movement</h3>\n<p>When you take an action, you can also move an immediate distance. In other words, you can take a few steps over to the control panel and activate a switch. You can lunge across a small room to attack a foe. You can open a door, then move through it.</p>\n<p>As your entire action for a turn, you can move a short distance (instead of an immediate distance).</p>\n<p>You can take an action and also move a short distance (instead of an immediate distance), but all your tasks are hindered until the end of your next turn.</p>\n<p>As your entire action for your turn, you can run a long distance, but all your tasks are hindered by two steps until the end of your next turn.</p>\n<p>For example, if your party is fighting a group of cultists, you can likely attack any cultist in the general melee—they’re all within immediate range. Exact positions aren’t important. Creatures in a fight are always moving, shifting, and jostling, anyway. However, if one cultist stayed back to fire a pistol, if you want to make a melee attack against them you could use your entire action to move that short distance and be ready to attack them on your next turn. Or you could move that distance and attack that turn, but the attack (and all your tasks until the end of your next turn) would be hindered. It doesn’t matter if the cultist is 20 feet (6 m) or 40 feet (12 m) away—it’s simply considered a short distance. It does matter if the cultist is more than 50 feet (16 m) away because that distance would require a long move.</p><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.4b81249c5fffaa5e]{Distance, Range, and Movement}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1f598df1278c4b90"
+          }
+        }
+      }
+    },
+    {
+      "_id": "cf47e9da185c8655",
+      "_key": "!journal.pages!4e81cf3f712eff14.cf47e9da185c8655",
+      "name": "Rest and healing",
+      "type": "text",
+      "sort": 800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>CRD excerpts: follow the links for complete procedures, examples and exceptions.</p></aside><p>You can replenish your character’s stat Pools by resting, which allows you to take a recovery. You can take four recoveries in a day: one action, ten minutes, one hour, and ten hours. (Some characters have abilities that modify these numbers.)</p>\n<p>When you take a recovery, roll a d6 and add your tier to see how many points you recover. You can divide these recovered points among your stat Pools however you wish, up to your maximum in a Pool. For example, if your recovery result is 5 and you’re down 6 points of Might and 2 points of Speed, you can recover 5 points of Might, or 3 points of Might and 2 points of Speed, or any other combination adding up to 5 points.</p>\n<p>When you use a recovery, you get the benefits from it when you complete the entire recovery time. For example, if you use a ten-hour recovery, you get Pool points at the end of that ten-hour period. If the recovery time is interrupted (such as if a creature attacks you), after the interruption you can continue the recovery and get its benefits when the full time is completed.</p>\n<p>You can use your recoveries in any order. For example, you might use a lot of Pool points during a battle, take a ten-minute recovery to get some of them back, spend more Pool points while negotiating with some pirates, take an hour rest, get in another fight, and use a one-action recovery during the fight. You could even use two recoveries back to back, like having a ten-minute rest followed by a one-hour rest.</p>\n<p>You choose when you take your recoveries. For example, just because another character is spending ten minutes resting doesn’t mean you have to use your ten-minute recovery at that time.</p>\n<p>Usually your ten-hour recovery means you’re stopping for the night to eat and sleep. When that rest ends, you’re starting a new day and have all four of your recoveries available again.</p>\n<aside class=\"crd-callout\"><p>You can use your one-action recovery as a Last action (even if you’re not in a round-by-round situation) to get an additional +2 on your roll.</p></aside><table><tbody><tr><th>Wounds Removed</th><th>Might Cost</th><th>Time Required</th></tr><tr><td>One minor wound</td><td>2</td><td>One action</td></tr><tr><td>One moderate wound</td><td>5</td><td>One action</td></tr><tr><td>One major wound</td><td>N/A</td><td>Except for the superhero genre and similarly superheroic games, you can’t rally to remove a major wound; you have to use treatment, rest, or an exceptional healing ability.</td></tr></tbody></table><table><tbody><tr><th>Wounds Removed</th><th>Task Difficulty</th><th>Treatment Time</th></tr><tr><td>One minor wound</td><td>0 (routine)</td><td>One minute</td></tr><tr><td>One moderate wound</td><td>3</td><td>Ten minutes</td></tr><tr><td>One major wound</td><td>6</td><td>One hour</td></tr></tbody></table><table><tbody><tr><th>Recovery</th><th>Wound Removal (in Addition to Restored Pool Points)</th></tr><tr><td>Ten-minute</td><td>Remove all minor wounds</td></tr><tr><td>One-hour</td><td>Remove one moderate wound or all minor wounds</td></tr><tr><td>Ten-hour</td><td>Remove all moderate wounds and, with a successful difficulty 6 Might task, remove one major wound; in place of removing one moderate wound, you can remove all minor wounds</td></tr></tbody></table><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.21c591beeb9e68b0]{Recoveries}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.45b08b7cf5faed30]{Healing Wounds}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "46225990d2207351"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "library": {
+        "role": "quick-reference"
+      },
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.player-quick-reference",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Selected player reference passages from the CRD",
+        "sourceLocator": "CRD sections and paragraph hashes listed in data/library-player-resources.json",
+        "transformations": [
+          "Selected complete source paragraphs and table cells; no rule paraphrases",
+          "Native links to complete source context"
+        ]
+      }
+    }
+  }
+}

@@ -59,7 +59,7 @@ export async function promptLibraryDraw(language) {
   return result;
 }
 
-/** A small pilot portal: source selections, contextual task help and opt-in tools. */
+/** Reference chapters and practical resources share permission-checked reading. */
 export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
   static DEFAULT_OPTIONS = {
     id: "cypher-library", classes: ["cypher", "sheet", "cypher-library"],
@@ -79,15 +79,21 @@ export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
       .filter(page => page.type === "text" && page.testUserPermission(game.user, "OBSERVER"))
       .sort((left, right) => left.sort - right.sort) : [];
     const enrich = (html, relativeTo) => foundry.applications.ux.TextEditor.implementation.enrichHTML(html, { secrets: false, relativeTo });
-    const isChapter = document?.flags?.cypherFoundry?.crd?.logicalId?.startsWith("journal.crd-");
+    // Pagination and editorial labels come from the allowlisted destination,
+    // never inferred from arbitrary Journal prose or world document flags.
+    const section = entries.find(entry => entry.key === this.selectedKey)?.section;
+    const editorial = ["guide", "cards"].includes(section);
+    const paginated = section === "chapter" || editorial;
     const currentPage = pages.find(page => page.id === this.selectedPageId) ?? pages[0];
-    const sourcePages = await Promise.all((isChapter ? [currentPage].filter(Boolean) : pages)
+    const sourcePages = await Promise.all((paginated ? [currentPage].filter(Boolean) : pages)
       .map(async page => ({ name: page.name, html: await enrich(page.text.content, page) })));
     const navigation = entry => ({ ...entry, name: entry.name ?? label("Unavailable"), selected: entry.key === this.selectedKey });
     return { language: this.contentLanguage, english: this.contentLanguage === "en", french: this.contentLanguage === "fr",
       chapters: entries.filter(entry => entry.section === "chapter").map(navigation),
-      references: entries.filter(entry => entry.documentName === "JournalEntry" && entry.section !== "chapter").map(navigation),
-      pageNavigation: isChapter ? pages.map(page => ({ id: page.id, name: page.name, selected: page === currentPage })) : [],
+      guides: entries.filter(entry => entry.section === "guide").map(navigation),
+      references: entries.filter(entry => entry.documentName === "JournalEntry" && ["quick", "cards"].includes(entry.section)).map(navigation),
+      pageNavigation: paginated ? pages.map(page => ({ id: page.id, name: page.name, selected: page === currentPage })) : [],
+      editorial, selectionLabel: label(editorial ? "PracticalResource" : "Canonical"),
       sourcePages, selectedName: document?.name, selected: Boolean(document),
       sourceLink: document ? await enrich(`@UUID[${document.uuid}]{${escape(document.name)}}`, document) : "",
       skillLink: entries.find(entry => entry.key === "athletics")?.uuid

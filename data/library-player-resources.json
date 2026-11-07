@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 1,
+  "referenceSha256": "cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729",
+  "documents": [
+    {
+      "logicalId": "journal.player-guide",
+      "role": "guide",
+      "pages": [
+        {
+          "key": "start",
+          "pageId": "0ed87fb5f6d455d5",
+          "sources": [
+            {
+              "start": 1,
+              "end": 49,
+              "sourceSha256": "cb9c20a5bb09b5496a15f7af78c51a61fd22706e4c33a7acee55d351dda09866"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "creation",
+          "pageId": "129b8ee6c693c7e0",
+          "sources": [
+            {
+              "start": 1,
+              "end": 49,
+              "sourceSha256": "cb9c20a5bb09b5496a15f7af78c51a61fd22706e4c33a7acee55d351dda09866"
+            },
+            {
+              "start": 247,
+              "end": 254,
+              "sourceSha256": "1c875546b54ee965ff9f33ab3d6469d6ed6a4999770690aa319d0afbdac03ec7"
+            },
+            {
+              "start": 3438,
+              "end": 3458,
+              "sourceSha256": "13d732414aaa92bee370802ae9aaf8e6498839569db95eb2105363784e823c08"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "sheet-equipment",
+          "pageId": "2a1b0ed73f44855b",
+          "sources": [
+            {
+              "start": 7450,
+              "end": 7466,
+              "sourceSha256": "69a417a9150ccf6d3dec728b14e91373009c454dd9446768318fcba64c52c9b1"
+            },
+            {
+              "start": 5230,
+              "end": 5302,
+              "sourceSha256": "943ed1dea0d0aa32aea66a5c2dda3cadc614256ff994b14ac9a50e1462b1ea6a"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "rollStat"
+            },
+            {
+              "template": "templates/actor/parts/equipment-hands.hbs",
+              "action": "promptEquipmentUse"
+            }
+          ]
+        },
+        {
+          "key": "tasks",
+          "pageId": "a400834d035a278a",
+          "sources": [
+            {
+              "start": 7467,
+              "end": 7560,
+              "sourceSha256": "e0042def31018b7505cb0c20975cd085e65e8ebef5f9986778bed398e8f2fc7b"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "task"
+            }
+          ]
+        },
+        {
+          "key": "attack",
+          "pageId": "5a17629a2ba382ef",
+          "sources": [
+            {
+              "start": 7694,
+              "end": 7703,
+              "sourceSha256": "b09fd29037fd05713e0c8ca0e448348d695d3043d2a5456d65b076198f8e1e7f"
+            },
+            {
+              "start": 7734,
+              "end": 7740,
+              "sourceSha256": "6c4e71e117a0548d04241fd44133789e9e729354dea0c61bed9ead547189c3c2"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "rollAttack"
+            }
+          ]
+        },
+        {
+          "key": "defense",
+          "pageId": "877ad26fee14364e",
+          "sources": [
+            {
+              "start": 7903,
+              "end": 7949,
+              "sourceSha256": "7a14c3511aa84fc9e690cc6f071484371f83a1fa18d0d328fb4d1ecb1a1b16c6"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "rollDefense"
+            }
+          ]
+        },
+        {
+          "key": "healing",
+          "pageId": "e3479d3456dd03da",
+          "sources": [
+            {
+              "start": 7751,
+              "end": 7814,
+              "sourceSha256": "74581c9db8430ab0962bed00291725e4ee0c71643e04d9268f5955fa7d77a1a2"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "rollRecovery"
+            },
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "rallyWound"
+            },
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "treatWound"
+            }
+          ]
+        },
+        {
+          "key": "powers",
+          "pageId": "dd3842ca4ed9224f",
+          "sources": [
+            {
+              "start": 5955,
+              "end": 5991,
+              "sourceSha256": "bf0931ba2397c860bf350c4e54b03fe33060c4cb63177370eb1d96170adc6dad"
+            },
+            {
+              "start": 6532,
+              "end": 6548,
+              "sourceSha256": "3fb4c671e4bd1931adb6db19afcf88cca1edbaaf6ead4a33f9955eb197c1be0e"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "chooseAbilityEffect"
+            },
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "useCypher"
+            }
+          ]
+        },
+        {
+          "key": "cooperation",
+          "pageId": "5be7e82f3f0db7a0",
+          "sources": [
+            {
+              "start": 7815,
+              "end": 7823,
+              "sourceSha256": "bac19e0595c0327a27221422cd989b55f7917d5b6901a4a751c99e60e5dcabb8"
+            },
+            {
+              "start": 7956,
+              "end": 7969,
+              "sourceSha256": "ab9cd16a5fdb183393175cd5e5b3cd8bd7daf679c7ea8fd74c7421b392019f48"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/general-actions.hbs",
+              "action": "promptCooperativeAction"
+            },
+            {
+              "template": "templates/actor/parts/general-actions.hbs",
+              "action": "toggleGuarding"
+            }
+          ]
+        },
+        {
+          "key": "rerolls",
+          "pageId": "bcebffad4932807e",
+          "sources": [
+            {
+              "start": 7610,
+              "end": 7613,
+              "sourceSha256": "5948ba1db47fdd774a6c95e2d93e5f9380247527888762cf57b95fff94a73e56"
+            },
+            {
+              "start": 8078,
+              "end": 8084,
+              "sourceSha256": "5515ecc5a6d2eae45b825c2d9d130f4916a2c67766ab92eb1469f86349870ea0"
+            },
+            {
+              "start": 8115,
+              "end": 8116,
+              "sourceSha256": "2257be2d6a7575d520ff7d5f4853faed4c3a4baddb66a7bbb6a3d46c72739dca"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/advancement.hbs",
+              "action": "playerIntrusion"
+            }
+          ]
+        },
+        {
+          "key": "advancement",
+          "pageId": "81b8be16c9b7e687",
+          "sources": [
+            {
+              "start": 8085,
+              "end": 8111,
+              "sourceSha256": "43988adf0a04ec0e8b777ad18bc3bb731a31346057ffd9ab1a31d0455109b362"
+            },
+            {
+              "start": 8117,
+              "end": 8178,
+              "sourceSha256": "1ab7b73277e2daec4ce44db469c32befb76d41351c97139f5c638dd0d1dbaf46"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/advancement.hbs",
+              "action": "purchaseAdvancement"
+            },
+            {
+              "template": "templates/actor/parts/projects.hbs",
+              "action": "promptProject"
+            }
+          ]
+        },
+        {
+          "key": "followers",
+          "pageId": "668dafe2d1ca9156",
+          "sources": [
+            {
+              "start": 7976,
+              "end": 7984,
+              "sourceSha256": "10896854a48e0a67645aa3ddb13b9642806eb106c1cd82e1b980c759cd58d92b"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/followers.hbs",
+              "action": "promptFollower"
+            },
+            {
+              "template": "templates/actor/parts/followers.hbs",
+              "action": "promptCompanionContext"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "logicalId": "journal.player-quick-reference",
+      "role": "quick-reference",
+      "pages": [
+        {
+          "key": "difficulty",
+          "pageId": "41670d62348e70d5",
+          "sources": [
+            {
+              "start": 7390,
+              "end": 7394,
+              "sourceSha256": "41f37641c96fb124b93608c8539c11d27efdbee4a81f3b8614f3162964950c0a"
+            },
+            {
+              "start": 7480,
+              "end": 7527,
+              "sourceSha256": "aaf1f7a7f865ca6a973d6534898557eb9c1b505e369cd58b8d10bf7023ce6b05"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "effort",
+          "pageId": "513b1a3ccac47179",
+          "sources": [
+            {
+              "start": 7544,
+              "end": 7553,
+              "sourceSha256": "5c3c1c799fd8ec37c09cab8203385779094c40515f78234545c89d5531232026"
+            },
+            {
+              "start": 7557,
+              "end": 7559,
+              "sourceSha256": "2107e134f1b60e39ef44144859740ee4f52580b3aacd28e5faf45965fb27a305"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "special",
+          "pageId": "d88f083d33b64d0d",
+          "sources": [
+            {
+              "start": 7573,
+              "end": 7578,
+              "sourceSha256": "1113771ef031e12e6bdcfb08c00329d107afa6e3ca001ce971a12bac879edc92"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "actions",
+          "pageId": "00ee3ac08a7a274c",
+          "sources": [
+            {
+              "start": 7653,
+              "end": 7654,
+              "sourceSha256": "568cf54a7e923bb5235f29709be5dc12c65797bdd3d8b101913e6c54ea2f9a38"
+            },
+            {
+              "start": 7657,
+              "end": 7659,
+              "sourceSha256": "e16ed8a3eea53bac863df94c507167d3346e7e498a862ec4763f4e3ae243e693"
+            },
+            {
+              "start": 7661,
+              "end": 7663,
+              "sourceSha256": "7fc0c2933893f34d322250636e172af5c13b0795723ba2a7c50147f941e73305"
+            },
+            {
+              "start": 7665,
+              "end": 7672,
+              "sourceSha256": "ff7bc0c7ee894c7b15716ad2fd56f0aca55cef60e95a85bc4e0c977927977b33"
+            },
+            {
+              "start": 7674,
+              "end": 7679,
+              "sourceSha256": "8ef71d41d36ff398a2891f0a3e9977af3f29254dff778849394f57505afe9aae"
+            },
+            {
+              "start": 7681,
+              "end": 7684,
+              "sourceSha256": "ced68f4443563355c650f4ceb88612824d359db9bb7a21c893e4d6f55f83da6c"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "conditions",
+          "pageId": "75b66f807b9473a7",
+          "sources": [
+            {
+              "start": 7817,
+              "end": 7823,
+              "sourceSha256": "951c06b7328be82a62b445f3ab9dd998cea5d9949a2e6d355adece9a037462ec"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "wounds",
+          "pageId": "ed45c756439d52ca",
+          "sources": [
+            {
+              "start": 7709,
+              "end": 7717,
+              "sourceSha256": "afcad994e2dcb259069d6820bb66e07cb27ffae2618c0f2b3f3d200bc8af8291"
+            },
+            {
+              "start": 7721,
+              "end": 7723,
+              "sourceSha256": "a51c83f3ed465b8a3bfdebd1d3601b0d4247eca3189bada891d0434b283d1c57"
+            },
+            {
+              "start": 7724,
+              "end": 7731,
+              "sourceSha256": "7a399e382bfee0a2b3591dd86130c72ab625e53f8bae43cb33327f4aad4570da"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "ranges",
+          "pageId": "b1a16621e791bec6",
+          "sources": [
+            {
+              "start": 7615,
+              "end": 7630,
+              "sourceSha256": "c08a38577c38debe85ef6c3085eb431eb71ce81ddace4afaeab393f7d75e1e2b"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "rest",
+          "pageId": "cf47e9da185c8655",
+          "sources": [
+            {
+              "start": 7752,
+              "end": 7758,
+              "sourceSha256": "8a519cfb390c222fe3c5c394669c0a4c4630af1ad043d5304f6d62912715693e"
+            },
+            {
+              "start": 7765,
+              "end": 7776,
+              "sourceSha256": "b1ce6a9676eef1c4e368321ca1833847364e0af263caab3c9bf183c39f2a8a6b"
+            },
+            {
+              "start": 7781,
+              "end": 7792,
+              "sourceSha256": "9ebcd2e8fae946231eec84410d826611c3ed2486a7bc7a680ec28048f10eaced"
+            },
+            {
+              "start": 7804,
+              "end": 7811,
+              "sourceSha256": "2a7ed55ea4b60af011053d2f84f6cdf7a2f650372d29e8818cb1d9764c7bfba6"
+            }
+          ],
+          "controls": []
+        }
+      ]
+    }
+  ]
+}

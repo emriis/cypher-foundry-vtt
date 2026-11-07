@@ -102,6 +102,16 @@ baseline rows in `docs/crd-reference-destinations.md` as stable review IDs.
 All fourteen chapters are now available; guides and executable tools have
 separate acceptance boundaries in the library plan.
 
+The player guide and eight quick cards are authored directly in their English
+`rules-en/_source` Journals with paired French proposals. They are editorial
+resources, not additional CRD chapters. Their source ranges/hashes and documented
+sheet controls are recorded in `data/library-player-resources.json`; update that
+contract after source/UI review when changing a procedure. The focused contracts
+are in `tests/content/library-player-resources.test.mjs`. Browser pagination and
+editorial labels use explicit library destination roles. They do not trust
+arbitrary Journal flags or prose, and do not run embedded commands from the guide.
+Keep the source partition and existing quick-selection identities unchanged.
+
 ### TDD and BDD boundary
 
 For recovery and healing work, follow the source contracts and persistence

@@ -17,6 +17,13 @@ source-reference delivery, not the runtime automation register. The inventory an
 below remain the historical `22e2f2a` audit snapshot; these reference additions
 do not close the runtime-rule or particular-power gaps listed here.
 
+Library lot 3 additionally provides a twelve-page player guide and eight
+quick-reference cards, bringing the current catalogue to **1,391 EN documents**
+with paired FR documents, **25 Rules Journals** and **441 paired Journal display
+fields**. These editorial resources link the complete source and actual sheet
+controls; they do not extend the canonical source partition or close remaining
+rule/Ability automation work.
+
 The reference is `docs/Cypher-Reference-Document-2026-07-29.docx`, SHA-256
 `cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729`.
 Paragraph numbers below belong to that file, including table paragraphs. The
