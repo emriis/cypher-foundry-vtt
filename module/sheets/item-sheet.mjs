@@ -96,7 +96,12 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
         armorCategories: categoryNames(system.freeArmorCategories ?? [], "ArmorCategory", system.freeArmor),
         weaponFamilies: (system.freeWeaponFamilies ?? []).map(family => localize(`CYPHER.WeaponFamily.${family}`)),
         skillOptions: (system.skillOptions ?? []).filter(skill => skill?.trim()),
-        abilities: await Promise.all(sourceAbilities.map(async ability => {
+        abilities: await Promise.all(sourceAbilities.map(async document => {
+          // The resolver returns Foundry Documents, not flattened legacy rows.
+          // Keep identity on the Document and read persisted fields from system.
+          const ability = document.system;
+          const tier = (system.abilityTiers ?? []).find(entry =>
+            entry.ability === document.uuid || entry.ability?.uuid === document.uuid)?.tier ?? ability.tier;
           const cost = ability.cost ?? {};
           const costOptions = (cost.options ?? []).map(stat => localize(`CYPHER.Stat.${stat}`));
           const costStat = cost.stat === "choice"
@@ -107,15 +112,16 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
           );
 
           return {
-            ...ability,
-            tierLabel: game.i18n.format("CYPHER.Type.AbilityTier", { tier: ability.tier }),
+            id: document.id, name: document.name, tier,
+            enabler: ability.enabler, repeatable: ability.repeatable,
+            tierLabel: game.i18n.format("CYPHER.Type.AbilityTier", { tier }),
             costLabel: cost.amount
               ? game.i18n.format("CYPHER.Type.AbilityCost", { amount: cost.amount, stat: costStat })
               : localize("CYPHER.Type.NoPoolCost"),
             costOptionsLabel: costOptions.length
               ? game.i18n.format("CYPHER.Type.AbilityCostOptions", { options: costOptions.join(", ") })
               : "",
-            actionLabel: abilityActionLabel(ability.system, localize),
+            actionLabel: abilityActionLabel(ability, localize),
             prerequisites,
             prerequisitesLabel: prerequisites.join(", "),
             enrichedDescription: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
@@ -133,7 +139,9 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
           : this.item._source?.system?.abilities ?? []
       );
       const flowchart = this.item.system.flowchart ?? { edges: [] };
-      const abilities = await Promise.all(sourceAbilities.map(async ability => {
+      const localize = key => game.i18n.localize(key);
+      const abilities = await Promise.all(sourceAbilities.map(async document => {
+        const ability = document.system;
         const cost = ability.cost ?? {};
         const costOptions = (cost.options ?? []).map(stat => game.i18n.localize(`CYPHER.Stat.${stat}`));
         const costStat = cost.stat === "choice"
@@ -153,7 +161,8 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
         );
 
         return {
-          ...ability,
+          id: document.id, name: document.name, tier: ability.tier,
+          enabler: ability.enabler, repeatable: ability.repeatable,
           tierLabel: game.i18n.format("CYPHER.FocusSheet.AbilityTier", { tier: Number(ability.tier) }),
           costLabel: cost.amount
             ? game.i18n.format("CYPHER.FocusSheet.AbilityCost", { amount: cost.amount, stat: costStat })
@@ -161,9 +170,9 @@ export default class CypherItemSheet extends HandlebarsApplicationMixin(ItemShee
           costOptionsLabel: costOptions.length
             ? game.i18n.format("CYPHER.FocusSheet.AbilityCostOptions", { options: costOptions.join(", ") })
             : "",
-          actionLabel: abilityActionLabel(ability.system, game.i18n.localize),
+          actionLabel: abilityActionLabel(ability, localize),
           prerequisites: flowchart.edges
-            .filter(edge => edge.to === ability.id)
+            .filter(edge => edge.to === document.id)
             .map(edge => sourceAbilities.find(candidate => candidate.id === edge.from)?.name ?? edge.from),
           weaponCategories,
           weaponCategoriesLabel: weaponCategories.join(", "),

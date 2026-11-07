@@ -7,10 +7,10 @@ does not implement the open rules or change accepted adjudications.
 
 Subsequent reference delivery is tracked in the
 [information-library plan](information-library-plan.md#lot-2-delivery-register).
-Tranches 2A–2B add nine complete source chapters and their contents/index,
-bringing the catalogue to 1,383 EN documents with paired FR documents and 17
-Rules Journals. Paragraph partitions cover 1–3437, closing 52 of the baseline
-100 open visual groups and two of the 61 Word tables. The inventory and counts
+Tranches 2A–2C add eleven complete source chapters and their contents/index,
+bringing the catalogue to 1,385 EN documents with paired FR documents and 19
+Rules Journals. Paragraph partitions cover 1–5952, closing 69 of the baseline
+100 open visual groups and 28 of the 61 Word tables. The inventory and counts
 below remain the historical `22e2f2a` audit snapshot; these reference additions
 do not close the runtime-rule or particular-power gaps listed here.
 

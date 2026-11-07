@@ -4,6 +4,7 @@
  */
 import { createHash } from "node:crypto";
 import { GENRE_JOURNAL_IDS } from "./genre-metadata.mjs";
+import { DETAIL_JOURNAL_IDS } from "./detail-metadata.mjs";
 import { proposedFoundryId, proposedPageId, identitySlug } from "../source-migration/id-contract.mjs";
 import { translationFields } from "../localization/compendium-translations.mjs";
 import { plainText } from "../crd-audit/text-fidelity.mjs";
@@ -165,8 +166,10 @@ export function buildCreationChapters(paragraphs, records) {
 
   const contents = journal("contents", "CRD Contents and Thematic Index", 1, 456);
   const genres = GENRE_JOURNAL_IDS.map(id => records.find(row => row.logicalId === id)?.document).filter(Boolean);
-  const navigable = [...documents, ...genres];
-  contents.flags.cypherFoundry.crd.sourceLocator = `Editorial navigation to CRD paragraphs 1-${genres.length ? 3437 : 456}`;
+  const details = DETAIL_JOURNAL_IDS.map(id => records.find(row => row.logicalId === id)?.document).filter(Boolean);
+  const referenceChapters = [...genres, ...details];
+  const navigable = [...documents, ...referenceChapters];
+  contents.flags.cypherFoundry.crd.sourceLocator = `Editorial navigation to CRD paragraphs 1-${details.length ? 5952 : genres.length ? 3437 : 456}`;
   contents.flags.cypherFoundry.crd.transformations = ["Editorial contents and thematic links to source-backed Journals; no replacement rule text"];
   page(contents, "reference-contents", "Contents", "<p>Reference chapters available in this edition:</p><ol>"
     + navigable.map(doc => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", doc.name)}<ul>`
@@ -183,7 +186,7 @@ export function buildCreationChapters(paragraphs, records) {
     const target = doc.pages.find(entry => entry.flags.cypherFoundry.identity.sourcePageId === proposedFoundryId(`crd-page-anchor:${key}`));
     if (!target) throw new Error(`Missing thematic destination: ${key}`);
     return `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", title, target._id)}</li>`;
-  }).join("") + genres.map(doc => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", doc.name, doc.pages[0]._id)}</li>`).join("") + "</ul>");
+  }).join("") + referenceChapters.map(doc => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", doc.name, doc.pages[0]._id)}</li>`).join("") + "</ul>");
   documents.push(contents);
   const missing = slice(1, 456).filter(p => p.text.trim() && !assigned.has(p.index));
   if (missing.length) throw new Error(`Unassigned source paragraphs: ${missing.map(p => p.index).join(", ")}`);

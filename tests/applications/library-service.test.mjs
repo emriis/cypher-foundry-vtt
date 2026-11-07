@@ -88,6 +88,26 @@ test("All five genre chapters are lazy, paired-language destinations with fresh 
   assert.equal(await libraryDocument("crd-fantasy", "fr"), null);
 });
 
+test("Foci and equipment chapters resolve lazily in both languages and never bypass hidden packs", async () => {
+  const { pack, calls, document } = setup();
+  for (const language of ["en", "fr"]) {
+    pack.collection = `cypher.rules-${language}`;
+    game.packs = new Map([[pack.collection, pack]]);
+    pack.getIndex = async () => ["foci", "equipment"].map(key => ({ _id: key, name: key,
+      flags: { cypherFoundry: { crd: { sourceLogicalId: `journal.crd-${key}` } } } }));
+    const destinations = (await libraryIndex(language)).filter(row => ["crd-foci", "crd-equipment"].includes(row.key));
+    assert.equal(destinations.length, 2);
+    assert.ok(destinations.every(row => row.section === "chapter" && row.uuid.includes(`rules-${language}.JournalEntry`)));
+    const before = calls.document;
+    assert.equal(await libraryDocument("crd-foci", language), document);
+    assert.equal(calls.document, before + 1);
+    pack.visible = false;
+    assert.equal(await libraryDocument("crd-equipment", language), null);
+    assert.equal(calls.document, before + 1);
+    pack.visible = true;
+  }
+});
+
 test("Home shortcut is permission checked, repeatable, and preserves user-edited macros", async () => {
   const { calls } = setup();
   const first = await createLibraryShortcut();

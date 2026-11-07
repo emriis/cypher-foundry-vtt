@@ -135,6 +135,30 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
       await player.evaluate(async () => {
         for (const app of foundry.applications.instances.values()) if (app.document?.type === "ability" && app.rendered) await app.close();
       });
+      await library.locator('[data-key="crd-foci"]').click();
+      await expect(library.locator('[data-key="crd-foci"]')).toHaveAttribute("aria-pressed", "true");
+      await library.locator('[data-action="page"]').nth(3).click();
+      const focusLinks = library.locator('.library-source > section .content-link[data-uuid*="foci-"]');
+      await expect(focusLinks).toHaveCount(42);
+      await focusLinks.first().click();
+      await expect(player.locator(".focus-flowchart")).toBeVisible();
+      await expect(player.locator(".focus-flowchart .type-ability-tags").first().locator("span")).toHaveCount(2);
+      expect(await player.locator(".focus-flowchart .focus-prerequisites").count()).toBeGreaterThan(0);
+      if (language === "fr") await player.screenshot({ path: test.info().outputPath("library-focus-fr.png") });
+      await player.evaluate(async () => {
+        for (const app of foundry.applications.instances.values()) if (app.document?.type === "focus" && app.rendered) await app.close();
+      });
+      await library.locator('[data-key="crd-equipment"]').click();
+      await expect(library.locator('[data-key="crd-equipment"]')).toHaveAttribute("aria-pressed", "true");
+      await library.locator('[data-action="page"]').nth(8).click();
+      const itemLink = library.locator('.library-source > section table .content-link[data-uuid*="equipment-"]').first();
+      await expect(itemLink).toHaveAttribute("data-uuid", new RegExp(`Compendium\\.cypher\\.equipment-${language}\\.`));
+      await itemLink.click();
+      await expect.poll(() => player.evaluate(() => [...foundry.applications.instances.values()].some(app =>
+        app.document?.type === "equipment" && app.rendered))).toBe(true);
+      await player.evaluate(async () => {
+        for (const app of foundry.applications.instances.values()) if (app.document?.type === "equipment" && app.rendered) await app.close();
+      });
     }
     await library.locator('[data-action="task"]').click();
     await submit(player, 'select[name="actor"]');
@@ -162,7 +186,7 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
 });
 
 test("library chapters: every EN/FR chapter page, native contents links and themed narrow layout", async ({ e2ePage: page }) => {
-  // This exhaustive scenario performs 200 distinct page renders (50 pages in
+  // This exhaustive scenario performs 436 distinct page renders (109 pages in
   // two locales and two themes), including real compendium enrichment.
   test.setTimeout(180_000);
   const original = await page.evaluate(() => {
@@ -170,8 +194,8 @@ test("library chapters: every EN/FR chapter page, native contents links and them
     return { language: game.i18n.lang, setting, config: foundry.utils.deepClone(game.settings.get("core", setting)) };
   });
   const keys = ["creating-your-character", "core-character", "skills", "descriptors",
-    "real-world", "genre-abilities", "fantasy", "science-fiction", "superheroes", "contents"];
-  const expectedPages = [13, 1, 4, 2, 3, 1, 9, 9, 6, 2];
+    "real-world", "genre-abilities", "fantasy", "science-fiction", "superheroes", "foci", "equipment", "contents"];
+  const expectedPages = [13, 1, 4, 2, 3, 1, 9, 9, 6, 46, 13, 2];
   try {
     for (const language of ["en", "fr"]) for (const theme of ["light", "dark"]) {
       await page.evaluate(async ({ language, theme, original }) => {
@@ -207,6 +231,10 @@ test("library chapters: every EN/FR chapter page, native contents links and them
           await expect(library.locator(".library-source > section")).toHaveCount(1);
           await expect(library.locator(".library-source .content-link.broken")).toHaveCount(0);
           expect(await library.evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true);
+          if (key === "equipment" && id === pages[8] && language === "fr" && theme === "light") {
+            await library.locator(".library-source > section table").first().scrollIntoViewIfNeeded();
+            await page.screenshot({ path: test.info().outputPath("library-equipment-fr-narrow.png") });
+          }
         }
       }
       // Thematic native page links must resolve to the paired language pack.

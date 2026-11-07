@@ -1,0 +1,1040 @@
+{
+  "_id": "20e153b9f5b29509",
+  "_key": "!journal!20e153b9f5b29509",
+  "name": "Foci",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "1da4a8a54a43d6a5",
+      "_key": "!journal.pages!20e153b9f5b29509.1da4a8a54a43d6a5",
+      "name": "Foci",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Two spellcasters are attacked by a demon assassin—one reflexively raises a shield of fire; the other sows confusion with an illusion. The first of the group converging at the spaceport bar looking for rumors tries learning information directly from the patrons with their mental powers, another attempts to befriend everyone, and a third dares to intimidate a target in the corner by revealing the horrifying shape they can take. The warriors face off—one never quits a fight, always coming back for more, while the other holds nothing but their clenched and deadly fists.</p>\n<p>Your focus helps make your character unique, differentiating you from the other PCs whether you have the same or different types. Your focus provides you with associated special abilities. It’s the verb of the sentence “I am an adjective noun who verbs.”</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "4ba821af78ef109f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "022680845cf3d510",
+      "_key": "!journal.pages!20e153b9f5b29509.022680845cf3d510",
+      "name": "Choosing a Focus",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>This chapter contains over forty foci, such as Blazes With Fire and Works for a Living. Each genre in this book includes a list of foci appropriate for that setting, but work with your GM if you have an idea for how a focus not on that list could be adapted to fit the genre and your character’s theme.</p>\n<p>When choosing your focus for a game, coordinate with the other players and the GM about what you’re all thinking of selecting. Ideally, none of you should have the same focus, because your character’s distinctiveness is part of the reason you’re choosing a focus in the first place.</p>\n<h3>The Story Behind Your Focus</h3>\n<p>How your character came to have the focus you do is yours to define, as long as it fits within the setting. For example, if your character Entertains, maybe you grew up as part of a traveling troupe, or perhaps you found yourself in the role accidentally in order to make ends meet. If you choose Employs Magnetism, maybe it’s because you’re secretly a mutant, you stole an experimental device that confers the ability, or you don’t know where your gifts come from and you want to find out. (It’s okay for you, the player, to know the answer even if your character doesn’t.)</p>\n<p>Giving a little thought to the origin of your character’s focus helps flesh out your background, ties you to other places and people, and connects to other parts of your character.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1c30d60e31b65186"
+          }
+        }
+      }
+    },
+    {
+      "_id": "74d64d90cd36424d",
+      "_key": "!journal.pages!20e153b9f5b29509.74d64d90cd36424d",
+      "name": "Understanding Your Focus",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>The foci descriptions in this book are purposely stripped down to basics so they have the widest possible application across multiple genres. A single descriptive sentence or two summarizes each one.</p>\n<p>Each focus offers one or more genre theme suggestions. These help conceptualize how that focus might fit your character in a particular genre. For instance, the Builds Allies focus might mean that, in a science fiction genre, the allies you build are robots. But in a fantasy genre, you might be crafting golems and similar magically animated entities.</p>\n<p>Each focus also offers one or more GM intrusion suggestions for possible ways the GM might complicate the situation, or as a consequence of a bad roll on your part.</p>\n<p>Sometimes, a focus grants you additional equipment: one or two starting items you gain, in addition to whatever you already have from other sources, that might be required for you to use your ability or that might pair well with the focus. For instance, a character that can build things needs a set of tools. That said, many foci don’t require additional equipment.</p>\n<h3>Focus Abilities</h3>\n<p>At tier 1, choose two tier 1 special abilities from your chosen focus. It’s not in your best interest to choose an ability identical—or effectively identical—to one you already have, such as one granted by your type. Doing so doesn’t provide any benefit unless it’s an ability that specifically indicates it can be taken more than once or an ability that improves something you already have.</p>\n<p>At tier 2 and each new tier after that, refer to your focus flowchart and pick one special ability. It shows how the focus’s early abilities connect to and unlock its later abilities. Your new focus ability can be anything on the flowchart as long as it’s your current tier or lower and connected by a line to an ability you already have. You can always go back and take a lower or equal tier ability, as long as you’ve taken any preceding ability in the flowchart. And you can always take another tier 1 ability (if any remain) for your focus.</p>\n<p>If an ability specifically indicates it can be taken more than once, you can choose it again instead of advancing elsewhere along the flowchart.</p>\n<p>Finally, you can’t choose a higher-tier focus ability if it modifies a lower-tier ability you don’t have yet.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "2a0a5622f52833f0"
+          }
+        }
+      }
+    },
+    {
+      "_id": "8d078a1283505e50",
+      "_key": "!journal.pages!20e153b9f5b29509.8d078a1283505e50",
+      "name": "Foci List",
+      "type": "text",
+      "sort": 400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.282f41c003d25ae6]{Abides in Stone}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.7312d3c758cd2450]{Blazes With Fire}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.59b13734e0a6855b]{Builds Allies}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.43d9a860fc74d804]{Carries a Gun}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.6a24ba0400c8b8b1]{Casts Spells}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.be066575fde7684f]{Changes Shape}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.31c70235c256daa2]{Commands Mental Powers}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.46a46fedbbfac5d4]{Consorts With the Dead}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.3d475d9d850ac8d9]{Controls Beasts}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.252562a24ad28fff]{Crafts Illusions}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.5e5f9e06b4338351]{Doesn’t Do Much}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.321177420b92ac3a]{Employs Magnetism}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.08770a3aece9a5cd]{Entertains}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.a5c145e3393778a0]{Explores}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.90fd6b6ef6a511a9]{Fights Dirty}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.f43634f161e2fa59]{Fights Unarmed}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.0250b044d6801929]{Fights With Panache}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.b565d95729e4a747]{Fuses Flesh and Steel}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.fcac5d7208bf3d72]{Fuses Mind and Machine}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.dc443944c0e754c6]{Grows to Towering Heights}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.4c79f4d0127a4830]{Howls at the Moon}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.29b6003ec097c077]{Hunts}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.4fd750930079ee97]{Infiltrates}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.61a574a0c8443b6f]{Leads}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.59e10a5797d00e9e]{Masters Telekinesis}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.710e9e9740188941]{Masters Weaponry}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.3927318cdd957397]{Moves Like the Wind}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.6ffccf81e83a4f9e]{Never Says Die}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.2cf3a270ebaba20a]{Performs Feats of Strength}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.4248bb1c92f3175c]{Quells Evil}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.00da8f9a88998c8b]{Reveres a Supernatural Force}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.b95318f3aee833bf]{Rides the Lightning}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.fe75916157f0145a]{Sneaks Through the Shadows}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.19ccd60a4278880e]{Solves Mysteries}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.86ac909232a1c223]{Speaks for the Land}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.0b248159dcdb2e99]{Stands Like a Bastion}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.6704ba394dcff139]{Strikes With Mystic Might}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.af4c2b423c14739e]{Talks to Machines}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.1ad2e05ddf30363e]{Tends to the Wounded}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.752d0f3a8abab1a6]{Walks Through Walls}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.50519ec393e32a49]{Wears a Sheen of Ice}</p>\n<p>@UUID[Compendium.cypher.foci-en.Item.f6e3ba3f779a5d0e]{Works for a Living}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "35f3cc8536f4fb5a"
+          }
+        }
+      }
+    },
+    {
+      "_id": "095c7318ee45fbda",
+      "_key": "!journal.pages!20e153b9f5b29509.095c7318ee45fbda",
+      "name": "Abides in Stone",
+      "type": "text",
+      "sort": 500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.282f41c003d25ae6]{Abides in Stone}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.36f39fe6c9906461]{Intimidating Presence:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3633ceff749f3777]{Stone Body:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ba4e36bc6aab5135]{Stoneknowing (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.965cabf16b78ca23]{Field of Stones:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f94e453a79b223bc]{Golem Grip (3 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b5e50539ae082e0c]{Stone Bash:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.08e8d42714efd8aa]{Golem Stomp (4 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6dcb398a95eb5c1c]{Improved Stone Body:}</p>\n<h3>Tier 4</h3>\n<p>Deep Reserves: When others are exhausted, you can push through. You can transfer up to 6 points among your Pools in any combination, at a rate of 1 point per round. For example, you could transfer 3 points of Speed to Might and 3 points of Intellect to Might, which would take a total of six rounds. This ability renews when you take a ten‑hour recovery. Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a50a5cf35ab7b32f]{Heavy Hands:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b38f6e6da834e929]{Rolling Stone (5 Might):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.64a431802a8828a0]{Still As a Statue (5 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c0a3ed1316263752]{Structural Brace (5+ Might):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3. Increase the weight you can hold by 10 tons (9 tonnes).</p>\n<p>Action to initiate.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.eefb3e026964cbe4]{Earthshake (7 Might or Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2264c13ee0c70619]{Mineralization:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "d37118cd0cb0b1bc"
+          }
+        }
+      }
+    },
+    {
+      "_id": "b26165e2dcdc46bd",
+      "_key": "!journal.pages!20e153b9f5b29509.b26165e2dcdc46bd",
+      "name": "Blazes With Fire",
+      "type": "text",
+      "sort": 600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.7312d3c758cd2450]{Blazes With Fire}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fbefd3f04b8abdfa]{Gentle Warmth (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9ed44455c7ebd14d]{Shroud of Flame (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ba85ccb0f31e19a3]{Warm Air:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c3760d38fc803629]{Flameblade (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.24cfdcd857fb3df0]{Hurl Flame (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7fbfd2090f73636d]{Spreading Fire (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2342398c13dad712]{Desperate Flame:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.71b1083fea4760a7]{Fiery Hand of Doom (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6276d1989f50737b]{Wings of Fire (4 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a80d2c97e65eddbc]{Enhanced Flames:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.28ace4297b4d25b5]{Fire Tendrils (5 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bd23cb7fab0492d3]{Plasma Field (5 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e4a13fb02a634372]{Fire Servant (6 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.237c025278daeb10]{Inferno Trail (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "11ae7adfd3341563"
+          }
+        }
+      }
+    },
+    {
+      "_id": "e342e843b4a64198",
+      "_key": "!journal.pages!20e153b9f5b29509.e342e843b4a64198",
+      "name": "Builds Allies",
+      "type": "text",
+      "sort": 700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.59b13734e0a6855b]{Builds Allies}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7d5b3ab1daefae0c]{Automaton Assistant:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d9afeb14b8d77702]{Efficient Builder:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.198aab63a98337d9]{Identify Machine (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.93c512ead8e35cc4]{Automaton Armor Upgrade (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.85057b27a0f2170b]{Automaton Cypher Upgrade (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c2645520c2804c06]{Charm Machine (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c99e15e14719111e]{Expert Automaton:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0372f3c4d30f22c1]{Quick Control (4 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bdf0bdce45a93e73]{Automaton Flight Upgrade:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.da7782a444f9f6f5]{Automaton Turret Upgrade:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5166bbb410fe8095]{Automaton Fleet:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.83269f087eb4d79f]{Automaton Force Field Upgrade:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bef6440ceac4dd8f]{Automaton Evolution:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4056188ecfa6ff7c]{Automaton Heavy Armor Upgrade (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "ba78ef594079c98e"
+          }
+        }
+      }
+    },
+    {
+      "_id": "3df8e3515fc62915",
+      "_key": "!journal.pages!20e153b9f5b29509.3df8e3515fc62915",
+      "name": "Carries a Gun",
+      "type": "text",
+      "sort": 800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.43d9a860fc74d804]{Carries a Gun}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a3efb7ad11a0456d]{Concealed Carry:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a1331b8584a25bcc]{Excellent Gunner:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cb23a52c02b16182]{Keen Eye:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.188e2422ef3bdf8f]{Careful Shot:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cde1e63bf5fe64a7]{Reload (1 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.76f2778b8b2b1b23]{Sneak Attack (1 Speed):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.330ea8e601a6c998]{Damage Dealer:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.29d30193c90f291b]{Spray (2 Speed):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b1ceb3edaafd305f]{Snap Shot:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.354b4aa9eeb6aaa2]{Special Shot:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7243684287b60036]{Arc Spray (3 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.794cf7878ec8c6e6]{Sniper:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ac637958dc3fe856]{Lethal Capability:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.54f44c529e1e5fb3]{Shot Collision (4+ Speed):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "5bf7684cc9891a0f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "09f4d625e4b4ec05",
+      "_key": "!journal.pages!20e153b9f5b29509.09f4d625e4b4ec05",
+      "name": "Casts Spells",
+      "type": "text",
+      "sort": 900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.6a24ba0400c8b8b1]{Casts Spells}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.772b61eb8ca8c530]{Blast (1+ Intellect):}</p>\n<p>If you have another damaging attack ability (from this focus or your type), you can use Blast to augment that ability, increasing its damage by 1.</p>\n<aside class=\"crd-callout\"><p>You can change the name of the Blast ability so it relates to the kind of energy you create, such as Blast of Fire, or something more evocative suggesting the name of the spellcaster who created it, such as Malhavoc’s Destructive Blast.</p></aside>\n<p>Effort: Gain fine control over the effect until you use a ten-minute or longer recovery, varying the intensity as you wish within immediate range; for instance, you could use it to warm the area, cook food without burning it, provide bright light in the area, and so on. Increase the maximum level of material that you can cut through by 1.</p>\n<p>Action to attack; Last action to initiate fine control; enabler to augment another attack ability.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3a7aee6fb508a99e]{Hedge Magic (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.76a4aa55699c4bcd]{Prepare Spell:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c1b842f017d67546]{Sense Magic (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2bc63988ce590a98]{Confusion Ray (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e13406bcc4deb81a]{Enchant Object (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.54c0a0aa70ca5373]{Hover (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a84862ceb44ec563]{Arcane Flight (3+ Intellect):}</p>\n<p>Effort: Affect one additional touched creature of your size or smaller; you direct their movement and they must remain within sight of you or they fall.</p>\n<p>Action to initiate.</p>\n<aside class=\"crd-callout\"><p>Arcane Flight is better than Hover, so if you have both, you can exchange Hover for another tier 2 or lower ability from the Casts Spells focus.</p></aside>\n<p>@UUID[Compendium.cypher.abilities-en.Item.03e434bd37453cf3]{Fireball (4+ Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b7b25c21c0c8c2a0]{Identify Magic (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.60be13a5d3cd95eb]{Summon Giant Spider (4+ Intellect):}</p>\n<p>Effort: Make the spider understand you and obey your verbal instructions.</p>\n<p>Action to initiate.</p>\n<aside class=\"crd-callout\"><p>Giant spider: level 3, perception as level 5, Speed defense as level 4 due to quickness; health 12; bite inflicts 3 damage plus 1 Speed damage from poison (ignores armor); moves a long distance each round when on webs</p></aside>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.94bdf1831169f080]{Arcane Teleportation (4+ Intellect):}</p>\n<p>Effort: Increase your range by a short distance. Teleport to a location you can’t see. Bring one creature (of your size or smaller) with you.</p>\n<p>At tier 5: If you spend 5 Intellect, your base distance and distance increment for Effort increase to long range, and each level of Effort applied lets you bring two people with you.</p>\n<p>At tier 6: If you spend 6 Intellect, your base distance increases to anywhere on the same planet, and each level of Effort used lets you bring three people with you.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0c115be214d7f02d]{Soul Interrogation (5 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9133ee7ef4ba7f46]{Divination (6 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c84d9c6d16f30a3b]{Granite Wall (5+ Intellect):}</p>\n<p>Effort: Increase the duration to until you use a ten-hour recovery. Make the duration permanent (this requires three levels of Effort).</p>\n<p>Action.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2da513c9e729e917]{Conjure Supernatural Creature (7+ Intellect):}</p>\n<p>Effort: Make the supernatural creature understand you and obey your verbal instructions.</p>\n<p>Action to initiate.</p>\n<aside class=\"crd-callout\"><p>Angel: level 5; health 15; physical, magical, or energy attack inflicts 6 damage; flies a short distance each round</p></aside>\n<aside class=\"crd-callout\"><p>Demon: level 5; health 25; physical, magical, or energy attack inflicts 6 damage; flies a short distance each round</p></aside>\n<aside class=\"crd-callout\"><p>Elemental: level 5; health 25; physical or energy attack inflicts 5 damage; amorphous form can pass through spaces as small as 1 foot (30 cm); air elemental flies a long distance each round; earth elemental has Armor 3; fire elemental has Armor 10 against fire; water elemental swims a long distance each round</p></aside>\n<p>@UUID[Compendium.cypher.abilities-en.Item.470c46b97d9e9b28]{Word of Death (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "76c9dd83ce9053b0"
+          }
+        }
+      }
+    },
+    {
+      "_id": "dcbdc406667c8bec",
+      "_key": "!journal.pages!20e153b9f5b29509.dcbdc406667c8bec",
+      "name": "Changes Shape",
+      "type": "text",
+      "sort": 1000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.be066575fde7684f]{Changes Shape}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.09df7b34387db257]{Animal Shape (3+ Intellect):}</p>\n<p>Effort: Gain an asset to one skill associated with the creature you become (see the Animal Form Minor Abilities box).</p>\n<p>Effort: Become a talking animal; this looks exactly like a normal animal, but you can still talk and use any abilities that rely on human speech.</p>\n<p>Effort: Take a hybrid shape; this is like your normal form but with animalistic features, even if that animal is something much smaller than you (such as a bat or rat). In hybrid form you can speak, use all of your abilities, make attacks like an animal, and perform tasks using hands without being hindered. Anyone who sees you clearly in hybrid form would never mistake you for a mere animal.</p>\n<p>Action to change or revert.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cb23a52c02b16182]{Keen Eye:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fbe31b1c5d90d55c]{Scent Transformation (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.99191653a9dd1202]{Beast Communication (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.94f554bd465de216]{Soothe the Savage (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e193f1857e767a0f]{Bigger Animal Shape:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.aa1c0b35bcde3d60]{Shapechanger Healing:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.71e9da164b0b73ca]{Animal Scrying (4+ Intellect):}</p>\n<p>Effort: Activate this ability even if you are not in animal form or a form similar to that animal.</p>\n<p>Action to establish.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6da33f418603c5f0]{Movement Adaptation (4 Might):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7970bcd8b0b70061]{Enhanced Animal Shape:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d039cbb4965f6bd2]{Not Dead Yet:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.da526c8ecdc2737f]{Hard to See:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.755b267220113af8]{Lend Animal Shape (6+ Intellect):}</p>\n<p>Effort: Affect an additional creature.</p>\n<p>Action.</p>\n<p>Lethal Capability: You’ve mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as a claw, a bite, a tail slap, or some other specific attack you prefer.</p>\n<p>You can gain this ability more than once. Each time you do, choose a different specific attack.</p>\n<p>Animal Form Minor Abilities</p>\n<aside class=\"crd-callout\"><p>“Animals” and “beasts” are intentionally not rigorously defined, because it depends on the setting. The terms are, in fact, interchangeable synonyms. In an Earth-like setting, badgers, wolves, and eagles are animals and beasts. In a very different fantasy world, in a very different time period, or on a science fiction planet, a warg, a triceratops, and a rigellian stinkpig are beasts and animals, while a basilisk, a robot dog, and a Saturnian silicon spider probably are not. Basically, if it’s more or less an animal, it is one. If it’s supernatural or has some kind of special powers, it is not.</p></aside>\n<p>Use the following as examples or suggestions of what a character gains when in the shape of an animal. If an animal shape lists two skills, the character chooses which one they want to have an asset in each time they take that shape.</p>\n<table><tbody>\n<tr>\n<th>Animal</th>\n<th>Minor Ability</th>\n<th>Skill Asset</th>\n</tr>\n<tr>\n<td>Ape</td>\n<td>Hands</td>\n<td>Climbing</td>\n</tr>\n<tr>\n<td>Badger</td>\n<td>Scent</td>\n<td>Climbing</td>\n</tr>\n<tr>\n<td>Bat</td>\n<td>Flying</td>\n<td>Perception</td>\n</tr>\n<tr>\n<td>Bear</td>\n<td>Scent</td>\n<td>Climbing</td>\n</tr>\n<tr>\n<td>Bird</td>\n<td>Flying</td>\n<td>Perception</td>\n</tr>\n<tr>\n<td>Boar</td>\n<td>Scent</td>\n<td>Might defense</td>\n</tr>\n<tr>\n<td>Cat</td>\n<td>Small</td>\n<td>Climbing or stealth</td>\n</tr>\n<tr>\n<td>Constrictor snake</td>\n<td>Constrict</td>\n<td>Climbing</td>\n</tr>\n<tr>\n<td>Crocodile</td>\n<td>Constrict</td>\n<td>Stealth or swimming</td>\n</tr>\n<tr>\n<td>Deinonychus</td>\n<td>Fast</td>\n<td>Perception</td>\n</tr>\n<tr>\n<td>Dolphin</td>\n<td>Fast</td>\n<td>Perception</td>\n</tr>\n<tr>\n<td>Fish</td>\n<td>Aquatic</td>\n<td>Stealth or swimming</td>\n</tr>\n<tr>\n<td>Frog</td>\n<td>Aquatic</td>\n<td>Jumping or stealth</td>\n</tr>\n<tr>\n<td>Horse</td>\n<td>Fast</td>\n<td>Perception</td>\n</tr>\n<tr>\n<td>Leopard</td>\n<td>Fast</td>\n<td>Climbing or stealth</td>\n</tr>\n<tr>\n<td>Lizard</td>\n<td>Small</td>\n<td>Climbing or stealth</td>\n</tr>\n<tr>\n<td>Octopus</td>\n<td>Aquatic</td>\n<td>Stealth</td>\n</tr>\n<tr>\n<td>Shark</td>\n<td>Aquatic</td>\n<td>Swimming</td>\n</tr>\n<tr>\n<td>Turtle</td>\n<td>Armor</td>\n<td>Might defense</td>\n</tr>\n<tr>\n<td>Venomous snake</td>\n<td>Venom</td>\n<td>Climbing</td>\n</tr>\n<tr>\n<td>Wolf</td>\n<td>Scent</td>\n<td>Perception</td>\n</tr>\n</tbody></table>\n<p>The GM can mix up the combinations of skills and other abilities for these animal shapes to create other Earth animals, or create animals in the campaign setting that don’t exist on Earth.</p>\n<aside class=\"crd-callout\"><p>Aquatic: The animal either breathes water instead of air or is able to breathe water in addition to breathing air.</p></aside>\n<aside class=\"crd-callout\"><p>Armor: The animal has a thick hide or shell that functions like light armor (but never hinders the character’s tasks).</p></aside>\n<aside class=\"crd-callout\"><p>Constrict: The animal can grip its opponent fast after making a melee attack (usually with a bite or claw), easing attack rolls against that foe on later turns until the animal releases the foe.</p></aside>\n<aside class=\"crd-callout\"><p>Fast: The animal can move a long distance on its turn instead of a short distance.</p></aside>\n<aside class=\"crd-callout\"><p>Flying: The animal can fly, which (depending on the type of animal) may be up to a short or long distance on its turn.</p></aside>\n<aside class=\"crd-callout\"><p>Hands: The animal has paws or hands that are nearly as agile as those of a human. Unlike with most animal shapes, tasks that require hands are not hindered (although the GM may decide that some tasks requiring human agility, such as playing a flute, are still hindered).</p></aside>\n<aside class=\"crd-callout\"><p>Scent: The animal has a strong sense of smell, gaining an asset on tracking and dealing with darkness or blindness.</p></aside>\n<aside class=\"crd-callout\"><p>Small: The animal is considerably smaller than a human, easing its dodge tasks but hindering tasks to move heavy things.</p></aside>\n<aside class=\"crd-callout\"><p>Venom: The animal is venomous (usually through a bite), inflicting an additional 1 poison damage</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "3627c133410e72dc"
+          }
+        }
+      }
+    },
+    {
+      "_id": "6351bdb7f8613a6d",
+      "_key": "!journal.pages!20e153b9f5b29509.6351bdb7f8613a6d",
+      "name": "Commands Mental Powers",
+      "type": "text",
+      "sort": 1100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.31c70235c256daa2]{Commands Mental Powers}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.862c4903ec68c34a]{Empathic Sense:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0851efef60b1ffee]{Sense Psionics (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c7c1b5ea43200b1a]{Telepathic (1+ Intellect):}</p>\n<p>Effort: Increase the duration so it lasts until you use a ten-hour recovery.</p>\n<p>Action to establish contact.</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.41a5ae873957eb84]{Mind Reading (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0d87066957259645]{Telepathic Bond (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5fc57e2c24f225b2]{Identify Psionics (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3984a42534b32334]{Psychic Burst (3+ Intellect):}</p>\n<p>Effort: Attack an additional target.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.50d97e42aa4c7a10]{Psychic Suggestion (4 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.050a67f4064109fc]{Extended Range:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8d49b33d2a081ee6]{Use Senses of Others (4 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f9c8e84e908f7105]{Precognition (6 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ef3781bf6563f8f6]{Mind Control (6+ Intellect):}</p>\n<p>Effort: Increase the maximum level of the target you can affect by 1.</p>\n<p>Action to initiate.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.46e0d4c81b8ece90]{Telepathic Network (0+ Intellect):}</p>\n<p>Effort: Increase the base number of people in the network to twenty (5 Intellect), lasting until you use a ten-minute or longer recovery; each additional ten people costs 1 Intellect.</p>\n<p>Enabler to create a network; action to create an expanded network (twenty or more people).</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "d60651902067ac45"
+          }
+        }
+      }
+    },
+    {
+      "_id": "a451cb06542f02cb",
+      "_key": "!journal.pages!20e153b9f5b29509.a451cb06542f02cb",
+      "name": "Consorts With the Dead",
+      "type": "text",
+      "sort": 1200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.46a46fedbbfac5d4]{Consorts With the Dead}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9210ce5579d86bf5]{Basic Necromancy (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.241da6073cb1012c]{Bone Lore (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.70b26bdaa930f296]{Speaker for the Dead (2 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a1f38b43b1b28e92]{Blood Sorcery:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8a50aaea3673c35d]{Improved Necromancy:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fdd048143d4c10b0]{Improved Speaker:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3d4ee18a491f449c]{Reading the Room (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.81021599123aeca3]{Repair Flesh (3 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.79e86a9705776812]{Greater Necromancy (5+ Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.55c5e8d6f280e807]{Wraith Cloak (4 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.23c44f4eba06a8a8]{Terrifying Gaze (6 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.74bd96736bf06241]{Wall of Bones (5 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.38441abfb300665a]{True Necromancy (8+ Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.470c46b97d9e9b28]{Word of Death (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "36ae8b4a3c3010ea"
+          }
+        }
+      }
+    },
+    {
+      "_id": "6e2a11d758fbef79",
+      "_key": "!journal.pages!20e153b9f5b29509.6e2a11d758fbef79",
+      "name": "Controls Beasts",
+      "type": "text",
+      "sort": 1300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.3d475d9d850ac8d9]{Controls Beasts}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bd5d35e60dab57cd]{Beast Companion:}</p>\n<aside class=\"crd-callout\"><p>Beast Companion, as part of the Controls Beasts focus, can be taken multiple times. Each time, you gain another level 2 beast follower.</p></aside>\n<p>Friend to Small Creatures (1+ Intellect): A broad type of small creature you name that exists in the surrounding environment (such as insects, rats, bats, or birds) comes under your influence if you succeed on a difficulty 2 Intellect task for outdoor survival. Affected creatures within short range will not harm you or those you designate as allies until you use a ten-minute or longer recovery.</p>\n<p>This ability doesn’t work against hostile  swarms of creatures of level 3 or higher. Your creatures—even common insects (level 0)—can swarm in large-enough numbers to hinder the attacks or defenses of a single target, or take some other action.</p>\n<p>This ability could instead be used to calm or command vines, grass blades, creepers, roots, or branches of nearby plants rather than animals or insects.</p>\n<p>Effort: Your creatures respond to your commands as NPC allies.</p>\n<p>Action to initiate.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a777d76b0b5609a6]{Understand Beast (2 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.99191653a9dd1202]{Beast Communication (2 Intellect):}</p>\n<p>Soothe the Savage (2 Intellect): Make an Intellect attack roll to calm a nonhuman beast within short range that can see you. You must speak to them (although they don’t need to understand your words). They remain calm until you use a ten-minute or longer recovery or for as long as you keep using your action to calm them. Action.</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.689d43a777314c4a]{Mount:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.27ec2a3baf2d506f]{Stronger Together:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e2d3cfff7366f3d9]{Beast Eyes (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6811013f5f9e3839]{Improved Companion:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e7973729699b4128]{Beast Betterment:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e549a54f2eac8bc0]{Beast Call (5 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2eaadc1ff0059fe4]{Armored Beast:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.23f5bc7eabf4f16f]{Control the Savage (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "91adbcc0e009658f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "b51b4edde4ae85a8",
+      "_key": "!journal.pages!20e153b9f5b29509.b51b4edde4ae85a8",
+      "name": "Crafts Illusions",
+      "type": "text",
+      "sort": 1400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.252562a24ad28fff]{Crafts Illusions}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3a7aee6fb508a99e]{Hedge Magic (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b918dfe95eb870b1]{Minor Illusion (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c1b842f017d67546]{Sense Magic (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a4390c8ea1e4abbd]{Illusory Disguise (2+ Intellect):}</p>\n<p>Effort: Disguise one additional creature (1 Intellect); if you lose sight of a disguised creature, they lose their disguise.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9198044df4cb2f80]{Reveal Illusion (2+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 15.</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.13ab8c708f7109bb]{Cast Illusion:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5f26fa1a9f0278e0]{Major Illusion (3+ Intellect):}</p>\n<p>Effort: Affect an additional creature with confusing images.</p>\n<p>Action to create.</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a1ece5952ce6bfff]{Illusion Cocoon (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.16df1d039c325616]{Illusory Selves (4 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.faf2c5b6d83c41c0]{Invisibility (4+ Intellect):}</p>\n<p>Effort: Use this ability on a creature you touch instead of yourself; they remain invisible until they act precipitously or they or you use a ten‑minute or longer recovery.</p>\n<p>Action to initiate.</p>\n<aside class=\"crd-callout\"><p>An invisible character’s attack is eased by two steps. Attacks on an invisible character are hindered by four steps or are nearly impossible if the attacker has no idea where they might be.</p></aside>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8915470eeda364f1]{Terrifying Image (6 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cfc8482d05e875a7]{Grandiose Illusion (8 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b42d6ebd6b7071c8]{Permanent Illusion (9 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "fe101d97532423da"
+          }
+        }
+      }
+    },
+    {
+      "_id": "022642f372d9ab88",
+      "_key": "!journal.pages!20e153b9f5b29509.022642f372d9ab88",
+      "name": "Doesn’t Do Much",
+      "type": "text",
+      "sort": 1500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.5e5f9e06b4338351]{Doesn’t Do Much}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3b9d3a2ba989702e]{Joy in Small Things:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c350443244793c57]{Life Lessons:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fc7edecbc6eaa245]{Picking Up the Slack (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b53337db50d28d0d]{Inspiring Ease:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3f9e626e1ce049be]{Totally Chill:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6e06d2ab421781f8]{Extra Padding (1+ Might):}</p>\n<p>Effort: Ignore a moderate wound instead of a minor wound. Ignore a major wound instead of a minor wound (this requires two levels of Effort).</p>\n<p>Enabler.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.67bdbc9bea0148da]{Improvise:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e43fdfba901a6866]{Agile Wit:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b2d00099260d5030]{Gather Your Strength:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6c00b2f795ade731]{Attention to Detail:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4d179e9d9c0a2119]{Drawing on Life’s Experiences (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "6c9f0937c3f7db28"
+          }
+        }
+      }
+    },
+    {
+      "_id": "ca018ff527c2673c",
+      "_key": "!journal.pages!20e153b9f5b29509.ca018ff527c2673c",
+      "name": "Employs Magnetism",
+      "type": "text",
+      "sort": 1600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.321177420b92ac3a]{Employs Magnetism}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0aff975bed2e64ed]{Craft Metal:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e538bf5b00993174]{Move Metal (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d28ff8324963909e]{Sense Metal (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.47c6c1471d401513]{Electromagnetic Eyes (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.556d557d0810a879]{Electromagnetically Charge (1+ Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1073633e1e2f6c7c]{Repel Metal:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3925ca30e84e57d3]{Guide Bolt (3+ Intellect):}</p>\n<p>Effort: Affect an ally’s attack instead of your own if their attack passes within short range.</p>\n<p>Enabler.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bee22c8d0ae4b3b5]{Rend Metal (3+ Intellect):}</p>\n<p>Effort: Increase the maximum level of the metal object you can affect by 1.</p>\n<p>Action.</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.399176a7d902ed7c]{Magnetic Field (5 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.de2f4fa977f79e23]{Magnetize (4+ Intellect):}</p>\n<p>Effort: Increase the level of a new magnetic force by 1. Increase the maximum level of an existing magnetic force you want to demagnetize by 1.</p>\n<p>Action.</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.074974d995ebaafa]{Command Metal (5 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.931809a957571b80]{Iron in the Blood:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f911b40b1447333d]{Diamagnetism:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a57bcc34bab66729]{Iron Punch (8+ Intellect):}</p>\n<p>Effort: Affect an additional target that is adjacent to the first target.</p>\n<p>Action.</p>\n<aside class=\"crd-callout\"><p>Diamagnetism supersedes Magnetize, so if you have both, you can exchange Magnetize for another equal or lower-tier ability from this focus.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "2601dcc2aa10f93e"
+          }
+        }
+      }
+    },
+    {
+      "_id": "3a3f59a0a7eab980",
+      "_key": "!journal.pages!20e153b9f5b29509.3a3f59a0a7eab980",
+      "name": "Entertains",
+      "type": "text",
+      "sort": 1700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.08770a3aece9a5cd]{Entertains}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c9bd1daa7c54e980]{Anecdote (2 Intellect):}</p>\n<p>Inspiring Suggestion (2 Intellect): When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they’re doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.98d53dc351f43652]{Knowing the Audience (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>Inspiring Ease: Through stories, songs, art, or other forms of entertainment, you inspire your allies. When you and any number of allies spend a ten-hour recovery together (yours or theirs), the allies are inspired by you. Once per day, each inspired ally can ease one task. This inspiration remains while you remain within a long distance of them. The inspiration is suspended at greater distances, but resumes automatically if you get within range. The inspiration ends if you use a ten‑hour recovery while away from the ally. Ten‑hour recovery to initiate.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cc4c2c596d0f8047]{Rising Courage (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b5bac94b462feec0]{Find Motivation (3+ Intellect):}</p>\n<p>Effort: Increase the maximum effect level you can ignore by 1.</p>\n<p>Enabler.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.dff932f81f0508e0]{Perfect Stranger (3 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.59d30ccbf960c094]{Calm (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fb6269fa8e8bffc2]{Captivate or Inspire:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2e1d472ddae84694]{Willing Sacrifice:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ae7ce145d2a17af5]{Master Entertainer:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.770573a3b82f8434]{Vindictive Performance (5 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "83e2dd92274199c5"
+          }
+        }
+      }
+    },
+    {
+      "_id": "e29b2920a1ca372d",
+      "_key": "!journal.pages!20e153b9f5b29509.e29b2920a1ca372d",
+      "name": "Explores",
+      "type": "text",
+      "sort": 1800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.a5c145e3393778a0]{Explores}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.331033e4011551dc]{Exploration Survivor:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3b88146f5c554542]{Tough:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fa47f6722d56e788]{Untamed Recovery:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.192867a513c6354a]{Beast Companion:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9faf99860a28900e]{Experienced Explorer:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.576a47d5e5dc46e0]{Animal Senses and Sensibilities:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.16fe07f9c1cf42e8]{Wilderness Encouragement (3 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.dcc5ab0c891b5aa4]{Wild Camouflage (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a819a3f6d62100d4]{Wilderness Awareness (4 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.539137eefd8d94ae]{Explorer’s Awareness:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.be63ea7c7a108ee8]{The Wild Is on Your Side (5 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4eabf317623adf0c]{One With the Wild (6 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.744e21420ecd71d8]{Survivor:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "bacfa9cdcdd3a90b"
+          }
+        }
+      }
+    },
+    {
+      "_id": "4956bc156c5a02dc",
+      "_key": "!journal.pages!20e153b9f5b29509.4956bc156c5a02dc",
+      "name": "Fights Dirty",
+      "type": "text",
+      "sort": 1900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.90fd6b6ef6a511a9]{Fights Dirty}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b83dbf47f07d6647]{Dirty Trick (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2a6e6e49f873da4d]{Go for the Eyes (2 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e3e56cfa4b466cbc]{Scratching and Kicking (1 Speed):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2ff387476afe1057]{Despite My Wounds:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.76f2778b8b2b1b23]{Sneak Attack (1 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d9061e8165f91935]{When the Deal Bombs:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.40622395f6f9598b]{Fast Kill (2 Might or Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bffd156cd0bb6725]{Incapacitating Attack (4 Speed):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b000d5538f28abac]{Feint (2 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bba52b5d2e233615]{Mind Games (4 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c953b7ec7cbc9dca]{Knock Out (5+ Might):}</p>\n<p>Effort: Increase the maximum level of the foe you can affect by 1.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e0eeaa91af8e047f]{Using the Environment (4 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.943ec2b6dfbb6203]{Lethal Strike (6 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cddc6934d51d33a9]{Twisting the Knife (4 Speed):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "dd935d5d9a6970c3"
+          }
+        }
+      }
+    },
+    {
+      "_id": "d31446dbddcb584c",
+      "_key": "!journal.pages!20e153b9f5b29509.d31446dbddcb584c",
+      "name": "Fights Unarmed",
+      "type": "text",
+      "sort": 2000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.f43634f161e2fa59]{Fights Unarmed}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.62acbdd0ebf94b91]{Body as a Tool:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.63a4543a155c1cde]{No Need for Weapons:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d2aec242869d48ff]{Resilience:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.338994bd2f15b903]{Advantage to Disadvantage (3 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ce605457aa1364f6]{Fearsome Reputation (3 Might or Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e67f8e68f549a475]{High and Low:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a46d26af830f3a7f]{Moving Like Water (3 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.99713f3230dc7118]{Throw (2 Might):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d8ab1c514eb57ba2]{Divert Attacks (4 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e8f009bb276f738c]{Knock Out (5+ Might):}</p>\n<p>Effort: Increase the maximum level of the foe you can affect by 1.</p>\n<p>Action.</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.15d2bdd6546d4356]{Stunning Attack:}</p>\n<h3>Tier 6</h3>\n<p>Lethal Capability: You’ve mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as unarmed attacks, or some other specific attack you prefer.</p>\n<p>You can gain this ability more than once. Each time you do, choose a different specific attack.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.735aecc521eaea68]{Master of Unarmed Fighting Style:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "bf3aa39c5c444fe6"
+          }
+        }
+      }
+    },
+    {
+      "_id": "3e1c76912dff2b54",
+      "_key": "!journal.pages!20e153b9f5b29509.3e1c76912dff2b54",
+      "name": "Fights With Panache",
+      "type": "text",
+      "sort": 2100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.0250b044d6801929]{Fights With Panache}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a9bea4ba6ba74a33]{Attack Flourish:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.650419e7724ddfea]{Roguish Smile (1+ Intellect):}</p>\n<p>Effort: Increase the maximum level of the foe you can affect by 1.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6d588d36570ee291]{Taunting Defense (2 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8be498224ba84a1d]{Dashing Defense:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.640dbeb714107ea5]{Fast Kill (2 Might or Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.28a8748c8cec5fcf]{Wounded Fury:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9d24bbcee4d36b45]{Acrobatic Attack (1+ Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f22ea5345a904109]{Flamboyant Boast (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.41121a1c54edcaf5]{Quick Adjustment (2 Speed):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cb0f566b45b22c73]{Improved Dashing Defense:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d87aa8f69c9f2fb9]{Misdirect (3 Speed):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.add3e327127d5adf]{Agile Wit:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e0eeaa91af8e047f]{Using the Environment (4 Intellect):}</p>\n<p>It is a routine task for you to move anywhere that it is physically possible for you to reach as part of normal movement, climbing, or jumping, and you ignore obstacles and difficult terrain when you do so. For example, you could climb up a tapestry to a balcony or slide down a ship’s sail, but not slip through an arrow slit or enter a locked cage.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2914396a7734de9e]{Again and Again (6 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.16c23ac47a79f920]{Return to Sender (3 Speed):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "7f6d37fe7ebce2ee"
+          }
+        }
+      }
+    },
+    {
+      "_id": "b93ff8ed730cf9b5",
+      "_key": "!journal.pages!20e153b9f5b29509.b93ff8ed730cf9b5",
+      "name": "Fuses Flesh and Steel",
+      "type": "text",
+      "sort": 2200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.b565d95729e4a747]{Fuses Flesh and Steel}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.28c3084688f9127c]{Defensive Cybernetics:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.70ca7dee63daf6d3]{Hidden Shield:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0cef27c55ec9b4f1]{Powered Cybernetics (2+ Might):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 12.</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.80a3ee2f93c5d281]{High-Speed Interface:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5a802f8149f273de]{HUD (0+ Intellect):}</p>\n<p>Effort: You can use Effort in varying amounts to gain alternate effects as follows:</p>\n<p class=\"crd-summary\">Combat HUD: If you use two levels of Effort, the HUD outlines your foes and predicts their attacks this round, giving you an asset on your next block or dodge task.</p>\n<p class=\"crd-summary\">Magnifier HUD: If you use one level of Effort, for the next two rounds the HUD magnifies your vision range to 5 miles (8 km) and allows you to see through level 4 or lower basic materials (such as wood, concrete, plastic, and stone) to a short distance in false color images.</p>\n<p class=\"crd-summary\">Scanner HUD: If you use two levels of Effort, for the next two rounds the HUD lets you see through level 4 or lower special materials (such as solid lead or an opaque force field) to an immediate distance in false color images. If you succeed on an Intellect task, you can see through level 5 or higher materials.</p>\n<p>Enabler.</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8aecaac69f4a709d]{Enhanced Self-Repair:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4563fdd2e49f731f]{Weaponization:}</p>\n<h3>Tier 4</h3>\n<p>Deep Reserves: When others are exhausted, you can push through. You can transfer up to 6 points among your Pools in any combination, at a rate of 1 point per round. For example, you could transfer 3 points of Speed to Might and 3 points of Intellect to Might, which would take a total of six rounds. This ability renews when you use a  ten-hour recovery. Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e78a6b5c9c3c2c7c]{Fusion:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.77d497377c9e3440]{Bolts of Power (5 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bec795bd362bb920]{Closed Loop Body:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.815ab60c02bb71f7]{Cybernetic Alacrity:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.818f3392f3bd5a76]{Embedded Drone (3 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "126306eded5fe99f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "7a8a87b6102cf9c4",
+      "_key": "!journal.pages!20e153b9f5b29509.7a8a87b6102cf9c4",
+      "name": "Fuses Mind and Machine",
+      "type": "text",
+      "sort": 2300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.fcac5d7208bf3d72]{Fuses Mind and Machine}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.75df1dc4a13e2c94]{Data Processor (1+ Intellect):}</p>\n<p>Effort: Increase your maximum number of temporary trained skills by one.</p>\n<p>Action to initiate.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f16edc343e8e42be]{Think Fast:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7f9e5c695effe765]{Wireless Interface (1+ Intellect):}</p>\n<p>Effort: Increase the duration so it lasts until you use a one-hour or longer recovery. Increase the range by a step (long, very long, 1 mile, 10 miles, or anywhere on the planet).</p>\n<p>Action to establish contact.</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d7a38ee3e10a02ae]{Analytic Processor (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1792d06ac32b30a1]{Machine Reading (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2b1705b1e8e6903e]{Action Processor (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1817254b16691295]{Awareness (3 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.84aa62f3252d7cbc]{Expanded Wireless:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.92e7e3f1f1f3dee0]{Locked Skill:}</p>\n<h3>Tier 5</h3>\n<p>Precognition (6 Intellect): You dimly sense the future until you use a ten-minute or longer recovery. During this time, you gain the following benefits:</p>\n<p class=\"crd-summary\">You gain an asset on defense tasks.</p>\n<p class=\"crd-summary\">You can predict the actions of those around you. You gain an asset to seeing through deceptions and attempts to betray you as well as avoiding traps and ambushes.</p>\n<p class=\"crd-summary\">You know what people are probably thinking and what they will say before they say it. You gain an asset to all interaction tasks.</p>\n<p>Enabler.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d97d9d117d54436f]{Machine Enhancement:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.761c155022d58c5b]{Mind Surge:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "4defd0cd194e4e12"
+          }
+        }
+      }
+    },
+    {
+      "_id": "dd3d684bdf42091b",
+      "_key": "!journal.pages!20e153b9f5b29509.dd3d684bdf42091b",
+      "name": "Grows to Towering Heights",
+      "type": "text",
+      "sort": 2400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.dc443944c0e754c6]{Grows to Towering Heights}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.529078c5d648d61d]{Enlarge (1+ Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6fc580ccc30dfee4]{Longstrider:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5648d9f1e7de509f]{Mighty Leap (1 Might):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e4695da8360cde3e]{Preternaturally Strong (2 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7a66ccbf41dcdb2d]{Scary Big:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.86966699069c57df]{Bigger:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b1a074822618392d]{Towering Throw (2 Might):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c9e2920e17b19f8f]{Huge:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a5abab2d5c142f30]{Towering Strike (3 Might):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f4ead3f769c8e613]{Gargantuan:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cac1b801f1700228]{Might for Mind:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d812f67a00c67fa6]{Colossal:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ed906d60dafdd692]{Grab:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "8859cd71a95b36db"
+          }
+        }
+      }
+    },
+    {
+      "_id": "bc29ffc944359351",
+      "_key": "!journal.pages!20e153b9f5b29509.bc29ffc944359351",
+      "name": "Howls at the Moon",
+      "type": "text",
+      "sort": 2500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.4c79f4d0127a4830]{Howls at the Moon}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4fb818714efffca3]{Beast Form (0+ Might):}</p>\n<p>Effort: You can intentionally change into your beast form if you succeed at a difficulty 4 Intellect task. If you fail, you can keep trying each round (at no additional Might cost to activate this ability) until you succeed or decide to give up.</p>\n<p>Enabler to involuntarily change into beast form; action to voluntarily change into beast form; action to change back to your normal form.</p>\n<aside class=\"crd-callout\"><p>A PC in beast form usually loses or at least leaves behind their regular-sized clothing and armor.</p></aside>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ff97aa11b28b3c9a]{Call Upon the Beast (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cb23a52c02b16182]{Keen Eye:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.841ad863026f127b]{Beast Senses:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e14b2dbd48dd8241]{Controlled Change:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8301c89cfba75fe0]{Scales (2 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d7db6d8e673a56a9]{Talons or Claws (1 Might):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.56ef28df1875a591]{Bigger Beast Form:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1d1c7cdcdcf41f69]{Sleeker Beast Form:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.195e37a8d9e70ad0]{Wounded Fury:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b7c94a18839c5b14]{Beast Healing:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3b607e1a2174903a]{Greater Controlled Change:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.55610b43d7e08477]{Poison Bite (4 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4ab36d7eb01530f5]{Wings (4 Might):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.77d9219689bf2eea]{Brute Squad (8 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f7822233d1cf8883]{Enhanced Beast Form:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.86161a7c73d6c0eb]{Constrict:}</p>\n<p>Lethal Capability: You’ve mastered how to kill with a particular attack. You inflict an additional 5 damage with your claws, your bite, or some other specific attack you prefer.</p>\n<p>You can gain this ability more than once. Each time you do, choose a different specific attack.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b115f5870f097e0a]{Perfect Control:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "8c7384096ac04d0f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "8486495ed174d0ab",
+      "_key": "!journal.pages!20e153b9f5b29509.8486495ed174d0ab",
+      "name": "Hunts",
+      "type": "text",
+      "sort": 2600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.29b6003ec097c077]{Hunts}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.54f1c666b9591227]{Hunter’s Determination:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.36255f0a37a7f3dd]{Knowledge of Nature:}</p>\n<p>Sneak Attack (1 Speed): If you attack a foe under one of the following conditions, your light melee or light ranged weapon attack inflicts an additional 5 damage on a successful hit. (This ability doesn’t work with medium or heavy weapons.)</p>\n<p class=\"crd-summary\">You attack with surprise.</p>\n<p class=\"crd-summary\">An ally uses their action to ease your attack.</p>\n<p class=\"crd-summary\">Your foe’s defenses are hindered due to some other ongoing direct distraction.</p>\n<p class=\"crd-summary\">Your foe is unable to take their next turn due to some disabling attack or situation.</p>\n<p>First action.</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.640dbeb714107ea5]{Fast Kill (2 Might or Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2315d2363d841684]{Quarry (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5af1dc58f8dddd3b]{Awareness (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d11fc24421d5bccb]{Horde Fighting:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6de39ac93bbcafdb]{Poison Crafter:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1eb1fab00771f480]{Better Sneak Attack:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9018bcc316f2d5f5]{Sprint and Grab (2 Speed):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6000a381730c0081]{Damage Dealer:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.600370ad88fda579]{Hunter’s Drive (5 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.10b24a8bb64bd7a9]{Escape Plan:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.943ec2b6dfbb6203]{Lethal Strike (6 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0e669c1e8fb7f6fa]{Multiple Quarries:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "2cf969858cdd7b8d"
+          }
+        }
+      }
+    },
+    {
+      "_id": "f8d186c321e109e9",
+      "_key": "!journal.pages!20e153b9f5b29509.f8d186c321e109e9",
+      "name": "Infiltrates",
+      "type": "text",
+      "sort": 2700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.4fd750930079ee97]{Infiltrates}</p>\n<h3>Tier 1</h3>\n<p>Fast Talk (1 Intellect): When speaking with an intelligent creature who can understand you and isn’t hostile, you convince that creature to take one reasonable action in the next round. A reasonable action must be agreed upon by the GM; it should not put the creature or its allies in obvious danger or be wildly out of character. Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.96f602b667db99d7]{Letting Their Guard Down (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4c5420a6826d6b30]{Master of Disguise (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.071e737c24ed7ad0]{Natural Sneak (2+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Enabler.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 9.</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0c438a1348f823da]{Awareness (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d52fbb620121165a]{Flight Not Fight:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.29660b81775547e1]{Blend In (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.81f5e9c9d645304c]{Defend and Respond (3 Might or Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6dae52eff791f95e]{Scrutinize Defenses (3+ Intellect):}</p>\n<p>Effort: Ask an additional question.</p>\n<p>Action to initiate; one hour to complete.</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fb4bb24f5a9152da]{Convenient Device (variable Intellect):}</p>\n<h3>Tier 5</h3>\n<p>Invisibility (4+ Intellect): You become invisible. This effect ends if you do something to reveal your presence or position—attacking, using an ability, moving a large object, and so on.</p>\n<p>Effort: Use this ability on a creature you touch instead of yourself; it lasts until they do something to reveal their presence or until you (not they) use a ten-minute or longer recovery.</p>\n<p>Action to initiate.</p>\n<aside class=\"crd-callout\"><p>An invisible character’s attack is eased by two steps. Attacks on an invisible character are hindered by four steps or are nearly impossible if the attacker has no idea where they might be.</p></aside>\n<p>@UUID[Compendium.cypher.abilities-en.Item.93bf9184ce871ce0]{Persistence Training (5+ Might):}</p>\n<p>Effort: Use this ability on an ally within immediate range instead of yourself.</p>\n<p>Enabler for yourself; action for another.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3253dc3716580b17]{Brainwashing (6+ Intellect):}</p>\n<p>Effort: Increase the maximum level of the creature you can affect by 1.</p>\n<p>Action to initiate.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cfdeb763a73921a0]{Spring Away (5 Speed):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "dc0bedeb199051a6"
+          }
+        }
+      }
+    },
+    {
+      "_id": "176b36e8545f68aa",
+      "_key": "!journal.pages!20e153b9f5b29509.176b36e8545f68aa",
+      "name": "Leads",
+      "type": "text",
+      "sort": 2800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.61a574a0c8443b6f]{Leads}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b8ce96e1782ea825]{Always Witty:}</p>\n<p>Inspiring Suggestion (2 Intellect): When you make a helpful suggestion to an ally, they have a better chance of succeeding at what they’re doing. Choose an ally who can see and understand you, then suggest a specific action for them to take, such as “attack the leader” or “climb the wall.” If the ally chooses to take that exact action, they gain two assets on that task. First action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b8fbd37b52d04526]{Lighting a Fire Under Them:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b76203a54a027140]{Basic Follower:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a324ef1cec2085de]{Natural Leader (3+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Enabler.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 12.</p>\n<aside class=\"crd-callout\"><p>A person manipulated by Natural Leader becomes more difficult to work with; the GM should treat them as one level higher for later uses of the ability.</p></aside>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cdd18f7e5c1eb1e9]{Advanced Command (4+ Intellect):}</p>\n<p>Effort: Attempt to give them one command each following round (make an Intellect attack for each additional command); the ability ends when you fail the attack.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e0241a391eba6fdf]{Expert Follower:}</p>\n<h3>Tier 4</h3>\n<p>Calm (3 Intellect): Through jokes, song, or other art, you prevent a living foe from attacking anyone or anything for one round. Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fb6269fa8e8bffc2]{Captivate or Inspire:}</p>\n<p>Captivate: Your words keep the attention of all NPCs that hear them for as long as you speak.</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.37626c411e4b0067]{Improved Follower:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1b0f5b99760bf840]{Stimulate (6 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ff0653bcd46e05ab]{Band of Followers:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.45a48e766a5576a9]{Mind of a Leader (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "46cd30400b51b35b"
+          }
+        }
+      }
+    },
+    {
+      "_id": "b09bd1e24970ce09",
+      "_key": "!journal.pages!20e153b9f5b29509.b09bd1e24970ce09",
+      "name": "Masters Telekinesis",
+      "type": "text",
+      "sort": 2900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.59e10a5797d00e9e]{Masters Telekinesis}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.10f435f217e52807]{Push (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.56cff79cda871156]{Steady Hand (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.db6952c36311ae37]{Telekinesis (2 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.23631b4877aa65e3]{Deflect Attacks (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2570ac7a41c19b45]{Energize Object (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e4f79ac81fddab52]{Armoring Debris (5 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.66539478ed1ebf57]{Enhance Strength (3+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Action to initiate.</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6d141e32e79d6de4]{Apportation (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.800ef61845cb3584]{Mind for Speed:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.aec6663133fc3eff]{Psychokinetic Attack (5 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.dd81277238e940e9]{Improved Apportation (6 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2b05e9738fcff0f8]{Reshape (5 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "7bb42d033d63bc70"
+          }
+        }
+      }
+    },
+    {
+      "_id": "27a1ddbedfe7eda3",
+      "_key": "!journal.pages!20e153b9f5b29509.27a1ddbedfe7eda3",
+      "name": "Masters Weaponry",
+      "type": "text",
+      "sort": 3000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.710e9e9740188941]{Masters Weaponry}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ffdceb1883cc310c]{Battle Competence:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.524012791aa594aa]{Display of Skill (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f19b805544d718b2]{Weapon Master:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d34cc07fbaf4d196]{Careful Shot:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.36d7243d1330bbe5]{Perfect Attack (2+ Might or Speed):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Action.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 12.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b4a149d5db384859]{Throw Weapon (1+ Speed):}</p>\n<p>Effort: Throw a heavy weapon (instead of a light or medium weapon) as a Last action.</p>\n<p>Action; Last action to throw heavy weapon.</p>\n<aside class=\"crd-callout\"><p>If you throw your weapon and fail to catch it after it rebounds, it most likely ends up a short distance from you.</p></aside>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e64a9bff8e4ce46b]{Disarming Strike (3 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c571dfbac7d33db5]{Rapid Attack (3 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.29d30193c90f291b]{Spray (2 Speed):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7674bedca9c402de]{Never Fumble:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2a0d0063eca1b738]{Rival Talent:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.354b4aa9eeb6aaa2]{Special Shot:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7243684287b60036]{Arc Spray (3 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c126bf3208be76c9]{That Was a Feint (5 Might or Speed):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.943ec2b6dfbb6203]{Lethal Strike (6 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.74805f2d3223e134]{Perfect Follow-Through (8 Might or Speed):}</p>\n<p>Shot Collision (4+ Speed): Once per round, if someone attacks you with a firearm, thrown weapon, or other physical projectile (such as an arrow, bullet, or crossbow bolt), instead of attempting a defense task, you can attempt to shoot the projectile out of the air. Make an attack against the projectile at the same difficulty as the defense task. If you hit, your shot deflects it, destroys it, or otherwise prevents it from hitting you.</p>\n<p>If you wish, the successfully deflected object explosively shatters in an immediate radius you select between you and the attacker, dealing 2 damage to all creatures and objects in the area (roll a separate attack against each). If you apply Effort to increase the damage, you deal 2 additional damage per level of Effort (instead of 3); targets in the area take 1 damage even if you fail the attack roll.</p>\n<p>Enabler.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "4bc498961ded3829"
+          }
+        }
+      }
+    },
+    {
+      "_id": "b987abcd8c8267b3",
+      "_key": "!journal.pages!20e153b9f5b29509.b987abcd8c8267b3",
+      "name": "Moves Like the Wind",
+      "type": "text",
+      "sort": 3100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.3927318cdd957397]{Moves Like the Wind}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.acf50bf78e171091]{Fleet of Foot (1+ Speed):}</p>\n<p>Effort: As an extra action on this turn you can move up to a long distance (instead of a short distance); this movement doesn’t hinder your tasks.</p>\n<p>Enabler.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.441bd1c3b584c82b]{Get Out:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e2009eb0ed6eae2c]{Recover Faster:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3aaff3500f929413]{Escape (2+ Speed):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Action.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 12.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.08c000078a81d69e]{Obstacle Running (3 Speed):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.79f3a711544a3947]{Incredible Running Speed:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.867776372a77617d]{Speedy Threat:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4695ad6521ef5009]{Blink of an Eye (4 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.088172196e598224]{Increasing Determination:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8dfc3df506cf1e42]{Speed for Mind:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.06962000d0b0a9dd]{Go to Ground (4 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e2d8c17842bd0873]{Hard to See:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2e9060c91447099a]{Speed Surge:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a5d65d5e576a8cc4]{Up to Speed:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "e760fec9e7135349"
+          }
+        }
+      }
+    },
+    {
+      "_id": "cab938d3640b7a96",
+      "_key": "!journal.pages!20e153b9f5b29509.cab938d3640b7a96",
+      "name": "Never Says Die",
+      "type": "text",
+      "sort": 3200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.6ffccf81e83a4f9e]{Never Says Die}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bea2059e9bb3be9a]{Determination:}</p>\n<p>Push on Through: Instead of a ten-minute recovery, you have a second one-action recovery—your first two recoveries are one action, the third is one hour, and the fourth is ten hours.</p>\n<p>You can take one more moderate wound than normal.</p>\n<p>You can use one of your one-action recoveries to allow an ally to use one of their ten-minute recoveries as an action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9b77094a2f5bfee0]{Safe Fall:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.51d49c17bd439af6]{Always Mighty:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.90d7d4026a25da23]{Ignore the Pain:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e5785dbdc114f34e]{Blood Fever:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fd5aa64cd4cc7c17]{Hidden Reserves:}</p>\n<h3>Tier 4</h3>\n<p>Increasing Determination: If you fail at a noncombat physical task (pushing open a door or climbing a cliff, for example) and then retry the task, the task is eased. If you fail again, you gain no special benefits. Enabler.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9a89bf208cbb76fd]{Outlast the Foe:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d039cbb4965f6bd2]{Not Dead Yet:}</p>\n<p>If you die again before you make your ten-hour recovery, you are truly dead.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.568ce957a3d0d433]{Final Defiance:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.aa4c64e082a42e14]{Ignore Affliction (5 Might):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "429edfb1b36d4b3d"
+          }
+        }
+      }
+    },
+    {
+      "_id": "7fff629dc7aeb10d",
+      "_key": "!journal.pages!20e153b9f5b29509.7fff629dc7aeb10d",
+      "name": "Performs Feats of Strength",
+      "type": "text",
+      "sort": 3300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.2cf3a270ebaba20a]{Performs Feats of Strength}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b2c197c59fa95bb6]{Always Mighty:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.eb2782d12fdf107f]{Hitting Harder:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5b4bcd5c3a0758dc]{Inspiring Display (2 Might):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.74fec388ec7fc48f]{Desperate Feat:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e5f5afad2ac8c51a]{Feat of Strength (1 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6c80899febfdb031]{Naturally Strong (2+ Might):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Enabler.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 12.</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cf56723fb7dfc6e8]{Deep Reserves:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4553e6e70cc5a403]{Iron Fist:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d49be1b32d54839c]{Amazing Strength:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.96e2674e74b82d1e]{Throw (2 Might):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.09dc89993e11e5f5]{Brute Strike (4 Might):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ffc80fe36ef41ff0]{Brute Squad (8 Might):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8263ae821d2a2066]{Jump Attack (5+ Might):}</p>\n<p>Effort: Add 2 feet to the jump height and an additional 2 damage to the attack (whether or not you knock the target prone).</p>\n<p>Action.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "cbf884881bedb21a"
+          }
+        }
+      }
+    },
+    {
+      "_id": "02c73ce1ea7e9ba4",
+      "_key": "!journal.pages!20e153b9f5b29509.02c73ce1ea7e9ba4",
+      "name": "Quells Evil",
+      "type": "text",
+      "sort": 3400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.4248bb1c92f3175c]{Quells Evil}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5bd78ac4e733bb0b]{Inspiring Trust (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.99a31c6053d92310]{Sense Evil (2+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Action to initiate.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 12.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fdbe84778ee853da]{Tribulation (1+ Intellect):}</p>\n<p>Effort: Increase the maximum level of the foe you can affect by 1. Specify some other action for the creatures to perform for one round, such as attacking a foe of your choice.</p>\n<p>Last action.</p>\n<aside class=\"crd-callout\"><p>“Creatures of similar ilk” could include additional categories of ineffably evil entities, depending on the campaign. Work with your GM to determine the details if there are any questions. For instance, other hellish creatures, fallen angels, Lovecraftian creatures, creatures from the “Crawling Deeps,” or creatures born of “the Strange” might be just as anathematic as undead and demons.</p></aside>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c69eb0b7f6ac9917]{Invisibility to Evil (2+ Intellect):}</p>\n<p>Effort: Increase the maximum level of foes who can’t perceive the invisible target by 1.</p>\n<p>Action to initiate.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.43ba3888ff41cbb3]{Shield Against Evil (1 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4b5ec98ea3c0fe27]{Blast Evil (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ebb3cfb7b7637a45]{Unearth Evil (4+ Intellect):}</p>\n<p>Effort: Once you have established where each qualifying target is located, you retain a sense of their locations (so if they move, you are aware of their new position) until you use a one-hour or longer recovery (this requires two levels of Effort).</p>\n<p>Action to initiate.</p>\n<aside class=\"crd-callout\"><p>A heat map is a simple map of an area using colors to show the intensity of something in a visual way, like showing where things are “hot” or “cold”—or, in this case, “evil.”</p></aside>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.37828fe7706d3c3c]{Rebuke Evil (4+ Intellect):}</p>\n<p>Effort: Affect an additional foe (make a separate attack roll against each foe); you must give the same command to all affected creatures.</p>\n<p>Last action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0caa9f97c6acd454]{Righteous Cloak (4 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.72ba68a853175b80]{Shrug Off Evil:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1d696429951c14b4]{Fence Out Evil (6+ Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7a8acd87ce68c519]{Supreme Retribution (8 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "6dc4c8d826d4fc9b"
+          }
+        }
+      }
+    },
+    {
+      "_id": "bf521053c44fa111",
+      "_key": "!journal.pages!20e153b9f5b29509.bf521053c44fa111",
+      "name": "Reveres a Supernatural Force",
+      "type": "text",
+      "sort": 3500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.00da8f9a88998c8b]{Reveres a Supernatural Force}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0d869a5c5c6ac2a4]{Defensive Precognition (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.10f435f217e52807]{Push (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3e6fad7b81da28f4]{Use the Force (2 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.74fec388ec7fc48f]{Desperate Feat:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.66207d2ef860602f]{Telekinesis (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9ef2b5b356601e74]{Telepathic Message (2+ Intellect):}</p>\n<p>Effort: Increase the range to anywhere in the same star system. Increase the range to anywhere in the same galaxy (this requires three levels of Effort). Action to initiate.</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9d24bbcee4d36b45]{Acrobatic Attack (1+ Speed):}</p>\n<p>You can’t use this ability if your physical actions are hindered from wearing armor.</p>\n<p>Psychic Suggestion (4 Intellect): If your Intellect attack succeeds, a target within short range takes the action you indicate on their next turn. If this action would cause direct harm to the creature or their allies, your mental attack is hindered. Action.</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9ac7ca01166e6814]{Telekinetic Crush (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e24198d1f40a463a]{Unbalancing Strike (4 Speed):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.27964f2de66d6deb]{Telekinetic Throw (5 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e3c4d1ab7f99ca93]{Total Awareness:}</p>\n<h3>Tier 6</h3>\n<p>Lethal Capability: You inflict an additional 5 damage with attacks of one specific type, such as a thrown knife, a shot with a blaster, unarmed attacks, or some other specific attack you prefer.</p>\n<p>You can gain this ability more than once. Each time you do, choose a different specific attack.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.16c23ac47a79f920]{Return to Sender (3 Speed):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "f8d0afe1f544ee98"
+          }
+        }
+      }
+    },
+    {
+      "_id": "420ccba7131e905b",
+      "_key": "!journal.pages!20e153b9f5b29509.420ccba7131e905b",
+      "name": "Rides the Lightning",
+      "type": "text",
+      "sort": 3600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.b95318f3aee833bf]{Rides the Lightning}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b874a6a354ca5e3c]{Control Electric Device (2+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Action.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 15.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a56f8e8425f7e968]{Lightning Hand (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.eae81d8d2b9711ed]{Thunder Crash (2 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.87f19a0384477176]{Bolt Rider (4 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b1bd3f74e195b961]{Radiohead:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.07dfa032917f83fb]{Resist the Storm:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.eae9e77c55fb7a6a]{Deafening Bolt (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d7dc2b830de94b9f]{Electric Armor (3 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cafb6665e604d0a4]{Bolts of Power (5 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0f80798d2e4a786b]{Subsonic Rumble (5 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b3cde9d63a703bcd]{Discharge (5+ Intellect):}</p>\n<p>Effort: Increase the effect on a target so that in addition to taking damage, they lose their next turn.</p>\n<p>Action to initiate.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e0c6afcba1af5724]{Electric Flight (0+ Intellect):}</p>\n<p>Effort: Cover and protect a passenger with Electric Armor as if they were you.</p>\n<p>Enabler.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.db0e001edc5b43b5]{Flash Across the Miles (6+ Intellect):}</p>\n<p>Effort: Travel to an indoor location if a lightning bolt could find an open route to that spot from the outside (such as through a window or doorway).</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7b1ca8ebd1fc56ef]{Wall of Lightning (8 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "539e93c2c60c15e4"
+          }
+        }
+      }
+    },
+    {
+      "_id": "747c6bcae96c7888",
+      "_key": "!journal.pages!20e153b9f5b29509.747c6bcae96c7888",
+      "name": "Sneaks Through the Shadows",
+      "type": "text",
+      "sort": 3700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.fe75916157f0145a]{Sneaks Through the Shadows}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a89898714e6b0191]{Always Speedy:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5addaa4273c5fc23]{Eyes Adjusted:}</p>\n<p>Natural Sneak (2+ Intellect): When you roll on a lockpicking, perception, pickpocketing, or stealth task and your roll is less than a 6, treat the roll as a 6. (This means you don’t get a GM intrusion if you roll a 1.)</p>\n<p>This ability renews when you take a recovery.</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Enabler.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 9.</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1b37210e9d1d9a40]{Safe Fall:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.281d703a0e5fe781]{Underworld Contacts:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c641e1cfbe4aef12]{Nine Lives:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.084386cc721c8210]{Retaliatory Swipe (3 Speed):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.42ceb3e16726bcbe]{Hard-Won Resilience:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e24198d1f40a463a]{Unbalancing Strike (4 Speed):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8b3fe6d3051696cf]{Dirty Fighter (2 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1b0fe962e22c09c9]{Slippery Customer:}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2914396a7734de9e]{Again and Again (6 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2e01f79318f7bdab]{Alley Rat (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "13df2e34f4eb15c4"
+          }
+        }
+      }
+    },
+    {
+      "_id": "deb76656415b08ee",
+      "_key": "!journal.pages!20e153b9f5b29509.deb76656415b08ee",
+      "name": "Solves Mysteries",
+      "type": "text",
+      "sort": 3800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.19ccd60a4278880e]{Solves Mysteries}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8901f43d017ea5c2]{Investigative Knack (2+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Action to initiate.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 12.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1c3c45324dc05ef7]{Sense Weakness (2 Intellect):}</p>\n<p>Sleuthing (3 Intellect): When you’re tracking a target of interest, looking for anything out of the ordinary (such as a clue or a single piece of evidence) at the scene of interest, or otherwise attempting to learn something about a mystery, you can ask the GM one question about the task and get a very short helpful answer that might be obvious to the character, but not to the player who doesn’t have their character’s experience. Action.</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5ae577a235b5b210]{Master of Disguise (2+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Enabler.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 9.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1ab3ebd1bed2a1e5]{Out of Harm’s Way (2 Speed):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f8b976dcec104cc7]{Combat Prowess:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.09a80061772944bd]{Ditch Assumption (4 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.476be3cde660a347]{Defend and Respond (3 Might or Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.f69d2cfd4a233de0]{Lead by Inquiry:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c66d295f60a3d685]{Defuse Situation (4 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.49eca8926ea13a0d]{Infer Thoughts (4+ Intellect):}</p>\n<p>Effort: Increase the maximum level of a target you can affect by 1.</p>\n<p>Action to prepare; action to initiate.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bfa4ad48e73075ff]{Knowing the Unknown (6 Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "e912fe8f6c7ef70e"
+          }
+        }
+      }
+    },
+    {
+      "_id": "0c350e7694f750f0",
+      "_key": "!journal.pages!20e153b9f5b29509.0c350e7694f750f0",
+      "name": "Speaks for the Land",
+      "type": "text",
+      "sort": 3900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.86ac909232a1c223]{Speaks for the Land}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.de5ec0f68c36a7a8]{Healing Fruit (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.52260d9d6f22b9b3]{Seeds of Fury (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a6140c4017669822]{Wild Affinity:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3184682f280785eb]{Communication (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.0a0b05e01227deef]{Wilderness Experience:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ef0de885e36ad47f]{Nature’s Grip (3+ Intellect):}</p>\n<p>Effort: Inflict 3 damage on the round the foe is first held.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.dd1175143f6607a7]{Nature’s Voice (3+ Intellect):}</p>\n<p>Effort: Affect an additional beast (2 Intellect).</p>\n<p>Action.</p>\n<aside class=\"crd-callout\"><p>The GM has final say over what counts as a nonhuman beast. Unless some kind of deception is at work, you should know whether you can affect a creature before you attempt to use Nature’s Voice on them. Aliens, extradimensional entities, very intelligent creatures, and robots never count.</p></aside>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b577dc5c9eb8b7f4]{Moon Shape (4+ Intellect):}</p>\n<p>Effort: Activate this ability even if you are not in moonlight.</p>\n<p>Action to change; action to revert.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c4598ac8cac3bc1c]{Wilderness Encouragement (3 Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a20c73e76d577e5c]{Insect Eruption (6 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6b6cb2f1ed391173]{Call the Storm (7 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e7acf4c1306c71ea]{Earthshake (8 Might or Intellect):}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "87bd8588803578ab"
+          }
+        }
+      }
+    },
+    {
+      "_id": "6c8e9c904b6c7021",
+      "_key": "!journal.pages!20e153b9f5b29509.6c8e9c904b6c7021",
+      "name": "Stands Like A Bastion",
+      "type": "text",
+      "sort": 4000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.0b248159dcdb2e99]{Stands Like A Bastion}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e5882a1e0466901d]{Battle Competence:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bf6c25d34e313c90]{Imperturbable:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a71403b18448f1f0]{Nothing but Defend:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bab1284acd8e2c33]{Resist the Elements:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.24a68b0cab1c483d]{Shield Master:}</p>\n<h3>Tier 3</h3>\n<p>Defend and Respond (3 Might or Speed): If you block or dodge a melee attack, you can immediately make a melee attack against your attacker. You can’t use this ability more than once per turn. Enabler.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.dde01a3953f7dde9]{Throw Shield (0+ Speed):}</p>\n<p>Effort: A successful hit with the shield also hinders the target for one round.</p>\n<p>Action.</p>\n<aside class=\"crd-callout\"><p>When using Throw Shield, if you throw your shield and fail to catch it when it rebounds, it most likely ends up a short distance from you.</p></aside>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bea9bd7c0bdcbe07]{Unmovable (3 Might):}</p>\n<h3>Tier 4</h3>\n<p>Hard-Won Resilience: Due to your experiences, you’ve been exposed to all sorts of terrible things and are developing a general resistance. You can take one more moderate wound than normal. Enabler.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.861b555be6856a00]{Inspiring Defense:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1f2fb2d206f5aa43]{Tower of Will:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.72ffc5693df88610]{Weave an Iron Wall (5 Might or Speed):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fdfe4e051a939d09]{Attenuate Threat:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a9707eb868ad61de]{Bouncing Shield (3+ Speed):}</p>\n<p>Effort: A successful hit with the shield hinders the target for one round.</p>\n<p>Action.</p>\n<p>Lethal Capability: You’ve mastered how to kill with a particular attack. You inflict an additional 5 damage with attacks of one specific type, such as a thrown knife, a shot with a firearm, a swing of an axe, unarmed attacks, or some other specific attack you prefer.</p>\n<p>You can gain this ability more than once. Each time you do, choose a different specific attack.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "07e36bce0846090f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "19dacc1a7f0a5f41",
+      "_key": "!journal.pages!20e153b9f5b29509.19dacc1a7f0a5f41",
+      "name": "Strikes With Mystic Might",
+      "type": "text",
+      "sort": 4100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.6704ba394dcff139]{Strikes With Mystic Might}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bbeb0253198a0e48]{Mystic Hand:}</p>\n<p>No Need for Weapons: Your unarmed attacks (such as punches, kicks, elbows, or knees) inflict an additional 2 damage.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b616c2f2849d7f21]{Supernatural Leap:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1b37210e9d1d9a40]{Safe Fall:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a26ce46e34a6d56a]{Surging Hand (2 Speed):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.77dd7c39af488c65]{Mystic Flurry:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9be8244a27a2408b]{Perfecting the Body:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a6ddd14a84838c21]{Mystic Step (4+ Speed):}</p>\n<p>Effort: Reach a location within range that you can’t see directly because it’s blocked by a wall or structure.</p>\n<p>First action.</p>\n<aside class=\"crd-callout\"><p>If you try to use Mystic Step to reach a location that has no room for you, the ability automatically fails and you don’t leave your original location.</p></aside>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ac71c098cac67adb]{Exploding Hand (5 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.eb3d2ab653876b8f]{Resonant Palm (7 Speed):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.943ec2b6dfbb6203]{Lethal Strike (6 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.971dad2d97e71874]{Perfected Form:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "ea87b1818d60bb11"
+          }
+        }
+      }
+    },
+    {
+      "_id": "e335c9f366105017",
+      "_key": "!journal.pages!20e153b9f5b29509.e335c9f366105017",
+      "name": "Talks to Machines",
+      "type": "text",
+      "sort": 4200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.af4c2b423c14739e]{Talks to Machines}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5cac3c930f591413]{Charm Machine (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b874a6a354ca5e3c]{Control Electric Device (2+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Action.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 15.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.21174a6865229a91]{Friend to Intelligent Machines:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8203aa28e1db1519]{Coaxing Power (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.47e58e33321aa96f]{Locate Machine (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3acc8ec0eac5c0a9]{Machine Control (2+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Action to initiate.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 9.</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.96d5d2bf789b9ef0]{Disable Mechanism (3+ Intellect):}</p>\n<p>Effort: Increase the range to as far as you can directly see (through your own eyes, not through a remote camera or other interface). Target a machine through a network interface you have unrestricted access to (this requires two levels of Effort).</p>\n<p>Action.</p>\n<p>Quick Control (4 Intellect): A successful Intellect attack allows you to command a machine (intelligent or not) within short range to take one action within its capabilities on its next turn, regardless of its normal programming or attitudes. If this action would cause the machine direct harm to itself or its allies, your Intellect attack against it is hindered. (If you use this ability to command an intelligent machine, it likely becomes hostile to you afterward.) Action.</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5291ef4c3b60ed4c]{Compile Robotic Offense:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.1aa2eec0cebdd3fc]{Machine Companion:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5cf49db61df33c12]{Information Gathering (5 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.5f237a19b75399c1]{Improved Machine Companion:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.71e3e34aaea66052]{Recompile Machine (8+ Intellect):}</p>\n<p>Effort: Increase the maximum level of the machine you can affect by 1.</p>\n<p>Last action.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "722c52df15665584"
+          }
+        }
+      }
+    },
+    {
+      "_id": "1157a80e97d7d805",
+      "_key": "!journal.pages!20e153b9f5b29509.1157a80e97d7d805",
+      "name": "Tends to the Wounded",
+      "type": "text",
+      "sort": 4300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.1ad2e05ddf30363e]{Tends to the Wounded}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.baf76c43594d0d88]{Easing the Pain:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9e258cad72e9c4f8]{Healing Hand (1+ Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d2aec242869d48ff]{Resilience:}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.c303447445eeb0b2]{Alleviate Malady (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b8e7c7e6c45ddf63]{Healing Beacon (3 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.9884d1bd34a214b2]{Font of Healing:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fac2a7764684c83f]{Font of Recovery:}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.145ddbbf6cc3b0bd]{Healing Shield:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.650ca449298c72a0]{Resuscitate (5+ Intellect):}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.29dd3dc83bae4f98]{Ranged Healer:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.37105914a2d38fb4]{Rewind Time (5 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8075c8e3f4842d38]{Greater Healing Hand (4+ Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.966696137c50a1f2]{Superior Healer (0+ Intellect):}</p>\n<p>Effort: Extend the death time limit of Resuscitate to 24 hours, a week (two levels of Effort), a month (three levels of Effort), or a year (five levels of Effort).</p>\n<p>Enabler.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "155056dc9a8bb322"
+          }
+        }
+      }
+    },
+    {
+      "_id": "3625072d7d99d845",
+      "_key": "!journal.pages!20e153b9f5b29509.3625072d7d99d845",
+      "name": "Walks Through Walls",
+      "type": "text",
+      "sort": 4400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.752d0f3a8abab1a6]{Walks Through Walls}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a3d0b05906c5eba3]{Light Step:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bbebb93b48d7a57d]{Soft Whisper (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.e4366bc7bedb1122]{Walk Through Walls (2+ Intellect):}</p>\n<p>Effort: Increase the maximum level of the barrier you can pass through by 1.</p>\n<p>Last action.</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.681bb5b028b464c8]{Defensive Phasing (2 Intellect or Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d764c1b79f732565]{Phase Grasp (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3b0ca07aeb30f86d]{Slip Into Shadow (0+ Intellect):}</p>\n<p>Effort: Increase the number of creatures you can hide from by one (attempt a separate stealth task against each).</p>\n<p>Enabler.</p>\n<p>At tier 3: The base number of targets you can attempt to hide from increases to three.</p>\n<aside class=\"crd-callout\"><p>Slipping into shadow and other stealth-based tasks for someone who Walks Through Walls is partly enabled by their ability to phase into translucence.</p></aside>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a7deae53edbdfb1e]{Faster Phase:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.cbc078d69eb25005]{Phased Attack (3 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.bf5d660c64831933]{Phase Door (4+ Intellect):}</p>\n<p>Effort: Increase the traveling range by a long distance.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.ab553ef87ffa486a]{Phase Friend (4+ Intellect):}</p>\n<p>Effort: Bring an additional ally.</p>\n<p>Enabler.</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b8a06e8ca485d063]{Quick Phase:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.32c9b1dffc92941c]{Untouchable (6 Intellect):}</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.223d5c4a456e2ed0]{Phase Foe (8+ Intellect):}</p>\n<p>Effort: Increase the maximum level of the target you can affect by 1.</p>\n<p>Action.</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.6b08cfeee32ef06b]{Selective Phase Attack:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "fb0113e5a8772f84"
+          }
+        }
+      }
+    },
+    {
+      "_id": "972f45955124b663",
+      "_key": "!journal.pages!20e153b9f5b29509.972f45955124b663",
+      "name": "Wears a Sheen of Ice",
+      "type": "text",
+      "sort": 4500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.50519ec393e32a49]{Wears a Sheen of Ice}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.038ac78ae1fa4f9b]{Cool Water (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.542107d4cbcd7e4b]{Ice Armor (1 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.d87e2cb03561faa6]{Lower Temperature (1 Intellect):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a500ee60977e339e]{Frost Bolt (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b6d5da807e766c32]{Ice Slide (2 Intellect):}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.4bbd24745052a2b8]{Ice Creation (4+ Intellect):}</p>\n<p>Effort: Double the maximum size of the object you can create. Increase the distance the object can be from you by one range category.</p>\n<p>Action.</p>\n<aside class=\"crd-callout\"><p>A wall of ice that is about 5 feet by 5 feet and 1 inch thick (1.5 m by 1.5 m and 3 cm thick) is about the same size as a person.</p></aside>\n<p>@UUID[Compendium.cypher.abilities-en.Item.fa05893eb379f21c]{Winter’s Grip (3+ Intellect):}</p>\n<p>Effort: Inflict 3 damage from cold on the round the foe is first held.</p>\n<p>Action.</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.8a82699fc9e89c6e]{Improved Ice Armor:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.a237e4e958b2cb52]{Cold Burst (5+ Intellect):}</p>\n<p>Effort: Attempt to blind all targets you successfully hit (a successful second attack roll against a target means they are blinded, hindering all vision-based tasks by two steps, until you use a ten-minute or longer recovery).</p>\n<p>Action.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.502e96db7de82d09]{Ice Monster (6 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.201fc34e3fb82e45]{Winter Gauntlets:}</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "5c0656729172ba99"
+          }
+        }
+      }
+    },
+    {
+      "_id": "df066b0504063114",
+      "_key": "!journal.pages!20e153b9f5b29509.df066b0504063114",
+      "name": "Works for a Living",
+      "type": "text",
+      "sort": 4600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>@UUID[Compendium.cypher.foci-en.Item.f6e3ba3f779a5d0e]{Works for a Living}</p>\n<h3>Tier 1</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.06e9b05f13930c59]{Fitting In (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.3bf6d39e6a2cfaca]{Handy:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.2a69ece25d268b32]{Muscles of Iron (2 Might):}</p>\n<h3>Tier 2</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.7c2b1b8cbea8b8dc]{Danger Instinct (3 Speed):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.b96cea7fcefdd8b5]{Endurance:}</p>\n<h3>Tier 3</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.309e295d9815a1c6]{Eye for Detail (2 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.307b2895252c45b7]{Improvise (3 Intellect):}</p>\n<h3>Tier 4</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.10c279b374e96dbf]{Device Insight (3 Intellect):}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.42ceb3e16726bcbe]{Hard-Won Resilience:}</p>\n<h3>Tier 5</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.dac8240c7ab7ca25]{Polymath (0+ Intellect):}</p>\n<p>Effort: Increase the minimum number rolled for this ability by 3.</p>\n<p>Enabler.</p>\n<p>At tier 3: The minimum number rolled for this ability increases to 15.</p>\n<h3>Tier 6</h3>\n<p>@UUID[Compendium.cypher.abilities-en.Item.97e28b73346a33d3]{Expert Handyman:}</p>\n<p>@UUID[Compendium.cypher.abilities-en.Item.abfde711489c89bd]{On the Crew (4+ Intellect):}</p>\n<h3>Mystic Source</h3>\n<p>A character who Strikes With Mystic Might relies on an otherworldly, magical source for their power, such as elemental fire, shadow, thorn, or something more esoteric like “The Six Lamps of the West”—work with your GM to flesh out the details. Whatever you choose is probably the same mystic power source used for the character’s higher-tier abilities as well.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "df8cf5c710831548"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.crd-foci",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Foci",
+        "sourceLocator": "CRD paragraphs 3438-5229",
+        "transformations": [
+          "Verbatim source paragraphs with structural HTML formatting",
+          "Complete canonical Item definitions replaced by native compendium links; paragraph destinations recorded separately"
+        ]
+      }
+    }
+  }
+}

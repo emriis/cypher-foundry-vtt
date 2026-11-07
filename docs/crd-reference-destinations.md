@@ -62,6 +62,30 @@ a consultation table rather than a random procedure. **59** tables remain for
 later chapter reconciliation. Generic substring audit results remain separate
 from these complete, source-bounded destinations.
 
+## Library tranche 2C dispositions
+
+The [Foci/equipment partition](../data/crd-reference-details.json) covers all
+nonblank source paragraphs at **3438–5952** and closes **17** more baseline
+visual groups:
+
+| Chapter | Closed baseline groups |
+| --- | --- |
+| Foci | B107, B112–B113, B115, B129–B130 |
+| Equipment | B145, B147–B156 |
+
+Together with 2A–2B, **69** baseline groups are covered and **31** remain open.
+Word tables **2–27** have complete destinations in the new Journals: **674
+cells**, including **31 empty cells**, are preserved in their original order.
+These animal-form, equipment and currency tables are consultation material.
+Their item rows include **259 native links**, retaining the canonical
+genre/price/name distinction. **33** source tables remain for 2D–2E.
+
+The existing **42 Focus Items** remain the native entry points to authored
+ability flowcharts and tier/prerequisite views; no arrows are inferred from
+prose or recreated by this reference work. The full equipment intrusion at
+5594 is no longer deferred. The baseline index and historical match counts
+below remain unchanged; they are not current completion claims.
+
 ## Baseline: 100 visual groups requiring review
 
 | Group | CRD paragraphs | Existing full paragraph matches | Source section | Proposed reference destination |
