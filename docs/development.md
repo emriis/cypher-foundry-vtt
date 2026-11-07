@@ -89,6 +89,19 @@ table labels while linking the common Item, without activating or generating
 anything. Preserve empty cells and the distinction between reference tables
 and executable RollTables, which belong to information-library lot 5.
 
+The final rules, advancement and attribution Journals use
+`npm run author:crd-final` and the read-only `npm run check:crd-final`.
+`data/crd-reference-final.json` owns their paragraph/table destinations,
+including the front-matter title. `npm run check:crd-completeness` verifies all
+five tranche partitions against the pinned CRD, every table and the 100
+historical visual-group locators. Missing/duplicate paragraphs or changed
+source hashes fail validation. Its stored register is
+`data/crd-reference-completeness.json`; `node scripts/check-reference-completeness.mjs --write`
+explicitly refreshes it after source-bound editorial review. Retain the original
+baseline rows in `docs/crd-reference-destinations.md` as stable review IDs.
+All fourteen chapters are now available; guides and executable tools have
+separate acceptance boundaries in the library plan.
+
 ### TDD and BDD boundary
 
 For recovery and healing work, follow the source contracts and persistence

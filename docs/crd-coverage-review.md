@@ -7,11 +7,13 @@ does not implement the open rules or change accepted adjudications.
 
 Subsequent reference delivery is tracked in the
 [information-library plan](information-library-plan.md#lot-2-delivery-register).
-Tranches 2A–2D add twelve complete source chapters and their contents/index,
-bringing the catalogue to 1,386 EN documents with paired FR documents and 20
-Rules Journals. Paragraph partitions cover all substantive text at 1–7380,
-closing 76 of the baseline 100 open visual groups and 39 of the 61 Word tables.
-The inventory and counts
+Tranches 2A–2E add all fourteen complete source chapters, their contents/index
+and separate attribution pages, bringing the catalogue to 1,389 EN documents
+with paired FR documents and 23 Rules Journals. The
+[complete source partition](../data/crd-reference-completeness.json) accounts
+for all 7,747 nonblank paragraphs at 0–8201, all 100 baseline visual groups and
+all 61 Word tables. No explicit callout deferral remains. This completes the
+source-reference delivery, not the runtime automation register. The inventory and counts
 below remain the historical `22e2f2a` audit snapshot; these reference additions
 do not close the runtime-rule or particular-power gaps listed here.
 

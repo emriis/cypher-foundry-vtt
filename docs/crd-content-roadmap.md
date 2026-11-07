@@ -319,9 +319,10 @@ combat prose remains available and is not parsed automatically.
 ### 9.3 Random tables
 
 - [x] Inventory all 61 Word tables through the source callout audit.
-- [ ] Classify every table as list, reference/procedure, equipment data or actual
-  random table and assign its destination. Cypher generation/inline tables
-  already have runtime consumers.
+- [x] Assign all 61 source tables complete destinations in the reference
+  library; see [the reconciliation](../data/crd-reference-completeness.json).
+- [ ] Complete the executable-table selection/classification for library lot 5.
+  Cypher generation/inline tables already have runtime consumers.
 - [ ] Add native RollTables where useful and genuinely source-backed.
 - [ ] Keep prose lists as Journal content.
 - [ ] Validate results and weights.
@@ -518,20 +519,22 @@ Completed families require, as applicable:
 - [x] Extract provenance and bilingual pairing.
 - [x] Add fidelity and contract tests.
 
-### W5 — CRD Journal foundation — In progress
+### W5 — CRD Journal foundation — Complete
 
-Seven source-faithful selections and the first four full chapter destinations
-plus contents/index now exist. The remaining ten chapters retain the complete
-source/context and navigation requirements in the lot 2 delivery register.
+The fourteen full source chapters, separate attribution, contents/index and
+seven existing quick selections now exist in EN/FR. The lot 2 delivery register
+records chapter-level contracts and validation; the complete partition maps
+all 7,747 nonblank source paragraphs, 61 tables and 100 historical visual groups.
+This source milestone does not close the runtime or guide/tool milestones.
 
 - [x] Inventory substantive reference/procedure chapters in the coverage review.
 - [x] Assign and validate all first-four-chapter paragraphs, including canonical
   Item destinations, five baseline callout groups and the Scavenging table.
-- [ ] Assign remaining individual passages, boxes, examples and tables.
-- [ ] Extend the selected-Journal hierarchy to the complete reference library.
-- [ ] Extend deterministic content authoring/generation beyond the seven selections.
-- [ ] Link Journals to structured records.
-- [ ] Add EN/FR and provenance tests.
+- [x] Assign remaining individual passages, boxes, examples and tables.
+- [x] Extend the selected-Journal hierarchy to the complete reference library.
+- [x] Extend deterministic content authoring/generation beyond the seven selections.
+- [x] Link Journals to structured records.
+- [x] Add EN/FR and provenance tests.
 
 ### W6 — Quick Reference — Planned
 
@@ -549,7 +552,7 @@ source/context and navigation requirements in the lot 2 delivery register.
 ### W8 — Genres and GM library — In progress
 
 - [x] Canonical Genre Ability integration.
-- [ ] Complete genre reference/navigation.
+- [x] Complete genre reference/navigation.
 - [x] Inventory the 61 Word tables; cypher generation and inline tables have consumers.
 - [ ] Complete table classification, destinations and any useful native RollTables.
 - [ ] Add GM procedures and rewards.
@@ -584,8 +587,9 @@ source/context and navigation requirements in the lot 2 delivery register.
   matrix.
 - [ ] Complete the extracted/modelled/validated/runtime/E2E matrix for all
   structured mechanics, including Cypher effects.
-- [ ] Close the general-rule residuals and reference-content destinations in
-  [the current coverage review](crd-coverage-review.md), including XP earning.
+- [x] Close the reference-content destinations in
+  [the current coverage review](crd-coverage-review.md).
+- [ ] Close the general-rule automation residuals, including XP earning.
 - [ ] Reconcile the machine automation classifier with existing shield, equipment
   and round-timing consumers before using its gap strings as planning evidence.
 - [ ] Expand high-value player and GM E2E workflows.

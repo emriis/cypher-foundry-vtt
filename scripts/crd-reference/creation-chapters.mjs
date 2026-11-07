@@ -6,6 +6,7 @@ import { createHash } from "node:crypto";
 import { GENRE_JOURNAL_IDS } from "./genre-metadata.mjs";
 import { DETAIL_JOURNAL_IDS } from "./detail-metadata.mjs";
 import { CYPHER_JOURNAL_IDS } from "./cypher-metadata.mjs";
+import { FINAL_JOURNAL_IDS } from "./final-metadata.mjs";
 import { proposedFoundryId, proposedPageId, identitySlug } from "../source-migration/id-contract.mjs";
 import { translationFields } from "../localization/compendium-translations.mjs";
 import { plainText } from "../crd-audit/text-fidelity.mjs";
@@ -169,14 +170,16 @@ export function buildCreationChapters(paragraphs, records) {
   const genres = GENRE_JOURNAL_IDS.map(id => records.find(row => row.logicalId === id)?.document).filter(Boolean);
   const details = DETAIL_JOURNAL_IDS.map(id => records.find(row => row.logicalId === id)?.document).filter(Boolean);
   const cyphers = CYPHER_JOURNAL_IDS.map(id => records.find(row => row.logicalId === id)?.document).filter(Boolean);
-  const referenceChapters = [...genres, ...details, ...cyphers];
+  const finals = FINAL_JOURNAL_IDS.map(id => records.find(row => row.logicalId === id)?.document).filter(Boolean);
+  const referenceChapters = [...genres, ...details, ...cyphers, ...finals];
   const navigable = [...documents, ...referenceChapters];
-  contents.flags.cypherFoundry.crd.sourceLocator = `Editorial navigation to CRD paragraphs 1-${cyphers.length ? 7380 : details.length ? 5952 : genres.length ? 3437 : 456}`;
+  contents.flags.cypherFoundry.crd.sourceLocator = `Editorial navigation to CRD paragraphs ${finals.length ? "0-8201" : `1-${cyphers.length ? 7380 : details.length ? 5952 : genres.length ? 3437 : 456}`}`;
   contents.flags.cypherFoundry.crd.transformations = ["Editorial contents and thematic links to source-backed Journals; no replacement rule text"];
   page(contents, "reference-contents", "Contents", "<p>Reference chapters available in this edition:</p><ol>"
     + navigable.map(doc => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", doc.name)}<ul>`
       + doc.pages.map(entry => `<li>${link(doc.flags.cypherFoundry.crd.logicalId, "rules", entry.name, entry._id)}</li>`).join("") + "</ul></li>").join("")
-    + "</ol><p>The remaining CRD chapters are being prepared. The existing quick references remain available from the library.</p>");
+    + (finals.length === 3 ? "</ol><p>All fourteen source chapters are available. Credits and license notices are provided separately; the existing quick references remain available from the library.</p>"
+      : "</ol><p>The remaining CRD chapters are being prepared. The existing quick references remain available from the library.</p>"));
   page(contents, "reference-thematic-index", "Thematic Index", "<ul>" + [
     [creation, "creation-your-three-stats", "Stats, Pools and Edge"],
     [creation, "creation-wounds", "Wounds"], [creation, "creation-effort", "Effort"],

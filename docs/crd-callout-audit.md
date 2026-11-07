@@ -100,6 +100,14 @@ have been reviewed.
 
 ## Interpretation and future work
 
+Tranche 2E completes the rules, advancement and credits partition, including
+the front title. The [cross-tranche register](../data/crd-reference-completeness.json)
+accounts for all 7,747 nonblank source paragraphs, all 100 historical open
+visual groups and all 61 tables (1,589 cells, including 239 blanks). The last
+explicit deferral at 7953 is now covered in full. No deferral remains. These
+source destinations do not certify automation or replace the generic substring
+diagnostic. Counts in the earlier tranche notes below remain historical.
+
 Tranche 2D adds the complete Cypher partition at 5955–7380 and tables 28–38
 (691 cells including 208 blank cells). It closes B157–B160 and B167–B169.
 Together, 2A–2D cover 76 baseline visual groups and 39 Word tables; 24 groups
