@@ -1,0 +1,94 @@
+{
+  "_id": "133f35dafa17ef18",
+  "_key": "!journal!133f35dafa17ef18",
+  "name": "Credits",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "147d4cb064faedc3",
+      "_key": "!journal.pages!133f35dafa17ef18.147d4cb064faedc3",
+      "name": "Credits",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"crd-editorial\"><p>The following credits and publisher statement are reproduced from the supplied CRD. They describe its publisher, not this unofficial Foundry conversion.</p></aside>\n<p>Designers and Developers Monte Cook, Bruce R. Cordell,</p>\n<p>Sean K. Reynolds</p>\n<p>Creative Director Monte Cook</p>\n<p>Editor and Proofreader Ray Vallese</p>\n<p>The Monte Cook Games Team</p>\n<p>Chief Creative Officer and Founder Monte Cook</p>\n<p>Senior Designer and Founder Shanna Germain</p>\n<p>Chief Operating Officer Charles Ryan</p>\n<p>General Manager Tammie Webb Ryan</p>\n<p>Customer Support Manager Jennifer Walls</p>\n<p>Marketing Manager Kate Evans</p>\n<p>Social Media Coordinator Olivia Ryan</p>\n<p>Art Director Bear Weiter</p>\n<p>Graphic Designer Javier P. Beltrán</p>\n<p>Managing Editor Teri Litorco</p>\n<p>Associate Editor Dominique Dickey</p>\n<p>Senior Designer Bruce R. Cordell</p>\n<p>Designer and Developer Sean K. Reynolds</p>\n<p>We make games that inspire us, with people who inspire us, for people who inspire us. We don’t use AI-generated content. Every product we make (including this one) is crafted by human hands, minds, and hearts. Read more about our values at:</p>\n<p>© 2026 Monte Cook Games, LLC.  CYPHER and its logo are trademarks of Monte Cook Games, LLC in the U.S.A. and other countries. All Monte Cook Games characters and character names, and the distinctive likenesses thereof, are trademarks of Monte Cook Games, LLC.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "300a7a4b4d8dcfa2"
+          }
+        }
+      }
+    },
+    {
+      "_id": "f62c75abf393ddf8",
+      "_key": "!journal.pages!133f35dafa17ef18.f62c75abf393ddf8",
+      "name": "Source title",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Cypher Reference Document</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1baf500dafaf8e92"
+          }
+        }
+      }
+    },
+    {
+      "_id": "74fe6a65ef4623e0",
+      "_key": "!journal.pages!133f35dafa17ef18.74fe6a65ef4623e0",
+      "name": "License notice",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Compatible with Cypher</p><p>This product is an independent production and is not affiliated with Monte Cook Games, LLC. It is published under the Cypher Open License, found at <a href=\"https://col.montecookgames.com\">Cypher Open License website</a>.</p><p>CYPHER and its logo are trademarks of Monte Cook Games, LLC in the U.S.A. and other countries. All Monte Cook Games characters and character names, and the distinctive likenesses thereof, are trademarks of Monte Cook Games, LLC.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "864c3193c8f96b16"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.crd-credits",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Credits",
+        "sourceLocator": "CRD paragraphs 8180-8201; front-matter title at paragraph 0",
+        "transformations": [
+          "Verbatim source paragraphs with structural HTML formatting",
+          "Complete canonical Item definitions replaced by native compendium links; paragraph destinations recorded separately"
+        ]
+      }
+    }
+  }
+}

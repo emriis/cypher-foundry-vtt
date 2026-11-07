@@ -1,0 +1,2334 @@
+{
+  "schemaVersion": 1,
+  "referenceSha256": "cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729",
+  "scope": "Full CRD text, all source tables and the 100 historical open visual groups; not an automation or accessibility certification",
+  "paragraphs": 8202,
+  "nonblankParagraphs": 7747,
+  "sourceTextSha256": "d08b82fc5efb8258f041567b33fbdcea97bb299b9c3d88786ed149a480375922",
+  "partitionFiles": [
+    "data/crd-reference-creation.json",
+    "data/crd-reference-genres.json",
+    "data/crd-reference-details.json",
+    "data/crd-reference-cyphers.json",
+    "data/crd-reference-final.json"
+  ],
+  "missingParagraphs": [],
+  "duplicateParagraphs": [],
+  "tables": [
+    {
+      "index": 0,
+      "start": 228,
+      "end": 237,
+      "cells": 10,
+      "blankParagraphs": 0,
+      "sourceSha256": "fdae30b909efce359851c9a881504921a530797f24cbc21d0e7c9871636b7b74",
+      "destinations": [
+        {
+          "logicalId": "skill.scavenging",
+          "kind": "canonical-item"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "start": 3065,
+      "end": 3088,
+      "cells": 24,
+      "blankParagraphs": 0,
+      "sourceSha256": "02b895d3e07f86ba64d76085f5e4b9851747176323ce1d46f9738cd8fc2fe7b1",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-superheroes",
+          "pageId": "76f6f072a05c475c"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "start": 3759,
+      "end": 3824,
+      "cells": 66,
+      "blankParagraphs": 0,
+      "sourceSha256": "e54daa593be6a619b24e7425c535aba7a0ed69ff7a84cde779ec2d488658d70f",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-foci",
+          "pageId": "dcbdc406667c8bec"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "start": 5303,
+      "end": 5326,
+      "cells": 24,
+      "blankParagraphs": 3,
+      "sourceSha256": "92c38c4c78455cd9f0b7e7e482719f9e8cb12116927ed2dbb9a47e0a086b80bb",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "start": 5329,
+      "end": 5370,
+      "cells": 42,
+      "blankParagraphs": 5,
+      "sourceSha256": "47ab2d52f4e350d0d9e50727e57c45d8e100d82b29f0910a8582547e3e6efc90",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "start": 5372,
+      "end": 5411,
+      "cells": 40,
+      "blankParagraphs": 0,
+      "sourceSha256": "b52163c5c90ba8220b5b1848521ec3408bc98b58612798cec14d538c7bd9e5f9",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "start": 5413,
+      "end": 5428,
+      "cells": 16,
+      "blankParagraphs": 0,
+      "sourceSha256": "75f60f50d92079f11a71243ce70e82f5646bd2c7c196a39639c73f179e1300e9",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "start": 5430,
+      "end": 5437,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "sourceSha256": "aa5ce2c968d0430888517f756489fb25dd2dbed62c3c58def0c146d723210ec1",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "start": 5441,
+      "end": 5452,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "sourceSha256": "b2a29c465e5f4dc360be7a00c29874731fc1c725cfcd2a8095379336a289b809",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "start": 5456,
+      "end": 5491,
+      "cells": 36,
+      "blankParagraphs": 5,
+      "sourceSha256": "c97e81083650f23e11c61aaf50e1493ab10e5de84c86e2a55ee14c9242565c7d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "3f9dc3d8901759e8"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "start": 5493,
+      "end": 5550,
+      "cells": 58,
+      "blankParagraphs": 5,
+      "sourceSha256": "cbc14c123922ef99360c746a6a6af3057d626f7af01d98d9daa733c3e7a1e974",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "3f9dc3d8901759e8"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "start": 5552,
+      "end": 5593,
+      "cells": 42,
+      "blankParagraphs": 2,
+      "sourceSha256": "6a66aeebb2b6f8ff9f8059cbc55530079662e1d79190ad7bb73112cdfe1036e3",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "3f9dc3d8901759e8"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "start": 5596,
+      "end": 5609,
+      "cells": 14,
+      "blankParagraphs": 0,
+      "sourceSha256": "28477333145818e65dff33d78c17eb1dfa9e09a89a32b51b49612cb02a224872",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "3f9dc3d8901759e8"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "start": 5611,
+      "end": 5616,
+      "cells": 6,
+      "blankParagraphs": 1,
+      "sourceSha256": "d559c97094e7ad82e8078b94a216212ea498a28676191486c997b71f249e4ab6",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "3f9dc3d8901759e8"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "start": 5619,
+      "end": 5630,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "sourceSha256": "9133d3ef6e48a3e00844e63760dd2bfee4002a17302b542c758ba4e7e6e8a620",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "3f9dc3d8901759e8"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "start": 5636,
+      "end": 5661,
+      "cells": 26,
+      "blankParagraphs": 2,
+      "sourceSha256": "cb7c72ef170982fad679024451471cb5aa14f9f1b0eb1de0c409fab27abd99d8",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "21b796bda6e075d6"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "start": 5663,
+      "end": 5724,
+      "cells": 62,
+      "blankParagraphs": 5,
+      "sourceSha256": "94f8e87679b392b0e91025a8d7cc5a7a5e7b09f4876305de552b67249664e08c",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "21b796bda6e075d6"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "start": 5726,
+      "end": 5773,
+      "cells": 48,
+      "blankParagraphs": 0,
+      "sourceSha256": "837621327d96f5e04f91800e3a019893d79b97b79754b98dc43abbbb6700b0ef",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "21b796bda6e075d6"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "start": 5775,
+      "end": 5808,
+      "cells": 34,
+      "blankParagraphs": 0,
+      "sourceSha256": "4ec40b3402f50252f0034b83a9d0e46a782afae23fb0de7d7db44e1fbca29a16",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "21b796bda6e075d6"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "start": 5811,
+      "end": 5822,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "sourceSha256": "5490eab3c6a786c4332f6ac11680aa412756a89ab34f30749786bee5708ccbd1",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "21b796bda6e075d6"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "start": 5825,
+      "end": 5836,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "sourceSha256": "d7845a27fcd7acd2beb14d335bc08969ce12e4a0ae3280b78f5efad43edadcfa",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "21b796bda6e075d6"
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "start": 5840,
+      "end": 5857,
+      "cells": 18,
+      "blankParagraphs": 1,
+      "sourceSha256": "9cd6db53a848a1d1335c70a22a4a33ef81d117f8c09f37fd66ae23f9df05099d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "fcc0445ece9a9474"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "start": 5859,
+      "end": 5900,
+      "cells": 42,
+      "blankParagraphs": 2,
+      "sourceSha256": "e71fc7f91b403a2c9a3aece0ee5311aa53656c879cff79d0a007cc05cc4ae53d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "fcc0445ece9a9474"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "start": 5902,
+      "end": 5917,
+      "cells": 16,
+      "blankParagraphs": 0,
+      "sourceSha256": "fc62433f8060687b979a93d87bdfb3bb3e51d3f72cc85923c38f404b5cb66b4a",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "fcc0445ece9a9474"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "start": 5920,
+      "end": 5931,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "sourceSha256": "53036a7f889b7b8f4e54f815de0e3f9b6f7a4b7566e8c18e12f57a3e597d6759",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "fcc0445ece9a9474"
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "start": 5935,
+      "end": 5938,
+      "cells": 4,
+      "blankParagraphs": 0,
+      "sourceSha256": "2ead7767fe4c17a29298e34d2d5fce52689efde8ca77eb722f30b80935c65fcb",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "aafc486ce99a2327"
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "start": 5940,
+      "end": 5945,
+      "cells": 6,
+      "blankParagraphs": 0,
+      "sourceSha256": "210c8f4fdd42c400f4b76f033534e03e44dbc308ace2af9dad277eb3ba4e4bf2",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "aafc486ce99a2327"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "start": 5947,
+      "end": 5952,
+      "cells": 6,
+      "blankParagraphs": 0,
+      "sourceSha256": "e3294a42ac5c369430ecba0e68ed616ba4a99fd5b4b587f168c3346361d417c8",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "aafc486ce99a2327"
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "start": 5993,
+      "end": 6253,
+      "cells": 261,
+      "blankParagraphs": 87,
+      "sourceSha256": "04db114685dfb3f513e7d0e819176e8f79f0663db3d61fbcf16285d39407f765",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "6e3a75ceaaee6f11"
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "start": 6550,
+      "end": 6567,
+      "cells": 18,
+      "blankParagraphs": 5,
+      "sourceSha256": "e8379fdbaedd7b2e156908b925ac99c1753c319b630c489400a717db52ac62db",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "a722d1f930994dee"
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "start": 6569,
+      "end": 6679,
+      "cells": 111,
+      "blankParagraphs": 36,
+      "sourceSha256": "60dd78a643dface00e39bdb44e6164e9d542b5fe9b9a446964278eeb48deab3c",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "4135d903b9776581"
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "start": 6681,
+      "end": 6797,
+      "cells": 117,
+      "blankParagraphs": 38,
+      "sourceSha256": "9d879cb3ff6b0eee6846676044690f0164cdd03888b800110bdf53a69a83d430",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "6c8c5d973b243a88"
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "start": 6799,
+      "end": 6858,
+      "cells": 60,
+      "blankParagraphs": 19,
+      "sourceSha256": "42b63b726b0b9f5156328c1004599e5a74bb99ca120b8c17038b937ea731e60e",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "1044b5cb1cc6ef42"
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "start": 6860,
+      "end": 6874,
+      "cells": 15,
+      "blankParagraphs": 4,
+      "sourceSha256": "27ce5afcc2c0a4fff9c34180a0c16958a995ca374b93909d1e7e8132918a6683",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "08715c1ee06af623"
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "start": 6876,
+      "end": 6905,
+      "cells": 30,
+      "blankParagraphs": 9,
+      "sourceSha256": "58e7fe545eb2c4c06857330c95846f124e3d5619ca219c7314bef81242ffb099",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "9aaa593105249316"
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "start": 6957,
+      "end": 6972,
+      "cells": 16,
+      "blankParagraphs": 0,
+      "sourceSha256": "c90c1e607b98e3bca4289f6aab6ba543cd63dd3c55462e59a7c85f630611a91d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "22ed812228ebe947"
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "start": 7051,
+      "end": 7066,
+      "cells": 16,
+      "blankParagraphs": 0,
+      "sourceSha256": "f912ab64a9032acf05f890b802c1bc7744afbdf52109182ff80ae08ecafc8499",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "22ed812228ebe947"
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "start": 7266,
+      "end": 7290,
+      "cells": 25,
+      "blankParagraphs": 10,
+      "sourceSha256": "bdf1ea9209f1552ddcfb42fb6d1dd9e5660c83af228d3cef6f6b02125f91c238",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "22ed812228ebe947"
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "start": 7337,
+      "end": 7358,
+      "cells": 22,
+      "blankParagraphs": 0,
+      "sourceSha256": "6575caeb3fa6ede3857e703d6a09d9a9b043bbfaf27edf7f67b5729327ab63f9",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "fe28f47fee9f3094"
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "start": 7480,
+      "end": 7527,
+      "cells": 48,
+      "blankParagraphs": 0,
+      "sourceSha256": "aaf1f7a7f865ca6a973d6534898557eb9c1b505e369cd58b8d10bf7023ce6b05",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "e858315d5a818496"
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "start": 7665,
+      "end": 7672,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "sourceSha256": "ff7bc0c7ee894c7b15716ad2fd56f0aca55cef60e95a85bc4e0c977927977b33",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "7b88f7bc4dae840b"
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "start": 7674,
+      "end": 7679,
+      "cells": 6,
+      "blankParagraphs": 0,
+      "sourceSha256": "8ef71d41d36ff398a2891f0a3e9977af3f29254dff778849394f57505afe9aae",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "7b88f7bc4dae840b"
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "start": 7681,
+      "end": 7684,
+      "cells": 4,
+      "blankParagraphs": 0,
+      "sourceSha256": "ced68f4443563355c650f4ceb88612824d359db9bb7a21c893e4d6f55f83da6c",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "7b88f7bc4dae840b"
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "start": 7724,
+      "end": 7731,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "sourceSha256": "7a399e382bfee0a2b3591dd86130c72ab625e53f8bae43cb33327f4aad4570da",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "83eac1c2681eb4e4"
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "start": 7765,
+      "end": 7776,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "sourceSha256": "b1ce6a9676eef1c4e368321ca1833847364e0af263caab3c9bf183c39f2a8a6b",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "45b08b7cf5faed30"
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "start": 7781,
+      "end": 7792,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "sourceSha256": "9ebcd2e8fae946231eec84410d826611c3ed2486a7bc7a680ec28048f10eaced",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "45b08b7cf5faed30"
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "start": 7794,
+      "end": 7801,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "sourceSha256": "b401c732a3c6e47ac8b700eda50631003198ee4704261e985a9ecf6be8612881",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "45b08b7cf5faed30"
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "start": 7804,
+      "end": 7811,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "sourceSha256": "2a7ed55ea4b60af011053d2f84f6cdf7a2f650372d29e8818cb1d9764c7bfba6",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "45b08b7cf5faed30"
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "start": 7829,
+      "end": 7833,
+      "cells": 5,
+      "blankParagraphs": 0,
+      "sourceSha256": "03ebb79249f6ae08e51ec1a5b3c87de6257cdabcd471d0b8b939c874fcb36b17",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "start": 7835,
+      "end": 7839,
+      "cells": 5,
+      "blankParagraphs": 0,
+      "sourceSha256": "16472333401f117883ef88331394a71586a688d8137da2e9b56b82261aa56cb3",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "start": 7841,
+      "end": 7842,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "sourceSha256": "eb3f411cf287270ee8f2778b3d18832ddff5a3bdc78c5444ec744babbae08f43",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "start": 7844,
+      "end": 7862,
+      "cells": 19,
+      "blankParagraphs": 0,
+      "sourceSha256": "73baaeb61a5db43caa76e3fc14582770c530bc011c06ef6d1f2a98a22f316daf",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "start": 7864,
+      "end": 7868,
+      "cells": 5,
+      "blankParagraphs": 0,
+      "sourceSha256": "896e4587c69e1b2d13b7320b2899ec259732045e283a1c812f33673e20b49ce8",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "start": 7870,
+      "end": 7871,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "sourceSha256": "faae3701a5a2ac9e191af726f5d967e2bf1754a2d1f0d8f7ca7ba00be0edb568",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "start": 7873,
+      "end": 7874,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "sourceSha256": "213bba9597abb4bba651a5f1a16885968e11431e9fc26db5bc66bf5dae7bd2ef",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "start": 7876,
+      "end": 7880,
+      "cells": 4,
+      "blankParagraphs": 0,
+      "sourceSha256": "8cc3819825d962fa7940f347c347fe74b5a8c66e62a79f45b5ac6bce0c768085",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "start": 7889,
+      "end": 7896,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "sourceSha256": "98a6bedf508522d93f6213233906fc2e724ae21432f6c3e8d6f321a4d15841db",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "start": 7898,
+      "end": 7899,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "sourceSha256": "8abd179d5c1ea390fe60547aae40fd6f1695887943db4f0efcd3812a86c8c750",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "start": 7901,
+      "end": 7902,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "sourceSha256": "3b6d2ca1640884815f986d7d5309e76dfc8f3b66def5090150ea6deebf5c62f0",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "start": 8135,
+      "end": 8146,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "sourceSha256": "d9f315afa10c875e009ff54279670d3661c0e1cf6d4b3c40fef78b287d9e80b7",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "20d8dec3e565be4c"
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "start": 8152,
+      "end": 8159,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "sourceSha256": "6a3eecbae427213bae1ba9f5990e4d3c541f11e6fd59c2f2fd23a220d4963f10",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "20d8dec3e565be4c"
+        }
+      ]
+    }
+  ],
+  "visualGroups": [
+    {
+      "id": "B0",
+      "start": 26,
+      "end": 26,
+      "paragraphs": 1,
+      "sourceSha256": "86c2d7d246259c5fdd4f2e0d78e765a3df6cc9f911321de5b5bdf62b98d0e7ec",
+      "destinations": [
+        {
+          "logicalId": "journal.crd-creating-your-character",
+          "pageId": "751bb864d693eae3",
+          "kind": "journal"
+        }
+      ]
+    },
+    {
+      "id": "B1",
+      "start": 63,
+      "end": 63,
+      "paragraphs": 1,
+      "sourceSha256": "5b6781c4f27fd6e36efbd85c6667561d68828c33c96d04ca1d4b6c3e0bd1c594",
+      "destinations": [
+        {
+          "logicalId": "journal.crd-core-character",
+          "pageId": "e9ee1cf1e7fecf60",
+          "kind": "journal"
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "start": 83,
+      "end": 87,
+      "paragraphs": 5,
+      "sourceSha256": "63e4204d9f5725ea32ae2a71968bec332fb728298f8de4f96f6e99dda7b69ff9",
+      "destinations": [
+        {
+          "logicalId": "journal.crd-skills",
+          "pageId": "0d2e73f7643d3928",
+          "kind": "journal"
+        }
+      ]
+    },
+    {
+      "id": "B7",
+      "start": 168,
+      "end": 171,
+      "paragraphs": 4,
+      "sourceSha256": "e01dcf7033ce873a6c0cd6eac4fe5bc515236c2f84cc813be152c73508140621",
+      "destinations": [
+        {
+          "logicalId": "skill.disguise",
+          "kind": "canonical-item"
+        }
+      ]
+    },
+    {
+      "id": "B19",
+      "start": 253,
+      "end": 254,
+      "paragraphs": 2,
+      "sourceSha256": "e86a5866448eba85f1bfd63d6280cbde13c69cff1d6de236659dc7549f184d96",
+      "destinations": [
+        {
+          "logicalId": "journal.crd-descriptors",
+          "pageId": "7eba62b913c1d7bc",
+          "kind": "journal"
+        }
+      ]
+    },
+    {
+      "id": "B20",
+      "start": 479,
+      "end": 484,
+      "paragraphs": 6,
+      "sourceSha256": "0a0c91f4e8abda49d5deb3329f5785af7c73479dc755468b0003ffdda7e13e33",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-real-world",
+          "pageId": "138c9b3c1f69057f"
+        }
+      ]
+    },
+    {
+      "id": "B21",
+      "start": 507,
+      "end": 507,
+      "paragraphs": 1,
+      "sourceSha256": "50c6ab106e59952df849e245e45d3b1ecaed8a93b917f7a0fe116835e39aacd0",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-real-world",
+          "pageId": "d670edc18b059e6d"
+        }
+      ]
+    },
+    {
+      "id": "B22",
+      "start": 512,
+      "end": 512,
+      "paragraphs": 1,
+      "sourceSha256": "b2b3f39acf37b2f2b03fbf6601c2bf4cd8f48e17d60a55bb985654f3f6f1c671",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-real-world",
+          "pageId": "d670edc18b059e6d"
+        }
+      ]
+    },
+    {
+      "id": "B23",
+      "start": 597,
+      "end": 610,
+      "paragraphs": 14,
+      "sourceSha256": "f4241c16980306998262e450a90b47eefcd846fcaa7ffd6956c7e6452d34a842",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-real-world",
+          "pageId": "d670edc18b059e6d"
+        }
+      ]
+    },
+    {
+      "id": "B24",
+      "start": 617,
+      "end": 617,
+      "paragraphs": 1,
+      "sourceSha256": "f7b4ab486bd1a29a53ac0e711af4ed75632cc2996b1305e3b15fe51175225e65",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-real-world",
+          "pageId": "d670edc18b059e6d"
+        }
+      ]
+    },
+    {
+      "id": "B25",
+      "start": 622,
+      "end": 622,
+      "paragraphs": 1,
+      "sourceSha256": "e1446638b28a8aee6b912e482d3a45017fd9307398de1b4467cda85902b08c3d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-genre-abilities",
+          "pageId": "133672a4e3520e87"
+        }
+      ]
+    },
+    {
+      "id": "B26",
+      "start": 624,
+      "end": 624,
+      "paragraphs": 1,
+      "sourceSha256": "15e00a8d3bc481af29779b8eb18cc11f3e9c9ab2e692b116247031a5586effa7",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-genre-abilities",
+          "pageId": "133672a4e3520e87"
+        }
+      ]
+    },
+    {
+      "id": "B27",
+      "start": 631,
+      "end": 631,
+      "paragraphs": 1,
+      "sourceSha256": "caae7ad95c6ffb8e07489bbc7a93bd363603b640b93794f69e96e928466f273e",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-genre-abilities",
+          "pageId": "133672a4e3520e87"
+        }
+      ]
+    },
+    {
+      "id": "B28",
+      "start": 640,
+      "end": 641,
+      "paragraphs": 2,
+      "sourceSha256": "739694f3ebb6d144be19286fb259fa873c820985844b7f27e940d1b10820f53b",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-genre-abilities",
+          "pageId": "133672a4e3520e87"
+        }
+      ]
+    },
+    {
+      "id": "B29",
+      "start": 649,
+      "end": 683,
+      "paragraphs": 35,
+      "sourceSha256": "fd727b696b7e5179734ce638e22d48e293867b12e2eb9e42ce98d3642dafa164",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "0158b9d78d9f656e"
+        }
+      ]
+    },
+    {
+      "id": "B30",
+      "start": 691,
+      "end": 699,
+      "paragraphs": 9,
+      "sourceSha256": "8bb27146a9c8a01b6d8c5a5b03bd357ce63c44e0e3ad644d88a71c7f31366e18",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "c536daad9e51ec47"
+        }
+      ]
+    },
+    {
+      "id": "B31",
+      "start": 701,
+      "end": 731,
+      "paragraphs": 31,
+      "sourceSha256": "c3af2cb74f815ebfed3a5431a2a64c8b4c0af46926ab524ee77351195aaf2e08",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "c536daad9e51ec47"
+        }
+      ]
+    },
+    {
+      "id": "B32",
+      "start": 739,
+      "end": 749,
+      "paragraphs": 11,
+      "sourceSha256": "95f63ff37827203c8be3e10475e0844cbcd168cc75d61b7271edc47482a255f6",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "c536daad9e51ec47"
+        }
+      ]
+    },
+    {
+      "id": "B41",
+      "start": 1135,
+      "end": 1135,
+      "paragraphs": 1,
+      "sourceSha256": "2e9b3732fd30a5106465eaa0f23874dae4863ccd6e3db1d56e4b68dcfca38d0a",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "371d8ec8e56c18b2"
+        }
+      ]
+    },
+    {
+      "id": "B42",
+      "start": 1141,
+      "end": 1158,
+      "paragraphs": 18,
+      "sourceSha256": "00fd28b1b3c4b57301bed35ace16d91528003b13d400c60973313bbf8987bfee",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "371d8ec8e56c18b2"
+        }
+      ]
+    },
+    {
+      "id": "B43",
+      "start": 1166,
+      "end": 1175,
+      "paragraphs": 10,
+      "sourceSha256": "5a49f1737dcdeec4c75021a04eed8fe203ef86589666da0ecd53982cbb7df613",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "371d8ec8e56c18b2"
+        }
+      ]
+    },
+    {
+      "id": "B44",
+      "start": 1240,
+      "end": 1240,
+      "paragraphs": 1,
+      "sourceSha256": "aaf3877c5ddd6c68b68abe2fac49679f37de10a3ad5014a1eaf53d0ba655849d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "371d8ec8e56c18b2"
+        }
+      ]
+    },
+    {
+      "id": "B45",
+      "start": 1275,
+      "end": 1275,
+      "paragraphs": 1,
+      "sourceSha256": "b029ae442ec5dbeb0d6678e4141df6443c587633ceb544e426566b5cdd964f53",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "371d8ec8e56c18b2"
+        }
+      ]
+    },
+    {
+      "id": "B46",
+      "start": 1351,
+      "end": 1351,
+      "paragraphs": 1,
+      "sourceSha256": "c00d241c695b7ba74a1cd01d39f44979c206ca4c59fc5152bf49ad674f33a898",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "371d8ec8e56c18b2"
+        }
+      ]
+    },
+    {
+      "id": "B47",
+      "start": 1387,
+      "end": 1387,
+      "paragraphs": 1,
+      "sourceSha256": "134b489065f25eae71746ff034c4fae97a5c763678073d5b5770abedd319290f",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "371d8ec8e56c18b2"
+        }
+      ]
+    },
+    {
+      "id": "B49",
+      "start": 1500,
+      "end": 1500,
+      "paragraphs": 1,
+      "sourceSha256": "3458bd780bae9201659efdc5b55b435174823d134e72b899504ff5e8759fe627",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "62ef34d5693cdf6e"
+        }
+      ]
+    },
+    {
+      "id": "B50",
+      "start": 1506,
+      "end": 1512,
+      "paragraphs": 7,
+      "sourceSha256": "ae711b7663e8a0bd56be09e70365a5933b73daf4861a8364643ff0b56d6efd47",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "62ef34d5693cdf6e"
+        }
+      ]
+    },
+    {
+      "id": "B51",
+      "start": 1514,
+      "end": 1539,
+      "paragraphs": 26,
+      "sourceSha256": "35c014f3b3d53759252c11bc1bbad521087fc531a2db0c081588cd0bda5e7ea9",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "62ef34d5693cdf6e"
+        }
+      ]
+    },
+    {
+      "id": "B52",
+      "start": 1651,
+      "end": 1652,
+      "paragraphs": 2,
+      "sourceSha256": "d21dd425fcf2ec6987c9462e8532951f7481c2f001f9852cd4f407295a22791f",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "62ef34d5693cdf6e"
+        }
+      ]
+    },
+    {
+      "id": "B54",
+      "start": 1786,
+      "end": 1786,
+      "paragraphs": 1,
+      "sourceSha256": "47e15a3cb6e0eca3fe849b4cb8f4b8f920662defa1b1f5859f8ca6b08fd7452e",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "efcdc9e3d246e50e"
+        }
+      ]
+    },
+    {
+      "id": "B55",
+      "start": 1789,
+      "end": 1797,
+      "paragraphs": 9,
+      "sourceSha256": "9866dc155483beab1121fc0cd3705288a8f233f08cec9e4564fa10bea90ca897",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-fantasy",
+          "pageId": "efcdc9e3d246e50e"
+        }
+      ]
+    },
+    {
+      "id": "B61",
+      "start": 1867,
+      "end": 1916,
+      "paragraphs": 50,
+      "sourceSha256": "6cc7f36e3b44a39708758a0e4933ac96510330ae1d247b62baa43dea66e420c7",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "3ee00af4234baf59"
+        }
+      ]
+    },
+    {
+      "id": "B62",
+      "start": 1920,
+      "end": 1920,
+      "paragraphs": 1,
+      "sourceSha256": "244751aaca457ce1938d56642e804fb41e8b332cc8dcca42c06be0ffac0acbf1",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "b3d5c0a236fa570a"
+        }
+      ]
+    },
+    {
+      "id": "B63",
+      "start": 1926,
+      "end": 1949,
+      "paragraphs": 24,
+      "sourceSha256": "9cfc8637b7d8a06e04944a3d236d6950e3db5dfbe597b9fd53a4a84590eb0cb8",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "b3d5c0a236fa570a"
+        }
+      ]
+    },
+    {
+      "id": "B64",
+      "start": 1957,
+      "end": 1962,
+      "paragraphs": 6,
+      "sourceSha256": "e20af8073162a5913e34e9af0b4fe71c00bda9a2bd2f7563c4e634ddfcc46257",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "b3d5c0a236fa570a"
+        }
+      ]
+    },
+    {
+      "id": "B68",
+      "start": 2173,
+      "end": 2173,
+      "paragraphs": 1,
+      "sourceSha256": "53de553924b7dfd7ddcbf4ea9224bc10407391bb4cd6c218ae792e9839d83691",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "b3d5c0a236fa570a"
+        }
+      ]
+    },
+    {
+      "id": "B70",
+      "start": 2184,
+      "end": 2184,
+      "paragraphs": 1,
+      "sourceSha256": "fec9595ee81c40ac7fbb038a4b7a4ed7772591a375193c32c11a1e3f4c20b0f8",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "d460197f2a1d68f3"
+        }
+      ]
+    },
+    {
+      "id": "B71",
+      "start": 2190,
+      "end": 2203,
+      "paragraphs": 14,
+      "sourceSha256": "1d39eeb1ffb320828ee369cf0e28957177ece0e1152e9afb480d26ecf6fad8c8",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "d460197f2a1d68f3"
+        }
+      ]
+    },
+    {
+      "id": "B72",
+      "start": 2206,
+      "end": 2240,
+      "paragraphs": 35,
+      "sourceSha256": "e7e43028318c98f98a801c9633658c50c33f20854c4d35818bb77f0888f00f87",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "d460197f2a1d68f3"
+        }
+      ]
+    },
+    {
+      "id": "B73",
+      "start": 2248,
+      "end": 2257,
+      "paragraphs": 10,
+      "sourceSha256": "d7ab7dec47e3ed9c1c7e521a048c7949a084795b958d133e8a5f08a8b1281ffd",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "d460197f2a1d68f3"
+        }
+      ]
+    },
+    {
+      "id": "B79",
+      "start": 2436,
+      "end": 2436,
+      "paragraphs": 1,
+      "sourceSha256": "26ac89af82020586efabcc4303a26656fa72c6b3162c5211c8e2512f9c29b55c",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "d460197f2a1d68f3"
+        }
+      ]
+    },
+    {
+      "id": "B80",
+      "start": 2442,
+      "end": 2442,
+      "paragraphs": 1,
+      "sourceSha256": "e845b8f412abfb66464300ce9f6d2e4cf51b0a557a821cfb937501f8e2fa7dc9",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "d460197f2a1d68f3"
+        }
+      ]
+    },
+    {
+      "id": "B82",
+      "start": 2524,
+      "end": 2571,
+      "paragraphs": 48,
+      "sourceSha256": "3bde3aaeb5d58a7024f7df03bb261447a64dd15493fc817e3ff31bd139c24922",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "ce7e1ec0fbb4824c"
+        }
+      ]
+    },
+    {
+      "id": "B83",
+      "start": 2575,
+      "end": 2594,
+      "paragraphs": 20,
+      "sourceSha256": "08249e34aa3b6e1450875c6db437a1a43dd2c69c47761fff811ce0cd61cf0fb7",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "ce7e1ec0fbb4824c"
+        }
+      ]
+    },
+    {
+      "id": "B84",
+      "start": 2602,
+      "end": 2605,
+      "paragraphs": 4,
+      "sourceSha256": "73ede59d6f9bc1a7ea18726b7d20725bdb02a1ff18873b6d7de90bb83b64d2b4",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "75f29bf75a744d14"
+        }
+      ]
+    },
+    {
+      "id": "B85",
+      "start": 2671,
+      "end": 2671,
+      "paragraphs": 1,
+      "sourceSha256": "ed1277cb75cc7fdb1da3428f383e828618f361269622bd6acd3ee3ffb81be268",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "75f29bf75a744d14"
+        }
+      ]
+    },
+    {
+      "id": "B87",
+      "start": 2796,
+      "end": 2808,
+      "paragraphs": 13,
+      "sourceSha256": "3040d8f36b8e45c0617d7d55b9856dfeb3cfe49375b19bb341f89b9310ea7bf4",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "ede988e40a2546cf"
+        }
+      ]
+    },
+    {
+      "id": "B93",
+      "start": 2905,
+      "end": 2905,
+      "paragraphs": 1,
+      "sourceSha256": "44bdeda907cb36e2cd703ded5cb4f398b797ce8361632613fff1b62dd08d7caf",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-science-fiction",
+          "pageId": "9addea7c321ddaa0"
+        }
+      ]
+    },
+    {
+      "id": "B94",
+      "start": 2919,
+      "end": 2972,
+      "paragraphs": 54,
+      "sourceSha256": "d19e87823fa87edbf75ba15e2885e083a8d99114d2626fc4eee9a1384c835c04",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-superheroes",
+          "pageId": "b378e6c1cb9cd4da"
+        }
+      ]
+    },
+    {
+      "id": "B95",
+      "start": 2976,
+      "end": 3018,
+      "paragraphs": 43,
+      "sourceSha256": "d0b8649d8e634204085d82704b8cf159d96f01319839ed34613ee4ff0647a064",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-superheroes",
+          "pageId": "b378e6c1cb9cd4da"
+        }
+      ]
+    },
+    {
+      "id": "B96",
+      "start": 3020,
+      "end": 3020,
+      "paragraphs": 1,
+      "sourceSha256": "319ed8518cc53f60a2aa82003537749979b26e845ae674ead429e3f1e4b5495c",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-superheroes",
+          "pageId": "b378e6c1cb9cd4da"
+        }
+      ]
+    },
+    {
+      "id": "B98",
+      "start": 3162,
+      "end": 3162,
+      "paragraphs": 1,
+      "sourceSha256": "1d0f089dcab076db19ca0e05444d633625628aa940208e699ccf8cb34906134d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-superheroes",
+          "pageId": "76f6f072a05c475c"
+        }
+      ]
+    },
+    {
+      "id": "B107",
+      "start": 3661,
+      "end": 3661,
+      "paragraphs": 1,
+      "sourceSha256": "9f7ad5c2b78916fefad80b23007413c73cfc1508751ac5c3328ed6a2bc790846",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-foci",
+          "pageId": "09f4d625e4b4ec05"
+        }
+      ]
+    },
+    {
+      "id": "B112",
+      "start": 3756,
+      "end": 3756,
+      "paragraphs": 1,
+      "sourceSha256": "a37d008a93f94c60fec1b75031629e48882a7e8a3f43f8a9ad31a4b94a7f35ec",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-foci",
+          "pageId": "dcbdc406667c8bec"
+        }
+      ]
+    },
+    {
+      "id": "B113",
+      "start": 3826,
+      "end": 3834,
+      "paragraphs": 9,
+      "sourceSha256": "43dfeb6e285e728a8d6fd0c53f89a09228012771bbe089eae6a83b5b4e4b8732",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-foci",
+          "pageId": "dcbdc406667c8bec"
+        }
+      ]
+    },
+    {
+      "id": "B115",
+      "start": 3923,
+      "end": 3923,
+      "paragraphs": 1,
+      "sourceSha256": "72d24225367b6cffc576679e693a346ad6be25b31d7c48b95a23e72c48c5a578",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-foci",
+          "pageId": "6e2a11d758fbef79"
+        }
+      ]
+    },
+    {
+      "id": "B129",
+      "start": 4543,
+      "end": 4547,
+      "paragraphs": 5,
+      "sourceSha256": "12ce4aa4053809e315c5b3d13bda8739ec595afb8aaf5c5d1b51c3963fa4f38b",
+      "destinations": [
+        {
+          "kind": "canonical-item",
+          "logicalId": "ability.apportation",
+          "field": "system.description"
+        }
+      ]
+    },
+    {
+      "id": "B130",
+      "start": 4557,
+      "end": 4561,
+      "paragraphs": 5,
+      "sourceSha256": "837cf16bea8e2618d2da648f99102eb90c4872c463d69540d3d84eab9e70b87b",
+      "destinations": [
+        {
+          "kind": "canonical-item",
+          "logicalId": "ability.improved-apportation",
+          "field": "system.description"
+        }
+      ]
+    },
+    {
+      "id": "B145",
+      "start": 5231,
+      "end": 5231,
+      "paragraphs": 1,
+      "sourceSha256": "795bf4a414af4fe72510fec4dabbe74e5501ad0b472ef14632444a48a5b869d5",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "20c2ec710309495a"
+        }
+      ]
+    },
+    {
+      "id": "B147",
+      "start": 5262,
+      "end": 5262,
+      "paragraphs": 1,
+      "sourceSha256": "964fcba7119fa7a34e8a4e72dbcdd97ce1db682dcffcb852d7c525701e841cf2",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "0d3833489a3875a3"
+        }
+      ]
+    },
+    {
+      "id": "B148",
+      "start": 5281,
+      "end": 5281,
+      "paragraphs": 1,
+      "sourceSha256": "6c4e25be6c8f6b3f73a2e55a903a3fa55dad7f86674bc30ea6792be0883812dc",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "aaa8088c23a8e414"
+        }
+      ]
+    },
+    {
+      "id": "B149",
+      "start": 5286,
+      "end": 5287,
+      "paragraphs": 2,
+      "sourceSha256": "f32e58fd5f23faab57bae889435a2358c8a1f0e29a8aaea5f02fa1b1c39cf051",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "41558af4c28128d7"
+        }
+      ]
+    },
+    {
+      "id": "B150",
+      "start": 5291,
+      "end": 5291,
+      "paragraphs": 1,
+      "sourceSha256": "64e6471355e3d04e9c935095c20d5c54c2f802a4dcf4116848f7c2eb84596066",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "c89b469aa23b3620"
+        }
+      ]
+    },
+    {
+      "id": "B151",
+      "start": 5297,
+      "end": 5297,
+      "paragraphs": 1,
+      "sourceSha256": "6737e504306f02cc2c0dcf99c0749686a2acd88a30c429371a9516226d098849",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b6e7ef893cb7a6fc"
+        }
+      ]
+    },
+    {
+      "id": "B152",
+      "start": 5301,
+      "end": 5301,
+      "paragraphs": 1,
+      "sourceSha256": "5b3fd91795c58e0ea67508aad859e83971c7f3ebc3e679c8615a393459ebb407",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "id": "B153",
+      "start": 5327,
+      "end": 5327,
+      "paragraphs": 1,
+      "sourceSha256": "6fab75b9e90ec0e2660c481043a2a3e1502082764f198c9d893c9e6c9189f3f0",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "id": "B154",
+      "start": 5438,
+      "end": 5438,
+      "paragraphs": 1,
+      "sourceSha256": "bf093777f76064d4c9d66d32ccac3940ba8879c40bba8c0e6fc8465ca32d99ec",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "b72122a33a96a477"
+        }
+      ]
+    },
+    {
+      "id": "B155",
+      "start": 5633,
+      "end": 5633,
+      "paragraphs": 1,
+      "sourceSha256": "2b8dbd8c4a4cc6aedf71886d26e6d2271291b7fff880b706bb7e4a2babc14a5e",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "21b796bda6e075d6"
+        }
+      ]
+    },
+    {
+      "id": "B156",
+      "start": 5809,
+      "end": 5809,
+      "paragraphs": 1,
+      "sourceSha256": "461b091415adc3cba6bfa9aef1ce438286cd3657836915e4b2f03d3a23749433",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-equipment",
+          "pageId": "21b796bda6e075d6"
+        }
+      ]
+    },
+    {
+      "id": "B157",
+      "start": 5956,
+      "end": 5956,
+      "paragraphs": 1,
+      "sourceSha256": "424ebfd92f5092687ce2802ff7572da6e13bdfdf90bf7d710c4c5ddfe118a29f",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "e1bfb61d42374ae0"
+        }
+      ]
+    },
+    {
+      "id": "B158",
+      "start": 5965,
+      "end": 5965,
+      "paragraphs": 1,
+      "sourceSha256": "086b3695dd28cf730cd38ecaad83159769e14f509e868207c759a021602b438d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "bf5e9db32583ae9c"
+        }
+      ]
+    },
+    {
+      "id": "B159",
+      "start": 5970,
+      "end": 5970,
+      "paragraphs": 1,
+      "sourceSha256": "01fef74f0df1060654aed4f8361ed35dd87c90a46640fe3f5d5250d969a4ff09",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "86d13f9b1c4a4350"
+        }
+      ]
+    },
+    {
+      "id": "B160",
+      "start": 5986,
+      "end": 5986,
+      "paragraphs": 1,
+      "sourceSha256": "b3370cfa36969e540c2366a5c0c40a3c7120118ae94ae9d6fd2e63b8b765c709",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "68bee1793e74b3d8"
+        }
+      ]
+    },
+    {
+      "id": "B167",
+      "start": 6536,
+      "end": 6536,
+      "paragraphs": 1,
+      "sourceSha256": "72df992f982c02cf83ab170690c60a5bb47ccfc822d76c104f3bc321d2a4ffe5",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "2ed7a12385352589"
+        }
+      ]
+    },
+    {
+      "id": "B168",
+      "start": 6548,
+      "end": 6548,
+      "paragraphs": 1,
+      "sourceSha256": "60e3fe08ec4dc62c24428c7a0a1f3a9b33c03e04009237828b96d167e733065d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "d59b991508ede4d4"
+        }
+      ]
+    },
+    {
+      "id": "B169",
+      "start": 6906,
+      "end": 6906,
+      "paragraphs": 1,
+      "sourceSha256": "b619ba31c0bcf67cefb837484347ca67e0aeacaa3d5973a8d1669356877540c0",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-cyphers",
+          "pageId": "9aaa593105249316"
+        }
+      ]
+    },
+    {
+      "id": "B183",
+      "start": 7428,
+      "end": 7449,
+      "paragraphs": 22,
+      "sourceSha256": "ccf210c2721b50e83893397a2a363bb58e03cb43058ddf25e552db761c8fcd57",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "8e7d980fbd7343c8"
+        }
+      ]
+    },
+    {
+      "id": "B184",
+      "start": 7466,
+      "end": 7466,
+      "paragraphs": 1,
+      "sourceSha256": "f5e9c825daca3c84c230861a394925fba1986ded11f268a8103c4b6914d37e00",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "1100e5b9964ae01b"
+        }
+      ]
+    },
+    {
+      "id": "B192",
+      "start": 7637,
+      "end": 7637,
+      "paragraphs": 1,
+      "sourceSha256": "7fc9b55b55a2c87ae4d936837242e52aa5d1b6f307a17962de46093e435f59a0",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "890380730d4d3cc6"
+        }
+      ]
+    },
+    {
+      "id": "B193",
+      "start": 7649,
+      "end": 7649,
+      "paragraphs": 1,
+      "sourceSha256": "38b20423a30401e4e5eb23cd68db0a107d07e9c3fb08b276a9c6c4fbcb67de58",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "7b88f7bc4dae840b"
+        }
+      ]
+    },
+    {
+      "id": "B194",
+      "start": 7663,
+      "end": 7663,
+      "paragraphs": 1,
+      "sourceSha256": "422340383ee5d46ab27d4483d9c831168f3315c4f186030b74b6a037cedc1902",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "7b88f7bc4dae840b"
+        }
+      ]
+    },
+    {
+      "id": "B195",
+      "start": 7693,
+      "end": 7693,
+      "paragraphs": 1,
+      "sourceSha256": "36968c8bb5d27c1cd7fd5a5c7d42bd26914d65fa55df4c190b1ba41f7ae0f536",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "7b88f7bc4dae840b"
+        }
+      ]
+    },
+    {
+      "id": "B196",
+      "start": 7718,
+      "end": 7718,
+      "paragraphs": 1,
+      "sourceSha256": "8bc852e939e166b13b5f804657de9da9f7cb8381e41ba2a07e1dd64193f4dd06",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "83eac1c2681eb4e4"
+        }
+      ]
+    },
+    {
+      "id": "B197",
+      "start": 7744,
+      "end": 7744,
+      "paragraphs": 1,
+      "sourceSha256": "a052e21826136af0cf2242bfbe105387ddd8a4d70994c4f4384b3357c28aee33",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "83eac1c2681eb4e4"
+        }
+      ]
+    },
+    {
+      "id": "B198",
+      "start": 7749,
+      "end": 7749,
+      "paragraphs": 1,
+      "sourceSha256": "61f231bebf6ac1834aed50e356dc1f4dd04a579981385be4491f28d01de7efb3",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "83eac1c2681eb4e4"
+        }
+      ]
+    },
+    {
+      "id": "B201",
+      "start": 7827,
+      "end": 7827,
+      "paragraphs": 1,
+      "sourceSha256": "2bf72a38f3472b7db76d451a22c86e75b9cf127936a82617f79ae3338abd58a5",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "id": "B202",
+      "start": 7886,
+      "end": 7886,
+      "paragraphs": 1,
+      "sourceSha256": "d5167c2f370e7f785bb2b1cffb8909336a92db7be542984d9ef25d972f3e0425",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "74ee63be6e20a22d"
+        }
+      ]
+    },
+    {
+      "id": "B209",
+      "start": 7954,
+      "end": 7954,
+      "paragraphs": 1,
+      "sourceSha256": "4badbdfd3804456263229c1bd527abd02d94eb85b60146f8d5dadce328289b97",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "2c4cca5636309687"
+        }
+      ]
+    },
+    {
+      "id": "B210",
+      "start": 7967,
+      "end": 7968,
+      "paragraphs": 2,
+      "sourceSha256": "829835d254e8d3ed7828a1334751abc4cd41373241ab192ee5b6a6a8b4c35f8e",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "04c899c56485ad8a"
+        }
+      ]
+    },
+    {
+      "id": "B211",
+      "start": 7973,
+      "end": 7975,
+      "paragraphs": 3,
+      "sourceSha256": "c53239af09fd4457313c4bc854cf9e543947a632472db82ba46bae1afc427a60",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-rules-of-the-game",
+          "pageId": "c34240c596fcaa60"
+        }
+      ]
+    },
+    {
+      "id": "B213",
+      "start": 7992,
+      "end": 7992,
+      "paragraphs": 1,
+      "sourceSha256": "a3ccb6bb645f45eb77a6175c2d5b6e4a03d396659ec17045fdd4f8685003dd7b",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "3ad300bfc60f7364"
+        }
+      ]
+    },
+    {
+      "id": "B214",
+      "start": 8000,
+      "end": 8000,
+      "paragraphs": 1,
+      "sourceSha256": "67587ef811491cfb876229c333d84c4f5af1423a3bdb58a9c8bd0585f62ad2da",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "c582de88a44e4e55"
+        }
+      ]
+    },
+    {
+      "id": "B215",
+      "start": 8011,
+      "end": 8011,
+      "paragraphs": 1,
+      "sourceSha256": "152be4e7086e826b1419b76fc32d0f52dc89a1550f68020340a38f979857207f",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "c582de88a44e4e55"
+        }
+      ]
+    },
+    {
+      "id": "B216",
+      "start": 8028,
+      "end": 8062,
+      "paragraphs": 35,
+      "sourceSha256": "ca4fe216938fea2c5dca8d0afaf933d634735378da06b6df8dcc746c098b8225",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "ba60363f62ade487"
+        }
+      ]
+    },
+    {
+      "id": "B217",
+      "start": 8071,
+      "end": 8071,
+      "paragraphs": 1,
+      "sourceSha256": "2c2aff486019cd04cc437fab52e5e25f67ffbe77ea7c1b518cdafd24e1fcbefa",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "29b029cc02365af0"
+        }
+      ]
+    },
+    {
+      "id": "B218",
+      "start": 8075,
+      "end": 8075,
+      "paragraphs": 1,
+      "sourceSha256": "efb1d805a1a8b9df24b797b2fe12a8c6ab548f8f615f7b4ea5da83034fc64e7a",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "4345d1070866cdb6"
+        }
+      ]
+    },
+    {
+      "id": "B222",
+      "start": 8119,
+      "end": 8119,
+      "paragraphs": 1,
+      "sourceSha256": "64fde82d30eb1103401f673f2364960137806dbd8145c436c74f2d0f05edf1d3",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "a3329547741d451e"
+        }
+      ]
+    },
+    {
+      "id": "B223",
+      "start": 8126,
+      "end": 8126,
+      "paragraphs": 1,
+      "sourceSha256": "c6d8f1ebd45297e95ddc946566c52909e6eca5c06404a387d69e737333bb156f",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "20d8dec3e565be4c"
+        }
+      ]
+    },
+    {
+      "id": "B224",
+      "start": 8167,
+      "end": 8168,
+      "paragraphs": 2,
+      "sourceSha256": "8783f69832aab83292b0b661846b353415b3e723073aa7cd6f4f4d97b27c5e30",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "4326f25c01837c50"
+        }
+      ]
+    },
+    {
+      "id": "B225",
+      "start": 8178,
+      "end": 8178,
+      "paragraphs": 1,
+      "sourceSha256": "a29d085affb3c0b5f2e37c58113c676183f2727decc738e1df822bf15792ce3d",
+      "destinations": [
+        {
+          "kind": "journal",
+          "logicalId": "journal.crd-advancing-your-character",
+          "pageId": "5aca8046ad5c76a6"
+        }
+      ]
+    }
+  ]
+}

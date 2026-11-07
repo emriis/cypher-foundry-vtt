@@ -176,6 +176,28 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
           for (const app of foundry.applications.instances.values()) if (app.document?.type === "cypher" && app.rendered) await app.close();
         });
       }
+      await library.locator('[data-key="crd-rules-of-the-game"]').click();
+      await expect(library.locator('[data-key="crd-rules-of-the-game"]')).toHaveAttribute("aria-pressed", "true");
+      await library.locator('[data-action="page"]').nth(3).click();
+      const related = library.locator(".crd-related .content-link");
+      await expect(related).toHaveCount(2);
+      await expect(related.first()).toHaveAttribute("data-uuid", new RegExp(`Compendium\\.cypher\\.rules-${language}\\.`));
+      await related.first().click();
+      await expect.poll(() => player.evaluate(() => [...foundry.applications.instances.values()].some(app =>
+        app.document?.documentName === "JournalEntry" && app.rendered))).toBe(true);
+      await player.evaluate(async () => {
+        for (const app of foundry.applications.instances.values()) if (app.document?.documentName === "JournalEntry" && app.rendered) await app.close();
+      });
+      await library.locator('[data-key="crd-advancing-your-character"]').click();
+      await expect(library.locator('[data-key="crd-advancing-your-character"]')).toHaveAttribute("aria-pressed", "true");
+      await expect(library.locator('[data-action="page"]')).toHaveCount(18);
+      await library.locator('[data-action="page"]').last().click();
+      await expect(library.locator(".library-source > section")).toContainText("6");
+      await library.locator('[data-key="crd-credits"]').click();
+      await expect(library.locator('[data-key="crd-credits"]')).toHaveAttribute("aria-pressed", "true");
+      await expect(library.locator(".crd-editorial")).toBeVisible();
+      await library.locator('[data-action="page"]').last().click();
+      await expect(library.locator('.library-source a[href="https://col.montecookgames.com"]')).toHaveCount(1);
       expect(await player.evaluate(id => ({ items: game.actors.get(id).items.toObject(), messages: game.messages.size }), ids.actor)).toEqual(before);
     }
     await library.locator('[data-action="task"]').click();
@@ -204,16 +226,19 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
 });
 
 test("library chapters: every EN/FR chapter page, native contents links and themed narrow layout", async ({ e2ePage: page }) => {
-  // This exhaustive scenario performs 524 distinct page renders (131 pages in
+  // This exhaustive scenario performs 716 distinct page renders (179 pages in
   // two locales and two themes), including real compendium enrichment.
-  test.setTimeout(180_000);
+  // Dense general-rule pages bring this to 716 renders; allow bounded headroom
+  // beyond the preceding 524-render tranche on the disposable local server.
+  test.setTimeout(240_000);
   const original = await page.evaluate(() => {
     const setting = game.settings.settings.has("core.uiConfig") ? "uiConfig" : "colorScheme";
     return { language: game.i18n.lang, setting, config: foundry.utils.deepClone(game.settings.get("core", setting)) };
   });
   const keys = ["creating-your-character", "core-character", "skills", "descriptors",
-    "real-world", "genre-abilities", "fantasy", "science-fiction", "superheroes", "foci", "equipment", "cyphers", "contents"];
-  const expectedPages = [13, 1, 4, 2, 3, 1, 9, 9, 6, 46, 13, 22, 2];
+    "real-world", "genre-abilities", "fantasy", "science-fiction", "superheroes", "foci", "equipment", "cyphers",
+    "rules-of-the-game", "advancing-your-character", "credits", "contents"];
+  const expectedPages = [13, 1, 4, 2, 3, 1, 9, 9, 6, 46, 13, 22, 27, 18, 3, 2];
   try {
     for (const language of ["en", "fr"]) for (const theme of ["light", "dark"]) {
       await page.evaluate(async ({ language, theme, original }) => {
@@ -256,6 +281,10 @@ test("library chapters: every EN/FR chapter page, native contents links and them
           if (key === "cyphers" && id === pages[13] && language === "fr" && theme === "light") {
             await library.locator(".library-source > section table").first().scrollIntoViewIfNeeded();
             await page.screenshot({ path: test.info().outputPath("library-cyphers-fr-narrow.png") });
+          }
+          if (key === "rules-of-the-game" && id === pages[6] && language === "fr" && theme === "light") {
+            await library.locator(".library-source > section table").first().scrollIntoViewIfNeeded();
+            await page.screenshot({ path: test.info().outputPath("library-rules-fr-narrow.png") });
           }
         }
       }

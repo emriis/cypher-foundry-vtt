@@ -1,0 +1,622 @@
+{
+  "_id": "170f4018cd457db7",
+  "_key": "!journal!170f4018cd457db7",
+  "name": "Rules of the Game",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "368d740225886fd6",
+      "_key": "!journal.pages!170f4018cd457db7.368d740225886fd6",
+      "name": "Rules of the Game",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Rules of the Game</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "5dea3ecff8feab0e"
+          }
+        }
+      }
+    },
+    {
+      "_id": "6f30bd139d12f10a",
+      "_key": "!journal.pages!170f4018cd457db7.6f30bd139d12f10a",
+      "name": "Cypher Core Concepts",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Cypher uses a twenty-sided die (d20) to determine the results of most actions. Whenever a roll of any kind is called for and no die is specified, roll a d20. Higher is always better for a d20 roll.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "509f094c98b4a2ac"
+          }
+        }
+      }
+    },
+    {
+      "_id": "0e25659e1fc59d5b",
+      "_key": "!journal.pages!170f4018cd457db7.0e25659e1fc59d5b",
+      "name": "This is How You Play Cypher",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>As the player, you tell the GM what you want your character to do. This is called the task.</p>\n<p>The GM decides how easy or hard that task might be—this is called setting the difficulty. The task might be so easy that it’s considered routine (and therefore just works, no roll required). But if there’s a chance of failure, the GM decides how hard the task will be on a scale from 1 (really easy) to 10 (basically impossible).</p>\n<p>You and the GM determine if anything about your PC can reduce the difficulty, making it more likely that you succeed. This is called easing the difficulty, and it might be a combination of a character skill, equipment, or putting extra Effort into the task (there’s more information on all of those options later in this section).</p>\n<p>Easing a task happens in one or more steps, reducing the difficulty by 1 for each step that you ease it. For example, if your character has to succeed at a difficulty 3 climbing task, but you’re trained in athletics, that reduces the difficulty by one step, down to difficulty 2.</p>\n<p>Other circumstances can hinder the task’s difficulty, if the situation isn’t in your favor, increasing the difficulty by one or more steps.</p>\n<p>If you reduce the difficulty of a task to 0 or less, it’s routine, and you automatically succeed without a roll.</p>\n<p>If the task still isn’t routine after these adjustments, the GM uses the task difficulty to determine your target number—the number you must roll on the d20 to succeed at the task. Examples of different target numbers are shown on the Task Difficulty table.</p>\n<p>The target number is always three times the task’s difficulty, so a difficulty 2 task has a target number of 6, while a difficulty 5 task has a target number of 15.</p>\n<p>To succeed at the task, you must roll the target number or higher on a d20. (Higher is always better for a d20 roll.) The GM doesn’t have to tell you what the difficulty or target number is, but might give a hint, especially if your PC would reasonably know if the action was easy, average, difficult, or impossible.</p>\n<p>You roll a d20. If the roll is equal to or higher than the target number, you succeed. If not, you probably fail. Either way, the task attempt is considered your action.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "bcf6b368f864dff6"
+          }
+        }
+      }
+    },
+    {
+      "_id": "60222c8c3ff21b34",
+      "_key": "!journal.pages!170f4018cd457db7.60222c8c3ff21b34",
+      "name": "GM Intrusions",
+      "type": "text",
+      "sort": 400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>A GM intrusion is a tool the GM has to provide an additional challenge for a character (or all the characters). It’s the moment in the story when the hero is running out of the burning building and part of the ceiling collapses around them. When the protagonist’s opponent in a fistfight suddenly pulls out a knife. When the knight is battling the dragon, and the beast’s eggs begin to hatch and little dragons come out to protect their mother. These moments happen all the time in stories, and we want to replicate those moments of tension, danger, and excitement in the stories we tell in our games as well.</p>\n<p>A GM can, whenever it seems appropriate to the story, introduce a GM intrusion. Usually this is either a surprising development (the floor beneath you collapses) or an unexpected event triggered by a PC’s action (the sleeping vampire awakens). A GM intrusion is typically brief and simple, although it can sometimes have a big effect on the story. The GM states the details of the intrusion and ends with “What do you do?”</p>\n<p>A GM intrusion can be the result of a character’s mistake, but just as often it comes as an event on the winds of fate. It’s not a punishment. It’s a way to heighten the tension and make things more exciting.</p>\n<p>The GM awards 2 experience points (XP) to the player affected by the intrusion. The player then awards one of those XP to another player of their choosing (for whatever reason they want).</p>\n<p>Reacting to an Intrusion: After the GM intrudes, you can spend 1 XP (assuming you have any to spend) on your next turn to react to the GM intrusion to help deal with whatever new situation the GM introduced.</p>\n<p>Intruding on an Automatic Success: One surprising way the GM can intrude is when you attempt an action that should be routine (an automatic success). For example, if you’re climbing a wall and, through skill and Effort, you’ve reduced the difficulty to 0, you might assume that everything goes according to plan and it’s a smooth climb without any issues, but the GM might intrude (offering you 2 XP) and say that part of the wall starts to crumble and suddenly you’re at risk of falling.</p>\n<p>Free GM Intrusion: If you roll a 1 on a task, the GM gets a “free” intrusion—they get to intrude, and they don’t give out any XP for it.</p>\n<h3>GM Intrusion Examples</h3>\n<p class=\"crd-summary\">The character’s weapon slips from their grip and skitters across the floor.</p>\n<p class=\"crd-summary\">The rope the character is climbing begins to fray.</p>\n<p class=\"crd-summary\">The character slips on slick rocks by the river’s edge and falls into the rushing water.</p>\n<p class=\"crd-summary\">The NPC a character is trying to charm gets an important phone call that interrupts the whole conversation.</p>\n<p class=\"crd-summary\">The characters’ car gets a flat tire in the middle of racing to somewhere important.</p>\n<p class=\"crd-summary\">A foe becomes enraged and makes an additional, unexpected attack out of initiative order.</p>\n<p class=\"crd-summary\">Reinforcements show up for the bad guys.</p>\n<h3>Player Intrusions</h3>\n<p>A player intrusion is when you (the player) intervene to alter something in the campaign, making things easier for your character, and ideally more interesting for the story. Conceptually, it is the reverse of a GM intrusion: instead of the GM giving you XP and introducing an unexpected complication for a character, you spend 1 XP and present a solution to a problem or complication. What a player intrusion can do usually introduces a change to the world or current circumstances rather than directly changing your character. For example, a player intrusion that a cypher you just used still has an additional use would be appropriate, but a player intrusion that your character suddenly heals would not.</p>\n<p>If you have no XP to spend, you can’t use a player intrusion. Using an intrusion does not require you to use an action to trigger it—it just happens.</p>\n<p>What follows are a few examples of player intrusions. Not every intrusion listed here is appropriate for all situations. The GM may allow you to come up with other player intrusion suggestions, but they are the final arbiter of whether the suggested intrusion is appropriate for the character and suitable for the situation. If the GM refuses the intrusion, you don’t spend the 1 XP, and the intrusion doesn’t occur.</p>\n<p>Advantageous Malfunction: A dangerous device malfunctions before it can affect you. It might harm the user or one of their allies for a round, or activate a dramatic and distracting side effect for a few rounds.</p>\n<p>Convenient Idea: A flash of insight provides you with a clear answer or suggests a course of action with regard to an urgent question, problem, or obstacle you’re facing.</p>\n<p>Friendly NPC: An NPC you don’t know, someone you don’t know that well, or someone you know but who hasn’t been particularly friendly in the past chooses to help you, though they don’t necessarily explain why. Maybe they’ll ask you for a favor in return afterward, depending on how much trouble they go to.</p>\n<p>Inexplicably Unbroken: An inactive, ruined, or presumed-destroyed device temporarily activates and performs a useful function relevant to the situation. This is enough to buy you some time for a better solution, alleviate a complication that was interfering with your abilities, or just get you one more use out of a depleted cypher or artifact.</p>\n<p>Old Friend: A comrade in arms from your past shows up unexpectedly and provides aid in whatever you’re doing. They are on a mission of their own and can’t stay longer than it takes to help out, chat for a while after, and perhaps share a quick meal.</p>\n<p>Perfect Setup: You’re fighting at least three foes and each one is standing in exactly the right spot for you to use a move you trained in long ago, allowing you to attack all three as an action. Make a separate attack roll for each foe.</p>\n<p>Perfect Suggestion: A follower or other  already-friendly NPC suggests a course of action with regard to an urgent question, problem, or obstacle you’re facing.</p>\n<p>React to a GM Intrusion: After the GM intrudes, you could decide to use your next turn to react to the GM intrusion in a way that changes the story complication that the GM just introduced into something that improves your situation.</p>\n<p>Serendipitous Landmark: Just when it seems like you’ve lost the path, something suggests to you the best path forward from this point, such as a trail marker, a landmark, or simply the way the terrain or corridor changes.</p>\n<p>Unexpected Gift: An NPC hands you a physical gift you were not expecting, one that helps put the situation at ease if things seem strained, or provides you with a new insight for understanding the context of the situation if there’s something you’re failing to understand or grasp.</p>\n<p>Weak Strain: The poison or disease turns out not to be as debilitating or deadly as it first seemed, and the wounds it inflicts are reduced by one severity.</p>\n<p>Weapon Break: Your foe’s weapon has a weak spot. In the course of the combat, it quickly becomes damaged and loses 1 to 3 levels.</p>\n<nav class=\"crd-related\"><p>Related rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.3ad300bfc60f7364]{Earning XP}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.9314a790ffaaf21a]{Player Intrusion}</li></ul></nav>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "8ccfc67ce3bf6032"
+          }
+        }
+      }
+    },
+    {
+      "_id": "8e7d980fbd7343c8",
+      "_key": "!journal.pages!170f4018cd457db7.8e7d980fbd7343c8",
+      "name": "Glossary of Game Terms",
+      "type": "text",
+      "sort": 500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside class=\"crd-callout\"><p>ACTION: Anything a character does that is significant—punch a foe, leap a chasm, activate a device, use a special ability, and so on. Each character can take one action in a round.</p></aside>\n<aside class=\"crd-callout\"><p>ASSET: An object, situation, or assistance that helps you with a task, easing your roll. A really good asset can ease your roll by two steps. Assets can never ease a task by more than two steps—any more than two steps doesn’t count. (If something eases a task but isn’t called an asset, it’s not an asset.)</p></aside>\n<aside class=\"crd-callout\"><p>CHARACTER: Any creature in the game capable of acting, whether it is a player character (PC) run by a player or a nonplayer character (NPC) run by the game master (GM). In Cypher, even bizarre creatures, sentient machines, and living energy beings can be “characters.”</p></aside>\n<aside class=\"crd-callout\"><p>COMBAT SKILL: An attack skill like medium blades or bows, or a defense skill like block, dodge, or Intellect defense.</p></aside>\n<aside class=\"crd-callout\"><p>DIFFICULTY: A measure of how easy it is to accomplish a task. Difficulty is rated on a scale from 1 (lowest) to 10 (highest). Altering the difficulty to make a task harder is called “hindering.” Altering it to make a task easier is called “easing.” All changes in difficulty are measured in steps. Difficulty often equates directly with level, so opening a level 3 locked door probably has a difficulty of 3.</p></aside>\n<aside class=\"crd-callout\"><p>EASE: A decrease in a task’s difficulty, usually by one step. If something is eased but doesn’t say by how many steps, that’s shorthand for reducing difficulty by one step.</p></aside>\n<aside class=\"crd-callout\"><p>EDGE: A characteristic for your PC representing how good you are using your Might, Speed, or Intellect. Also see STAT.</p></aside>\n<aside class=\"crd-callout\"><p>EFFORT: Spending points from a stat Pool to reduce the difficulty of a task. You decide whether or not to apply Effort on your turn before the roll is made. Your Effort score indicates how much Effort you can use on an action (characters usually start with Effort 1, meaning they can reduce a task’s difficulty by one step). NPCs never apply Effort.</p></aside>\n<aside class=\"crd-callout\"><p>EXPERT: Having an amazing amount of skill in a task. Being an expert eases the task by three steps. So if you are an expert in athletics, all your athletics tasks are eased by three steps. Expert is better than trained or specialized.</p></aside>\n<aside class=\"crd-callout\"><p>EXTRA ACTION: A special case where an ability or effect gives you another action in a round in addition to the normal action you take on your turn. Because it’s a separate action, you can use your full Effort on it even if you’ve used all your other Effort on a different task this round.</p></aside>\n<aside class=\"crd-callout\"><p>FREELY USE: Able to use a kind of equipment (such as medium armor or heavy weapons) without penalty. If you can’t freely use the weapon you’re attacking with, your attacks with it are hindered. If you can’t freely use a kind of armor (such as medium armor), the dodge penalty for the armor applies to all of your Speed tasks.</p></aside>\n<aside class=\"crd-callout\"><p>HINDER: An increase in a task’s difficulty, usually by one step. If something is hindered but doesn’t say by how many steps, that’s shorthand for increasing the difficulty by one step.</p></aside>\n<aside class=\"crd-callout\"><p>INABILITY: The opposite of trained—you’re hindered whenever you attempt a task that you have an inability in. If you also become trained in the task, the training and the inability cancel each other out and you can try the task normally.</p></aside>\n<aside class=\"crd-callout\"><p>LEVEL: A way to measure the strength, difficulty, power, or challenge of something in the game. Everything other than you in the game has a level. NPCs and objects have levels that determine the difficulty of any task related to them. For example, an opponent’s level determines how hard they are to hit or avoid in combat. A door’s level indicates how hard it is to break down. A lock’s level determines how hard it is to pick. Levels are rated on a scale from 1 (lowest) to 10 (highest).</p></aside>\n<aside class=\"crd-callout\"><p>POOL: A defining characteristic for your PC, representing your raw, innate ability in Might, Speed, or Intellect. Also see STAT.</p></aside>\n<aside class=\"crd-callout\"><p>ROLL: A d20 roll made by a PC to determine whether an action is successful. Although the game occasionally uses other dice, when the text simply refers to “a roll,” it always means a d20 roll.</p></aside>\n<aside class=\"crd-callout\"><p>ROUND: A length of time about five to ten seconds long. There are about ten rounds in a minute. When it’s really important to track precise time, use rounds. Basically, it’s the length of time to take an action in the game, but since everyone more or less acts simultaneously, all characters get to take an action each round.</p></aside>\n<aside class=\"crd-callout\"><p>SPECIALIZED: Having an exceptional amount of skill in a task. Being specialized eases the task by two steps. So if you are specialized in athletics, all your athletics tasks are eased by two steps. Specialized is better than trained.</p></aside>\n<aside class=\"crd-callout\"><p>STAT: One of the three defining characteristics for PCs: Might, Speed, or Intellect. Each stat (short for statistic) has two values: Pool and Edge. Your Pool represents your raw, innate ability, and your Edge represents knowing how to use what you have. Each stat Pool can increase or decrease over the course of play—for example, you can spend points from your Might Pool when you rally to remove a wound, lose points from your Speed Pool if you take certain types of damage like poison, spend points from your Intellect Pool to activate a special ability, or rest to recover points in your all your Pools after a long day of marching. Anything that requires spending from a stat, damages a stat, restores or heals a stat, or boosts or penalizes a stat affects the stat’s Pool.</p></aside>\n<aside class=\"crd-callout\"><p>TASK: Something your character attempts, often as an action. The GM determines the difficulty of the task. In general, a task is something that you do and an action is you performing that task, but they often come down to the same thing.</p></aside>\n<aside class=\"crd-callout\"><p>TRAINED: Having a reasonable amount of skill in a task. Being trained eases the task. For example, if you are trained in athletics, all athletics tasks for you are eased. If you become very skilled at that task, you become specialized instead of trained. And if you become even more skilled, you become an expert instead of specialized. You do not need to be trained to attempt a task.</p></aside>\n<aside class=\"crd-callout\"><p>TURN: The part of the round when a character or creature takes its actions. For example, if a Paladin and a Bard are fighting an orc, each round the Paladin takes an action on their turn, the Bard takes an action on their turn, and the orc takes an action on its turn. Some abilities or effects last only one turn, or end when the next turn is started.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "6cf147b1956d567e"
+          }
+        }
+      }
+    },
+    {
+      "_id": "1100e5b9964ae01b",
+      "_key": "!journal.pages!170f4018cd457db7.1100e5b9964ae01b",
+      "name": "Character Stats and Pools",
+      "type": "text",
+      "sort": 600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>As mentioned earlier, your character has three statistics (or stats): Might, Speed, and Intellect.</p>\n<h3>Might</h3>\n<p>Your Might stat is for physical activities that require strength, power, or endurance.</p>\n<h3>Speed</h3>\n<p>Your Speed stat is for physical activities that require agility, flexibility, or fast reflexes.</p>\n<h3>Intellect</h3>\n<p>Your Intellect stat is for mental activities that require force of will, memory, or mental power.</p>\n<h3>Stats and Tasks</h3>\n<p>You can generalize all tasks into three categories: Might tasks, Speed tasks, and Intellect tasks. Breaking down a door is usually a Might task, picking a lock is usually a Speed task, and solving a puzzle is usually an Intellect task. These tasks usually require an action.</p>\n<p>A defense task is when you roll to avoid or prevent something unwanted from happening to your character. Resisting a poison is a Might defense task. Dodging an arrow is a Speed defense task. Resisting mind control is an Intellect defense task. Defense tasks usually do not require an action.</p>\n<p>(The word “roll” can be used interchangeably with “task,” especially when the GM asks you to attempt a task, such as “Make an Intellect roll to hack the computer” or “Make a Speed defense roll to resist the charm spell.”)</p>\n<p>The GM sets the difficulty of the task on a scale of 1 to 10. This can be modified by advantages and disadvantages in play.</p>\n<h3>Pools</h3>\n<p>Each stat has a Pool of points, so your character has a Might Pool, Speed Pool, and Intellect Pool. Starting characters have at least 8 points in all three Pools, and it’s common for a starting character’s best Pool to have 14 or more points.</p>\n<p>You use your Pool points for various things, such as using Effort or activating special abilities. For example, your Soldier character might have a combat maneuver that costs points from your Speed Pool, or your Wizard character might have a spell that costs points from your Intellect Pool.</p>\n<aside class=\"crd-callout\"><p>In general, there’s no penalty for spending a Pool down to 0 points. It just means you can’t use Effort from that stat or use abilities that cost points from that stat.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "43537046bbda1855"
+          }
+        }
+      }
+    },
+    {
+      "_id": "e858315d5a818496",
+      "_key": "!journal.pages!170f4018cd457db7.e858315d5a818496",
+      "name": "Taking Action",
+      "type": "text",
+      "sort": 700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Something your character does during your turn is an action. (Often, the term task is used interchangeably with action, but technically a task is an activity you attempt and an action is you performing that task. So while they can be synonymous, it’s not always true—for example, defense tasks don’t require your action.)</p>\n<p>Most basic actions are routine (difficulty 0), so you don’t need to make a roll and you succeed automatically. For example, you might do one of these things:</p>\n<p class=\"crd-summary\">Walk across a room</p>\n<p class=\"crd-summary\">Open a door</p>\n<p class=\"crd-summary\">Throw a stone into a nearby bucket</p>\n<p class=\"crd-summary\">Introduce yourself to a stranger</p>\n<p>All of these things are actions. None of them requires a roll.</p>\n<p>To make sure one player doesn’t hog all of the GM’s attention, normally the players take turns saying what their character does. If the exact order in which these actions happen doesn’t matter, the order you say them to the GM doesn’t matter either, as long as everyone gets a chance to act and the GM knows what everyone is doing. For example, the GM might go clockwise around the table (or video screen during an online game) to talk to each player, ask a random player to go first, or start with the person who just brought some snacks to the table.</p>\n<p>So your character might search a room for clues, another character might spend some time treating a wound, and a third character might try to pick a lock on a mysterious door. An allied NPC might do something, too.</p>\n<p>In a time-intensive situation like combat, the order that things happen in matters a lot. You’ll make an initiative roll to see whether you get to act earlier or later in combat.</p>\n<p>Some things your character attempts don’t require an action. As noted above, your defense rolls to avoid attacks do not happen on your turn but instead in response to your foes’ attacks on their turns. And whenever you use a special ability tagged as an enabler, you usually don’t use an action—the ability is already affecting you, happens automatically, or requires so little effort on your part that it doesn’t distract you from your regular action.</p>\n<h3>Task Difficulty</h3>\n<table><tbody>\n<tr>\n<th>Task Difficulty</th>\n<th>Description</th>\n<th>Target Number</th>\n<th>Guidance</th>\n</tr>\n<tr>\n<td>0</td>\n<td>Routine</td>\n<td>0</td>\n<td>Anyone can do this basically every time.</td>\n</tr>\n<tr>\n<td>1</td>\n<td>Simple</td>\n<td>3</td>\n<td>Most people can do this most of the time.</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Standard</td>\n<td>6</td>\n<td>Typical task requiring focus, but most people can usually do this.</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Demanding</td>\n<td>9</td>\n<td>Requires full attention; most people have a 50/50 chance to succeed.</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Difficult</td>\n<td>12</td>\n<td>Trained people have a 50/50 chance to succeed.</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Challenging</td>\n<td>15</td>\n<td>Even trained people often fail.</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Intimidating</td>\n<td>18</td>\n<td>Normal people almost never succeed.</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Formidable</td>\n<td>21</td>\n<td>Impossible without skills or great effort.</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Heroic</td>\n<td>24</td>\n<td>A task worthy of tales told for years afterward.</td>\n</tr>\n<tr>\n<td>9</td>\n<td>Immortal</td>\n<td>27</td>\n<td>A task worthy of legends that last lifetimes.</td>\n</tr>\n<tr>\n<td>10</td>\n<td>Impossible</td>\n<td>30</td>\n<td>A task that normal humans couldn’t consider (but one that doesn’t break the laws of physics).</td>\n</tr>\n</tbody></table>\n<p>The GM uses the Task Difficulty table to determine the difficulty of the task, which in turn sets the target number you need to roll to succeed. If you’re acting against an NPC, that NPC’s level is the difficulty. You can look at the table to see the target number, but a shortcut is simply taking the difficulty and multiplying it by 3. That’s the target number. You’ll notice that at difficulty 7 and above, the target number is higher than 20, and since you’re rolling a d20, those targets are impossible. However, you can ease the difficulty of a task in many ways. Lowering the difficulty means lowering the target number.</p>\n<p>If your task is opposed by a creature, the GM will likely use their level to decide the difficulty. So to attack a level 3 mugger, the task is level 3 and you need to roll a 9. If a level 4 psychic tries to control your mind, the task to resist will be level 4.</p>\n<p>All NPCs have levels. Objects and obstacles also have levels. If you need to pick a level 5 lock or smash through a level 6 barrier, the GM will use those levels to determine the difficulty.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "b707d41ac4e66465"
+          }
+        }
+      }
+    },
+    {
+      "_id": "7d3bca4f76084bc2",
+      "_key": "!journal.pages!170f4018cd457db7.7d3bca4f76084bc2",
+      "name": "Easing Tasks",
+      "type": "text",
+      "sort": 800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You can potentially ease (decrease the difficulty) of any task to 0, making it routine and negating the need for a roll. Walking across a narrow wooden beam is tricky for most people, but for an experienced gymnast, it’s routine. Repairing a car might be difficult for most people, but for a professional mechanic, it’s routine.</p>\n<p>There are three main ways for characters to ease tasks: skills, assets, and Effort.</p>\n<h3>Skill</h3>\n<p>A skill is something your character is better at than the average person. Athletics, hacking, history, perception, and stealth are all examples of skills. You can even be trained in a combat skill like guns or dodging.</p>\n<p>There are three possible levels to a skill: trained, specialized, and expert (but you can usually become expert in a skill only if your character has a special ability allowing it). Trained means you’re good at it, specialized means you’re great at it, and expert means you’re amazing at it. For example, a high school or college gymnast is probably trained in gymnastics, an Olympic competitor is probably specialized in gymnastics, and a gymnast who breaks world records is probably an expert in gymnastics.</p>\n<p>Being trained eases your task by one step, being specialized eases it by two, and being an expert eases it by three. A skill can never ease a task by more than three steps.</p>\n<h3>Asset</h3>\n<p>An asset is any object, situation, or assistance that helps you with a task. If you’re trying to force open a door, a crowbar is an asset. If you’re trying to put out a fire, a rainstorm is an asset. If you’re trying to climb over a fence, your friend giving you a boost (in other words, helping) is an asset. If you’re fighting a monster, the monster being distracted by strong winds is an asset.</p>\n<p>An asset usually eases a task by one step. A really good asset (or two regular assets) can ease a task by two steps. Assets can never ease a task by more than two steps—any more than two steps doesn’t count.</p>\n<aside class=\"crd-callout\"><p>The game rules tell you if something is an asset so you know if the two-asset limit applies. If it’s not called an asset, it’s not an asset. For example, medium armor eases block tasks by two steps, but it’s not an asset.</p></aside>\n<h3>Effort</h3>\n<p>Effort is when your character tries harder than normal at a task. Because you’re pushing yourself to succeed, this costs points from one of your stat Pools. Which Pool these points come from depends on what kind of task it is; use your Might Pool for Effort on Might tasks, your Speed Pool for Effort on Speed tasks, and your Intellect Pool for Effort on Intellect tasks.</p>\n<p>Using Effort costs 3 Pool points and eases the task by one step—this is often called applying one level of Effort. Remember to subtract your Edge from this cost.</p>\n<p>You have to decide to use Effort (and spend the points for it) before you make the roll.</p>\n<p>When you use Effort on an attack, you choose whether you’re easing the roll by one step or increasing the damage by 3.</p>\n<p>Applying More Effort: Tier 1 characters can only use one level of Effort on a task—your Effort score on your character sheet is the maximum number of levels of Effort you can use. More advanced characters can increase their Effort score (up to a maximum of six). Levels of Effort beyond the first one only cost 2 points instead of 3. So applying two levels of Effort costs 5 points (3 + 2), using three levels cost 7 points (3 + 2 + 2), and so on.</p>\n<p>Effort on Multiple Tasks: Your Effort limit is per task or per action, so if you do multiple things in a turn, you can use Effort up to your limit on each of them. For example, you can use Effort up to your limit when making an attack on your turn, then use Effort up to your limit again when a foe attacks you on their turn, then use it up to your limit again when a second foe attacks you on their turn. And if you have an ability that gives you an extra action on your turn, that’s a separate task, so you could use Effort up to your limit again. Of course, using Effort on four tasks in a round would cost a lot of Pool points!</p>\n<p>Multiple Levels of Effort: If your Effort is 2 or higher, you can split your Effort between easing the attack roll and increasing the damage. For example, if your Effort is 3, you could use three levels of Effort on the attack roll, or two levels on the attack roll and one level on the damage, or one level on the attack roll and two levels on the damage, or three levels on the damage; your total Effort on the task is three, within your Effort limit.</p>\n<h4>Edge</h4>\n<p>Your Might, Speed, and Intellect Pools each have a linked Edge stat—Might Edge, Speed Edge, and Intellect Edge. Edge works like a “discount” when you spend points; whenever you spend points from a Pool, reduce the point cost by your Edge for that stat (to a minimum point cost of 0, which means it’s free).</p>\n<p>Generally, you can use your Edge only once per action (no “double-dipping”). So if you apply Effort to ease your pistol shot’s chance of hitting and apply more Effort to increase damage, the two levels of Effort you apply (5 points from your Speed Pool) get the discount of your Edge only once. Or if you spend 1 Speed to activate a special attack and use a level of Effort on that attack, you only get the discount from your Edge once. An easy way to handle using your Edge is to add up the entire Pool cost for an action (such as the cost of a Blast and one level of Effort to ease the attack), then subtract your Edge once from the total.</p>\n<aside class=\"crd-callout\"><p>Some people get Edge and Effort confused. One way to remember the difference is you have an Edge, but you use Effort. Another way is to rename your Edge stat to something like “Mastery” or “Superiority,” representing how you’re naturally better at using that stat.</p></aside>\n<h4>Free Level of Effort</h4>\n<p>Some character abilities give you a free level of Effort on a task. This free level doesn’t cost you any Pool points, and it doesn’t count toward your Effort limit. However, even if you have free levels of Effort, you’re still limited to applying a maximum of six levels of Effort on a task.</p>\n<aside class=\"crd-callout\"><p>Effort requires spending points from the stat Pool appropriate to the action, minus any Edge you have in that Pool. Each level of Effort eases the task by one step.</p></aside>\n<aside class=\"crd-callout\"><p>By using skills, assets, and Effort, you can ease a task by a maximum of eleven steps: one to three steps from skills, one or two steps from assets, and one to six steps from Effort.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "6c6d514cdc968094"
+          }
+        }
+      }
+    },
+    {
+      "_id": "435176772ef63763",
+      "_key": "!journal.pages!170f4018cd457db7.435176772ef63763",
+      "name": "Rolling the Die",
+      "type": "text",
+      "sort": 900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>As previously stated, to determine success or failure, you roll a d20. If you roll the target number or higher, you succeed. Most of the time, that’s the end of it—nothing else needs to be done.</p>\n<p>When you roll, tell the GM the result on the d20 and also by how many steps you’re easing it, based on whatever skill, Effort, and other assets you’re using, if any. Unless the GM tells you otherwise, they probably only want to know if your roll is eased and, if so, by how many steps (not a breakdown of what contributes to each step). For example, you might say, “I rolled a 12, eased by two steps,” or “eased by two steps, rolled a 12.” (Ask your GM how they prefer to hear this: the roll followed by how much you eased it, or how much you eased it followed by the roll. GMs can process the difficulty-adjusting math in different ways, so try to say it in the way that makes it easier for them.)</p>\n<p>Note that because you can’t roll above a 20, that means that difficulty 7 or higher tasks (which have a target number of 21 or higher) are impossible unless you have some way to lower the difficulty. Not even a 20 is a success in this situation—which makes sense, because otherwise rolling a 20 would let you do impossible things like jump over the moon.</p>\n<aside class=\"crd-callout\"><p>Maybe you’re familiar with the phrase “a natural 20” or other “natural” roll on a d20. Many non-Cypher games have you add a number to your roll, so there’s a difference between rolling an 18 with a +2 for a total of 20 and actually rolling a “natural 20” on the die, which means the exact number that comes up on the d20. In Cypher, you never modify the die roll, so every roll is a “natural” something.</p></aside>\n<h3>The Player Always Rolls</h3>\n<p>In Cypher, the players always drive the action. That means you—the player—make all the die rolls. If you leap out of a moving vehicle, you roll to see if you succeed. If you search for a hidden panel, you roll to determine whether you find it. If a rockslide falls on you, you roll to try to get out of the way. If you attack a foe, you roll to see if you hit. If a foe attacks you, you roll to see if you dodge the blow.</p>\n<p>As shown by the last two examples, you roll whether your character is attacking or defending. Thus, something that improves defenses might ease or hinder your rolls depending on whether it’s helping your character or an NPC. For example, if your character uses a low wall to gain cover from an NPC’s attacks, the wall eases your defense rolls. If an NPC uses the wall to gain cover from your character’s attacks, it hinders your attack rolls.</p>\n<aside class=\"crd-callout\"><p>NPCs don’t roll dice, so if an NPC is hindered, it instead eases your roll against them, and vice versa. For example, if an NPC’s defense is hindered, it eases your attack roll against them.</p></aside>\n<h3>Special Rolls</h3>\n<p>If you roll a 1, 17, 18, 19, or 20, special rules come into play. More information on each of these results is in the following sections.</p>\n<p>1: GM intrusion</p>\n<p>17: +1 damage bonus</p>\n<p>18: +2 damage bonus</p>\n<p>19: +3 damage bonus or minor effect. If the roll was a damage-dealing attack, it deals 3 additional damage, or you can choose a minor effect in addition to the normal results of the task. If the roll was something other than an attack, you can choose a minor effect in addition to the normal results of the task.</p>\n<p>20: +4 damage bonus or major effect. If the roll was a damage-dealing attack, it deals 4 additional damage, or you can choose a major effect in addition to the normal results of the task. If the roll was something other than an attack, you can choose a major effect in addition to the normal results of the task. And the point cost for the action (if any) decreases to 0, so if you spent points from a stat Pool on the action, you regain those points as if you had not spent them at all.</p>\n<h4>GM Intrusion</h4>\n<p>The GM has the ability to use a GM intrusion at any time—it’s one of the ways you earn XP. However, an intrusion that happens when you roll a 1 is a special case because they don’t have to award you any XP—it’s “free” for the GM.</p>\n<p>When you roll a 1, something occurs to complicate your character’s situation. The GM decides what the intrusion is.</p>\n<p>For example, there could be unexpected difficulty with your task (you slip while trying to climb a wall), something unrelated affects the situation (a dangerous creature wanders into the area), or your attack or defense has a mishap (you clip an ally with your backswing, or your foe finds a weak spot in your armor).</p>\n<h4>Damage Bonus</h4>\n<p>If you’re making an attack roll for an attack that inflicts damage, rolling a 17 or higher means you get to add extra damage to the attack: +1 for a 17, +2 for an 18, +3 for a 19 (if you don’t choose a minor effect), or +4 for a 20 (if you don’t choose a major effect).</p>\n<p>This extra damage only happens if the attack hits your foe. For example, if you roll a 17 but you needed an 18 to hit, you miss and don’t inflict any damage at all.</p>\n<p>Also, as noted above, this extra damage only happens if you’re rolling for an attack, and only if the attack would inflict damage. For example, if you’re rolling to defend against an NPC’s attack and you roll an 18, that doesn’t mean your foe takes damage from your defense. And if you’re attacking with a mind control ability and you roll a 19, that doesn’t mean your mind control also inflicts +3 damage.</p>\n<h4>Minor Effect</h4>\n<p>A minor effect happens when you roll a 19. Most of the time, a minor effect is slightly beneficial to your character, but not overwhelming. A climber gets up the steep slope a bit faster. A repaired machine works a bit better. A character jumping down into a pit lands on their feet. Either the GM or you can come up with a minor effect that fits the situation, but both must agree on what it should be.</p>\n<p>Don’t waste a lot of time thinking of a minor effect if nothing appropriate suggests itself. Sometimes, in cases where only success or failure matters, it’s okay to have no minor effect. Keep the game moving at an exciting pace.</p>\n<p>If you roll a 19 on an attack roll to inflict damage, instead of a minor effect, you can add +3 damage.</p>\n<p>The following are other common minor effects for combat:</p>\n<p class=\"crd-summary\">Damage object: Your attack can harm the foe and an object of your choice they are holding. Add +3 damage to your total, then split your damage between the foe and the object.</p>\n<p class=\"crd-summary\">Distract: For one round, all of your foe’s tasks are hindered.</p>\n<p class=\"crd-summary\">Knock back: Your foe is knocked or forced back a few feet. Most of the time, this doesn’t matter much, but if the fight takes place on a ledge or next to a pit of lava, it might be significant.</p>\n<p class=\"crd-summary\">Move past: As an extra action on your turn, you can move a short distance at the end of your attack. For example, you could use this to get past a foe guarding a door.</p>\n<p class=\"crd-summary\">Strike a specific body part: You strike a specific spot on the defender’s body. The GM rules what special effect, if any, results. For example, hitting a tentacle wrapped around an ally might ease the ally’s escape task by two steps. Hitting a foe in the eye might blind it for one round. Hitting a creature in its one vulnerable spot might bypass its defenses against your attack.</p>\n<p>In situations other than combat, the minor effect is even more open-ended and you’re encouraged to use your creativity. The rules of thumb are: it should be positive or helpful to you or your friends, and it should deal with the task you are dealing with. In a social interaction, the person you’re talking to might reveal an additional bit of valuable information or might be predisposed to future interactions with you (easing a future attempt involving them).</p>\n<p>Usually, the GM just has the desired minor effect occur and there’s no second roll needed. For example, rolling a 19 against a relatively weak foe means it is knocked off the cliff; the minor effect makes the round more exciting, but the defeat of a minor creature has no significant impact on the story. Other times, the GM might rule that an additional roll is needed to achieve the effect—the special roll only gives you the opportunity for a minor effect. This mostly happens when the desired effect is very unlikely, such as pushing a 50-ton dinosaur off a cliff. If you just want to deal +3 damage, no extra roll is needed.</p>\n<h4>Major Effect</h4>\n<p>A major effect happens when you roll a 20. Most of the time, a major effect is quite beneficial to your character. A climber gets up the steep slope in half the time. A jumper lands with such panache that those nearby are impressed and possibly intimidated. A defender makes a free attack on a foe.</p>\n<p>Either you or the GM can come up with a major effect that fits the situation, but you both must agree on what it should be. As with minor effects, don’t spend a lot of time agonizing over the details of a major effect. In cases where only success or failure matters, a major effect might offer the character a one-time asset to use the next time they attempt a similar action. When nothing else seems appropriate, the GM could simply give you an extra action on your turn that same round.</p>\n<p>If you roll a 20 on an attack roll to inflict damage, instead of a major effect, you can add +4 damage.</p>\n<p>The following are other common major effects for combat.</p>\n<p class=\"crd-summary\">Disarm: The foe drops one object that it is holding.</p>\n<p class=\"crd-summary\">Impair: For the rest of the combat, all tasks the foe attempts are hindered.</p>\n<p class=\"crd-summary\">Knock down: The foe is knocked prone. It can get up on its turn.</p>\n<p class=\"crd-summary\">Stun: The foe loses its next action.</p>\n<p>As with minor effects, out of combat the major effect offers a lot of room for creativity. If you’re scaling a wall, you might have memorized the handholds you used last time you climbed it, so that now, going up is simply routine. If you’re trying to charm an NPC, you might not just succeed, but also win them over as an ongoing friend.</p>\n<p>Usually the GM just has the desired major effect occur, but as with a minor effect, sometimes they might require an extra roll if the effect is unusual or unlikely.</p>\n<nav class=\"crd-related\"><p>Related rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.7d3bca4f76084bc2]{Easing Tasks}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.5b3fdd7a2794d612]{Retrying a Task After Failure}</li></ul></nav>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "2a26969430f57a67"
+          }
+        }
+      }
+    },
+    {
+      "_id": "5b3fdd7a2794d612",
+      "_key": "!journal.pages!170f4018cd457db7.5b3fdd7a2794d612",
+      "name": "Retrying a Task After Failure",
+      "type": "text",
+      "sort": 1000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>If you fail a task (whether it’s climbing a wall, picking a lock, trying to figure out a mysterious device, or something else) you can attempt it again, but you have to use Effort when retrying it. A retry is a new action, not part of the same action that failed, and it takes the same amount of time as the first attempt did. Additional retries may be possible if your first retry fails, but the same rule applies: you have to apply at least one level of Effort each time.</p>\n<p>Sometimes the GM might rule that retries are impossible. Perhaps you only have one chance to convince the leader of a group of thugs not to attack, and after that, no amount of talking will stop them.</p>\n<p>The retrying rule doesn’t apply to something like attacking a foe in combat because combat is always changing and fluid. Each round’s situation is new, not a repeat of a previous situation, so a missed attack can’t be retried (other than as a new attack action on the following round).</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "cb461ca2a5ab11c0"
+          }
+        }
+      }
+    },
+    {
+      "_id": "4b81249c5fffaa5e",
+      "_key": "!journal.pages!170f4018cd457db7.4b81249c5fffaa5e",
+      "name": "Distance, Range, and Movement",
+      "type": "text",
+      "sort": 1100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Instead of precise distances like 10 feet (3.5 m) or 90 feet (27 m), Cypher uses simple range categories for most distances: immediate, short, long, and very long.</p>\n<p>Immediate distance or immediate range is what’s in reach of your character or within a few steps. If you’re standing in a prison cell or a small room, everything in the room is within immediate distance. At most, immediate distance is 10 feet (3.5 m).</p>\n<p>Short distance is anything greater than immediate distance extending up to 50 feet (16 m) or so.</p>\n<p>Long distance is anything greater than short distance extending up to 100 feet (30 m) or so.</p>\n<p>Very long distance is anything greater than long distance extending up to 500 feet (150 m) or so.</p>\n<p>Beyond very long distance, ranges are always specified—1,000 feet (300 m), a mile (1.6 km), and so on.</p>\n<aside class=\"crd-callout\"><p>Narratively, immediate distance is right there, practically next to the character. Short distance is nearby. Long distance is farther off. Very long distance is really far off.</p></aside>\n<aside class=\"crd-callout\"><p>Rarely, you might need even bigger range categories, like the following: Planetary: On the same planet. Interplanetary: Within the same solar system. Interstellar: Within the same galaxy. Intergalactic: Anywhere in the same universe. Interdimensional: Anywhere.</p></aside>\n<p>All weapons and special abilities (including creature abilities) use these terms for ranges. For example, melee weapons have immediate range—they are close-combat weapons, and you can use them to attack anyone within immediate distance. A thrown knife (and most other thrown weapons) has short range. A bow has long range. Magic spells vary, but a particular one might be short range.</p>\n<p>Cypher uses these categories for areas, too—an immediate area is an area about an immediate distance across, a short area is a short distance across, and so on. Because the categories aren’t precise, it doesn’t matter if the area is a cube or sphere.</p>\n<h3>Movement</h3>\n<p>When you take an action, you can also move an immediate distance. In other words, you can take a few steps over to the control panel and activate a switch. You can lunge across a small room to attack a foe. You can open a door, then move through it.</p>\n<p>As your entire action for a turn, you can move a short distance (instead of an immediate distance).</p>\n<p>You can take an action and also move a short distance (instead of an immediate distance), but all your tasks are hindered until the end of your next turn.</p>\n<p>As your entire action for your turn, you can run a long distance, but all your tasks are hindered by two steps until the end of your next turn.</p>\n<p>For example, if your party is fighting a group of cultists, you can likely attack any cultist in the general melee—they’re all within immediate range. Exact positions aren’t important. Creatures in a fight are always moving, shifting, and jostling, anyway. However, if one cultist stayed back to fire a pistol, if you want to make a melee attack against them you could use your entire action to move that short distance and be ready to attack them on your next turn. Or you could move that distance and attack that turn, but the attack (and all your tasks until the end of your next turn) would be hindered. It doesn’t matter if the cultist is 20 feet (6 m) or 40 feet (12 m) away—it’s simply considered a short distance. It does matter if the cultist is more than 50 feet (16 m) away because that distance would require a long move.</p>\n<aside class=\"crd-callout\"><p>Many Cypher rules avoid the cumbersome need for precision. Does it really matter if the ghost is 13 feet away from you or 18? Probably not. That kind of needless specificity only slows things down and draws away from, rather than contributes to, the story. For the same reason, provided metric conversions from imperial are approximations.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "bb631ad36558d1f5"
+          }
+        }
+      }
+    },
+    {
+      "_id": "890380730d4d3cc6",
+      "_key": "!journal.pages!170f4018cd457db7.890380730d4d3cc6",
+      "name": "Timekeeping",
+      "type": "text",
+      "sort": 1200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Time in the game passes in minutes, hours, days, and weeks. Thus, if you walk overland for 15 miles (24 km), that takes about eight hours of time in the game world, even if it only takes a few seconds at the game table.</p>\n<p>Like distances, precision timekeeping is rarely important. Most of the time, saying things like “That takes about an hour” works fine. Almost all time-limited things in Cypher, such as cypher effects and character abilities, are written so they last until you use a recovery, which is your character having a rest in order to restore Pool points. For example, a flying spell or potion doesn’t have a specific duration like five minutes—it lasts until you use a ten-minute or longer recovery.</p>\n<p>This puts control over these durations in your hands. You never have to ask the GM how much time has passed. Things last until something you do triggers the thing’s ending. This also means you may have some interesting tactical options, like deciding to push on without resting even though your Pools are low because you want to keep one of your abilities active for a while longer without having to spend Pool points to restart it.</p>\n<aside class=\"crd-callout\"><p>Using resource points usually has a timekeeping component—for instance, it might take you a few hours or a few days to use resource points to fix an engine.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "06df215e1ec6c2e8"
+          }
+        }
+      }
+    },
+    {
+      "_id": "7b88f7bc4dae840b",
+      "_key": "!journal.pages!170f4018cd457db7.7b88f7bc4dae840b",
+      "name": "Actions and Initiative",
+      "type": "text",
+      "sort": 1300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>A round in combat is about five to ten seconds. The length of time is variable because sometimes one round might be a bit longer than another. You don’t need to measure time more precisely than that. You can estimate that on average there are about ten rounds in a minute. In a round, everyone—each character and NPC—gets to take one action.</p>\n<h3>Initiative</h3>\n<p>An initiative roll determines who goes first, second, and so on in a round. For PCs, initiative is a Speed roll, and each player makes a roll for their own character. For NPCs, the GM typically uses the NPC’s target number (based on their level) to determine their initiative. Like all d20 rolls in Cypher, a higher initiative roll is better, meaning you get to go earlier.</p>\n<p>Most of the time, it’s only important to know which PCs act before the NPCs and which PCs act after the NPCs. If your initiative roll is equal to or higher than the NPC’s initiative, you get to go before they do; if your roll is lower than the NPC’s initiative, you go after them.</p>\n<p>The order in which the PCs act relative to each other usually isn’t important. You could take your turns in initiative order (highest to lowest), or you could go clockwise around the table (skipping the characters who go after the NPCs), and so on.</p>\n<p>For example, Charles, Tammie, and Shanna’s characters are in combat with some level 2 guards. The GM has the players make initiative rolls. Charles rolls an 8, Shanna rolls a 15, and Tammie rolls a 4. The target number for a level 2 creature is 6, so each round Charles (8) and Shanna (15) act before the guards, then the guards (6) act, and finally Tammie (4) acts. It doesn’t matter whether Charles acts before or after Shanna, as long as they both think it’s fair.</p>\n<p>Each character gets to take one action coupled with (optionally) a non-attack activity as part of their turn, such as moving an immediate distance, shutting a door, giving something to another character, drinking a potion or using something they’re holding, or something else minor—as long as it’s not an attack.</p>\n<p>After everyone—all PCs and NPCs—in the combat has had a turn, the round ends and a new round begins. In that new round and all following rounds, everyone acts in the same initiative order as they did in the first round (although PCs can mix it up a bit if they want to).</p>\n<p>Since the action moves as a cycle, anything that lasts for a round ends where it started in the cycle. If you use an ability on an opponent that hinders their defenses for one round, the effect lasts until you act on your next turn.</p>\n<p>The characters cycle through this order until the logical end of the encounter (the end of the fight or the completion of the event).</p>\n<aside class=\"crd-callout\"><p>Because you want your initiative roll to be higher instead of lower, you and your GM might find it easier to think of each step eased as +3 on your roll, so rolling a 12 eased by one step is like rolling a 15.</p></aside>\n<h4>Easing Initiative Rolls</h4>\n<p>Initiative can be eased just like any other roll, using skill, Speed Effort, assets, and so on.</p>\n<h4>First Actions</h4>\n<p>A small number of options in the game are fast and can be done as a First action instead of an action. With a First action, you have the option to jump ahead to the front of the initiative order, ahead of everyone else. If you do this, you can perform your First action (and only your First action), and the rest of your turn happens later.</p>\n<p>Once your First action is done, everyone else’s turns happen in the normal initiative order. After everyone else’s turns using their actions are done, you have the option to perform a follow-up non-attack activity such as moving an immediate distance, picking up something off the floor, drawing or putting away a weapon, or something else minor—as long as it’s not an attack. This is referred to as a Follow-up action, and it only comes into play for characters using a First action.</p>\n<p>If more than one character wants to take a First action, they all happen at the start of the round, in initiative order. For example, if your initiative is 18 and your ninja opponent’s is 15 and you both take a First action, your First action goes first, the ninja’s First action goes second, and then everyone else gets to go in the normal initiative order.</p>\n<p>On later rounds after the round you used a First action, the initiative order goes back to normal. In other words, just because you took a First action in a round doesn’t mean you get to go first every round after that.</p>\n<p>First actions are always optional. Anything labeled as a First action can be used as an action. Just because something is a First action doesn’t mean you have to go first—you always can choose to do it in the normal initiative order, which means you don’t have to delay anything else you want to do that round to a Follow-up action.</p>\n<h4>Last Actions</h4>\n<p>A small number of actions in the game are slow and have to be done as a Last action. A Last action always happens at the end of the round, after everyone else has acted (even after the Follow-up action of someone who performed a First action this round). If you perform a Last action, on that round you can’t do anything else (not even move an immediate distance). Last actions are typically those that take longer than a normal action, such as swinging a heavy greatsword or casting a complicated spell.</p>\n<p>It’s best to think of a Last action as happening over the course of the round, not just at the end. It’s simply resolved at the end because the action takes a bit longer or happens more slowly than normal.</p>\n<p>If more than one character takes a Last action, they happen at the end of the round, in initiative order.</p>\n<p>On later rounds after the round you used a Last action, the initiative order goes back to normal. In other words, just because you took a Last action in a round doesn’t mean you have to go last every round after that.</p>\n<aside class=\"crd-callout\"><p>You can attack with a heavy weapon as a Last action and still move an immediate distance before or after the attack, but your attack is hindered.</p></aside>\n<h3>Example Actions</h3>\n<table><tbody>\n<tr>\n<th>First Action</th>\n</tr>\n<tr>\n<td>Attack with a light weapon</td>\n</tr>\n<tr>\n<td>Close or open a door</td>\n</tr>\n<tr>\n<td>Drop or pick up something</td>\n</tr>\n<tr>\n<td>Move an immediate distance</td>\n</tr>\n<tr>\n<td>Fall prone</td>\n</tr>\n<tr>\n<td>Give something to/take something from an adjacent ally</td>\n</tr>\n<tr>\n<td>Drink a potion or use a simple item already in hand</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Action</th>\n</tr>\n<tr>\n<td>Attack with a light weapon or medium weapon</td>\n</tr>\n<tr>\n<td>Use a typical character ability</td>\n</tr>\n<tr>\n<td>Activate or use a device</td>\n</tr>\n<tr>\n<td>Move a short distance</td>\n</tr>\n<tr>\n<td>Use a one-action recovery</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Last Action</th>\n</tr>\n<tr>\n<td>Attack with a heavy weapon</td>\n</tr>\n<tr>\n<td>Pick a lock</td>\n</tr>\n<tr>\n<td>Run a long distance</td>\n</tr>\n</tbody></table>\n<h3>Delay or “Ready Your Action”</h3>\n<p>You can always wait until later in the initiative order to take your turn. For example, you may want a stronger ally to approach a foe before you attack, or you may want an ally to use a healing ability on you before you take your turn. Waiting like this generally changes the initiative order only for that round; at the start of the next round, everyone goes back to the initiative they rolled.</p>\n<p>You can also tell the GM that you want to wait until something specific happens, and if that thing happens you get to go right before it (unless that wouldn’t make sense, like waiting to attack someone before they walk through a doorway). For example, if a goblin threatens you with a knife, you can tell the GM “If they slash at me, I’m going to hit them with my sword.” On the goblin’s turn, they try to stab you, so you make your sword attack before that happens. This is also a good way to deal with a ranged foe who is using cover to pop up, shoot, and drop down out of view again. You could say, “I wait to see them rise up from behind cover and then I shoot them.”</p>\n<p>Lastly, any action can be used as a First action if you spend the entire round before it just readying. The best use of this is being on watch (sometimes called “overwatch”), ready for action in response to something specific happening, such as someone coming through a door.</p>\n<h3>Extra Action on Your Turn</h3>\n<p>Normally you can only take one action on your turn. But sometimes, the description of an ability, cypher, or other effect says that you can take an extra action on your turn. This extra action is usually very specific, such as making a second attack or attempting a stealth task after attacking a foe. Because it’s a separate action from your normal action on your turn, you can use your full Effort on the extra action, even if you already hit your Effort limit on a different task this round.</p>\n<p>You can use an extra action on your turn even if you use a Last action.</p>\n<aside class=\"crd-callout\"><p>An “extra action on your turn” and an “additional action on your turn” mean the same thing.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "e0a7e1c3ca542d08"
+          }
+        }
+      }
+    },
+    {
+      "_id": "d57a984f71946bfd",
+      "_key": "!journal.pages!170f4018cd457db7.d57a984f71946bfd",
+      "name": "Attack",
+      "type": "text",
+      "sort": 1400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>An attack is anything that you do to someone that they don’t want you to do. Slashing a foe with a curved dagger is an attack, blasting a foe with a lightning spell is an attack, wrapping a foe in magnetically controlled metal cables is an attack, and controlling someone’s mind is an attack. An attack always requires a roll to see if you hit or otherwise affect your target (if an ability is an attack and doesn’t require a roll, it will tell you so).</p>\n<p>In the simplest kind of attack, such as if you’re trying to stab an NPC bandit with a knife, you roll and compare your result to your foe’s target number (usually set by their level). If your roll is equal to or greater than the target number, the attack hits. Just as with any kind of task, the GM might modify the difficulty based on the situation, and you can try to ease the task using skills, assets, or Effort.</p>\n<p>A less straightforward attack might be a special ability that stuns a foe with a mental blast. However, it’s handled the same way: you make a roll against the NPC’s target number. Similarly, an attempt to tackle a foe and wrestle it to the ground is still just a roll against the foe’s target number.</p>\n<p>Attacks are sometimes categorized as “melee” attacks, meaning that you hurt or affect something within immediate reach, or “ranged” attacks, meaning that you hurt or affect something at a distance.</p>\n<p>Melee attacks can be Might or Speed actions—you choose which one (and that determines whether you’d use Might Effort or Speed Effort to ease the attack). Physical ranged attacks (such as bows, thrown weapons, and blasts of fire from a mutation) are almost always Speed actions, but attacks from a special ability such as a lightning spell or a mind blast tend to be Intellect actions.</p>\n<p>A special ability that requires touching a target (sometimes called a “touch attack”) is a melee attack. If the attack misses, the power is not wasted, and you can try again each round as your action until you hit the target, use another ability, or take a different action that requires you to use your hands. These attempts in later rounds count as different actions, so you don’t have to keep track of how much Effort you used on it last time or how you used Edge. For example, if in the first round you use Effort but your touch attack misses, in the next round you can try the touch attack again and decide whether or not you want to use Effort at all.</p>\n<p>You are encouraged to describe every attack you make with flavor and flair. One attack roll might be a stab to your foe’s left side. A miss might be your sword slamming into the wall. Combatants lunge, block, duck, spin, leap, and make all kinds of movements that should keep combat visually interesting and compelling.</p>\n<p>Many things can modify the difficulty of a combat task, including cover and illumination. Examples of this are described later in this section.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "72ac96f127dabf52"
+          }
+        }
+      }
+    },
+    {
+      "_id": "83eac1c2681eb4e4",
+      "_key": "!journal.pages!170f4018cd457db7.83eac1c2681eb4e4",
+      "name": "Damage",
+      "type": "text",
+      "sort": 1500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Damage is handled different ways in the game depending on whether the target is a player character, a nonplayer character, or an object.</p>\n<h3>Damage to PCs</h3>\n<p>Attacks on you that inflict physical damage appear as wounds. The attacker’s stats indicate the severity of the wound they inflict.</p>\n<h3>Wounds</h3>\n<p>Creatures, NPCs, and physical hazards typically inflict damage to PCs in the form of wounds. Wounds have three categories of severity—minor, moderate, and major.</p>\n<p>A core character can take three minor wounds, three moderate wounds, and three major wounds. Your type might allow you to take additional wounds, and some characters have abilities that allow them to take more than the normal number of wounds.</p>\n<p>Each time you take a wound, mark off the appropriate wound box on your character sheet.</p>\n<p>Minor Wounds: These are nicks, scratches, bruises, and other inconsequential injuries that no longer hurt after a few hours. Individual minor wounds don’t negatively affect your character in any way.</p>\n<p>When you’ve taken all of your minor wounds, any other minor wounds you take become (“roll over to”) moderate wounds.</p>\n<p>Moderate Wounds: These are open cuts, weapon grazes, sprains, minor fractures, and other injuries that no longer hurt after a few days. Individual moderate wounds don’t negatively affect your character in any way.</p>\n<p>When you’ve taken all of your moderate wounds, all of your actions are hindered, and any other moderate wounds you take become (“roll over to”) major wounds.</p>\n<p>Major Wounds: These are fractures, large open cuts, gunshot wounds, and other significant injuries that generally take anywhere from days to weeks to recover from.</p>\n<p>Each individual major wound hinders all of your actions. When you take your third major wound, you die.</p>\n<aside class=\"crd-callout\"><p>The GM may decide that you might take a wound for punching or kicking a hard object, whether or not you succeed in damaging it. A character who mainly attacks with punches and kicks—such as a Monk, a superhero, or someone who Fights Unarmed—probably doesn’t need to worry about that.</p></aside>\n<h3>Damage to Pools</h3>\n<p>Some special attacks may instead damage your Pools, such as a disease that inflicts Might damage, a numbing poison that inflicts Speed damage, or a psychic attack that inflicts Intellect damage. A few very dangerous attacks can inflict wounds and Pool damage at the same time.</p>\n<p>If damage reduces your stat Pool to 0, any further damage to that stat (including excess damage from the attack that reduced the stat to 0) turns into wounds.</p>\n<p>Pool Damage to Wound Conversions</p>\n<table><tbody>\n<tr>\n<th>Pool Damage</th>\n<th>Wound Type</th>\n</tr>\n<tr>\n<td>1 to 4</td>\n<td>Minor</td>\n</tr>\n<tr>\n<td>5 to 8</td>\n<td>Moderate</td>\n</tr>\n<tr>\n<td>9+</td>\n<td>Major</td>\n</tr>\n</tbody></table>\n<p>For example, if your Intellect Pool has 3 points and you take 6 points of Intellect damage, your Intellect Pool drops to 0 and the remaining 3 points convert to a minor wound.</p>\n<p>This conversion to wound damage doesn’t change the type of incoming damage or your defenses against it. For example, if your Intellect defense tasks are eased and you’re attacked by a psychic blast, your defense against it is still eased even if your Intellect Pool is at 0 and the Intellect damage you take converts to wounds.</p>\n<h3>Inflicting Damage on NPCs</h3>\n<p>An NPC has a stat called health, which often is the same as their target number (three times their level). When an NPC takes damage of any kind, they lose health (the GM tracks this). When their health reaches 0 or lower, they’re defeated.</p>\n<p>The attack you use either has standard base damage or specifies how much damage it inflicts when it hits an NPC. For instance, weapons inflict 2, 4, or 6 damage depending on whether they are light, medium, or heavy weapons respectively, whereas a Blast spell from a Mage specifies that it inflicts 4 damage. And so on.</p>\n<p>There are many ways to add damage to your attack, including character abilities (such as Combat Prowess from the Paladin type), using Effort, or getting a special roll of 17 or higher.</p>\n<p>If your attack brings an NPC to 0 or lower health, you decide whether it kills them or they’re merely unconscious. You don’t have to declare this ahead of time; if the GM says your attack defeats the NPC, you can tell the GM if you only want to knock them out. (The GM also has the option of having the NPC surrender near or at 0 health.)</p>\n<p>An NPC may have an Armor stat (usually 1, 2, or 3) that reduces physical damage they take. If the NPC’s Armor reduces the incoming damage to 0 or less, the NPC takes no damage at all. For example, a strange crab mutant covered in a thick shell probably has 3 Armor, so damage from every physical attack against them is reduced by 3 points. Mental attacks like a psychic blast ignore Armor, and some unusual physical attacks (such as poison on a blade) can bypass Armor.</p>\n<h3>Damage to Objects</h3>\n<p>An object doesn’t have wounds or stat Pools. Instead, its level acts like Armor and health. To damage an object, make an attack roll against its level. If you are successful and inflict enough damage to get through its Armor, the excess damage reduces its level on a one-for-one basis. If you damage it enough that its level becomes 0, the object is broken and no longer works. If you keep attacking the level 0 object and inflict additional damage equal to its original level, you destroy it.</p>\n<p>For example, if you attack a level 2 window and inflict 4 damage, 2 points get through its Armor, reducing it from level 2 to level 0. Now the window is broken; parts of it still have glass, but there’s enough gone that you could carefully crawl through it. If you inflict 2 more damage, the window is completely destroyed.</p>\n<aside class=\"crd-callout\"><p>Objects have levels and therefore target numbers, but usually the GM doesn’t need to keep track of the level of every single thing near you. Something easy to break in the real world is level 1 or 2, something that takes a little work to break is level 3 or 4, and something hard to break without tools is level 5 or higher.</p></aside>\n<p>If you attack a level 6 steel door and inflict 7 damage, 1 point gets through its Armor and reduces it to a level 5 door. Another hit for 7 damage means 2 points get through and make it a level 3 door. Another hit for 7 damage means 4 points get through and reduce its level to 0. Now the door is broken and no longer an obstacle. If you inflict another 6 or more damage to it, you destroy it.</p>\n<p>If you’re using another physical tool (such as a stick or sword) to attack an object, the tool has to be as hard as the object; otherwise the attack has no effect. For example, you can’t break a steel door by hitting it with a flimsy plastic chair.</p>\n<p>Shields: A shield being used defensively by a PC is a special case for objects taking damage—it takes wounds like a PC instead of reducing its level.</p>\n<aside class=\"crd-callout\"><p>The GM may treat hacking and lockpicking tasks like damaging an object—the lock or system has a level, and your roll inflicts “damage.” When its level becomes 0, you’ve opened the lock or hacked the system.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "77f1779c5a599b4f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "21c591beeb9e68b0",
+      "_key": "!journal.pages!170f4018cd457db7.21c591beeb9e68b0",
+      "name": "Recoveries",
+      "type": "text",
+      "sort": 1600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You can replenish your character’s stat Pools by resting, which allows you to take a recovery. You can take four recoveries in a day: one action, ten minutes, one hour, and ten hours. (Some characters have abilities that modify these numbers.)</p>\n<p>When you take a recovery, roll a d6 and add your tier to see how many points you recover. You can divide these recovered points among your stat Pools however you wish, up to your maximum in a Pool. For example, if your recovery result is 5 and you’re down 6 points of Might and 2 points of Speed, you can recover 5 points of Might, or 3 points of Might and 2 points of Speed, or any other combination adding up to 5 points.</p>\n<p>When you use a recovery, you get the benefits from it when you complete the entire recovery time. For example, if you use a ten-hour recovery, you get Pool points at the end of that ten-hour period. If the recovery time is interrupted (such as if a creature attacks you), after the interruption you can continue the recovery and get its benefits when the full time is completed.</p>\n<p>You can use your recoveries in any order. For example, you might use a lot of Pool points during a battle, take a ten-minute recovery to get some of them back, spend more Pool points while negotiating with some pirates, take an hour rest, get in another fight, and use a one-action recovery during the fight. You could even use two recoveries back to back, like having a ten-minute rest followed by a one-hour rest.</p>\n<p>You choose when you take your recoveries. For example, just because another character is spending ten minutes resting doesn’t mean you have to use your ten-minute recovery at that time.</p>\n<p>Usually your ten-hour recovery means you’re stopping for the night to eat and sleep. When that rest ends, you’re starting a new day and have all four of your recoveries available again.</p>\n<aside class=\"crd-callout\"><p>You can use your one-action recovery as a Last action (even if you’re not in a round-by-round situation) to get an additional +2 on your roll.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "5d1bf530e0860e47"
+          }
+        }
+      }
+    },
+    {
+      "_id": "45b08b7cf5faed30",
+      "_key": "!journal.pages!170f4018cd457db7.45b08b7cf5faed30",
+      "name": "Healing Wounds",
+      "type": "text",
+      "sort": 1700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>There are four ways to heal a wound: rallying, treatment, rest, and exceptional healing abilities. All these methods remove a wound so you can erase it from your character sheet, but there are advantages and disadvantages to each.</p>\n<h3>Rallying</h3>\n<p>Rallying allows you to remove a wound. You simply spend the indicated Might points. Rallying is fast and never requires a roll, but in most genres, rallying only works with minor and moderate wounds. When you rally, it’s because the wound wasn’t as bad as it seemed; because you’re shrugging it off, toughing it out, or taking a moment to catch your breath; because you’re lucky; or for some similar narrative reason.</p>\n<p>You cannot use Might Edge to reduce the cost of rallying.</p>\n<table><tbody>\n<tr>\n<th>Wounds Removed</th>\n<th>Might Cost</th>\n<th>Time Required</th>\n</tr>\n<tr>\n<td>One minor wound</td>\n<td>2</td>\n<td>One action</td>\n</tr>\n<tr>\n<td>One moderate wound</td>\n<td>5</td>\n<td>One action</td>\n</tr>\n<tr>\n<td>One major wound</td>\n<td>N/A</td>\n<td>Except for the superhero genre and similarly superheroic games, you can’t rally to remove a major wound; you have to use treatment, rest, or an exceptional healing ability.</td>\n</tr>\n</tbody></table>\n<h3>Treatment</h3>\n<p>Treatment to remove a wound is an Intellect task, using the healing skill. It requires a roll and time based on the severity of the wound, but it doesn’t cost any Might points. Treatment is slower than rallying but sometimes faster than resting, and it works best when a skilled person is involved.</p>\n<aside class=\"crd-callout\"><p>An ally can use treatment on you; you both spend the time, and they make the roll.</p></aside>\n<p>In some genres, like epic fantasy and many real-world settings, treatment times could take longer. In more heroic settings, like space opera and superheroes, treatment times are probably less. The GM will let you know what the treatment time is for their game if it’s different than the suggested time for that genre.</p>\n<table><tbody>\n<tr>\n<th>Wounds Removed</th>\n<th>Task Difficulty</th>\n<th>Treatment Time</th>\n</tr>\n<tr>\n<td>One minor wound</td>\n<td>0 (routine)</td>\n<td>One minute</td>\n</tr>\n<tr>\n<td>One moderate wound</td>\n<td>3</td>\n<td>Ten minutes</td>\n</tr>\n<tr>\n<td>One major wound</td>\n<td>6</td>\n<td>One hour</td>\n</tr>\n</tbody></table>\n<h3>Suggested Treatment Time by Genre</h3>\n<table><tbody>\n<tr>\n<td>Real world: Ten minutes for a minor wound, one hour for a moderate wound, and one week for a major wound.</td>\n</tr>\n<tr>\n<td>Real world (action): Last action for a minor wound, one minute for a moderate wound, and ten minutes for a major wound.</td>\n</tr>\n<tr>\n<td>Fantasy (dungeon fantasy, swords &amp; sorcery): One minute for a minor wound, ten minutes for a moderate wound, and one hour for a major wound.</td>\n</tr>\n<tr>\n<td>Fantasy (epic fantasy): Ten minutes for a minor wound, one hour for a moderate wound, and one week for a major wound.</td>\n</tr>\n<tr>\n<td>Hard science fiction: Ten minutes for a minor wound, one hour for a moderate wound, and one week for a major wound.</td>\n</tr>\n<tr>\n<td>Space opera: Last action for a minor wound, one minute for a moderate wound, and ten minutes for a major wound.</td>\n</tr>\n<tr>\n<td>Postapocalypse: Ten minutes for a minor wound, one hour for a moderate wound, and one week for a major wound.</td>\n</tr>\n<tr>\n<td>Superhero: Last action for a minor wound, one minute for a moderate wound, and ten minutes for a major wound.</td>\n</tr>\n</tbody></table>\n<h3>Rest</h3>\n<p>When you rest (or require treatment), it’s because the wound was as bad as it first seemed. Resting takes time, and it happens when you use a ten-minute or longer recovery—in addition to restoring Pool points, you remove wounds.</p>\n<table><tbody>\n<tr>\n<th>Recovery</th>\n<th>Wound Removal (in Addition to Restored Pool Points)</th>\n</tr>\n<tr>\n<td>Ten-minute</td>\n<td>Remove all minor wounds</td>\n</tr>\n<tr>\n<td>One-hour</td>\n<td>Remove one moderate wound or all minor wounds</td>\n</tr>\n<tr>\n<td>Ten-hour</td>\n<td>Remove all moderate wounds and, with a successful difficulty 6 Might task, remove one major wound; in place of removing one moderate wound, you can remove all minor wounds</td>\n</tr>\n</tbody></table>\n<p>Resting is slow but happens automatically as part of using your recoveries.</p>\n<h3>Exceptional Healing Abilities</h3>\n<p>Some character abilities, cyphers, magic, advanced technology, and other amazing effects can quickly remove wounds or reduce their severity (such as turning a major wound into a moderate wound). How this works is explained in the individual abilities; in most cases, it happens instantly and doesn’t cost the injured person any Might points.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "8eb65935d9910421"
+          }
+        }
+      }
+    },
+    {
+      "_id": "d5a20a4748e112cc",
+      "_key": "!journal.pages!170f4018cd457db7.d5a20a4748e112cc",
+      "name": "Special Damage",
+      "type": "text",
+      "sort": 1800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>In the course of playing the game, you may face all manner of threats and dangers that can harm you in a variety of ways, only some of which are easily represented by wounds or damage.</p>\n<p>Being dazed hinders all your tasks, usually for about one round. You might be dazed by being struck hard on the head, exposed to extremely loud sounds, or affected by a mental attack. When this happens, for the duration of the daze effect, all of your tasks are hindered.</p>\n<p>Being stunned means you lose your turn; you can’t take any actions except to defend yourself.</p>\n<p>When you’re exposed to poison—whether the venom of a serpent, rat poison slipped into a burrito, cyanide dissolved in wine, or an overdose of acetaminophen—you make a Might defense roll to resist it. Failing this roll might mean you take a wound, lose points directly from your Speed or Intellect Pool, are hindered for a while, or experience a special effect like paralysis, unconsciousness, or something stranger.</p>\n<p>Diseases work like poisons, but their effect occurs every day, so you must make a Might defense roll each day or suffer the effects. Disease effects are as varied as poisons: wounds, hindrance, damage to Pools, and so on. Many diseases inflict damage that cannot be restored through conventional means—you need specialized treatment, such as healing magic or a specialist doctor.</p>\n<p>Paralytic effects cause you to drop to the ground, unable to move. Unless otherwise specified, you can still take actions that require no physical movement. For example, if you have a telepathy ability, you probably can still use it while physically paralyzed.</p>\n<p>Psychic attacks that directly blast or otherwise hurt your mind usually damage your Intellect Pool. Other mental effects could have the same effect.</p>\n<p>Other special effects might make you blind or deaf, so dizzy that you can’t stand without immediately falling over, or unable to breathe. Even stranger effects might alter gravity just for you, teleport you somewhere, mutate you, alter your memories, make you hallucinate, or cause incredible pain. The GM handles how this affects you and how the effect can be removed.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "74e481fd49985129"
+          }
+        }
+      }
+    },
+    {
+      "_id": "74ee63be6e20a22d",
+      "_key": "!journal.pages!170f4018cd457db7.74ee63be6e20a22d",
+      "name": "Modifying Attack and Defense",
+      "type": "text",
+      "sort": 1900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>There are a lot of factors in combat that could make your attack roll easier (eased) or harder (hindered). This section presents various examples. Your GM will let you know if any of these come into play for a particular encounter. It’s not on you to monitor all these possible scenarios.</p>\n<aside class=\"crd-callout\"><p>Remember, these modifiers affect NPC attacks as well as your attacks. So if you’re on higher ground, your attacks against your foe are eased; if they’re on higher ground, their attacks against you are eased (your defense is hindered).</p></aside>\n<h3>Easing Attacks</h3>\n<table><tbody>\n<tr>\n<th>One Step</th>\n</tr>\n<tr>\n<td>Attacker on higher ground</td>\n</tr>\n<tr>\n<td>Target dazed</td>\n</tr>\n<tr>\n<td>Melee attack on prone target</td>\n</tr>\n<tr>\n<td>Target on guard but unaware of attacker’s location</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Two Steps</th>\n</tr>\n<tr>\n<td>Surprise (first attack ambush on unaware target)</td>\n</tr>\n<tr>\n<td>Attacker invisible</td>\n</tr>\n<tr>\n<td>Target blinded</td>\n</tr>\n<tr>\n<td>Ranged attack from hidden position on unaware target</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Automatic Hit</th>\n</tr>\n<tr>\n<td>Target paralyzed or unconscious</td>\n</tr>\n</tbody></table>\n<h3>Hindering Attacks</h3>\n<table><tbody>\n<tr>\n<th>One Step</th>\n</tr>\n<tr>\n<td>Attacking after moving a short distance</td>\n</tr>\n<tr>\n<td>Target is behind sturdy cover</td>\n</tr>\n<tr>\n<td>Attacker dazed</td>\n</tr>\n<tr>\n<td>Ranged attack on prone target</td>\n</tr>\n<tr>\n<td>Ranged attack at extreme range (the limit of the weapon range)</td>\n</tr>\n<tr>\n<td>Target in dim light, within short range</td>\n</tr>\n<tr>\n<td>Target in very dim light, within immediate range</td>\n</tr>\n<tr>\n<td>Target is guarding</td>\n</tr>\n<tr>\n<td>Ranged attack on target in mist</td>\n</tr>\n<tr>\n<td>Melee attack on target in very dense mist</td>\n</tr>\n<tr>\n<td>Attacker in deep water (waist or deeper; aquatic creatures ignore this)</td>\n</tr>\n<tr>\n<td>Attacker underwater using stabbing weapon</td>\n</tr>\n<tr>\n<td>Attacker underwater using special ranged weapon (and range is reduced by one range category)</td>\n</tr>\n<tr>\n<td>Target is moving very fast (doing nothing but running, on a fast mount, in a vehicle, and so on)</td>\n</tr>\n<tr>\n<td>Attacker on a moving mount or in a moving vehicle (training in riding or driving ignores this penalty)</td>\n</tr>\n<tr>\n<td>Attacker on a listing ship, vibrating platform, and so on (training in balancing or sailing ignores this penalty)</td>\n</tr>\n<tr>\n<td>High gravity (all physical tasks, including attacks; thrown and projectile weapon attacks reduced by one range category)</td>\n</tr>\n<tr>\n<td>Low gravity or zero gravity (all physical tasks, including attacks; thrown and projectile weapon attacks increased by one range category)</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Two Steps</th>\n</tr>\n<tr>\n<td>Target in very dim light, more than immediate range but within short range</td>\n</tr>\n<tr>\n<td>Attacker underwater using bashing or slashing weapon</td>\n</tr>\n<tr>\n<td>Attacker trying to disarm target</td>\n</tr>\n<tr>\n<td>Attacker aiming for specific limb (to hinder target for the rest of combat or slow their movement)</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Three Steps</th>\n</tr>\n<tr>\n<td>Attacker trying to blind target for a few rounds</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Four Steps</th>\n</tr>\n<tr>\n<td>Target in darkness or invisible but attacker has a sense of where they might be</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Not Attackable</th>\n</tr>\n<tr>\n<td>Target in darkness or invisible; attacker has no idea where they might be (attack fails without a roll unless you spend 1 XP to make a lucky shot)</td>\n</tr>\n<tr>\n<td>Target entirely behind sturdy cover (if the attack can break through the cover, the attack is only hindered)</td>\n</tr>\n<tr>\n<td>Ranged target in very dense mist (as darkness)<br>Attacker underwater using thrown weapon, bow, crossbow, and so on, and most firearms</td>\n</tr>\n</tbody></table>\n<h3>Illumination</h3>\n<p>Normal light: the assumed level of light for most situations; outdoors in daylight</p>\n<p>Dim light: a night with a bright full moon, or the illumination provided by a torch, flashlight, or desk lamp</p>\n<p>Very dim light: starry night with no visible moon, or the glow provided by a candle or an illuminated computer control panel</p>\n<p>Darkness: no light at all, such as a moonless night with cloud cover or a room with no lights</p>\n<aside class=\"crd-callout\"><p>As a GM intrusion, the GM could have an NPC in darkness make a lucky shot against you even though they can’t see you.</p></aside>\n<h3>Easing Skill Tasks</h3>\n<table><tbody>\n<tr>\n<th>One Step</th>\n</tr>\n<tr>\n<td>Run immediate distance before a jump</td>\n</tr>\n<tr>\n<td>Move at half speed when sneaking</td>\n</tr>\n<tr>\n<td>Wear camouflage or appropriate gear  when sneaking (asset)</td>\n</tr>\n<tr>\n<td>Dim light when sneaking</td>\n</tr>\n<tr>\n<td>Many things to hide behind when sneaking</td>\n</tr>\n<tr>\n<td>Pole for jumping (asset)</td>\n</tr>\n<tr>\n<td>Saddle for riding (asset)</td>\n</tr>\n</tbody></table>\n<h3>Hindering Skill Tasks</h3>\n<table><tbody>\n<tr>\n<th>One Step</th>\n</tr>\n<tr>\n<td>Any action after moving a short distance on your turn (hindrance ends at the end of your next turn)</td>\n</tr>\n</tbody></table>\n<table><tbody>\n<tr>\n<th>Two Steps</th>\n</tr>\n<tr>\n<td>Any action after using your turn to run a long distance (hindrance ends at the end of your next turn)</td>\n</tr>\n</tbody></table>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "44adb139e77fa111"
+          }
+        }
+      }
+    },
+    {
+      "_id": "b776c9d80531783a",
+      "_key": "!journal.pages!170f4018cd457db7.b776c9d80531783a",
+      "name": "Defending",
+      "type": "text",
+      "sort": 2000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Defending is something you do in response to being attacked. It happens when it’s not your turn, and it doesn’t use your action for the round.</p>\n<aside class=\"crd-callout\"><p>Even if you don’t know an attack is coming, you usually can still make a defense roll, but the GM might say that you can’t use skill or Effort to ease the defense task. In extreme circumstances, like being betrayed by an NPC you thought was a friend, the GM might say that the surprise attack automatically hits you.</p></aside>\n<p>Defending is otherwise like an extra action—the GM sets the difficulty, you can reduce the difficulty with skills and Effort and so on, and you make a roll to see if you succeed.</p>\n<p>Each time you defend, it’s a singular instance, so any Effort or Edge you used on your last turn doesn’t limit what you can do when defending. If you’re attacked multiple times, you can apply Effort to each as if it were an extra action.</p>\n<aside class=\"crd-callout\"><p>Defending against an attack happens on your foe’s turn, not your turn, so defending counts as a separate action if you want to use Effort.</p></aside>\n<p>When you are attacked, you decide whether you try to block it or dodge it (not both).</p>\n<h3>Block</h3>\n<p>Blocking is an attempt to lessen an attack’s force against you so it does less harm.</p>\n<p>To block, make a Might defense roll. If you fail, you are hit and take the wound from the attack. If you succeed, you reduce the wound’s severity by one step—an attack that inflicts a major wound only gives you a moderate wound, a moderate wound attack gives you a minor wound, and a minor wound attack doesn’t wound you at all.</p>\n<p>Limits of Blocking: Some attacks only have to touch you to be effective, like a giant frog’s sticky tongue or an undead’s life-draining touch. You can use block against these kinds of attacks, but even a successful block means the foe was able to touch you, so additional effects from the attack can still affect you. This includes attacks that restrain or move you (like being grabbed by a giant or pushed by a charging bull).</p>\n<h3>Dodge</h3>\n<p>Dodging is an attempt to completely avoid being hit.</p>\n<p>To dodge, make a Speed defense roll. If you fail, you are hit and take the wound from the attack. If you succeed, you are not hit and take no wound from the attack.</p>\n<p>Dodge tasks against an area attack are hindered.</p>\n<p>Wearing armor hinders your Speed defense rolls to dodge. If you cannot freely use the armor you are wearing, its dodge penalty also applies to all of your Speed tasks (not just to Speed defense rolls to dodge).</p>\n<aside class=\"crd-callout\"><p>You can still try to block or dodge while hindered due to something like having your hands tied behind your back or being drugged, but that hindrance applies to your block or dodge.Completely helpless or unconscious Cs can’t attempt to block or dodge.</p></aside>\n<h4>Armor and Shields</h4>\n<p>Armor makes it easier to block but harder to dodge, based on armor category: light, medium, or heavy armor.</p>\n<p>Light Armor: Block rolls are eased. Dodge rolls are hindered.</p>\n<p>Medium Armor: Block rolls are eased by two steps. Dodge rolls are hindered by two steps.</p>\n<p>Heavy Armor: Block rolls are eased by three steps. Dodge rolls are hindered by three steps.</p>\n<p>If you cannot freely use the armor you are wearing, its dodge penalty also applies to all of your Speed tasks (not just to Speed defense rolls to dodge). For example, heavy armor hinders dodge rolls by three steps; if you are wearing heavy armor but can’t freely use it, all of your Speed tasks are hindered by three steps.</p>\n<aside class=\"crd-callout\"><p>PC armor and NPC Armor work differently. Note the capitalization of “Armor” for NPCs—that’s to signify a game mechanic. NPCs don’t necessarily wear actual physical armor like your character might, but instead may have an inherent ability to take less damage from attacks. Or they may wear physical armor. Either way, their Armor stat indicates how much less damage they take from an attack.</p></aside>\n<aside class=\"crd-callout\"><p>Special attacks or a GM intrusion as part of an attack might damage your armor, reducing how much it eases your block tasks (but not affecting how much it hinders your dodge tasks).</p></aside>\n<p>Shields: You use a shield to protect yourself from an attack. If you have a shield and succeed at a block roll, instead of reducing the wound’s severity by one step, you can have the shield take the entire wound from the attack so you take no damage. For example, if you succeed at blocking an attack that inflicts a major wound, you can reduce the severity to a moderate wound or have the shield take the major wound.</p>\n<aside class=\"crd-callout\"><p>Your type tells you what kind of armor you can freely use. All characters can use shields.</p></aside>\n<p>A shield can take three minor wounds, two moderate wounds, and one major wound.</p>\n<p>Just like a player character, when a shield runs out of minor wounds, additional minor wounds become (“roll over to”) moderate wounds, and when it runs out of moderate wounds, additional moderate wounds become (“roll over to”) major wounds.</p>\n<p>When a shield takes a major wound, it is broken, ruined, or destroyed and no longer has any effect. (Minor and moderate wounds don’t reduce a shield’s effectiveness, other than that they eventually run out and the shield only has a major wound left.)</p>\n<aside class=\"crd-callout\"><p>The GM might use a GM intrusion to knock your shield off your arm or destroy it even if it has wounds left.</p></aside>\n<aside class=\"crd-callout\"><p>Historically, shields lasted maybe one or two battles before being reduced to flinders.</p></aside>\n<h3>Other Defenses</h3>\n<p>Some effects and NPC attacks might bypass blocks and dodges. For example, a trap that releases poison gas might have you make a Might defense roll (not a block roll), and a mental blast from a psychic monster might have you make an Intellect defense roll (not a dodge roll). Some characters are trained in Might defense, Speed defense, or Intellect defense for these situations.</p>\n<p>Sometimes an attack provokes two defense actions. For example, if a venomous snake tries to bite you, you can try to block or dodge its attack, but if you fail, you’ll take a wound and also need to make a Might defense roll against the poison in the bite. (And if you fail that, you might take damage directly to your Speed Pool.)</p>\n<p>You can always choose to not defend against an attack, in which case it automatically hits you.</p>\n<p>Non-Rest Recovery: If a defense roll fails, some attacks may confer an ongoing hostile effect that requires you to use a recovery to end them. More serious or long-lasting hostile effects may require you to use multiple recoveries (or one with a specific duration, such as a one-hour or ten-hour recovery) to give you a chance to end the effect with a successful defense roll. If you use a recovery this way, you don’t get any of the benefits a recovery normally grants, but it still takes the indicated time.</p>\n<p>For example, suppose Ray’s character is possessed by a demon. In that case, he can use a ten-hour non-rest recovery to attempt another Intellect defense roll to break the demon’s control, but doing so doesn’t give him any Pool points or remove any wounds for that recovery.</p>\n<nav class=\"crd-related\"><p>Related rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.83eac1c2681eb4e4]{Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.45b08b7cf5faed30]{Healing Wounds}</li></ul></nav>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "cc24ff5b776fd762"
+          }
+        }
+      }
+    },
+    {
+      "_id": "168a8c5828b3cfc2",
+      "_key": "!journal.pages!170f4018cd457db7.168a8c5828b3cfc2",
+      "name": "Area Attacks",
+      "type": "text",
+      "sort": 2100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>An area attack is an attack or effect that affects an area rather than a single target, such as a grenade, a landslide, or a special ability or creature ability that inflicts damage in an area.</p>\n<p>If you are in the area, you make a defense roll against the area attack to see if it affects you. Block rolls work normally against area attacks, but dodge rolls against area attacks are hindered.</p>\n<p>If you’re making the area attack and there are NPCs in the area, make one roll per NPC when that’s specified by a special ability you’re using. (When an ability or effect lets you attack multiple creatures on your turn, each attack after the first one is an extra action on your turn.) Sometimes your GM might ask that you make just one roll for the attack, and they’ll apply the result to all the NPCs.</p>\n<p>Some area attacks always deal at least a minimum amount of damage, even if the attacks miss or if a PC makes a successful defense roll. A given special ability usually indicates that if so.</p>\n<p>When you use Effort to increase the damage of an area attack, it adds only 2 damage per level of Effort (instead of the normal 3). However, you only have to apply Effort once when using the ability, not for each individual attack roll made—unless the attack specifies that you make each roll as an extra action on your turn. In that case, then Effort works normally.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "0c44d65733b53acf"
+          }
+        }
+      }
+    },
+    {
+      "_id": "2c4cca5636309687",
+      "_key": "!journal.pages!170f4018cd457db7.2c4cca5636309687",
+      "name": "Doing Something Else",
+      "type": "text",
+      "sort": 2200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>In the game, you can try anything you think of, although that doesn’t mean anything is possible. Guided by logic, you and the GM will find all kinds of actions and options that aren’t covered by a rule. That’s a good thing.</p>\n<p>You shouldn’t feel limited by the game mechanics when taking actions. Just because you don’t have a skill doesn’t mean you can’t attempt that kind of task. For example, even if you’ve never picked a lock, you can still try; the GM might hinder the task because of your inexperience, but you can still attempt it.</p>\n<p>Remember: your character is not just a piece on a game board with a specific list of things you’re allowed to do. That’s why this “Doing Something Else” section is in the book. Like a person in The Real World Genre, you can try anything you can think of (even if succeeding is impossible).</p>\n<aside class=\"crd-callout\"><p>An action that doesn’t affect anyone but you or doesn’t harm anything doesn’t require an attack roll. For example, you can use a flying ability on yourself without a roll.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "f9610e4a7885a721"
+          }
+        }
+      }
+    },
+    {
+      "_id": "3e581f0d1199e2f1",
+      "_key": "!journal.pages!170f4018cd457db7.3e581f0d1199e2f1",
+      "name": "Cooperative Actions",
+      "type": "text",
+      "sort": 2300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>There are many ways multiple characters can work together. However, you can’t use more than one of these at the same time.</p>\n<p>Help: If you use your action to help someone with a task, you give them an asset on the task. If you’re trained, specialized, or expert in that task, you give them an additional asset (for a total of two assets). If you have an inability in a task, your help has no effect.</p>\n<p>Sometimes you can help by performing a task that complements what another person is attempting. If your complementary action succeeds, you give the other person an asset on their task. For example, if your friend is trying to charm a ship captain to let your group on board, you could try to supplement their words with a flattering lie about the captain (a deception action), a display of knowledge about the region where the ship is headed (a navigation action), or a direct threat to the captain (an intimidation action). If your roll is a success, your friend’s charm task gets an asset.</p>\n<p>Distraction: When you use your turn to distract a foe, that foe’s attacks are hindered for one round. A distraction might be yelling a challenge, firing a warning shot, or a similar activity that doesn’t harm the foe. This can’t hinder a foe by more than one step, no matter how many people are trying to distract them.</p>\n<p>Draw the Attack: When an NPC attacks another character, you can try to get the NPC to attack you instead (usually by prominently presenting yourself, shouting taunts, and so on). In most cases, this succeeds without a roll—the opponent attacks you instead of the other character. Against an intelligent or determined foe, you may have to succeed at an Intellect action to draw their attack; if you succeed, the foe attacks you, and (because you had to make yourself a bit vulnerable to get them to attack you) your defense is hindered by two steps. Two characters attempting to draw an attack at the same time cancel each other out.</p>\n<p>Take the Attack: If an NPC’s attack would hit another character (usually by the other character failing their defense task), you can throw yourself in front of the successful attack to save them. The attack automatically succeeds against you and it inflicts an additional minor wound. Once you take an attack this way, you can’t do so again until the start of your next turn.</p>\n<nav class=\"crd-related\"><p>Related rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.04c899c56485ad8a]{Guarding}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.e858315d5a818496]{Taking Action}</li></ul></nav>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "9644f27c6aa23d86"
+          }
+        }
+      }
+    },
+    {
+      "_id": "c92ddae2dd93fb2e",
+      "_key": "!journal.pages!170f4018cd457db7.c92ddae2dd93fb2e",
+      "name": "Crafting, Building, and Repairing",
+      "type": "text",
+      "sort": 2400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Unless you have a character ability that allows you to craft or repair something quickly, this sort of activity is handled by spending resource points.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "8a1f43c21d578923"
+          }
+        }
+      }
+    },
+    {
+      "_id": "04c899c56485ad8a",
+      "_key": "!journal.pages!170f4018cd457db7.04c899c56485ad8a",
+      "name": "Guarding",
+      "type": "text",
+      "sort": 2500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You can stand guard as your action, lasting until you decide to stop. When guarding, you don’t make attacks, but all your defense tasks are eased. If a foe tries to get by you or take an action you’re guarding against (such as moving through a door or attacking your friend), you can attempt an eased Speed task against the foe. Success means the foe can’t take that action this turn and their turn is wasted.</p>\n<aside class=\"crd-callout\"><p>Helping someone with their defenses gives them an asset on all their defense tasks (not just one defense roll) until your next turn.</p></aside>\n<aside class=\"crd-callout\"><p>You may want to delay rather than guard if you are looking to prevent a very specific event.</p></aside>\n<p>If an NPC is guarding, you have to succeed at a hindered Speed task against them in order to do the thing they’re guarding against.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "4cb4813d246cdc84"
+          }
+        }
+      }
+    },
+    {
+      "_id": "c34240c596fcaa60",
+      "_key": "!journal.pages!170f4018cd457db7.c34240c596fcaa60",
+      "name": "Interacting With NPCs",
+      "type": "text",
+      "sort": 2600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>You can attempt to influence NPCs and other creatures, usually by talking with them. Trying to charm, intimidate, bluff, bribe, calm, or otherwise interact with an NPC may require an Intellect roll against the NPC’s level.</p>\n<p>Interacting usually requires a common language or some other way to communicate. Trying to influence someone who doesn’t understand your language relies on tone of voice, gestures, and so on, and is probably hindered by at least one or two steps.</p>\n<aside class=\"crd-callout\"><p>When determining initiative for a group of NPCs of different levels, the GM might speed things up by having all of them act together instead of separately.</p></aside>\n<aside class=\"crd-callout\"><p>NPC ally: NPC allies, unlike followers, are usually only temporary. In general, unless indicated differently by an ability, an NPC ally uses their action (on your turn) to help you with (easing) a task if they can—that’s the default. In combat, you should decide if the ally helps you attack (giving you an asset on your attacks) or defend (giving you an asset on your block or dodge rolls).</p></aside>\n<aside class=\"crd-callout\"><p>The GM might determine that a particular NPC ally can’t help with certain tasks.</p></aside>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "a5a913528f8581e7"
+          }
+        }
+      }
+    },
+    {
+      "_id": "044a7ab242205764",
+      "_key": "!journal.pages!170f4018cd457db7.044a7ab242205764",
+      "name": "Followers",
+      "type": "text",
+      "sort": 2700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Some PCs have the ability to gain followers from a type or focus ability. Depending on the ability, the follower might be a person (such as a bodyguard), a beast (such as a loyal horse or faithful hound), some kind of robot, or even a “monster” such as a zombie.</p>\n<p>A follower is someone who you have inspired, asked, created, or otherwise recruited to help you with a variety of endeavors. A follower puts your interests ahead of (or at least on par with) their own. Your follower does not need to be paid, fed, or housed, but you can certainly make such arrangements.</p>\n<p>Most of the time, the follower just helps you with whatever actions you’re taking, which gives you an asset on the task. For example, if you’re trying to climb a wall, they’ll help you climb. In combat, you should decide if the follower is helping you attack (giving you an asset on your attacks) or defend (giving you an asset on your block or dodge tasks).</p>\n<p>Instead of helping your tasks, you can have the follower act on their own, such as scouting ahead, guarding a location while you’re away, or directly attacking a foe so you can do something else. The GM has information on handling follower actions, including when a creature attacks your follower.</p>\n<p>A follower has a level, which determines their health and (if they attack directly) how much damage they inflict in combat. A follower may have modifiers to their level for certain tasks; for example, a scout follower might be level 2 with a level 3 modifier for perception. (A follower can have an inability just like a PC does, but that’s uncommon.)</p>\n<p>Your follower gets better at things as you advance as a PC: for every two tiers you gain after acquiring the follower, increase the follower’s level and its modifier levels by 1. For example, if you gained a scout follower at tier 2 and you advance to tier 4, the scout’s level increases to 3 and their perception modifier to 4. Depending on your focus, you might gain an ability that increases your follower’s levels even more.</p>\n<p>If your follower’s level or modification is 5 or higher for a task, them helping you with that task gives you two assets instead of one. For example, if your follower is level 3, but level 5 for athletics, they give you two assets when they help you climb.</p>\n<p>If your follower dies, you dismiss them, or you otherwise lose them, and you later gain a replacement, all of the level increases (and other improvements, if any) to your original follower apply to the new follower.</p>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1d2107d786327fb3"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.crd-rules-of-the-game",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Rules of the Game",
+        "sourceLocator": "CRD paragraphs 7381-7985",
+        "transformations": [
+          "Verbatim source paragraphs with structural HTML formatting",
+          "Complete canonical Item definitions replaced by native compendium links; paragraph destinations recorded separately"
+        ]
+      }
+    }
+  }
+}

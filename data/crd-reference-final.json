@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 1,
+  "referenceSha256": "cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729",
+  "sourceRange": [
+    7381,
+    8201
+  ],
+  "additionalParagraphs": [
+    0
+  ],
+  "nonblankParagraphs": 784,
+  "journalIds": [
+    "journal.crd-rules-of-the-game",
+    "journal.crd-advancing-your-character",
+    "journal.crd-credits"
+  ],
+  "destinations": [
+    {
+      "start": 0,
+      "end": 0,
+      "kind": "journal",
+      "logicalId": "journal.crd-credits",
+      "pageId": "f62c75abf393ddf8",
+      "sourceSha256": "6f4fb185f1e3d370f8343f57d2bda4a3b0d31db7d2b56e08b32ff8ecdaff1142"
+    },
+    {
+      "start": 7381,
+      "end": 7381,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "368d740225886fd6",
+      "sourceSha256": "17169c04a381d7af255a8d91381d47885a30af5351f2a3f618c0a183cd52295e"
+    },
+    {
+      "start": 7382,
+      "end": 7383,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "6f30bd139d12f10a",
+      "sourceSha256": "fd3b81748e292f50f380c60c544744438dd600f2ca7759db0d9bb32c4cbb9802"
+    },
+    {
+      "start": 7384,
+      "end": 7394,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "0e25659e1fc59d5b",
+      "sourceSha256": "e1fb1d1e161cfc19af7ca793b6bbdff6baa0cb37dee560b5dd681ffc3f25cdf2"
+    },
+    {
+      "start": 7395,
+      "end": 7426,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "60222c8c3ff21b34",
+      "sourceSha256": "7442e427df19dc0f87453475103be0c5a5f3448672613b916cec4c87805f353a"
+    },
+    {
+      "start": 7427,
+      "end": 7449,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "8e7d980fbd7343c8",
+      "sourceSha256": "31ef7eff803c77ac40a1685790bf67ffafa8aa5cb827c5f76850e7b28496b95b"
+    },
+    {
+      "start": 7450,
+      "end": 7466,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "1100e5b9964ae01b",
+      "sourceSha256": "69a417a9150ccf6d3dec728b14e91373009c454dd9446768318fcba64c52c9b1"
+    },
+    {
+      "start": 7467,
+      "end": 7530,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "e858315d5a818496",
+      "sourceSha256": "d08b6d97725438d8aa18654a63863acaec17cbaadb80c50d1850fca423d68478"
+    },
+    {
+      "start": 7531,
+      "end": 7559,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "7d3bca4f76084bc2",
+      "sourceSha256": "cc37c8c23019f859c20349b5be5f2f10e3cb57764e177311a3c7f32ae3eee2aa"
+    },
+    {
+      "start": 7561,
+      "end": 7609,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "435176772ef63763",
+      "sourceSha256": "41199a4c00304ae09e4a6001492d52f519a9a77ec126b5733099773d08f4a880"
+    },
+    {
+      "start": 7610,
+      "end": 7613,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "5b3fdd7a2794d612",
+      "sourceSha256": "5948ba1db47fdd774a6c95e2d93e5f9380247527888762cf57b95fff94a73e56"
+    },
+    {
+      "start": 7614,
+      "end": 7631,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "4b81249c5fffaa5e",
+      "sourceSha256": "21a649cd63a3abd8572add48ff2689a1b036a9c9088c26fa4bcd6544e67ef320"
+    },
+    {
+      "start": 7633,
+      "end": 7637,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "890380730d4d3cc6",
+      "sourceSha256": "a6f331a8080adffda3fcb5bcf2c026a9d25cf729391184a1eac9a47bc2c8d467"
+    },
+    {
+      "start": 7638,
+      "end": 7693,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "7b88f7bc4dae840b",
+      "sourceSha256": "1834bb99093273b88f4e1986bcf5c7ccf01d43fe59e67b7c3cc0f40fc28e66f1"
+    },
+    {
+      "start": 7694,
+      "end": 7702,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "d57a984f71946bfd",
+      "sourceSha256": "b09fd29037fd05713e0c8ca0e448348d695d3043d2a5456d65b076198f8e1e7f"
+    },
+    {
+      "start": 7704,
+      "end": 7749,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "83eac1c2681eb4e4",
+      "sourceSha256": "546e5dbfa3197aaeaac8c307641faa9be91464c25b278d187532171776cf2ec4"
+    },
+    {
+      "start": 7751,
+      "end": 7758,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "21c591beeb9e68b0",
+      "sourceSha256": "92e77562c8d27819b9f6bf75c5ab30851a61bc07cd8af355183b887ef3e6e6f8"
+    },
+    {
+      "start": 7760,
+      "end": 7814,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "45b08b7cf5faed30",
+      "sourceSha256": "30a08423b2b3b2d9d105a9ed1071156337a9d7563add8d57e8747aa643fb579a"
+    },
+    {
+      "start": 7815,
+      "end": 7823,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "d5a20a4748e112cc",
+      "sourceSha256": "bac19e0595c0327a27221422cd989b55f7917d5b6901a4a751c99e60e5dcabb8"
+    },
+    {
+      "start": 7825,
+      "end": 7902,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d",
+      "sourceSha256": "49d3ae4417240552942e50794670d9260cb732d899e499e324175d4c2ad97e7d"
+    },
+    {
+      "start": 7903,
+      "end": 7943,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "b776c9d80531783a",
+      "sourceSha256": "ab2b8ae98ce8be14ffdf8200039a926c21ce4edf4d9e54e5f073d71af57c7f67"
+    },
+    {
+      "start": 7944,
+      "end": 7949,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "168a8c5828b3cfc2",
+      "sourceSha256": "5f7134ccd280a5a374231fc704dd1e5c467b3dddfafdbfd576edbba037cec326"
+    },
+    {
+      "start": 7950,
+      "end": 7954,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "2c4cca5636309687",
+      "sourceSha256": "cfa548e4dcbdbcf78c4f3d7681d116ec9301a8da8e5995287d4fc211233ea95b"
+    },
+    {
+      "start": 7956,
+      "end": 7962,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "3e581f0d1199e2f1",
+      "sourceSha256": "01cfab01c4a540f6f80f88ad24ac0421f99915a05d099a32f1f0965805662278"
+    },
+    {
+      "start": 7963,
+      "end": 7964,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "c92ddae2dd93fb2e",
+      "sourceSha256": "c461395d9c24af31c08af0a443a0971cc1d5e3055881eb3a0d3d6d3093d1b733"
+    },
+    {
+      "start": 7965,
+      "end": 7969,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "04c899c56485ad8a",
+      "sourceSha256": "0b5fc4e2120a10086e0c7d5169b552b79e5a3c5c5800f9bbee3ba3284a3979f8"
+    },
+    {
+      "start": 7970,
+      "end": 7975,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "c34240c596fcaa60",
+      "sourceSha256": "4ad5644abed0f2cfeb58318083acec25de8167803bfd994ce6d012405f02a8eb"
+    },
+    {
+      "start": 7976,
+      "end": 7984,
+      "kind": "journal",
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "044a7ab242205764",
+      "sourceSha256": "10896854a48e0a67645aa3ddb13b9642806eb106c1cd82e1b980c759cd58d92b"
+    },
+    {
+      "start": 7986,
+      "end": 7989,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "20c2d1d447229f91",
+      "sourceSha256": "78aed5787720ed456f4d4c2b923bb0ebcb9fd636989a8dea53a434d5e687f7dc"
+    },
+    {
+      "start": 7990,
+      "end": 7992,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "3ad300bfc60f7364",
+      "sourceSha256": "1d8e44db7e6b8c24f1291f464e92da9c57af5d5c68439ba9588d9cd8a95f143c"
+    },
+    {
+      "start": 7994,
+      "end": 7996,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "fa661b7352b763ff",
+      "sourceSha256": "3635227e8dd66bd00c45abdadbe3b2853a7d1b75d8445137de72318ffb90035c"
+    },
+    {
+      "start": 7997,
+      "end": 8011,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "c582de88a44e4e55",
+      "sourceSha256": "e6a02c7ec1011d06c1f0e5eb555626912a84ab131e65b1a39e50534eac3105f8"
+    },
+    {
+      "start": 8012,
+      "end": 8062,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "ba60363f62ade487",
+      "sourceSha256": "f4952759571ed6bc1cf878f7c9b03126b14fcbbee30246085f045af6cbaec278"
+    },
+    {
+      "start": 8063,
+      "end": 8071,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "29b029cc02365af0",
+      "sourceSha256": "9b7279d1ba25c83c52b5842531fd5778990793fc4f88221137512a5c830aa227"
+    },
+    {
+      "start": 8073,
+      "end": 8075,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "4345d1070866cdb6",
+      "sourceSha256": "26223b17f0926440696d39d9bc2ae3e2a251fc35e1774b8e4ab087b329d7ca79"
+    },
+    {
+      "start": 8076,
+      "end": 8077,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "902480d0ebb6414e",
+      "sourceSha256": "78f552f468fdda85bce3cf4ce31798c90c6514aab1af7d742de58eb6cf991e86"
+    },
+    {
+      "start": 8078,
+      "end": 8081,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "9a828ce40b960dc9",
+      "sourceSha256": "b9835f51bbf88e4dc6a1042d7ffe6e06f24cbf238cce2748f7e2addb7740a80f"
+    },
+    {
+      "start": 8083,
+      "end": 8084,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "9314a790ffaaf21a",
+      "sourceSha256": "b3b3dd620a9fb01a2e2f47d12148b6a0a10fe346bec047b0645f9314a2eae712"
+    },
+    {
+      "start": 8085,
+      "end": 8111,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "4d36d269c64bdab3",
+      "sourceSha256": "43988adf0a04ec0e8b777ad18bc3bb731a31346057ffd9ab1a31d0455109b362"
+    },
+    {
+      "start": 8112,
+      "end": 8114,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "3f7709d5703e27ca",
+      "sourceSha256": "9391821ce60be31bd34bb529f829c68c697d4915a67575b915c303bf127bf0b9"
+    },
+    {
+      "start": 8115,
+      "end": 8116,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "e3d6d999511f8258",
+      "sourceSha256": "2257be2d6a7575d520ff7d5f4853faed4c3a4baddb66a7bbb6a3d46c72739dca"
+    },
+    {
+      "start": 8117,
+      "end": 8119,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "a3329547741d451e",
+      "sourceSha256": "0f6e42d3f0bd1fbe740593c7d655cac834bf4e7b9c09abe79ac82192bbaf1506"
+    },
+    {
+      "start": 8120,
+      "end": 8122,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "f67f55e84a41598c",
+      "sourceSha256": "9bdc839e85e53ec073f02ae2958677c41b8fcb1634999ef97ccad88185657a76"
+    },
+    {
+      "start": 8123,
+      "end": 8164,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "20d8dec3e565be4c",
+      "sourceSha256": "648601f9eb6d4de3f135ae432a51ed291a20b12c952ab25f00a939c5f2c00a38"
+    },
+    {
+      "start": 8165,
+      "end": 8171,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "4326f25c01837c50",
+      "sourceSha256": "8ad48d32f3020ba4be1070c370072ea707bfeca69ae306b91c422bbc5c62690e"
+    },
+    {
+      "start": 8172,
+      "end": 8178,
+      "kind": "journal",
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "5aca8046ad5c76a6",
+      "sourceSha256": "5584b9bdedebc3a8e27bf40829063e25558804018ae379b61002741cd3eb1419"
+    },
+    {
+      "start": 8180,
+      "end": 8200,
+      "kind": "journal",
+      "logicalId": "journal.crd-credits",
+      "pageId": "147d4cb064faedc3",
+      "sourceSha256": "282b5f4eaa80b3f5c76923923d349e74335c22045bdec1798699115ff483366f"
+    }
+  ],
+  "tables": [
+    {
+      "index": 39,
+      "start": 7480,
+      "end": 7527,
+      "cells": 48,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "e858315d5a818496"
+    },
+    {
+      "index": 40,
+      "start": 7665,
+      "end": 7672,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "7b88f7bc4dae840b"
+    },
+    {
+      "index": 41,
+      "start": 7674,
+      "end": 7679,
+      "cells": 6,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "7b88f7bc4dae840b"
+    },
+    {
+      "index": 42,
+      "start": 7681,
+      "end": 7684,
+      "cells": 4,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "7b88f7bc4dae840b"
+    },
+    {
+      "index": 43,
+      "start": 7724,
+      "end": 7731,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "83eac1c2681eb4e4"
+    },
+    {
+      "index": 44,
+      "start": 7765,
+      "end": 7776,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "45b08b7cf5faed30"
+    },
+    {
+      "index": 45,
+      "start": 7781,
+      "end": 7792,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "45b08b7cf5faed30"
+    },
+    {
+      "index": 46,
+      "start": 7794,
+      "end": 7801,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "45b08b7cf5faed30"
+    },
+    {
+      "index": 47,
+      "start": 7804,
+      "end": 7811,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "45b08b7cf5faed30"
+    },
+    {
+      "index": 48,
+      "start": 7829,
+      "end": 7833,
+      "cells": 5,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 49,
+      "start": 7835,
+      "end": 7839,
+      "cells": 5,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 50,
+      "start": 7841,
+      "end": 7842,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 51,
+      "start": 7844,
+      "end": 7862,
+      "cells": 19,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 52,
+      "start": 7864,
+      "end": 7868,
+      "cells": 5,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 53,
+      "start": 7870,
+      "end": 7871,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 54,
+      "start": 7873,
+      "end": 7874,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 55,
+      "start": 7876,
+      "end": 7880,
+      "cells": 4,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 56,
+      "start": 7889,
+      "end": 7896,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 57,
+      "start": 7898,
+      "end": 7899,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 58,
+      "start": 7901,
+      "end": 7902,
+      "cells": 2,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-rules-of-the-game",
+      "pageId": "74ee63be6e20a22d"
+    },
+    {
+      "index": 59,
+      "start": 8135,
+      "end": 8146,
+      "cells": 12,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "20d8dec3e565be4c"
+    },
+    {
+      "index": 60,
+      "start": 8152,
+      "end": 8159,
+      "cells": 8,
+      "blankParagraphs": 0,
+      "logicalId": "journal.crd-advancing-your-character",
+      "pageId": "20d8dec3e565be4c"
+    }
+  ]
+}

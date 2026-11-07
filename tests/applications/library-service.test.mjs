@@ -127,6 +127,25 @@ test("Cypher reference discovery is bilingual, lazy and permission checked", asy
   }
 });
 
+test("Final rules, advancement and credits are lazy bilingual references with fresh permission checks", async () => {
+  const { pack, calls, document } = setup();
+  const keys = ["rules-of-the-game", "advancing-your-character", "credits"];
+  for (const language of ["en", "fr"]) {
+    pack.collection = `cypher.rules-${language}`;
+    game.packs = new Map([[pack.collection, pack]]);
+    pack.getIndex = async () => keys.map(key => ({ _id: key, name: key,
+      flags: { cypherFoundry: { crd: { logicalId: `journal.crd-${key}` } } } }));
+    const before = calls.document;
+    const rows = (await libraryIndex(language)).filter(row => keys.some(key => row.key === `crd-${key}`));
+    assert.equal(rows.length, 3);
+    assert.equal(calls.document, before);
+    for (const row of rows) assert.equal(await libraryDocument(row.key, language), document);
+    document.testUserPermission = () => false;
+    assert.equal(await libraryDocument("crd-credits", language), null);
+    document.testUserPermission = () => true;
+  }
+});
+
 test("Home shortcut is permission checked, repeatable, and preserves user-edited macros", async () => {
   const { calls } = setup();
   const first = await createLibraryShortcut();

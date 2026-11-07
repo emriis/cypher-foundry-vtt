@@ -103,6 +103,27 @@ fallback table. Lot 5 owns executable RollTables. This brings coverage to
 **39 of 61 source tables**, with **22** still to reconcile in 2E. Empty source
 icon cells and absent symbol artwork are not reconstructed or guessed.
 
+## Library tranche 2E dispositions and final reconciliation
+
+The [final partition](../data/crd-reference-final.json) covers Rules of the
+Game, advancement, credits and the front-matter title. It closes all **24**
+remaining historical groups: B183–B184, B192–B198, B201–B202, B209–B211,
+B213–B218 and B222–B225. Every group retains its complete source-paragraph
+destinations, rather than relying on a partial match. Paragraph 7953 is now
+included in full and removed from the explicit deferral register.
+
+Word tables **39–60** preserve **190 cells**. The final cell of table 55 has
+two paragraphs; both survive in one cell with a line break. Table 46 has eight
+data statements and no header. None of these 22 tables is a random procedure.
+
+The [complete register](../data/crd-reference-completeness.json) reconciles all
+five tranches: **7,747 nonblank paragraphs**, **61 tables**, **1,589 cells**
+(including **239 blank cells**) and all **100** original open visual groups.
+It rejects missing/duplicate paragraph ownership and stale source hashes.
+Original group/table IDs and historical match counts below remain unchanged
+for traceability. Source coverage does not imply complete rule/power automation
+or a fresh certification of every visual layout.
+
 ## Baseline: 100 visual groups requiring review
 
 | Group | CRD paragraphs | Existing full paragraph matches | Source section | Proposed reference destination |

@@ -188,7 +188,7 @@ APIs. The platform guides establish the intended native capabilities:
 | Lot | Status | Acceptance boundary |
 | --- | --- | --- |
 | 1 | Complete; merged in PR #176 | Home, existing reference selections, task pilot, cypher preview and personal shortcut |
-| 2 | In progress | Tranches 2A–2C merged; 2D adds Cyphers; 2E remains |
+| 2 | Complete; 2E pending merge | All fourteen source chapters, attribution, complete paragraph/table reconciliation |
 | 3 | Planned | Complete player guide and quick references |
 | 4 | Planned | Complete GM guide and linked screen |
 | 5 | Planned | Native source-backed random table packs |
@@ -252,8 +252,8 @@ working tree was clean. The accepted multiple-PR split remains:
 | 2A | Creation, core character, Skills, Descriptors; initial contents/index | Merged in PR #177 |
 | 2B | Real World, cross-genre selection, Fantasy, Science Fiction, Superheroes | Merged in PR #178 |
 | 2C | Foci and Equipment | Merged, confirmed before tranche 2D |
-| 2D | Cyphers and reference tables | Implemented and validated, 2026-11-07; pending merge |
-| 2E | Rules of the Game, Advancement, credits and final coverage reconciliation | Planned |
+| 2D | Cyphers and reference tables | Merged in PR #180 |
+| 2E | Rules of the Game, Advancement, credits and final coverage reconciliation | Implemented and validated, 2026-11-07; pending merge |
 
 ### Tranche 2A content and identity contract
 
@@ -587,3 +587,89 @@ tests and documentation. Existing Cypher definitions, generated LevelDB packs,
 release artifacts and user worlds are not modified. No commit or push is part
 of this tranche. Next: **2E Rules of the Game, Advancement, credits and final
 coverage reconciliation**.
+
+### Tranche 2E content and identity contract
+
+Baseline: `221b1e7`, after PR #180, with a clean working tree. Three additive
+Journals provide **27 Rules of the Game pages**, **18 advancement pages** and
+**three attribution pages**, with **99 new French display fields**. The
+library now exposes all **fourteen substantive source chapters**, their
+contents/index and separate credits, for **179 reference/index/attribution
+pages**. The inventory becomes **1,389 canonical EN documents** with paired
+FR documents, **23 Rules Journals** and **399 paired Journal display fields**.
+Existing source document/page/Item and pack identities are preserved.
+
+The [final paragraph partition](../data/crd-reference-final.json) covers all
+**784 nonblank paragraphs at 7381–8201 plus the front-matter title at 0**.
+Rules retain their examples, glossary, action timing, wounds and Pool damage,
+object destruction, treatment/rest tables, conditions, circumstances, defenses,
+cooperation, guarding, interactions and followers. Advancement includes all
+character-arc examples, optional XP policies, spending and advancement choices,
+resource-point projects and advancement beyond tier 6. Source text is kept
+verbatim in EN and translated completely in FR; it does not amend the accepted
+runtime adjudications or claim new effect automation.
+
+All **22 final Word tables (39–60)** preserve **190 cells**. Table 55 has two
+source paragraphs in its final cell; their boundary remains a line break,
+rather than becoming a new row or losing one statement. Table 46 contains
+eight genre statements with no header row. These difficulty, action, damage,
+healing, circumstance, crafting and research tables are consultation data,
+not random procedures. Twelve native page links connect related general rules
+and advancement procedures, including intrusions, defenses, cooperation,
+followers and projects. The ordinary library permission checks still apply.
+
+Credits preserve the source's contributors, copyright and publisher statement.
+An explicit editorial note attributes that statement to the source publisher;
+it is not a production claim about this unofficial Foundry adaptation. The
+source ends its values statement without supplying a URL, so none is invented.
+The separate license page carries the independent-production/trademark notices
+and license URL already supplied in `LICENSE.txt`, rather than fabricating a
+license section in the CRD. The title at paragraph 0 has its own source page.
+
+The [complete reconciliation](../data/crd-reference-completeness.json) now maps
+all **7,747 nonblank paragraphs** of the **8,202-paragraph source**, including
+front matter and credits, to exactly one source destination across 2A–2E.
+Every partition hash is checked before reconciliation. All **61 tables** have
+source-bound destinations, retaining **1,589 cells** including **239 blanks**.
+All **100 historical open visual groups** have complete paragraph destinations;
+this is not a new visual-layout certification or proof of effect automation.
+The last explicit deferral, Doing Something Else at 7953, is removed. Historical
+substring audit scores remain separate from this complete source partition.
+
+### Tranche 2E validation — 2026-11-07
+
+The final isolated complete suite passes **1,316 Node tests**, with no failures
+or skips. Focused regressions verify all final paragraphs, table-cell boundaries,
+related native page links, attribution and read-only authoring reproducibility.
+Cross-tranche tests reject missing/duplicate source ownership and stale source
+hashes. Lint, pilot type checking, architecture, locale and syntax checks pass.
+Journal, i18n, terminology and normalized callout audits pass: **23 reviewed
+Rules Journals**, **399 paired display fields**, no mechanical differences and
+no explicit callout deferrals.
+
+The isolated build compiles **14 packs**, passes **15 compiled-pack checks**
+and verifies the packaged archive. All **four library E2E scenarios** pass on
+**Foundry V14.370 / Chromium 153.0.8010.12**, system `0.2.0-alpha.1`. The
+exhaustive scenario visits all **179 pages** in both languages and themes,
+for **716 page renders**, checking native links, keyboard selection, selected
+contrast and 480px library layout. An ordinary player opens related rules,
+advancement and credits in EN/FR without creating Items or ChatMessages. The
+French difficulty table was also visually inspected in the narrow layout.
+This is focused observation, not a complete accessibility certification. V13
+remains untested live; manifest verification is unchanged.
+
+Live validation exposed Foundry enriching a visible URL inside its existing
+license anchor, producing an extra empty link. The license now uses a descriptive
+label with the same destination; the final player scenario verifies exactly
+one usable link in each language. The source and complete suites were rerun
+after that correction. The exhaustive scenario has a bounded four-minute
+timeout for its 716 renders rather than the preceding 524-render workload.
+
+Changed families are the three EN/FR Journals and contents/index, the final and
+complete coverage registers and cleared deferral, Node authoring/inventory/audit
+tools, library discovery and its EN/FR introductory text/bundles, regression
+tests and planning/audit documentation. Existing canonical Item definitions,
+generated LevelDB packs, release artifacts and user worlds are not edited.
+No commit or push is part of this tranche. Lot 2 is complete as a source-reference
+delivery. Next: **3: player guide and quick references**; executable random
+tables remain lot 5 and the separate runtime automation register remains open.

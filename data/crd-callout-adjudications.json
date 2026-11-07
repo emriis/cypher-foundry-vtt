@@ -2,14 +2,5 @@
   "version": 1,
   "referenceSha256": "cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729",
   "policy": "These annotations are review dispositions, not claims that the CRD text is already in a compendium. They do not rewrite or summarize source passages.",
-  "decisions": [
-    {
-      "paragraph": 7953,
-      "kind": "clarification",
-      "sectionPrefix": "Rules of the Game / Doing Something Else",
-      "status": "deferred-full-crd-journal",
-      "target": "Doing Something Else rules reference",
-      "reason": "General guidance passage outside the seven currently selected rule Journals."
-    }
-  ]
+  "decisions": []
 }
