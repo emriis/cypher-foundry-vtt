@@ -21,6 +21,8 @@ const references = Object.freeze([
   ["crd-rules-of-the-game", "rules", "JournalEntry"],
   ["crd-advancing-your-character", "rules", "JournalEntry"],
   ["crd-credits", "rules", "JournalEntry"],
+  ["player-guide", "rules", "JournalEntry", "guide"],
+  ["player-quick-reference", "rules", "JournalEntry", "cards"],
   ["task-difficulty", "rules", "JournalEntry"],
   ["effort-edge", "rules", "JournalEntry"],
   ["recoveries-healing", "rules", "JournalEntry"],
@@ -29,8 +31,8 @@ const references = Object.freeze([
   ["task-resolution", "rules", "JournalEntry"],
   ["xp-advancement", "rules", "JournalEntry"],
   ["athletics", "skills", "Item"]
-].map(([key, family, documentName]) => Object.freeze({ key, family, documentName,
-  section: key.startsWith("crd-") ? "chapter" : "quick",
+].map(([key, family, documentName, section]) => Object.freeze({ key, family, documentName,
+  section: section ?? (key.startsWith("crd-") ? "chapter" : "quick"),
   logicalId: `${family === "rules" ? "journal" : "skill"}.${key}` })));
 const homeCommand = "await game.cypher.library.open();";
 

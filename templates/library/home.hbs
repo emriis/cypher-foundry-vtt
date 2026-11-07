@@ -5,6 +5,12 @@
     <button type="button" data-action="language" data-language="en" aria-pressed="{{english}}" lang="en">English</button>
     <button type="button" data-action="language" data-language="fr" aria-pressed="{{french}}" lang="fr">Français</button>
   </nav>
+  <section aria-labelledby="library-player-guides-heading">
+    <h2 id="library-player-guides-heading">{{localize 'CYPHER.Library.PlayerGuide'}}</h2>
+    <nav class="library-references library-player-guides" aria-label="{{localize 'CYPHER.Library.PlayerGuide'}}" lang="{{language}}">
+      {{#each guides}}<button type="button" data-action="reference" data-key="{{key}}" aria-pressed="{{selected}}" {{#unless uuid}}disabled{{/unless}}>{{name}}</button>{{/each}}
+    </nav>
+  </section>
   <section aria-labelledby="library-crd-heading">
     <h2 id="library-crd-heading">{{localize 'CYPHER.Library.Reference'}}</h2>
     <nav class="library-references library-chapters" aria-label="{{localize 'CYPHER.Library.Reference'}}" lang="{{language}}">
@@ -18,6 +24,8 @@
       <button type="button" data-action="reference" data-key="{{key}}" aria-pressed="{{selected}}" {{#unless uuid}}disabled{{/unless}}>{{name}}</button>
       {{/each}}
     </nav>
+  </section>
+  <section class="library-reader" aria-label="{{localize 'CYPHER.Library.Reader'}}">
     {{#if unavailable}}<p role="status">{{localize 'CYPHER.Library.Unavailable'}}</p>{{/if}}
     {{#if selected}}
     {{#if pageNavigation.length}}
@@ -25,8 +33,9 @@
       {{#each pageNavigation}}<button type="button" data-action="page" data-page-id="{{id}}" aria-pressed="{{selected}}">{{name}}</button>{{/each}}
     </nav>
     {{/if}}
-    <article class="library-source" lang="{{language}}" aria-label="{{selectedName}}">
-      <p>{{localize 'CYPHER.Library.Canonical'}} {{{sourceLink}}}</p>
+    <article class="library-source {{#if editorial}}library-editorial{{/if}}" lang="{{language}}" aria-label="{{selectedName}}">
+      <p>{{selectionLabel}} {{{sourceLink}}}</p>
+      {{#if editorial}}<p class="hint">{{localize 'CYPHER.Library.EditorialHint'}}</p>{{/if}}
       {{#each sourcePages}}<section><h3>{{name}}</h3>{{{html}}}</section>{{/each}}
     </article>
     {{/if}}

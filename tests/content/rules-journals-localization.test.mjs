@@ -1,5 +1,6 @@
 import { REFERENCE_JOURNAL_IDS } from "../../scripts/crd-reference/inventory.mjs";
 import { EXPECTED_CATALOGUE_COUNT } from "../../scripts/crd-reference/inventory.mjs";
+import { PLAYER_JOURNAL_IDS } from "../../scripts/library-player-metadata.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -13,7 +14,8 @@ test("selected and chaptered Rules Journals retain canonical identity, source te
  const review=reviewCatalogue(records,proposals);const map=new Map(review.entries.map(row=>[row.logicalId,row]));
  const sources=new Map(records.filter(row=>row.pack==="rules-en").map(row=>[row.logicalId,row]));
  const counterparts=new Map(records.filter(row=>row.pack==="rules-fr").map(row=>[row.logicalId,row]));
- for(const id of [...m.ids,...REFERENCE_JOURNAL_IDS]){const row=map.get(id),en=sources.get(id),fr=counterparts.get(id);
+ const journalIds=[...m.ids,...REFERENCE_JOURNAL_IDS,...PLAYER_JOURNAL_IDS];
+ for(const id of journalIds){const row=map.get(id),en=sources.get(id),fr=counterparts.get(id);
    assert.ok(row&&en&&fr,id);assert.equal(row.status,"reviewed",id);
    assert.equal(en.document._id,fr.document._id,id);
    assert.deepEqual(row.errors,[],id);assert.deepEqual(row.missingFields,[],id);
@@ -21,7 +23,7 @@ test("selected and chaptered Rules Journals retain canonical identity, source te
    const proposal=proposals.get(id)?.proposal;assert.ok(proposal,id);
    assert.ok(proposal.fields.some(f=>f.path.endsWith(".text.content")),id);
  }
- assert.equal(sources.size,7+REFERENCE_JOURNAL_IDS.length);assert.equal(counterparts.size,7+REFERENCE_JOURNAL_IDS.length);
+ assert.equal(sources.size,journalIds.length);assert.equal(counterparts.size,journalIds.length);
  assert.equal(review.entries.length,EXPECTED_CATALOGUE_COUNT);
  assert.equal(review.entries.filter(row=>row.status==="reviewed").length,EXPECTED_CATALOGUE_COUNT);
  assert.equal(review.entries.filter(row=>row.status==="proposed").length,0);

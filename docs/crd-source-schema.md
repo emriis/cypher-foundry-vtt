@@ -78,6 +78,19 @@ French display prose is authored only in source-hashed editorial proposals under
 
 The schema does not translate, normalize, infer, or otherwise rewrite mechanics.
 
+### Editorial player resources
+
+`journal.player-guide` and `journal.player-quick-reference` are additional
+editorial Journals, separate from the `journal.crd-*` source chapters. Their
+provenance explicitly identifies practical instructions or selected complete
+source excerpts and links to full source context. Optional
+`flags.cypherFoundry.library.role` records `guide` or `quick-reference` for content
+audits; the runtime independently allowlists their destinations and roles.
+`data/library-player-resources.json` records pinned source evidence and actual
+sheet-control references without duplicating prose. English `_source` records
+and reviewed French proposals remain the authoring surfaces. Editorial help
+must not add a rule, certify all power automation or replace full CRD passages.
+
 ## 5. Structured Ability end conditions
 
 Physical shield runtime designation is stored on the owned shield as
