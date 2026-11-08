@@ -2,7 +2,7 @@
  * Editorial help stays outside source Journal pages; task/cypher mechanics are
  * delegated to the existing dialogs and services rather than duplicated here.
  */
-import { libraryIndex, libraryDocument, libraryActors, canCreateLibraryShortcut, createLibraryShortcut } from "../applications/library-service.mjs";
+import { libraryIndex, libraryDocument, libraryActors, libraryGMActors, canCreateLibraryShortcut, createLibraryShortcut } from "../applications/library-service.mjs";
 import { drawCypher } from "../applications/cypher-generation-service.mjs";
 import { resolveDocumentReference } from "../applications/reference-resolver.mjs";
 import { promptRollOptions } from "./dialogs.mjs";
@@ -59,13 +59,31 @@ export async function promptLibraryDraw(language) {
   return result;
 }
 
+/** Select a current actual Actor before opening its existing sheet. This is a
+ * navigation aid only: no gameplay action, resource spend or document creation.
+ * Revalidate after the dialog so a revoked permission or stale token is rejected.
+ */
+export async function promptLibraryGMSheet() {
+  const actors = libraryGMActors();
+  if (!actors.length) { ui.notifications.warn(label("NoGMActor")); return null; }
+  const choice = await DialogV2.prompt({ rejectClose: false, window: { title: label("OpenSheet") },
+    content: `<label>${label("Actor")}<select name="actor">${actors.map((actor, index) =>
+      `<option value="${index}">${escape(actor.name)} · ${game.i18n.localize(`TYPES.Actor.${actor.type}`)}${actor.isToken ? ` · ${label("Token")}` : ""}</option>`).join("")}</select></label>`,
+    ok: { label: label("OpenSheet"), callback: (_event, button) => Number(button.form.elements.actor.value) } });
+  if (choice === null || choice === undefined || !Number.isInteger(choice)) return null;
+  const actor = actors[choice];
+  if (!actor || !libraryGMActors().includes(actor)) return null;
+  await actor.sheet.render(true);
+  return actor;
+}
+
 /** Reference chapters and practical resources share permission-checked reading. */
 export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
   static DEFAULT_OPTIONS = {
     id: "cypher-library", classes: ["cypher", "sheet", "cypher-library"],
     position: { width: 740, height: 720 }, window: { title: "CYPHER.Library.Title", resizable: true },
     actions: { reference: CypherLibrary.reference, language: CypherLibrary.language, page: CypherLibrary.page,
-      task: CypherLibrary.task, draw: CypherLibrary.draw, shortcut: CypherLibrary.shortcut }
+      task: CypherLibrary.task, draw: CypherLibrary.draw, gmSheet: CypherLibrary.gmSheet, shortcut: CypherLibrary.shortcut }
   };
   static PARTS = { content: { template: "systems/cypher/templates/library/home.hbs" } };
   contentLanguage = game.i18n.lang.startsWith("fr") ? "fr" : "en";
@@ -82,7 +100,7 @@ export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
     // Pagination and editorial labels come from the allowlisted destination,
     // never inferred from arbitrary Journal prose or world document flags.
     const section = entries.find(entry => entry.key === this.selectedKey)?.section;
-    const editorial = ["guide", "cards"].includes(section);
+    const editorial = ["guide", "cards", "gm"].includes(section);
     const paginated = section === "chapter" || editorial;
     const currentPage = pages.find(page => page.id === this.selectedPageId) ?? pages[0];
     const sourcePages = await Promise.all((paginated ? [currentPage].filter(Boolean) : pages)
@@ -91,6 +109,7 @@ export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
     return { language: this.contentLanguage, english: this.contentLanguage === "en", french: this.contentLanguage === "fr",
       chapters: entries.filter(entry => entry.section === "chapter").map(navigation),
       guides: entries.filter(entry => entry.section === "guide").map(navigation),
+      gmGuides: entries.filter(entry => entry.section === "gm").map(navigation),
       references: entries.filter(entry => entry.documentName === "JournalEntry" && ["quick", "cards"].includes(entry.section)).map(navigation),
       pageNavigation: paginated ? pages.map(page => ({ id: page.id, name: page.name, selected: page === currentPage })) : [],
       editorial, selectionLabel: label(editorial ? "PracticalResource" : "Canonical"),
@@ -111,6 +130,7 @@ export class CypherLibrary extends HandlebarsApplicationMixin(ApplicationV2) {
   }
   static async task() { await promptLibraryTask(); }
   static async draw() { await promptLibraryDraw(this.contentLanguage); }
+  static async gmSheet() { await promptLibraryGMSheet(); }
   static async shortcut() {
     const macro = await createLibraryShortcut();
     if (!macro) { ui.notifications.warn(label("ShortcutDenied")); return; }

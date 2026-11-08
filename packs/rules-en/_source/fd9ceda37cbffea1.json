@@ -1,0 +1,207 @@
+{
+  "_id": "fd9ceda37cbffea1",
+  "_key": "!journal!fd9ceda37cbffea1",
+  "name": "GM screen",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "4162add9b7550435",
+      "_key": "!journal.pages!fd9ceda37cbffea1.4162add9b7550435",
+      "name": "Session and handouts",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Check player ownership, genre/options and content language. Keep private campaign notes outside these published resources.</li><li>Open the linked preparation/presentation procedures for native Journal sharing. Open an actor sheet below for existing GM controls; this shortcut alone spends nothing.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.837cd26d902605e2]{Creating Your Character}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.368d740225886fd6]{Rules of the Game}</li></ul><p>Related procedures and references</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.1e0863c07da2d5b1]{Prepare access and the table}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.8bdfa86b22ab8a99]{Present a rule to players}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "5748ccd1349a8d92"
+          }
+        }
+      }
+    },
+    {
+      "_id": "874f8edb8994d832",
+      "_key": "!journal.pages!fd9ceda37cbffea1.874f8edb8994d832",
+      "name": "Task decisions and special rolls",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Agree intent, need for a roll, stat and base difficulty. Declare applicable circumstances and avoid duplicating modifiers already supplied by the sheet.</li><li>Use the linked difficulty/Effort/special-roll cards and full exceptions. The task aid below opens the normal dialog. Distinguish the original card's paid reroll from a GM-approved fresh attempt with paid Effort.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.e858315d5a818496]{Taking Action}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.435176772ef63763]{Rolling the Die}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.5b3fdd7a2794d612]{Retrying a Task After Failure}</li></ul><p>Related procedures and references</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.f715f4c8c4e17eeb]{Set difficulty and circumstances}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.91ebbb057d40e421]{Resolve intrusions, rerolls and retries}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.41670d62348e70d5]{Difficulty and task resolution}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.513b1a3ccac47179]{Effort and Edge}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.d88f083d33b64d0d]{Special rolls}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "2a83a553d430b223"
+          }
+        }
+      }
+    },
+    {
+      "_id": "08916bb8c70af2b2",
+      "_key": "!journal.pages!fd9ceda37cbffea1.08916bb8c70af2b2",
+      "name": "Combat and movement",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Check actual combatants, NPC profiles and target tokens. Use the tracker for initiative and Round sequence for declared special timing.</li><li>Advance real turns and confirm waiting triggers, range and movement explicitly. Open the NPC sheet below to launch its attack and use that attack's defense workflow.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.7b88f7bc4dae840b]{Actions and Initiative}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.d57a984f71946bfd]{Attack}</li></ul><p>Related procedures and references</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.c20d50fc7a7abc45]{Prepare NPCs and attacks}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.36089e55ff388779]{Run rounds and special timing}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.00ee3ac08a7a274c]{Actions and initiative}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.b1a16621e791bec6]{Ranges and movement}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "d1030946b8181a70"
+          }
+        }
+      }
+    },
+    {
+      "_id": "f0f57e2ce516f41f",
+      "_key": "!journal.pages!fd9ceda37cbffea1.f0f57e2ce516f41f",
+      "name": "Damage, healing and objects",
+      "type": "text",
+      "sort": 400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Check which consequence has already been applied: NPC Health, PC wounds/Pools, shield track or Object level. Do not resolve the same hit twice.</li><li>Follow the linked wound/rest cards and full shield/object rules. Open the actual sheet for dedicated damage, recovery or treatment controls; declare time, tools and protection first.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.83eac1c2681eb4e4]{Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.21c591beeb9e68b0]{Recoveries}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.b776c9d80531783a]{Defending}</li></ul><p>Related procedures and references</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.6240cee2eb699d62]{Resolve wounds, shields and objects}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.ed45c756439d52ca]{Wounds and Pool damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.cf47e9da185c8655]{Rest and healing}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "64bb5795dcd27101"
+          }
+        }
+      }
+    },
+    {
+      "_id": "081526450a765a12",
+      "_key": "!journal.pages!fd9ceda37cbffea1.081526450a765a12",
+      "name": "Conditions, hazards and cooperation",
+      "type": "text",
+      "sort": 500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Declare actual conditions, exposure and protection. Hazard names supply no universal damage table; save then trigger the explicit profile. Ending exposure does not heal its consequences.</li><li>Choose one cooperative mode per task/attack and check the global asset cap. Confirm guard eligibility and follower help separately through the actual sheet's general actions.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.d5a20a4748e112cc]{Special Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.3e581f0d1199e2f1]{Cooperative Actions}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.04c899c56485ad8a]{Guarding}</li></ul><p>Related procedures and references</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.9bfc14d177768639]{Declare conditions and environmental danger}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.a906212211a1d7e0]{Adjudicate cooperation and guarding}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.75b66f807b9473a7]{Conditions and special damage}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "e75f68d91b2a2a87"
+          }
+        }
+      }
+    },
+    {
+      "_id": "9cff206b989afe46",
+      "_key": "!journal.pages!fd9ceda37cbffea1.9cff206b989afe46",
+      "name": "Intrusions and retained consequences",
+      "type": "text",
+      "sort": 600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Describe the intrusion and use the PC sheet or retained natural 1 card. Finish the mandatory XP recipient choice and decide player requests on their cards.</li><li>Keep cards and receipts. Resume an interrupted settlement rather than awarding twice. Inspect reroll corrections before manual edits; narrative effects still need explicit resolution.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.60222c8c3ff21b34]{GM Intrusions}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.9a828ce40b960dc9]{Rerolling}</li></ul><p>Related procedures and references</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.91ebbb057d40e421]{Resolve intrusions, rerolls and retries}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "1b73bd2f87123452"
+          }
+        }
+      }
+    },
+    {
+      "_id": "c869b7af7518ff6d",
+      "_key": "!journal.pages!fd9ceda37cbffea1.c869b7af7518ff6d",
+      "name": "Cypher supply and use",
+      "type": "text",
+      "sort": 700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Preview below to inspect a result; use the recipient PC sheet's Generate/Award controls for an actual grant after checking capacity, power and variant.</li><li>Draw, award and Use are distinct. Check the linked complete definition and existing target changes before resolving an unsupported particular effect manually.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.bf5e9db32583ae9c]{Use Them and Replace Them}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.4c99bcc4c2cddfea]{Gaining New Cyphers}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.68bee1793e74b3d8]{Reading a Cypher Description}</li></ul><p>Related procedures and references</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.e5e1e118edf5e093]{Preview, award and replace cyphers}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "0f713c357ec739af"
+          }
+        }
+      }
+    },
+    {
+      "_id": "7b55947a9916da94",
+      "_key": "!journal.pages!fd9ceda37cbffea1.7b55947a9916da94",
+      "name": "Rewards, progression and downtime",
+      "type": "text",
+      "sort": 800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Discuss arc/story XP, record agreed awards and avoid duplicating intrusion settlement. Review dedicated advancement choices and already-applied resource/follower rewards.</li><li>Open the principal PC's project panel. Review qualification, total shared cost, participants and time; complete only after actual work. Resume or reconcile interrupted completion instead of paying again.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.3ad300bfc60f7364]{Earning XP}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.4d36d269c64bdab3]{Character Advancement}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.a3329547741d451e]{Resource Points}</li></ul><p>Related procedures and references</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.9f2b05bbd701753e]{Award XP and follow advancement}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.fd4c9959c5ce49e1]{Review projects and resource points}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "c6e19c1dbb3b2a5e"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "library": {
+        "role": "gm-screen"
+      },
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.gm-screen",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Editorial GM procedures linked to the CRD",
+        "sourceLocator": "CRD evidence and platform references in data/library-gm-resources.json",
+        "transformations": [
+          "Editorial instructions for existing controls; no replacement CRD wording",
+          "Native links to complete source rules and detailed procedures"
+        ]
+      }
+    }
+  }
+}

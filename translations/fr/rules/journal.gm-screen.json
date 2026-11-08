@@ -1,0 +1,93 @@
+{
+  "logicalId": "journal.gm-screen",
+  "sourceLogicalId": "journal.gm-screen",
+  "language": "fr",
+  "status": "reviewed",
+  "fields": [
+    {
+      "path": "name",
+      "sourceHash": "871abbc66fcc42287c945400fd44feb6bf6e8e3a250418854073ce542bacdf3f",
+      "text": "Écran du MJ"
+    },
+    {
+      "path": "pages.5748ccd1349a8d92.name",
+      "sourceHash": "8c1f5f7fadc441b182561030d9469f6c8745e62500e57d1f6b34f712f3367192",
+      "text": "Séance et documents partagés"
+    },
+    {
+      "path": "pages.5748ccd1349a8d92.text.content",
+      "sourceHash": "f7dadbcdea31392477db30700d234e50611067d93e33b1305097cf21beba73f4",
+      "text": "<aside><p>Aide pratique du MJ : les liens donnent les règles complètes. Les choix de situation et les effets non pris en charge restent à arbitrer.</p></aside><ol><li>Vérifiez permissions des joueurs, genre, options et langue du contenu. Gardez les notes privées de campagne hors de ces ressources publiées.</li><li>Ouvrez les procédures liées de préparation et de présentation pour le partage natif des Journaux. Ouvrez une fiche d’acteur ci-dessous pour les commandes existantes du MJ ; ce raccourci ne dépense rien à lui seul.</li></ol><p>Règles complètes du CRD</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.837cd26d902605e2]{Créer votre personnage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.368d740225886fd6]{Règles du jeu}</li></ul><p>Procédures et repères liés</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.1e0863c07da2d5b1]{Préparer les accès et la table}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.8bdfa86b22ab8a99]{Présenter une règle aux joueurs}</li></ul>"
+    },
+    {
+      "path": "pages.2a83a553d430b223.name",
+      "sourceHash": "27c86cbbfa21df967a1dc965983a2ba0152b40fbe019d382e39c1063baaaac86",
+      "text": "Décisions de tâche et jets spéciaux"
+    },
+    {
+      "path": "pages.2a83a553d430b223.text.content",
+      "sourceHash": "b267a2bfa24e839a4953ac2e36f94a3c1444541c4ee640bb76bb7086f2d1042f",
+      "text": "<aside><p>Aide pratique du MJ : les liens donnent les règles complètes. Les choix de situation et les effets non pris en charge restent à arbitrer.</p></aside><ol><li>Convenez de l’intention, du besoin d’un jet, de la caractéristique et de la difficulté de base. Déclarez les circonstances applicables et évitez de doubler les modificateurs déjà fournis par la fiche.</li><li>Utilisez les fiches liées de difficulté, d’Effort et de jets spéciaux et leurs exceptions complètes. L’aide aux tâches ci-dessous ouvre le dialogue habituel. Distinguez relance payée de la carte initiale et nouvelle tentative approuvée par le MJ avec Effort payé.</li></ol><p>Règles complètes du CRD</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.e858315d5a818496]{Agir}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.435176772ef63763]{Lancer le dé}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.5b3fdd7a2794d612]{Réessayer une tâche après un échec}</li></ul><p>Procédures et repères liés</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.f715f4c8c4e17eeb]{Fixer difficulté et circonstances}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.91ebbb057d40e421]{Résoudre intrusions, relances et nouvelles tentatives}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.41670d62348e70d5]{Difficulté et résolution des tâches}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.513b1a3ccac47179]{Effort et Avantage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.d88f083d33b64d0d]{Résultats spéciaux}</li></ul>"
+    },
+    {
+      "path": "pages.d1030946b8181a70.name",
+      "sourceHash": "122902c5071262708306782d3bf04f2de70a0744bd470a69d47e1cc84f497b54",
+      "text": "Combat et déplacements"
+    },
+    {
+      "path": "pages.d1030946b8181a70.text.content",
+      "sourceHash": "575078b9156e93f236ba9dec1133b34c9ae770d80887f87b5114985490e08d13",
+      "text": "<aside><p>Aide pratique du MJ : les liens donnent les règles complètes. Les choix de situation et les effets non pris en charge restent à arbitrer.</p></aside><ol><li>Vérifiez combattants réels, profils des PNJ et tokens ciblés. Utilisez le suivi pour l’initiative et Séquence du round pour les actions particulières déclarées.</li><li>Avancez les tours réels et confirmez explicitement déclencheurs d’attente, portée et déplacement. Ouvrez la fiche du PNJ ci-dessous pour lancer son attaque et utilisez le parcours de défense de cette attaque.</li></ol><p>Règles complètes du CRD</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.7b88f7bc4dae840b]{Actions et initiative}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.d57a984f71946bfd]{Attaque}</li></ul><p>Procédures et repères liés</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.c20d50fc7a7abc45]{Préparer les PNJ et leurs attaques}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.36089e55ff388779]{Gérer les rounds et les actions}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.00ee3ac08a7a274c]{Actions et initiative}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.b1a16621e791bec6]{Portées et déplacements}</li></ul>"
+    },
+    {
+      "path": "pages.64bb5795dcd27101.name",
+      "sourceHash": "c2ee7b7e229251e926a0366ee517b612a4cdcbc96314c0cd2f0fafd63b869284",
+      "text": "Dégâts, soins et objets"
+    },
+    {
+      "path": "pages.64bb5795dcd27101.text.content",
+      "sourceHash": "ac42ac58920fb57b4765123714b116653ec4d26c5d4c7ad70bee932efb2a474d",
+      "text": "<aside><p>Aide pratique du MJ : les liens donnent les règles complètes. Les choix de situation et les effets non pris en charge restent à arbitrer.</p></aside><ol><li>Vérifiez la conséquence déjà appliquée : Santé du PNJ, blessures ou réserves du PJ, piste du bouclier ou niveau de l’objet. Ne résolvez pas deux fois le même coup.</li><li>Suivez les fiches liées de blessures et de repos et les règles complètes des boucliers et objets. Ouvrez la fiche réelle pour les commandes dédiées de dégâts, récupération ou traitement ; déclarez d’abord temps, outils et protection.</li></ol><p>Règles complètes du CRD</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.83eac1c2681eb4e4]{Dégâts}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.21c591beeb9e68b0]{Récupérations}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.b776c9d80531783a]{Défense}</li></ul><p>Procédures et repères liés</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.6240cee2eb699d62]{Résoudre blessures, boucliers et objets}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.ed45c756439d52ca]{Blessures et dégâts aux réserves}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.cf47e9da185c8655]{Repos et soins}</li></ul>"
+    },
+    {
+      "path": "pages.e75f68d91b2a2a87.name",
+      "sourceHash": "d5ac4756e16da28c89d3b4a6ce912414bf18154306bf1d5fc7fc89ccb5861bd4",
+      "text": "États, dangers et coopération"
+    },
+    {
+      "path": "pages.e75f68d91b2a2a87.text.content",
+      "sourceHash": "0f2025bfcfe9e57e995e9b4ea7d5342f74b31a209957cd722127bdf10a4c3ebd",
+      "text": "<aside><p>Aide pratique du MJ : les liens donnent les règles complètes. Les choix de situation et les effets non pris en charge restent à arbitrer.</p></aside><ol><li>Déclarez états, exposition et protection réels. Le nom du danger ne fournit pas de table universelle de dégâts ; enregistrez puis déclenchez le profil explicite. Terminer une exposition ne soigne pas ses conséquences.</li><li>Choisissez un mode coopératif par tâche ou attaque et vérifiez le plafond global d’atouts. Confirmez séparément éligibilité de la garde et aide des suivants via les actions générales de la fiche réelle.</li></ol><p>Règles complètes du CRD</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.d5a20a4748e112cc]{Dégâts particuliers}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.3e581f0d1199e2f1]{Actions coopératives}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.04c899c56485ad8a]{Monter la garde}</li></ul><p>Procédures et repères liés</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.9bfc14d177768639]{Déclarer états et dangers environnementaux}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.a906212211a1d7e0]{Arbitrer coopération et garde}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.4e81cf3f712eff14.JournalEntryPage.75b66f807b9473a7]{États et dégâts particuliers}</li></ul>"
+    },
+    {
+      "path": "pages.1b73bd2f87123452.name",
+      "sourceHash": "2eab6719a1e6d10bc46a983f4ed9283643e56dafaccaffcc0a59c3a93c770260",
+      "text": "Intrusions et conséquences conservées"
+    },
+    {
+      "path": "pages.1b73bd2f87123452.text.content",
+      "sourceHash": "f744efd12ba53b9ed07fc8ad06d7453e28f5b9ef3d6e369330c7c3c373aea8a2",
+      "text": "<aside><p>Aide pratique du MJ : les liens donnent les règles complètes. Les choix de situation et les effets non pris en charge restent à arbitrer.</p></aside><ol><li>Décrivez l’intrusion et utilisez la fiche du PJ ou la carte conservant un 1 naturel. Terminez le choix obligatoire du bénéficiaire de l’XP et décidez les demandes des joueurs sur leurs cartes.</li><li>Conservez cartes et reçus. Reprenez un règlement interrompu plutôt que d’attribuer deux fois. Consultez les corrections de relance avant modification manuelle ; les effets narratifs exigent toujours une résolution explicite.</li></ol><p>Règles complètes du CRD</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.60222c8c3ff21b34]{Intrusions du MJ}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.9a828ce40b960dc9]{Relancer un jet}</li></ul><p>Procédures et repères liés</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.91ebbb057d40e421]{Résoudre intrusions, relances et nouvelles tentatives}</li></ul>"
+    },
+    {
+      "path": "pages.0f713c357ec739af.name",
+      "sourceHash": "287d09eda2648be99745c34635062acbc97b1c522db47d413d43564c353e0ac0",
+      "text": "Distribution et utilisation des cyphers"
+    },
+    {
+      "path": "pages.0f713c357ec739af.text.content",
+      "sourceHash": "2d3d7302cd02a6e6718932c8b222e4fb42d307f22a5af206ee40032d1b5cf5a7",
+      "text": "<aside><p>Aide pratique du MJ : les liens donnent les règles complètes. Les choix de situation et les effets non pris en charge restent à arbitrer.</p></aside><ol><li>Prévisualisez ci-dessous pour examiner un résultat ; utilisez Générer ou Attribuer sur la fiche du PJ destinataire pour un véritable octroi après vérification de capacité, puissance et variante.</li><li>Tirage, attribution et utilisation sont distincts. Consultez la définition complète liée et les changements déjà appliqués aux cibles avant de résoudre manuellement un effet particulier non pris en charge.</li></ol><p>Règles complètes du CRD</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.bf5e9db32583ae9c]{Les utiliser et les remplacer}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.4c99bcc4c2cddfea]{Obtenir de nouveaux cyphers}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.68bee1793e74b3d8]{Lire la description d’un cypher}</li></ul><p>Procédures et repères liés</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.e5e1e118edf5e093]{Prévisualiser, attribuer et renouveler les cyphers}</li></ul>"
+    },
+    {
+      "path": "pages.c6e19c1dbb3b2a5e.name",
+      "sourceHash": "7d7801a516f8969c1f91e41d0e8fa78974c4184b41d7fc4cb5c428638485a538",
+      "text": "Récompenses, progression et temps libre"
+    },
+    {
+      "path": "pages.c6e19c1dbb3b2a5e.text.content",
+      "sourceHash": "ff8395b480f7e6939931bd776e46c2318c5b576d61dbc91aa177afd54af59360",
+      "text": "<aside><p>Aide pratique du MJ : les liens donnent les règles complètes. Les choix de situation et les effets non pris en charge restent à arbitrer.</p></aside><ol><li>Discutez l’XP d’arcs et d’histoire, inscrivez les attributions convenues et évitez de doubler le règlement d’intrusion. Vérifiez les choix dédiés de progression et les récompenses de ressources ou de suivants déjà appliquées.</li><li>Ouvrez le panneau de projets du PJ principal. Vérifiez qualification, coût total partagé, participants et temps ; terminez après le travail réel uniquement. Reprenez ou réconciliez un achèvement interrompu au lieu de payer de nouveau.</li></ol><p>Règles complètes du CRD</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.3ad300bfc60f7364]{Gagner des XP}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.4d36d269c64bdab3]{Progression du personnage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.a3329547741d451e]{Points de ressources}</li></ul><p>Procédures et repères liés</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.9f2b05bbd701753e]{Attribuer l’XP et suivre la progression}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.bcded427f083368e.JournalEntryPage.fd4c9959c5ce49e1]{Examiner projets et points de ressources}</li></ul>"
+    }
+  ]
+}

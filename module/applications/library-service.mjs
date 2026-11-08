@@ -23,6 +23,8 @@ const references = Object.freeze([
   ["crd-credits", "rules", "JournalEntry"],
   ["player-guide", "rules", "JournalEntry", "guide"],
   ["player-quick-reference", "rules", "JournalEntry", "cards"],
+  ["gm-guide", "rules", "JournalEntry", "gm"],
+  ["gm-screen", "rules", "JournalEntry", "gm"],
   ["task-difficulty", "rules", "JournalEntry"],
   ["effort-edge", "rules", "JournalEntry"],
   ["recoveries-healing", "rules", "JournalEntry"],
@@ -36,7 +38,7 @@ const references = Object.freeze([
   logicalId: `${family === "rules" ? "journal" : "skill"}.${key}` })));
 const homeCommand = "await game.cypher.library.open();";
 
-/** Index just the two pilot families, once each per call; missing/hidden packs
+/** Index just the two reference families, once each per call; missing/hidden packs
  * produce disabled destinations, never a fallback into another language.
  * @param {string} language Explicit content language, independent of UI locale.
  * @returns {Promise<object[]>} Allowlisted destinations, with null UUID if unavailable.
@@ -89,6 +91,16 @@ export function libraryActors() {
   const actors = [...(globalThis.canvas?.tokens?.controlled ?? []).map(token => token.actor),
     game.user.character, ...game.actors];
   return [...new Map(actors.filter(actor => actor?.type === "pc" && actor.isOwner === true)
+    .map(actor => [actor.uuid, actor])).values()];
+}
+
+/** GM tool selection includes real PCs, NPCs and Objects, preserving controlled
+ * synthetic Actors. Reading a guide never creates or selects an Actor for play.
+ */
+export function libraryGMActors() {
+  if (!game.user.isGM) return [];
+  const actors = [...(globalThis.canvas?.tokens?.controlled ?? []).map(token => token.actor), ...game.actors];
+  return [...new Map(actors.filter(actor => ["pc", "npc", "object"].includes(actor?.type) && actor.isOwner === true)
     .map(actor => [actor.uuid, actor])).values()];
 }
 

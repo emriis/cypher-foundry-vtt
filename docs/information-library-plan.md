@@ -189,8 +189,8 @@ APIs. The platform guides establish the intended native capabilities:
 | --- | --- | --- |
 | 1 | Complete; merged in PR #176 | Home, existing reference selections, task pilot, cypher preview and personal shortcut |
 | 2 | Complete; merged | All fourteen source chapters, attribution, complete paragraph/table reconciliation |
-| 3 | Complete; awaiting merge | Twelve player procedures and eight linked quick-reference cards |
-| 4 | Planned | Complete GM guide and linked screen |
+| 3 | Complete; merged in PR #182 | Twelve player procedures and eight linked quick-reference cards |
+| 4 | Complete; validated on V14.370 | Twelve GM procedures, eight linked screen cards and an actual-actor sheet entry |
 | 5 | Planned | Native source-backed random table packs |
 | 6 | Planned | Complete bilingual macro packs |
 | 7 | Planned | Selective repeatable world installation and broad contextual discovery |
@@ -750,3 +750,69 @@ tests, and planning/source/development documentation. Existing canonical Item
 definitions, generated LevelDB packs, release artifacts and user worlds are
 not edited. No commit or push is part of this lot. Next: **lot 4, GM guide and
 linked GM screen**.
+
+## Lot 4 delivery register
+
+Baseline: `6a67e03` (PR #182), with a clean working tree. Two additive editorial
+Journals, `journal.gm-guide` and `journal.gm-screen`, provide **twelve GM
+procedures** and **eight compact screen cards** in EN/FR. The screen reaches
+every guide procedure and reuses relevant player quick cards. Every page also
+links complete CRD source context. The catalogue becomes **1,393 EN documents**
+with paired FR documents, including **27 Rules Journals / 483 paired Journal
+display fields**. Existing source chapters, player resources, document/page
+identities and all fourteen pack collections remain in place.
+
+The guide covers setup and permissions, presenting native Journal pages,
+difficulty and circumstances, actual NPC profiles and attacks, initiative and
+round timing, wounds/shields/objects/healing, conditions and environmental
+exposures, cooperation and guarding, intrusions/rerolls/retries, cypher preview
+and awards, XP/progression, and resource-point projects. Instructions trace real
+sheet controls, distinguish declarations from application, and explain manual
+story/arc XP and unsupported particular effects. Native Journal presentation
+instructions were checked against the official Foundry Journal guide.
+
+The library gives both resources their own navigation group and paginated
+editorial reader. A GM-only **Open an actor sheet** entry explicitly selects
+an actual owned PC, NPC or Object, preserving controlled synthetic Actors. It
+rechecks GM authority, current availability and ownership after the dialog,
+then opens the existing sheet. Cancellation and opening apply no gameplay
+effect, spend no resources and create no document. Cypher preview remains
+separate from awarding and uses the existing elected-GM generation service.
+
+Published GM procedures have ordinary Observer reading permissions: they are
+instructions, not campaign secrets or authority to execute GM actions. Private
+notes belong in separately permissioned world Journals. Pack visibility and
+actual document/page access still gate reading; GM controls independently check
+authority. Reading imports nothing and needs no script macros. This lot adds
+no gameplay rule, random-table pack, macro family or automatic story award.
+
+The [GM evidence contract](../data/library-gm-resources.json) records pinned
+CRD ranges/hashes, the platform reference and actual template/control references.
+English prose remains in `_source`, with separately reviewed French proposals;
+the evidence contract does not duplicate prose. Source coverage remains
+**7,747 paragraphs / 61 tables / 100 historical groups**. Linked editorial
+instructions do not extend the canonical CRD partition or certify the remaining
+runtime automation backlog.
+
+### Lot 4 validation — 2026-11-08
+
+The isolated full suite passes **1,326 Node tests**, with no failures or skips.
+Focused content tests verify the bilingual source records, pinned evidence,
+links, stable identities and GM access checks. Lint, pilot type checking,
+architecture, locale and E2E syntax checks pass. The Rules Journal audit
+reports **27 reviewed Journals**.
+
+The isolated live run builds and verifies all **14 packs**, passes **15
+compiled-pack checks**, and verifies the packaged archive. Both GM E2E scenarios
+pass on **Foundry V14.370.0 / Chromium 153.0.8010.12**, system
+`0.2.0-alpha.1`: all 20 guide/screen pages across both languages and themes
+(**80 page renders**), keyboard navigation, native source links, reload and no
+world-document creation; and GM actor-sheet cancellation plus opening an actual
+NPC without changing its data. V13 remains untested. `system.json`
+compatibility metadata is unchanged.
+
+Validation ran in disposable workspaces; no generated packs, archives or user
+worlds were changed. The E2E NPC fixture was corrected to use a schema-valid
+structured attack after the first focused run rejected its incomplete damage
+profile. Final focused E2E and syntax checks pass. No commit or push is part of
+this lot. Next: **lot 5, native source-backed random tables**.

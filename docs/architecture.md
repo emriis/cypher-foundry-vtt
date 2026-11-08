@@ -32,6 +32,8 @@ The main gameplay boundaries are:
 
 - `library-service.mjs`: allowlisted canonical reference discovery, lazy pack
   reads, actual owned PC candidates and opt-in personal shortcut creation.
+  GM navigation also selects actual owned PC/NPC/Object sheets, preserving
+  controlled synthetic identity and rechecking authority after the dialog.
   `sheets/library.mjs` owns the library window and uses existing task dialogs
   and cypher-generation services; see the
   [information library plan](information-library-plan.md).
