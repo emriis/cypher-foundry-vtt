@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { libraryIndex, libraryDocument, createLibraryShortcut, libraryActors } from "../../module/applications/library-service.mjs";
+import { libraryIndex, libraryDocument, createLibraryShortcut, libraryActors, libraryGMActors } from "../../module/applications/library-service.mjs";
 
 function setup() {
   const calls = { index: 0, document: 0, create: 0 };
@@ -18,6 +18,42 @@ function setup() {
   } } } };
   return { calls, pack, document };
 }
+
+test("GM resources stay lazy and permission checked in both languages", async () => {
+  const { pack, calls, document } = setup();
+  for (const language of ["en", "fr"]) {
+    pack.collection = `cypher.rules-${language}`;
+    game.packs = new Map([[pack.collection, pack]]);
+    pack.getIndex = async () => ["gm-guide", "gm-screen"].map(key => ({ _id: key, name: key,
+      flags: { cypherFoundry: { crd: { logicalId: `journal.${key}` } } } }));
+    const before = calls.document;
+    const rows = (await libraryIndex(language)).filter(row => row.section === "gm");
+    assert.equal(rows.length, 2);
+    assert.equal(calls.document, before);
+    for (const row of rows) assert.equal(await libraryDocument(row.key, language), document);
+    document.testUserPermission = () => false;
+    assert.equal(await libraryDocument("gm-screen", language), null);
+    document.testUserPermission = () => true;
+    pack.visible = false;
+    assert.equal(await libraryDocument("gm-guide", language), null);
+    pack.visible = true;
+  }
+});
+
+test("GM sheet candidates preserve synthetic identity and reject players and revoked ownership", () => {
+  setup();
+  const world = { uuid: "Actor.n", type: "npc", isOwner: true };
+  const token = { uuid: "Scene.s.Token.t.Actor.n", type: "npc", isOwner: true };
+  const object = { uuid: "Actor.o", type: "object", isOwner: true };
+  const denied = { uuid: "Actor.d", type: "pc", isOwner: false };
+  game.actors = [world, object, denied];
+  canvas.tokens.controlled = [{ actor: token }, { actor: denied }];
+  assert.deepEqual(libraryGMActors(), []);
+  game.user.isGM = true;
+  assert.deepEqual(libraryGMActors(), [token, world, object]);
+  token.isOwner = false;
+  assert.deepEqual(libraryGMActors(), [world, object]);
+});
 
 test("Library resolves stable logical identities lazily and rejects unknown keys and languages", async () => {
   const { calls } = setup();

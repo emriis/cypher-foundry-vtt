@@ -1,6 +1,7 @@
 import { REFERENCE_JOURNAL_IDS } from "../../scripts/crd-reference/inventory.mjs";
 import { EXPECTED_CATALOGUE_COUNT } from "../../scripts/crd-reference/inventory.mjs";
 import { PLAYER_JOURNAL_IDS } from "../../scripts/library-player-metadata.mjs";
+import { GM_JOURNAL_IDS } from "../../scripts/library-gm-metadata.mjs";
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -14,7 +15,7 @@ test("selected and chaptered Rules Journals retain canonical identity, source te
  const review=reviewCatalogue(records,proposals);const map=new Map(review.entries.map(row=>[row.logicalId,row]));
  const sources=new Map(records.filter(row=>row.pack==="rules-en").map(row=>[row.logicalId,row]));
  const counterparts=new Map(records.filter(row=>row.pack==="rules-fr").map(row=>[row.logicalId,row]));
- const journalIds=[...m.ids,...REFERENCE_JOURNAL_IDS,...PLAYER_JOURNAL_IDS];
+ const journalIds=[...m.ids,...REFERENCE_JOURNAL_IDS,...PLAYER_JOURNAL_IDS,...GM_JOURNAL_IDS];
  for(const id of journalIds){const row=map.get(id),en=sources.get(id),fr=counterparts.get(id);
    assert.ok(row&&en&&fr,id);assert.equal(row.status,"reviewed",id);
    assert.equal(en.document._id,fr.document._id,id);

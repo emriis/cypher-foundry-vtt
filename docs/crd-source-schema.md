@@ -91,6 +91,13 @@ sheet-control references without duplicating prose. English `_source` records
 and reviewed French proposals remain the authoring surfaces. Editorial help
 must not add a rule, certify all power automation or replace full CRD passages.
 
+`journal.gm-guide` and `journal.gm-screen` use that same separate editorial
+contract, with roles `gm-guide` and `gm-screen` and evidence in
+`data/library-gm-resources.json`. Screen cards link detailed guide procedures,
+existing quick cards and full CRD context rather than maintaining a new rule
+summary. Platform instructions are identified separately from CRD rule evidence.
+These public instructions contain no campaign secrets and grant no GM authority.
+
 ## 5. Structured Ability end conditions
 
 Physical shield runtime designation is stored on the owned shield as

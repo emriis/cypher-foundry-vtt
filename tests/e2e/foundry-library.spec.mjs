@@ -110,10 +110,16 @@ test("library pilot: ordinary player reads references and rolls, cancellation an
       for (const app of foundry.applications.instances.values()) if (app.document?.type === "skill" && app.rendered) await app.close();
     });
     await expect(library.locator('[data-action="draw"]')).toHaveCount(0);
+    await expect(library.locator('[data-action="gmSheet"]')).toHaveCount(0);
     await expect(library.locator('[data-action="shortcut"]')).toBeDisabled();
     for (const language of ["en", "fr"]) {
       await library.locator(`[data-action="language"][data-language="${language}"]`).click();
       await expect(library.locator(`[data-action="language"][data-language="${language}"]`)).toHaveAttribute("aria-pressed", "true");
+      await library.locator('[data-key="gm-screen"]').click();
+      await expect(library.locator('[data-key="gm-screen"]')).toHaveAttribute("aria-pressed", "true");
+      await expect(library.locator('[data-action="page"]')).toHaveCount(8);
+      await expect(library.locator(".library-editorial > section")).toHaveCount(1);
+      await expect(library.locator(".library-source .content-link.broken")).toHaveCount(0);
       await library.locator('[data-key="crd-descriptors"]').click();
       await expect(library.locator('[data-key="crd-descriptors"]')).toHaveAttribute("aria-pressed", "true");
       await library.locator('[data-action="page"]').last().click();

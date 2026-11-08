@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "referenceSha256": "cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729",
+  "platformReferences": [
+    "https://foundryvtt.com/article/journal/"
+  ],
+  "documents": [
+    {
+      "logicalId": "journal.gm-guide",
+      "role": "gm-guide",
+      "pages": [
+        {
+          "key": "setup",
+          "pageId": "1e0863c07da2d5b1",
+          "sources": [
+            {
+              "start": 1,
+              "end": 49,
+              "sourceSha256": "cb9c20a5bb09b5496a15f7af78c51a61fd22706e4c33a7acee55d351dda09866"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            }
+          ]
+        },
+        {
+          "key": "present",
+          "pageId": "8bdfa86b22ab8a99",
+          "sources": [
+            {
+              "start": 7381,
+              "end": 7394,
+              "sourceSha256": "7a5a13b9607e16898cfa1af1e9755b1ce0cc6f870525fd5226801f983f9bba7c"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "difficulty",
+          "pageId": "f715f4c8c4e17eeb",
+          "sources": [
+            {
+              "start": 7467,
+              "end": 7560,
+              "sourceSha256": "e0042def31018b7505cb0c20975cd085e65e8ebef5f9986778bed398e8f2fc7b"
+            },
+            {
+              "start": 7825,
+              "end": 7902,
+              "sourceSha256": "49d3ae4417240552942e50794670d9260cb732d899e499e324175d4c2ad97e7d"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "task"
+            }
+          ]
+        },
+        {
+          "key": "npcs",
+          "pageId": "c20d50fc7a7abc45",
+          "sources": [
+            {
+              "start": 7567,
+              "end": 7571,
+              "sourceSha256": "6ac10a8bd9b2f99c67509a0f4118838c4c3c9f44a3c67fc79ccbee33b5c3baf7"
+            },
+            {
+              "start": 7694,
+              "end": 7703,
+              "sourceSha256": "b09fd29037fd05713e0c8ca0e448348d695d3043d2a5456d65b076198f8e1e7f"
+            },
+            {
+              "start": 7734,
+              "end": 7740,
+              "sourceSha256": "6c4e71e117a0548d04241fd44133789e9e729354dea0c61bed9ead547189c3c2"
+            },
+            {
+              "start": 7970,
+              "end": 7985,
+              "sourceSha256": "d7e6d7a02748ef4416ec1b3f162c7801fcf17cbc301b2a2dbd77b89bcb3d4828"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            },
+            {
+              "template": "templates/actor/npc/body.hbs",
+              "action": "rollNpcAttack"
+            }
+          ]
+        },
+        {
+          "key": "combat",
+          "pageId": "36089e55ff388779",
+          "sources": [
+            {
+              "start": 7638,
+              "end": 7693,
+              "sourceSha256": "1834bb99093273b88f4e1986bcf5c7ccf01d43fe59e67b7c3cc0f40fc28e66f1"
+            }
+          ],
+          "controls": []
+        },
+        {
+          "key": "damage",
+          "pageId": "6240cee2eb699d62",
+          "sources": [
+            {
+              "start": 7704,
+              "end": 7813,
+              "sourceSha256": "24c503a485e452b63b89f145e24aa84673ab959ef751d67e4dd4166cb23877a5"
+            },
+            {
+              "start": 7921,
+              "end": 7949,
+              "sourceSha256": "9e5fe04df148463ce4545d62138f2f6c1f0013918a2af468ef2594ba7dfd5acf"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            },
+            {
+              "template": "templates/actor/object.hbs",
+              "action": "damageObject"
+            }
+          ]
+        },
+        {
+          "key": "environment",
+          "pageId": "9bfc14d177768639",
+          "sources": [
+            {
+              "start": 7815,
+              "end": 7823,
+              "sourceSha256": "bac19e0595c0327a27221422cd989b55f7917d5b6901a4a751c99e60e5dcabb8"
+            },
+            {
+              "start": 7825,
+              "end": 7902,
+              "sourceSha256": "49d3ae4417240552942e50794670d9260cb732d899e499e324175d4c2ad97e7d"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/environment.hbs",
+              "action": "promptEnvironment"
+            },
+            {
+              "template": "templates/actor/parts/general-actions.hbs",
+              "action": "promptGeneralCondition"
+            }
+          ]
+        },
+        {
+          "key": "cooperation",
+          "pageId": "a906212211a1d7e0",
+          "sources": [
+            {
+              "start": 7956,
+              "end": 7962,
+              "sourceSha256": "01cfab01c4a540f6f80f88ad24ac0421f99915a05d099a32f1f0965805662278"
+            },
+            {
+              "start": 7965,
+              "end": 7969,
+              "sourceSha256": "0b5fc4e2120a10086e0c7d5169b552b79e5a3c5c5800f9bbee3ba3284a3979f8"
+            },
+            {
+              "start": 7976,
+              "end": 7985,
+              "sourceSha256": "10896854a48e0a67645aa3ddb13b9642806eb106c1cd82e1b980c759cd58d92b"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/general-actions.hbs",
+              "action": "promptCooperativeAction"
+            },
+            {
+              "template": "templates/actor/parts/general-actions.hbs",
+              "action": "toggleGuarding"
+            }
+          ]
+        },
+        {
+          "key": "intrusions",
+          "pageId": "91ebbb057d40e421",
+          "sources": [
+            {
+              "start": 7395,
+              "end": 7425,
+              "sourceSha256": "dbba49c7bae7e4e957fe3c6a65e16dc81f38eec4458beab1911341a80b458486"
+            },
+            {
+              "start": 7610,
+              "end": 7613,
+              "sourceSha256": "5948ba1db47fdd774a6c95e2d93e5f9380247527888762cf57b95fff94a73e56"
+            },
+            {
+              "start": 8078,
+              "end": 8084,
+              "sourceSha256": "5515ecc5a6d2eae45b825c2d9d130f4916a2c67766ab92eb1469f86349870ea0"
+            },
+            {
+              "start": 8115,
+              "end": 8116,
+              "sourceSha256": "2257be2d6a7575d520ff7d5f4853faed4c3a4baddb66a7bbb6a3d46c72739dca"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "gmIntrusion"
+            }
+          ]
+        },
+        {
+          "key": "cyphers",
+          "pageId": "e5e1e118edf5e093",
+          "sources": [
+            {
+              "start": 5955,
+              "end": 5988,
+              "sourceSha256": "95f74af0c1e5c3184d42f30661e53345822aa8de7ffc0cfd118378f40041560e"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "draw"
+            },
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "generateCypher"
+            },
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "awardCypher"
+            }
+          ]
+        },
+        {
+          "key": "rewards",
+          "pageId": "9f2b05bbd701753e",
+          "sources": [
+            {
+              "start": 7990,
+              "end": 7999,
+              "sourceSha256": "3c94d4604c0cfcfb322e5a63fea010e77b7d5107d2bc3962dbf5ab925ba261aa"
+            },
+            {
+              "start": 8063,
+              "end": 8076,
+              "sourceSha256": "965d52d3c7a5b6d7280bc115e2bc640fef6120e2c5c7742ed0e7cc0d077bcedf"
+            },
+            {
+              "start": 8085,
+              "end": 8110,
+              "sourceSha256": "30c8dcf1be10871cec68a31793a5649844c3f9b8a0de287f70a49956f79d65ab"
+            },
+            {
+              "start": 8172,
+              "end": 8179,
+              "sourceSha256": "5584b9bdedebc3a8e27bf40829063e25558804018ae379b61002741cd3eb1419"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/main.hbs",
+              "action": "purchaseAdvancement"
+            }
+          ]
+        },
+        {
+          "key": "projects",
+          "pageId": "fd4c9959c5ce49e1",
+          "sources": [
+            {
+              "start": 7963,
+              "end": 7964,
+              "sourceSha256": "c461395d9c24af31c08af0a443a0971cc1d5e3055881eb3a0d3d6d3093d1b733"
+            },
+            {
+              "start": 8117,
+              "end": 8170,
+              "sourceSha256": "56a912475932c5ecffe4d6755b1e55491d9e07ab4b3decd24f53da6e2a339bdf"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/actor/parts/projects.hbs",
+              "action": "promptProject"
+            },
+            {
+              "template": "templates/actor/parts/projects.hbs",
+              "action": "approveProject"
+            },
+            {
+              "template": "templates/actor/parts/projects.hbs",
+              "action": "completeProject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "logicalId": "journal.gm-screen",
+      "role": "gm-screen",
+      "pages": [
+        {
+          "key": "start",
+          "pageId": "4162add9b7550435",
+          "sources": [
+            {
+              "start": 1,
+              "end": 49,
+              "sourceSha256": "cb9c20a5bb09b5496a15f7af78c51a61fd22706e4c33a7acee55d351dda09866"
+            },
+            {
+              "start": 7381,
+              "end": 7394,
+              "sourceSha256": "7a5a13b9607e16898cfa1af1e9755b1ce0cc6f870525fd5226801f983f9bba7c"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            }
+          ]
+        },
+        {
+          "key": "tasks",
+          "pageId": "874f8edb8994d832",
+          "sources": [
+            {
+              "start": 7467,
+              "end": 7560,
+              "sourceSha256": "e0042def31018b7505cb0c20975cd085e65e8ebef5f9986778bed398e8f2fc7b"
+            },
+            {
+              "start": 7572,
+              "end": 7613,
+              "sourceSha256": "755eaf368424e7d58c92c5b35525c6b02dedde2509487437ff018d54b52cea9b"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "task"
+            }
+          ]
+        },
+        {
+          "key": "combat",
+          "pageId": "08916bb8c70af2b2",
+          "sources": [
+            {
+              "start": 7638,
+              "end": 7703,
+              "sourceSha256": "b2a03125b5a2ce54fe396291a1889249a64177148c13fb720df869ff7cf975c4"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            }
+          ]
+        },
+        {
+          "key": "damage",
+          "pageId": "f0f57e2ce516f41f",
+          "sources": [
+            {
+              "start": 7704,
+              "end": 7813,
+              "sourceSha256": "24c503a485e452b63b89f145e24aa84673ab959ef751d67e4dd4166cb23877a5"
+            },
+            {
+              "start": 7921,
+              "end": 7949,
+              "sourceSha256": "9e5fe04df148463ce4545d62138f2f6c1f0013918a2af468ef2594ba7dfd5acf"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            }
+          ]
+        },
+        {
+          "key": "danger",
+          "pageId": "081526450a765a12",
+          "sources": [
+            {
+              "start": 7815,
+              "end": 7823,
+              "sourceSha256": "bac19e0595c0327a27221422cd989b55f7917d5b6901a4a751c99e60e5dcabb8"
+            },
+            {
+              "start": 7956,
+              "end": 7969,
+              "sourceSha256": "ab9cd16a5fdb183393175cd5e5b3cd8bd7daf679c7ea8fd74c7421b392019f48"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            }
+          ]
+        },
+        {
+          "key": "intrusions",
+          "pageId": "9cff206b989afe46",
+          "sources": [
+            {
+              "start": 7395,
+              "end": 7425,
+              "sourceSha256": "dbba49c7bae7e4e957fe3c6a65e16dc81f38eec4458beab1911341a80b458486"
+            },
+            {
+              "start": 8078,
+              "end": 8084,
+              "sourceSha256": "5515ecc5a6d2eae45b825c2d9d130f4916a2c67766ab92eb1469f86349870ea0"
+            },
+            {
+              "start": 8115,
+              "end": 8116,
+              "sourceSha256": "2257be2d6a7575d520ff7d5f4853faed4c3a4baddb66a7bbb6a3d46c72739dca"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            }
+          ]
+        },
+        {
+          "key": "cyphers",
+          "pageId": "c869b7af7518ff6d",
+          "sources": [
+            {
+              "start": 5955,
+              "end": 5988,
+              "sourceSha256": "95f74af0c1e5c3184d42f30661e53345822aa8de7ffc0cfd118378f40041560e"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "draw"
+            },
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            }
+          ]
+        },
+        {
+          "key": "rewards",
+          "pageId": "7b55947a9916da94",
+          "sources": [
+            {
+              "start": 7990,
+              "end": 7999,
+              "sourceSha256": "3c94d4604c0cfcfb322e5a63fea010e77b7d5107d2bc3962dbf5ab925ba261aa"
+            },
+            {
+              "start": 8063,
+              "end": 8110,
+              "sourceSha256": "c7aeb81681f656b67e1e65d449a1434e80455005cff7a66791447eba923ce1d1"
+            },
+            {
+              "start": 8117,
+              "end": 8170,
+              "sourceSha256": "56a912475932c5ecffe4d6755b1e55491d9e07ab4b3decd24f53da6e2a339bdf"
+            }
+          ],
+          "controls": [
+            {
+              "template": "templates/library/home.hbs",
+              "action": "gmSheet"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

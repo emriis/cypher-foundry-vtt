@@ -546,7 +546,7 @@ This source milestone does not close the runtime or guide/tool milestones.
 ### W7 — Player/GM Guides — In progress
 
 - [x] Build twelve player procedures and distinct guide navigation (library lot 3).
-- [ ] Build GM navigation.
+- [x] Build twelve GM procedures, eight linked screen cards and distinct navigation.
 - [x] Validate the player guide's EN/FR links and shared task path live (library lot 3).
 - [ ] Validate the GM guide's links and procedures live (library lot 4).
 
@@ -556,7 +556,7 @@ This source milestone does not close the runtime or guide/tool milestones.
 - [x] Complete genre reference/navigation.
 - [x] Inventory the 61 Word tables; cypher generation and inline tables have consumers.
 - [ ] Complete table classification, destinations and any useful native RollTables.
-- [ ] Add GM procedures and rewards.
+- [x] Add GM procedures and explain supported/manual reward workflows (library lot 4).
 - [ ] Do not add a CRD creature extraction task: the source contains no
   creature inventory.
 

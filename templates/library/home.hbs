@@ -11,6 +11,12 @@
       {{#each guides}}<button type="button" data-action="reference" data-key="{{key}}" aria-pressed="{{selected}}" {{#unless uuid}}disabled{{/unless}}>{{name}}</button>{{/each}}
     </nav>
   </section>
+  <section aria-labelledby="library-gm-guides-heading">
+    <h2 id="library-gm-guides-heading">{{localize 'CYPHER.Library.GMGuide'}}</h2>
+    <nav class="library-references library-gm-guides" aria-label="{{localize 'CYPHER.Library.GMGuide'}}" lang="{{language}}">
+      {{#each gmGuides}}<button type="button" data-action="reference" data-key="{{key}}" aria-pressed="{{selected}}" {{#unless uuid}}disabled{{/unless}}>{{name}}</button>{{/each}}
+    </nav>
+  </section>
   <section aria-labelledby="library-crd-heading">
     <h2 id="library-crd-heading">{{localize 'CYPHER.Library.Reference'}}</h2>
     <nav class="library-references library-chapters" aria-label="{{localize 'CYPHER.Library.Reference'}}" lang="{{language}}">
@@ -51,7 +57,11 @@
   <section aria-labelledby="library-gm-heading">
     <h2 id="library-gm-heading">{{localize 'CYPHER.Library.GM'}}</h2>
     <p>{{localize 'CYPHER.Library.GMPending'}}</p>
-    {{#if isGM}}<button type="button" data-action="draw">{{localize 'CYPHER.Library.Draw'}}</button>{{/if}}
+    {{#if isGM}}
+    <button type="button" data-action="gmSheet">{{localize 'CYPHER.Library.OpenSheet'}}</button>
+    <p class="hint">{{localize 'CYPHER.Library.OpenSheetHint'}}</p>
+    <button type="button" data-action="draw">{{localize 'CYPHER.Library.Draw'}}</button>
+    {{/if}}
     <p class="hint">{{localize 'CYPHER.Library.TablesPending'}}</p>
   </section>
   <section aria-labelledby="library-shortcuts-heading">

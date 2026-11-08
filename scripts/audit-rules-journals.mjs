@@ -10,12 +10,13 @@ import {readCompendiumCatalogue,readFrenchProposals,reviewCatalogue} from "./rev
 import {inspectAbilityPair8} from "./audit-ability-batch-2.mjs";
 import {REFERENCE_JOURNAL_IDS} from "./crd-reference/inventory.mjs";
 import {PLAYER_JOURNAL_IDS} from "./library-player-metadata.mjs";
+import {GM_JOURNAL_IDS} from "./library-gm-metadata.mjs";
 const ROOT=path.resolve(import.meta.dirname,"..");
 const MANIFEST="data/localization/rules-journals-review.json";
 export async function auditRulesJournals(root=ROOT,output=path.join(root,"reports/rules-journals-review.json")){
  const manifest=JSON.parse(await fs.readFile(path.join(root,MANIFEST),"utf8"));
  const proposals=await readFrenchProposals(root);
- const ids=[...manifest.ids,...REFERENCE_JOURNAL_IDS,...PLAYER_JOURNAL_IDS].sort();
+ const ids=[...manifest.ids,...REFERENCE_JOURNAL_IDS,...PLAYER_JOURNAL_IDS,...GM_JOURNAL_IDS].sort();
  const current=[...proposals.keys()].filter(id=>id.startsWith("journal.")).sort();
  if(manifest.expected!==7||manifest.ids.length!==7||new Set(manifest.ids).size!==7||
     current.length!==ids.length||JSON.stringify(current)!==JSON.stringify(ids)||
@@ -35,7 +36,7 @@ export async function auditRulesJournals(root=ROOT,output=path.join(root,"report
        throw new Error("Rules Journal bilingual field/mechanic mismatch: "+id+" "+JSON.stringify(check));}
      return {...inspectAbilityPair8(id,source.document,item.proposal),status:item.proposal.status,sourceFile:source.file,proposalFile:item.file};
    });
-   const report={version:1,scope:manifest.scope+" and library chapters/player resources",reference:manifest.reference,expected:ids.length,
+   const report={version:1,scope:manifest.scope+" and library chapters/player/GM resources",reference:manifest.reference,expected:ids.length,
     semanticCertification:false,warning:"Automated checks cannot approve Rules Journals semantic fidelity.",
     statuses:details.reduce((a,row)=>(a[row.status]=(a[row.status]??0)+1,a),{}),details};
    await fs.mkdir(path.dirname(output),{recursive:true});

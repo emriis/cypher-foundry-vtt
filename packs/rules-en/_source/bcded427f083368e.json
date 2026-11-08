@@ -1,0 +1,295 @@
+{
+  "_id": "bcded427f083368e",
+  "_key": "!journal!bcded427f083368e",
+  "name": "GM guide",
+  "document": "JournalEntry",
+  "crdType": "journal",
+  "pages": [
+    {
+      "_id": "1e0863c07da2d5b1",
+      "_key": "!journal.pages!bcded427f083368e.1e0863c07da2d5b1",
+      "name": "Prepare access and the table",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Agree the genre, permitted character options and table expectations. Create or assign each player's actual PC, then configure Foundry ownership. Open this library from Journals or the sheet's book button. Choose the EN/FR content family independently of interface language; existing world documents retain their language.</li><li>Use Open an actor sheet below to choose a PC, NPC or Object you own, including a controlled token actor. This opens existing controls and spends nothing. Keep campaign secrets in separately permissioned world Journals: this published guide and screen contain instructions, not private campaign storage. Reading them grants no GM authority. Players can read and roll tasks without script macros.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.6bff609d936dfe2e.JournalEntryPage.837cd26d902605e2]{Creating Your Character}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "ce9e6b55fd727330"
+          }
+        }
+      }
+    },
+    {
+      "_id": "8bdfa86b22ab8a99",
+      "_key": "!journal.pages!bcded427f083368e.8bdfa86b22ab8a99",
+      "name": "Present a rule to players",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Open the complete CRD page through its native link, rather than presenting a procedural summary as the rule. For a handout you intend to customize, explicitly import a copy into world Journals and configure entry/page permissions. Reading the library alone never imports it. Keep the canonical compendium reference available for future consultation.</li><li>In the native Journal, use Show Players and choose the intended recipients; in multipage view, use the individual page's context menu. Check what you are revealing and whether players can reopen linked documents under their permissions. This is Foundry's presentation workflow, not a rule effect. Share the complete passage and discuss its examples and exceptions; do not assume your open library window is broadcast to other clients.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.368d740225886fd6]{Rules of the Game}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "c4cb6de3a0c91c0a"
+          }
+        }
+      }
+    },
+    {
+      "_id": "f715f4c8c4e17eeb",
+      "_key": "!journal.pages!bcded427f083368e.f715f4c8c4e17eeb",
+      "name": "Set difficulty and circumstances",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Ask what the character is trying to achieve. Decide whether a roll is needed, the stat, base difficulty and possible consequences. Consult the complete difficulty and circumstance passages. In Make a task roll, the player chooses their actual PC, relevant acquired Skill, declared assets, hindrances and Effort. A linked Skill is a reference, not a granted benefit.</li><li>Inspect the modifiers already supplied by the sheet before adding manual steps. Agree applicability, visibility, range and physical prerequisites explicitly; token coordinates do not resolve every circumstance. Use the full rules for limits, special rolls and effects. Unsupported narrative consequences need a declared resolution; neither a chat description nor a generic ability activation proves they have changed a target.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.e858315d5a818496]{Taking Action}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.7d3bca4f76084bc2]{Easing Tasks}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.74ee63be6e20a22d]{Modifying Attack and Defense}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "8e7589df5a2a6fd9"
+          }
+        }
+      }
+    },
+    {
+      "_id": "c20d50fc7a7abc45",
+      "_key": "!journal.pages!bcded427f083368e.c20d50fc7a7abc45",
+      "name": "Prepare NPCs and attacks",
+      "type": "text",
+      "sort": 400000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Create or open an actual NPC and configure its level, Health, Armor, attacks and task modifications from the agreed scenario. The CRD supplied here is not a creature catalogue: no invented bestiary is included. Use explicit modifications for tasks where the NPC differs from its general level. Assign any follower role through its existing procedure rather than treating every ally as a follower.</li><li>For an NPC attack, select the intended actual target and use its Attack control, then declare the attack profile and relevant circumstances. Resolve the resulting defense through that attack's workflow. Inspect already-applied Health/wounds before making manual changes. A controlled unlinked token has its own actor state; do not substitute its base NPC when resolving effects.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.435176772ef63763]{Rolling the Die}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.83eac1c2681eb4e4]{Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.c34240c596fcaa60]{Interacting With NPCs}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "e85ab9b111904aeb"
+          }
+        }
+      }
+    },
+    {
+      "_id": "36089e55ff388779",
+      "_key": "!journal.pages!bcded427f083368e.36089e55ff388779",
+      "name": "Run rounds and special timing",
+      "type": "text",
+      "sort": 500000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Add the actual combatants to the combat tracker and use the initiative workflow. PCs use the initiative dialog; NPC initiative follows their level. Review ties and any explicit grouping with the players. For special timing, open Round sequence and declare the eligible First, ordinary or Last timing before planning the round; do not change initiative merely to imitate those phases.</li><li>Advance the actual tracker so source-turn durations can expire. Declare waiting triggers and confirm when they occur; coordinates and narrative prose do not trigger them. A follow-up activity is not another primary turn. Confirm immediate movement and attack form where requested, and account for manually resolved actions with the table rather than assuming every narrative activity is automatically tracked.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.7b88f7bc4dae840b]{Actions and Initiative}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "fd87b162eefc38c4"
+          }
+        }
+      }
+    },
+    {
+      "_id": "6240cee2eb699d62",
+      "_key": "!journal.pages!bcded427f083368e.6240cee2eb699d62",
+      "name": "Resolve wounds, shields and objects",
+      "type": "text",
+      "sort": 600000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Check the retained defense and its recorded consequences first. Distinguish NPC Health, PC wound/Pool damage, physical shield wounds and Object levels. A usable held shield has its own overflow and destruction track. Do not subtract an absorbed wound from the PC again. Use the dedicated recovery, Rally and treatment controls only after their declared requirements are met.</li><li>For destructible scenery, create an Object actor and set its original level and physical/nonphysical material. Use its damage control or an appropriate attack; declare tool compatibility instead of guessing hardness from a name. Check broken versus destroyed state and later hits. PC shields keep their separate procedure. A destroyed object must be recreated rather than selected as an ordinary resource-point repair.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.83eac1c2681eb4e4]{Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.21c591beeb9e68b0]{Recoveries}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.b776c9d80531783a]{Defending}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "94ec1ea93bbd01d0"
+          }
+        }
+      }
+    },
+    {
+      "_id": "9bfc14d177768639",
+      "_key": "!journal.pages!bcded427f083368e.9bfc14d177768639",
+      "name": "Declare conditions and environmental danger",
+      "type": "text",
+      "sort": 700000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Use the actual actor's general-action panel for explicit conditions. For a PC hazard, the elected active GM opens the environmental panel and declares the wound/Pool/condition profile, protection, resolution mode and any interval. Saving the declaration prepares exposure; it does not apply damage. The supplied CRD has no universal falling, fire or suffocation damage table, so the name of the danger cannot supply those numbers.</li><li>Trigger each occurrence explicitly when ready, or offer the configured defense. Check the recorded result before applying again. Ending exposure stops that danger's repetition but does not heal damage or remove its separate conditions. Use explicit NPC Health controls for NPC hazards. For disease and specialist-only damage, follow the declared repeat checks and healing restrictions rather than removing the damage with an ordinary recovery.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.d5a20a4748e112cc]{Special Damage}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.74ee63be6e20a22d]{Modifying Attack and Defense}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "4a20351d159faf5e"
+          }
+        }
+      }
+    },
+    {
+      "_id": "a906212211a1d7e0",
+      "_key": "!journal.pages!bcded427f083368e.a906212211a1d7e0",
+      "name": "Adjudicate cooperation and guarding",
+      "type": "text",
+      "sort": 800000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Use the general-action panel to declare the actual helper, beneficiary, foe or guard. Confirm the fictional position and eligibility before applying anything. Select one cooperative mode for the task or attack; help, distraction, draw and take do not silently combine. Check the shared asset cap and explicitly selected benefits in the roll dialog.</li><li>Follower help remains distinct from PC cooperative modes while sharing the global asset limit. A guard intervention or passage uses its dedicated declared task. Track the real turns and end conditions, and do not infer adjacency from a marker or token icon. Consult the linked rules before deciding whether a particular request or interception is possible.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.3e581f0d1199e2f1]{Cooperative Actions}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.04c899c56485ad8a]{Guarding}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.044a7ab242205764]{Followers}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "b7bd2d27ff34b982"
+          }
+        }
+      }
+    },
+    {
+      "_id": "91ebbb057d40e421",
+      "_key": "!journal.pages!bcded427f083368e.91ebbb057d40e421",
+      "name": "Resolve intrusions, rerolls and retries",
+      "type": "text",
+      "sort": 900000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Use the PC sheet's GM intrusion control, or the free intrusion offered on a retained natural 1 task card. Describe the complication. For an XP-bearing intrusion, complete the affected player's mandatory recipient choice; pending distribution is not spendable XP. Decide player requests on their chat cards. Keep the cards and resume a failed settlement rather than awarding the same XP again. Narrative consequences still require explicit resolution.</li><li>A paid reroll uses the original task's card and retained-result workflow. Initial roll costs remain spent, with the supported natural 20 Pool refund exception; inspect attributed corrections before any manual edit. A fresh attempt after failure is a separate GM-approved retry requiring paid Effort. Do not substitute a reroll for a retry, and reconcile ambiguous or manually altered consequences through the recorded workflow.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.60222c8c3ff21b34]{GM Intrusions}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.5b3fdd7a2794d612]{Retrying a Task After Failure}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.9a828ce40b960dc9]{Rerolling}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "399aacc1bb4ab47f"
+          }
+        }
+      }
+    },
+    {
+      "_id": "e5e1e118edf5e093",
+      "_key": "!journal.pages!bcded427f083368e.e5e1e118edf5e093",
+      "name": "Preview, award and replace cyphers",
+      "type": "text",
+      "sort": 1000000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Use Preview a cypher draw below to inspect a generated result in the chosen EN/FR family. Select the appropriate table and explicitly confirm superhero availability when needed. Previewing or opening its Item does not award it, consume it or publish chat. For an actual grant, use Generate or Award on the recipient PC sheet; review capacity, source, power and variant before confirming. Use the existing elected-GM workflow, not a second manual copy of the preview.</li><li>Discuss opportunities to use and replace cyphers, and consult their complete definitions for targets, power choices and exceptions. Use, variant/table rolls, discard, hiding and transfer are distinct controls. Common lifecycle enforcement does not execute every particular effect: resolve unsupported effects with the GM and check existing target changes before applying them manually. Native random-table packs are a later delivery, not a hidden extra generation system here.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.bf5e9db32583ae9c]{Use Them and Replace Them}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.86d13f9b1c4a4350]{Cypher Limit}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.4c99bcc4c2cddfea]{Gaining New Cyphers}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.5f9ce5fe586244e1.JournalEntryPage.68bee1793e74b3d8]{Reading a Cypher Description}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "d967f110c0dabf54"
+          }
+        }
+      }
+    },
+    {
+      "_id": "9f2b05bbd701753e",
+      "_key": "!journal.pages!bcded427f083368e.9f2b05bbd701753e",
+      "name": "Award XP and follow advancement",
+      "type": "text",
+      "sort": 1100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>Review character arcs and story awards with the table using the linked CRD passages. Record the agreed award in each actual PC's XP field; there is no automatic story or arc detector. Intrusion XP uses its own settlement card, so do not add it a second time. Keep a note of manual award reasons and verify the affected token/world actor.</li><li>Players purchase advancement through its dedicated controls and finish the permitted choices. Review tier grants and qualifications instead of adding all displayed options manually. Choices are not banked across tiers; a new tier's permitted current-or-lower choices must be settled. Check resource-point rewards and follower changes already applied by progression before adding manual adjustments. Beyond-tier-six options remain subject to their complete source procedure.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.3ad300bfc60f7364]{Earning XP}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.29b029cc02365af0]{Story Awards}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.4d36d269c64bdab3]{Character Advancement}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.5aca8046ad5c76a6]{Advancement Beyond Tier 6}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "0b084589c8f35ea5"
+          }
+        }
+      }
+    },
+    {
+      "_id": "fd4c9959c5ce49e1",
+      "_key": "!journal.pages!bcded427f083368e.fd4c9959c5ce49e1",
+      "name": "Review projects and resource points",
+      "type": "text",
+      "sort": 1200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<aside><p>Practical GM help: links provide complete rules. Situational decisions and unsupported effects remain adjudicated.</p></aside><ol><li>On the principal PC's Projects and resources panel, propose the activity, actual target or template, qualifications, contributions and available time. The elected active GM reviews the calculated total cost and duration, participants and fictional prerequisites before starting. Proposing or starting does not spend the points. Contributors share one total cost; a single resulting object is not duplicated for each helper.</li><li>Advance world time as appropriate and confirm actual work before completing. Recheck balances and prerequisites; completion settles the supported result and participant receipts. Use Resume or Reconcile for interrupted work rather than paying again. Use the resource award/correction control for documented adjustments. Repair only an eligible damaged or broken Object; recreating a destroyed one is a different activity. Time passage alone does not certify completed work.</li></ol><p>Full CRD rules</p><ul><li>@UUID[Compendium.cypher.rules-en.JournalEntry.170f4018cd457db7.JournalEntryPage.c92ddae2dd93fb2e]{Crafting, Building, and Repairing}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.a3329547741d451e]{Resource Points}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.20d8dec3e565be4c]{Goals and Activities}</li><li>@UUID[Compendium.cypher.rules-en.JournalEntry.884434bebcb68956.JournalEntryPage.4326f25c01837c50]{Spending Time}</li></ul>"
+      },
+      "flags": {
+        "cypherFoundry": {
+          "identity": {
+            "sourcePageId": "ad630bb2fa7d78bb"
+          }
+        }
+      }
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "cypherFoundry": {
+      "library": {
+        "role": "gm-guide"
+      },
+      "crd": {
+        "version": "2026-07-29",
+        "logicalId": "journal.gm-guide",
+        "language": "en",
+        "sourceKind": "section",
+        "section": "Editorial GM procedures linked to the CRD",
+        "sourceLocator": "CRD evidence and platform references in data/library-gm-resources.json",
+        "transformations": [
+          "Editorial instructions for existing controls; no replacement CRD wording",
+          "Native links to complete source rules and detailed procedures"
+        ]
+      }
+    }
+  }
+}

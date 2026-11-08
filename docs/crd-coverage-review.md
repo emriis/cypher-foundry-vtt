@@ -24,6 +24,13 @@ fields**. These editorial resources link the complete source and actual sheet
 controls; they do not extend the canonical source partition or close remaining
 rule/Ability automation work.
 
+Library lot 4 adds twelve GM procedures and an eight-card linked screen:
+**1,393 EN documents**, paired FR, **27 Rules Journals / 483 paired Journal
+display fields**. Existing tools are explained and reached through actual
+Actor sheets; native presentation, manual XP awards and unsupported effects
+remain explicit. This extends editorial access, not canonical source coverage
+or executable effect coverage. Native random tables remain library lot 5.
+
 The reference is `docs/Cypher-Reference-Document-2026-07-29.docx`, SHA-256
 `cbf439c9d6fc2c55860a8d0fa52a70be838522e66482d2706bd6ea3f6142c729`.
 Paragraph numbers below belong to that file, including table paragraphs. The

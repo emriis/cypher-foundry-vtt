@@ -112,6 +112,14 @@ editorial labels use explicit library destination roles. They do not trust
 arbitrary Journal flags or prose, and do not run embedded commands from the guide.
 Keep the source partition and existing quick-selection identities unchanged.
 
+The GM guide and linked screen follow the same editorial pipeline, with the
+separate evidence contract `data/library-gm-resources.json` and focused tests in
+`tests/content/library-gm-resources.test.mjs`. Every screen card reaches detailed
+procedures and full source rules. The library's GM-only sheet selector opens a
+current actual owned PC/NPC/Object without spending or applying effects; it
+preserves controlled synthetic Actors and revalidates after the dialog. Reading
+these published instructions is not GM authorization or private campaign storage.
+
 ### TDD and BDD boundary
 
 For recovery and healing work, follow the source contracts and persistence
