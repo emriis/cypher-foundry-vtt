@@ -4,7 +4,7 @@ An unofficial Foundry VTT system for **Cypher**, built under the Cypher Open
 License.
 
 This repository currently targets Foundry VTT V13 and V14 and is verified
-against Foundry V14. The current release version is 0.2.0-alpha.1.
+against Foundry V14. The current release version is 0.2.0-alpha.2.
 
 This project is not affiliated with Monte Cook Games or Foundry Gaming LLC.
 

@@ -205,8 +205,11 @@ approved by this mapping.
 ## Complete French proposals
 
 Maintain one proposal per logical source identity under `translations/fr/`,
-organized by family. Ability batches may be subdivided for editorial ownership;
-those folders do not affect the runtime pack names. Each JSON file contains:
+organized by family. Equipment proposals use the same relative subdirectories
+as their English records under `packs/equipment-en/_source/`; proposal filenames
+remain independent of source filenames and never determine document identity.
+Ability batches may be subdivided for editorial ownership; those folders do not
+affect the runtime pack names. Each JSON file contains:
 
 ```json
 {
